@@ -1,0 +1,503 @@
+/* カラー変数 */
+:root {
+  --color-primary: #ff008c;
+  --color-primary-dark: #cc006f;
+  --color-primary-bg: #fff0f8;
+  --color-primary-light: #ffe0f3;
+}
+
+/* ベース */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+  color: #1a1a1a;
+  background: #fff;
+  line-height: 1.7;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ヘッダー */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 14px;
+  padding-bottom: 14px;
+}
+
+.site-logo {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  text-decoration: none;
+}
+
+.site-nav {
+  display: flex;
+  gap: 24px;
+}
+
+.site-nav a {
+  font-size: 14px;
+  font-weight: 600;
+  color: #444;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: var(--color-primary);
+}
+
+/* ヒーロー */
+.hero {
+  background: linear-gradient(135deg, #fff 0%, var(--color-primary-bg) 100%);
+  border-bottom: 1px solid var(--color-primary-light);
+  padding: 72px 0 64px;
+  text-align: center;
+}
+
+.hero-badge {
+  display: inline-block;
+  background: var(--color-primary-bg);
+  border: 1px solid var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+  padding: 6px 16px;
+  border-radius: 50px;
+  margin-bottom: 24px;
+}
+
+.hero-price {
+  color: var(--color-primary);
+}
+
+.hero-diff {
+  font-size: 17px;
+  color: #444;
+  margin-bottom: 12px;
+}
+
+.hero-diff strong {
+  color: var(--color-primary);
+  font-size: 20px;
+}
+
+.hero-title {
+  font-size: clamp(28px, 5vw, 44px);
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.hero-sub {
+  font-size: 15px;
+  color: #666;
+  margin-bottom: 32px;
+  max-width: 480px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-point-badge {
+  display: inline-block;
+  background: #fff;
+  border: 2px solid var(--color-primary);
+  border-radius: 12px;
+  padding: 14px 28px;
+  margin-bottom: 24px;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #1a1a1a;
+}
+
+.hero-point-badge strong {
+  color: var(--color-primary);
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.hero-note {
+  margin-top: 12px;
+  font-size: 12px;
+  color: #888;
+}
+
+/* ボタン */
+.btn-primary {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 17px;
+  font-weight: 700;
+  padding: 18px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+  transform: translateY(-2px);
+}
+
+/* 社員紹介バナー */
+.staff-banner {
+  background: #fffbe6;
+  border-top: 1px solid #f5e4a0;
+  border-bottom: 1px solid #f5e4a0;
+  padding: 14px 0;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+}
+
+.staff-banner strong {
+  color: #1a1a1a;
+}
+
+/* セクション共通 */
+.section {
+  padding: 64px 0;
+}
+
+.section-gray {
+  background: #f7f7f7;
+}
+
+.section-title {
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: 40px;
+  line-height: 1.4;
+}
+
+/* 料金テーブル */
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+}
+
+th, td {
+  padding: 14px 16px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+thead th {
+  background: #f0f0f0;
+  font-weight: 700;
+}
+
+th.highlight, td.highlight {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.table-note {
+  margin-top: 10px;
+  font-size: 12px;
+  color: #888;
+  text-align: right;
+}
+
+/* カード */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 24px 16px;
+  text-align: center;
+}
+
+.card-icon {
+  font-size: 32px;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.card p {
+  font-size: 13px;
+  color: #555;
+}
+
+.card p strong {
+  color: var(--color-primary);
+}
+
+/* チェックリスト */
+.checklist {
+  list-style: none;
+  max-width: 520px;
+  margin: 0 auto;
+}
+
+.checklist li {
+  padding: 12px 0 12px 36px;
+  border-bottom: 1px solid #eee;
+  position: relative;
+  font-size: 15px;
+}
+
+.checklist li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 900;
+  font-size: 18px;
+}
+
+/* 申し込みステップ */
+.steps {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.step {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 24px 20px;
+  text-align: center;
+  flex: 1;
+  min-width: 160px;
+  max-width: 220px;
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step-num {
+  width: 36px;
+  height: 36px;
+  background: var(--color-primary);
+  color: #fff;
+  font-weight: 900;
+  font-size: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 12px;
+}
+
+.step h3 {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.step p {
+  font-size: 13px;
+  color: #666;
+}
+
+.step-arrow {
+  font-size: 24px;
+  color: #ccc;
+  flex-shrink: 0;
+}
+
+.steps-note {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #888;
+  text-align: center;
+}
+
+.steps-note a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* 利用者数 */
+.trust-block {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.trust-num {
+  font-size: clamp(36px, 6vw, 56px);
+  font-weight: 900;
+  color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.trust-label {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.trust-sub {
+  font-size: 14px;
+  color: #666;
+}
+
+/* CTAセクション */
+.cta-section {
+  background: var(--color-primary-bg);
+  text-align: center;
+}
+
+.cta-title {
+  font-size: clamp(20px, 3vw, 26px);
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.cta-point {
+  color: var(--color-primary);
+}
+
+.cta-sub {
+  color: #555;
+  margin-bottom: 32px;
+  font-size: 15px;
+}
+
+.cta-urgency {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #999;
+}
+
+/* 記事一覧 */
+.articles-lead {
+  text-align: center;
+  color: #666;
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+.article-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.article-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 12px;
+  padding: 20px 24px;
+  text-decoration: none;
+  color: #1a1a1a;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.article-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: 0 2px 12px rgba(255, 0, 140, 0.1);
+}
+
+.article-card--more {
+  justify-content: center;
+  border-style: dashed;
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.article-card__icon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.article-card__text {
+  flex: 1;
+  font-size: 15px;
+}
+
+.article-card__arrow {
+  font-size: 18px;
+  color: #ccc;
+  flex-shrink: 0;
+}
+
+.article-card:hover .article-card__arrow {
+  color: var(--color-primary);
+}
+
+.articles-note {
+  margin-top: 16px;
+  font-size: 12px;
+  color: #aaa;
+  text-align: center;
+}
+
+.article-empty {
+  text-align: center;
+  padding: 48px 0;
+  color: #aaa;
+  font-size: 15px;
+}
+
+/* フッター */
+.footer {
+  background: #1a1a1a;
+  color: #aaa;
+  padding: 32px 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 2;
+}
+
+.footer a {
+  color: #ccc;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+  .hero { padding: 48px 0 40px; }
+  .section { padding: 48px 0; }
+  .btn-primary { font-size: 15px; padding: 16px 28px; }
+  .step-arrow { display: none; }
+  .step { max-width: 100%; min-width: unset; width: 100%; }
+  .site-logo { font-size: 13px; }
+  .site-nav { gap: 16px; }
+  .site-nav a { font-size: 13px; }
+}

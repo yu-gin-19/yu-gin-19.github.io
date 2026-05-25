@@ -9,6 +9,10 @@
 /* ベース */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+html {
+  scroll-padding-top: 70px;
+}
+
 body {
   font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
   color: #1a1a1a;
@@ -476,6 +480,100 @@ th.highlight, td.highlight {
   font-size: 15px;
 }
 
+/* FAQ */
+.faq-list {
+  max-width: 640px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faq-item {
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  background: #fff;
+  overflow: hidden;
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 18px 20px;
+  text-align: left;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.faq-question:hover {
+  background: var(--color-primary-bg);
+}
+
+.faq-question__q {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.faq-question__text {
+  flex: 1;
+  line-height: 1.5;
+}
+
+.faq-question__icon {
+  flex-shrink: 0;
+  font-size: 20px;
+  color: var(--color-primary);
+  line-height: 1;
+  transition: transform 0.25s;
+}
+
+.faq-item.is-open .faq-question__icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.25s ease;
+}
+
+.faq-item.is-open .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer__inner {
+  overflow: hidden;
+}
+
+.faq-answer__body {
+  padding: 0 20px 18px 58px;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.8;
+}
+
+.faq-answer__body a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
 /* フッター */
 .footer {
   background: #1a1a1a;
@@ -500,4 +598,6 @@ th.highlight, td.highlight {
   .site-logo { font-size: 13px; }
   .site-nav { gap: 16px; }
   .site-nav a { font-size: 13px; }
+  .faq-question { padding: 16px; font-size: 14px; }
+  .faq-answer__body { padding: 0 16px 16px 54px; }
 }

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <title>Instagram自己紹介画像モック</title>
+  <style>
+    body {
+      margin: 0;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+    }
+
+    .card {
+      width: 600px;
+      height: 600px;
+      background: #fff0f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* 背景装飾 */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 260px;
+      height: 260px;
+      background: #ffe0f3;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .card::after {
+      content: "";
+      position: absolute;
+      bottom: -60px;
+      left: -60px;
+      width: 200px;
+      height: 200px;
+      background: #ffe0f3;
+      border-radius: 50%;
+      z-index: 0;
+    }
+
+    .inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      padding: 0 48px;
+      text-align: center;
+    }
+
+    .lantern {
+      font-size: 52px;
+      line-height: 1;
+    }
+
+    .label {
+      background: #ff008c;
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 6px 20px;
+      border-radius: 50px;
+      letter-spacing: 0.05em;
+    }
+
+    .name {
+      font-size: 36px;
+      font-weight: 900;
+      color: #1a1a1a;
+      line-height: 1.2;
+    }
+
+    .name span {
+      font-size: 18px;
+      color: #888;
+      font-weight: 400;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .desc {
+      font-size: 17px;
+      color: #333;
+      line-height: 1.8;
+      font-weight: 500;
+    }
+
+    .desc strong {
+      color: #ff008c;
+      font-weight: 700;
+    }
+
+    .handle {
+      font-size: 14px;
+      color: #ff008c;
+      font-weight: 700;
+      letter-spacing: 0.03em;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="inner">
+      <div class="lantern">🏮</div>
+      <div class="label">楽天の中の人</div>
+      <div class="name">
+        ジン
+        <span>Rakuten Mobile 社員</span>
+      </div>
+      <div class="desc">
+        <strong>SPU最大化・ポイ活</strong>を<br>
+        社員目線で本音で語ります
+      </div>
+      <div class="handle">@gin_rakuten</div>
+    </div>
+  </div>
+</body>
+</html>

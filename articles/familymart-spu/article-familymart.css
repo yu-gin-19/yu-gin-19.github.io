@@ -1,3 +1,142 @@
+/* SPU積み上がりグラフ */
+.spu-stack {
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+
+.spu-stack__title {
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #1a1a1a;
+}
+
+.spu-stack__items {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.spu-stack__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.spu-stack__item--total {
+  margin-top: 8px;
+  padding-top: 12px;
+  border-top: 2px solid #ddd;
+}
+
+.spu-stack__service {
+  font-size: 13px;
+  color: #555;
+  width: 170px;
+  flex-shrink: 0;
+}
+
+.spu-stack__item--total .spu-stack__service {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.spu-stack__bar-wrap {
+  flex: 1;
+  background: #e8e8e8;
+  border-radius: 50px;
+  height: 28px;
+  overflow: hidden;
+}
+
+.spu-stack__bar {
+  height: 100%;
+  background: var(--color-primary-light);
+  border-radius: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--color-primary);
+  min-width: 44px;
+  transition: width 0.6s ease;
+}
+
+.spu-stack__bar--primary {
+  background: var(--color-primary);
+  color: #fff;
+}
+
+.spu-stack__bar--sub {
+  background: #ffd0ed;
+  color: var(--color-primary);
+}
+
+.spu-stack__bar--total {
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 14px;
+}
+
+/* FAQリスト */
+.faq-list {
+  margin: 24px 0;
+}
+
+.faq-item {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.faq-q {
+  background: #f7f7f7;
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.faq-q::before {
+  content: "Q";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.faq-a {
+  padding: 14px 20px 14px 52px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555;
+}
+
+/* スマホ対応（追加分） */
+@media (max-width: 600px) {
+  .spu-stack__service {
+    width: 120px;
+    font-size: 12px;
+  }
+  .faq-a { padding-left: 20px; }
+}
+
 /* 適用条件テーブル */
 .condition-table {
   width: 100%;

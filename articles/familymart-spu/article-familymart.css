@@ -1,0 +1,272 @@
+/* 適用条件テーブル */
+.condition-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 15px;
+}
+
+.condition-table th {
+  background: var(--color-primary);
+  color: #fff;
+  padding: 12px 16px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.condition-table td {
+  padding: 14px 16px;
+  border: 1px solid #eee;
+  vertical-align: top;
+  line-height: 1.6;
+}
+
+.condition-table tr:nth-child(even) td {
+  background: #fafafa;
+}
+
+.condition-table td:first-child {
+  font-weight: 700;
+  color: #1a1a1a;
+  width: 40%;
+}
+
+.condition-table td.ok {
+  color: #1a7c3e;
+  font-weight: 700;
+}
+
+.condition-table td.ng {
+  color: #c0392b;
+  font-weight: 700;
+}
+
+/* 条件チェックリスト */
+.cond-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.cond-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  padding: 16px 20px;
+}
+
+.cond-item__badge {
+  flex-shrink: 0;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 4px 10px;
+  border-radius: 4px;
+  margin-top: 2px;
+  letter-spacing: 0.02em;
+}
+
+.cond-item__badge--ng {
+  background: #888;
+}
+
+.cond-item__body {
+  flex: 1;
+}
+
+.cond-item__title {
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.cond-item__desc {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* ポイント計算シミュレーター */
+.sim-box {
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px 0;
+}
+
+.sim-box__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 16px;
+}
+
+.sim-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin-bottom: 8px;
+}
+
+.sim-row--total {
+  border-color: var(--color-primary);
+  background: var(--color-primary-bg);
+  margin-top: 12px;
+}
+
+.sim-label {
+  font-size: 14px;
+  color: #444;
+}
+
+.sim-label strong {
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.sim-value {
+  font-size: 18px;
+  font-weight: 900;
+  color: var(--color-primary);
+}
+
+.sim-value--gray {
+  color: #666;
+  font-size: 16px;
+}
+
+.sim-note {
+  font-size: 12px;
+  color: #aaa;
+  margin-top: 10px;
+}
+
+/* 利用方法フロー */
+.usage-flow {
+  display: flex;
+  align-items: stretch;
+  gap: 8px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.usage-step {
+  flex: 1;
+  min-width: 140px;
+  background: #fff;
+  border: 2px solid var(--color-primary-light);
+  border-radius: 12px;
+  padding: 16px 14px;
+  text-align: center;
+}
+
+.usage-step__num {
+  width: 28px;
+  height: 28px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 10px;
+}
+
+.usage-step__title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+  line-height: 1.4;
+}
+
+.usage-step__desc {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.6;
+}
+
+.usage-arrow {
+  display: flex;
+  align-items: center;
+  color: #ccc;
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* 対象外商品グリッド */
+.ng-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 10px;
+  margin: 16px 0;
+}
+
+.ng-item {
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 12px 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #555;
+}
+
+.ng-item__icon {
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* SPU積み上がり（ファミマ追加版） */
+.spu-new-badge {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 10px;
+  font-weight: 900;
+  padding: 2px 7px;
+  border-radius: 4px;
+  margin-left: 6px;
+  vertical-align: middle;
+  letter-spacing: 0.03em;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+  .usage-flow {
+    flex-direction: column;
+  }
+
+  .usage-arrow {
+    transform: rotate(90deg);
+    justify-content: center;
+    padding: 4px 0;
+  }
+
+  .condition-table td:first-child {
+    width: 35%;
+  }
+
+  .sim-row {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+  }
+
+  .ng-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -291,7 +291,7 @@ th.highlight, td.highlight {
 }
 
 .checklist li {
-  padding: 12px 0 12px 36px;
+  padding: 12px 0 12px 64px;
   border-bottom: 1px solid #eee;
   position: relative;
   font-size: 15px;
@@ -300,10 +300,19 @@ th.highlight, td.highlight {
 .checklist li::before {
   content: "✓";
   position: absolute;
-  left: 0;
+  left: 36px;
   color: var(--color-primary);
   font-weight: 900;
   font-size: 18px;
+}
+
+.checklist-icon {
+  position: absolute;
+  left: 0;
+  font-size: 22px;
+  line-height: 1;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 /* 申し込みステップ */

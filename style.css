@@ -339,6 +339,12 @@ th.highlight, td.highlight {
   align-items: center;
 }
 
+.step-icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+  line-height: 1;
+}
+
 .step-num {
   width: 36px;
   height: 36px;

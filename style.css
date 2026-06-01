@@ -74,6 +74,28 @@ body {
   text-align: center;
 }
 
+.hero-container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.hero-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-image {
+  flex-shrink: 0;
+}
+
+.hero-image img {
+  width: 300px;
+  height: 300px;
+  object-fit: contain;
+  display: block;
+}
+
 .hero-badge {
   display: inline-block;
   background: var(--color-primary-bg);
@@ -683,6 +705,8 @@ th.highlight, td.highlight {
 /* スマホ対応 */
 @media (max-width: 600px) {
   .hero { padding: 48px 0 40px; }
+  .hero-container { flex-direction: column; gap: 24px; }
+  .hero-image img { width: 220px; height: 220px; }
   .section { padding: 48px 0; }
   .btn-primary { font-size: 15px; padding: 16px 28px; }
   .step-arrow { display: none; }

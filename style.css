@@ -616,6 +616,55 @@ th.highlight, td.highlight {
   transform: translateY(-2px);
 }
 
+/* SNSリンク共通パーツ */
+.sns-links {
+  text-align: center;
+  margin-top: 16px;
+  padding-top: 16px;
+}
+
+.sns-links__text {
+  font-size: 12px;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.sns-links__icons {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.sns-links__btn {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  padding: 6px 14px;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.sns-links__btn:hover {
+  opacity: 0.8;
+}
+
+.sns-links__btn--x {
+  background: #000;
+  color: #fff;
+}
+
+.sns-links__btn--instagram {
+  background: #E1306C;
+  color: #fff;
+}
+
+.sns-links__btn--note {
+  background: #41C9B4;
+  color: #fff;
+}
+
 /* フッター */
 .footer {
   background: #1a1a1a;
@@ -628,6 +677,7 @@ th.highlight, td.highlight {
 
 .footer a {
   color: #ccc;
+  margin: 0 8px;
 }
 
 /* スマホ対応 */

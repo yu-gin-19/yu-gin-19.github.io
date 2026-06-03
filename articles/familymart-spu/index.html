@@ -401,16 +401,40 @@
           <h2>よくある質問</h2>
           <div class="faq-list">
             <div class="faq-item">
-              <div class="faq-q">ファミリーマートのSPUはいつから始まりますか？</div>
-              <div class="faq-a">2026年7月1日（水）0:00からです。エントリーは不要ですが、利用登録が必要です。7月1日より前に利用登録しておくとスムーズです。</div>
+              <button class="faq-question" aria-expanded="false">
+                <span class="faq-question__q">Q</span>
+                <span class="faq-question__text">ファミリーマートのSPUはいつから始まりますか？</span>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer__inner">
+                  <div class="faq-answer__body">2026年7月1日（水）0:00からです。エントリーは不要ですが、利用登録が必要です。7月1日より前に利用登録しておくとスムーズです。</div>
+                </div>
+              </div>
             </div>
             <div class="faq-item">
-              <div class="faq-q">ファミペイで支払ってもSPUの対象になりますか？</div>
-              <div class="faq-a">楽天ポイントカードとファミペイを連携している場合は対象になります。他社カードと連携した状態では対象外です。楽天ペイで支払う場合は自動的に楽天ポイントカードが提示されるため、別途提示は不要です。</div>
+              <button class="faq-question" aria-expanded="false">
+                <span class="faq-question__q">Q</span>
+                <span class="faq-question__text">ファミペイで支払ってもSPUの対象になりますか？</span>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer__inner">
+                  <div class="faq-answer__body">楽天ポイントカードとファミペイを連携している場合は対象になります。他社カードと連携した状態では対象外です。楽天ペイで支払う場合は自動的に楽天ポイントカードが提示されるため、別途提示は不要です。</div>
+                </div>
+              </div>
             </div>
             <div class="faq-item">
-              <div class="faq-q">月3,000円の集計はいつリセットされますか？</div>
-              <div class="faq-a">毎月1日にリセットされます。前月の購入は翌月の集計には持ち越されません。月ごとに条件を達成する必要があります。</div>
+              <button class="faq-question" aria-expanded="false">
+                <span class="faq-question__q">Q</span>
+                <span class="faq-question__text">月3,000円の集計はいつリセットされますか？</span>
+                <span class="faq-question__icon">+</span>
+              </button>
+              <div class="faq-answer">
+                <div class="faq-answer__inner">
+                  <div class="faq-answer__body">毎月1日にリセットされます。前月の購入は翌月の集計には持ち越されません。月ごとに条件を達成する必要があります。</div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -424,9 +448,9 @@
         <!-- CTA -->
         <div class="article-cta">
           <p class="article-cta__title">SPUの土台となる<br>楽天モバイルはまだですか？</p>
-          <p class="article-cta__sub">ファミリーマートSPU（+0.5倍）の恩恵を最大化するには、楽天モバイル（+4倍）・楽天カード（+2倍）の土台が必要です。社員紹介リンクから申し込むと最大14,000ポイントもらえます。</p>
+          <p class="article-cta__sub">ファミリーマートSPU（+0.5倍）の恩恵を最大化するには、楽天モバイル（+4倍）・楽天カード（+2倍）の土台が必要です。社員紹介リンクから申し込むと乗り換えで最大14,000pt・新規でも11,000ptもらえます。</p>
           <a href="https://r10.to/h5zkrv" class="btn-primary" onclick="gtag('event', 'cta_click', {'event_category': 'referral', 'event_label': document.title})" target="_blank" rel="noopener noreferrer">
-            紹介リンクから申し込む（最大14,000Pもらえる）
+            紹介リンクから申し込む（乗り換え最大14,000P）
           </a>
           <p class="article-cta__note">まだ迷っている方は <a href="/">紹介ページの詳細を見る →</a></p>
         </div>
@@ -443,5 +467,6 @@
   </footer>
 
   <script src="../../components/sns-links.js" defer></script>
+  <script src="../../components/faq.js" defer></script>
 </body>
 </html>

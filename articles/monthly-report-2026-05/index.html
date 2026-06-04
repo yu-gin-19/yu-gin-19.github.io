@@ -103,6 +103,8 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="site-logo">🏮 楽天の中の人のポイ活メディア</a>
@@ -113,7 +115,7 @@
     </div>
   </header>
 
-  <main class="article-wrap">
+  <main id="main-content" class="article-wrap">
     <div class="container">
 
       <nav class="breadcrumb">
@@ -235,12 +237,12 @@
 
           <div class="faq-list">
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-1" aria-controls="faq-panel-1">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">楽天ポイントは毎月どのくらい貯まりますか？</span>
                 <span class="faq-question__icon">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-1" aria-labelledby="faq-btn-1">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">楽天市場・楽天カード・SPU・キャンペーンを組み合わせると、毎月2,000〜3,000ポイント程度が目安です。楽天スーパーSALEやお買い物マラソンの月は増加します。</div>
                 </div>
@@ -248,12 +250,12 @@
             </div>
 
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-2" aria-controls="faq-panel-2">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">SPUで効率よくポイントを貯めるには何をすればいいですか？</span>
                 <span class="faq-question__icon">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-2" aria-labelledby="faq-btn-2">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">SPUで最も倍率が大きいのは楽天モバイル（+4倍）です。楽天カード（+2倍）と組み合わせるだけで+6倍になり、楽天市場での買い物ポイントが大幅に増えます。</div>
                 </div>
@@ -261,12 +263,12 @@
             </div>
 
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-3" aria-controls="faq-panel-3">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">楽天ポイントはどこで確認できますか？</span>
                 <span class="faq-question__icon">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-3" aria-labelledby="faq-btn-3">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">楽天アプリまたは楽天PointClubのサイトから確認できます。サービスごとの獲得内訳はアプリの「ポイント明細」から確認できます。</div>
                 </div>

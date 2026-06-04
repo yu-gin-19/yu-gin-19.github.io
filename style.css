@@ -2,8 +2,39 @@
 :root {
   --color-primary: #ff008c;
   --color-primary-dark: #cc006f;
-  --color-primary-bg: #fff0f8;
+  --color-primary-bg: #fff;
   --color-primary-light: #ffe0f3;
+}
+
+/* ===== アクセシビリティ ===== */
+
+/* C1: スキップリンク */
+.skip-link {
+  position: absolute;
+  top: -44px;
+  left: 0;
+  background: #1a1a1a;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 14px;
+  z-index: 9999;
+  border-radius: 0 0 4px 0;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0;
+}
+
+/* C3: フォーカスリング */
+:focus-visible {
+  outline: 3px solid #cc006f;
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+.btn-primary:focus-visible,
+.btn-line:focus-visible {
+  outline: 3px solid #1a1a1a;
+  outline-offset: 3px;
 }
 
 /* ベース */

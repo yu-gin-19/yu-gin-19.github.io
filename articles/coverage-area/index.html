@@ -103,6 +103,8 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="site-logo">🏮 楽天の中の人のポイ活メディア</a>
@@ -113,7 +115,7 @@
     </div>
   </header>
 
-  <main class="article-wrap">
+  <main id="main-content" class="article-wrap">
     <div class="container">
 
       <!-- パンくず -->
@@ -331,48 +333,48 @@
           <h2>よくある疑問</h2>
           <div class="faq-list">
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-1" aria-controls="faq-panel-1">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">楽天モバイルは地方でも使える？</span>
-                <span class="faq-question__icon">+</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-1" aria-labelledby="faq-btn-1">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">人口カバー率は自社回線で99%以上を達成しており、主要な市街地では問題なく使えます。山間部・離島など楽天回線エリア外に出た場合は、自動的にauのパートナー回線に切り替わります。パートナー回線は月5GBまで通常速度で利用できるため、日常的な利用では実害が出るケースは限られています。</div>
                 </div>
               </div>
             </div>
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-2" aria-controls="faq-panel-2">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">楽天モバイルは地下鉄で繋がらない？</span>
-                <span class="faq-question__icon">+</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-2" aria-labelledby="faq-btn-2">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">主要な地下鉄路線・駅構内では整備が進んでいますが、一部の地下区間や地下街では繋がりにくい場所があります。改善は継続的に進んでおり、2026年5月にも全国34都道府県78市区町村で新規基地局が設置されました。通勤路が地下中心の方は、事前に公式エリアマップで確認することをおすすめします。</div>
                 </div>
               </div>
             </div>
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-3" aria-controls="faq-panel-3">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">楽天モバイルとahamoどちらがエリアは広い？</span>
-                <span class="faq-question__icon">+</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-3" aria-labelledby="faq-btn-3">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">ahamoはdocomoの回線を利用しているため、山間部・地下など幅広いエリアで安定した通信が可能です。楽天モバイルは都市部では遜色なく使えますが、電波の届きにくい環境ではahamoに分があります。ただし楽天モバイルは月3,168円でデータ無制限という価格面の強みがあるため、エリアを事前確認した上で選ぶことが重要です。</div>
                 </div>
               </div>
             </div>
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-4" aria-controls="faq-panel-4">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">楽天モバイルのパートナー回線5GBを超えたらどうなる？</span>
-                <span class="faq-question__icon">+</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-4" aria-labelledby="faq-btn-4">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">楽天回線エリア外でauのパートナー回線を月5GB超えて使うと、速度が最大1Mbpsに制限されます。1Mbpsはテキストメッセージ・地図・メールなどの軽い用途なら支障なく使えますが、動画の高画質視聴には厳しい速度です。地方への長期出張や遠方への旅行が多い方は、Wi-Fi活用と動画のオフライン保存で対応するのが現実的です。</div>
                 </div>

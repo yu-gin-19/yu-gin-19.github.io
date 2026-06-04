@@ -103,6 +103,8 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="site-logo">🏮 楽天の中の人のポイ活メディア</a>
@@ -113,7 +115,7 @@
     </div>
   </header>
 
-  <main class="article-wrap">
+  <main id="main-content" class="article-wrap">
     <div class="container">
 
       <!-- パンくず -->
@@ -364,48 +366,48 @@
           <h2>よくある疑問</h2>
           <div class="faq-list">
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-1" aria-controls="faq-panel-1">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">楽天モバイルに乗り換えて本当に後悔している人はいるの？</span>
-                <span class="faq-question__icon">+</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-1" aria-labelledby="faq-btn-1">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">います。ただし「エリアを確認しなかった」「Rakuten Linkを使わなかった」など、事前に知っていれば防げたケースがほとんどです。この記事のパターンを把握した上で乗り換えれば、後悔するリスクは大きく減らせます。</div>
                 </div>
               </div>
             </div>
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-2" aria-controls="faq-panel-2">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">楽天モバイルとahamoはどっちが向いている？</span>
-                <span class="faq-question__icon">+</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-2" aria-labelledby="faq-btn-2">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">楽天経済圏（楽天カード・楽天市場）を使っているなら楽天モバイルが有利です。経済圏を使っておらず、月20〜30GBほど安定して使いたいならahamoが向いている場合があります。詳しくは<a href="/articles/ahamo-vs-rakuten/">楽天モバイルとahamoを比較</a>をご覧ください。</div>
                 </div>
               </div>
             </div>
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-3" aria-controls="faq-panel-3">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">Rakuten Linkって本当に無料で通話できる？</span>
-                <span class="faq-question__icon">+</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-3" aria-labelledby="faq-btn-3">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">はい、Rakuten Linkアプリを使えば国内通話が無料かつ無制限です。相手側は普通の電話と変わらず受けられます。ただし0120・0570などのフリーダイヤル・ナビダイヤルはRakuten Linkから発信できないため、その場合は通常ダイヤルを使ってください。</div>
                 </div>
               </div>
             </div>
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-4" aria-controls="faq-panel-4">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">楽天モバイルのパートナー回線制限はどのくらい影響する？</span>
-                <span class="faq-question__icon">+</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-4" aria-labelledby="faq-btn-4">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">楽天回線エリア外ではauのパートナー回線に切り替わり、月5GBを超えると速度が最大1Mbpsに制限されます。都市部在住で地方出張が少ない方への影響はほとんどありません。地方に頻繁に行く場合は5GB制限を意識した使い方が必要です。</div>
                 </div>

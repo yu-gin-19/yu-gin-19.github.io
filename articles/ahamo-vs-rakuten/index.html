@@ -105,6 +105,8 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="site-logo">🏮 楽天の中の人のポイ活メディア</a>
@@ -115,7 +117,7 @@
     </div>
   </header>
 
-  <main class="article-wrap">
+  <main id="main-content" class="article-wrap">
     <div class="container">
 
       <!-- パンくず -->
@@ -485,48 +487,48 @@
           <h2>よくある疑問</h2>
           <div class="faq-list">
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-1" aria-controls="faq-panel-1">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">楽天モバイルとahamoはどちらが安い？</span>
-                <span class="faq-question__icon">+</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-1" aria-labelledby="faq-btn-1">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">使用量によって変わります。月20GB以下なら楽天モバイルが安く（20GBで2,068円）、20〜30GBはahamoが2,970円で一定のため場合によりますが、無制限では楽天モバイルが3,168円でahamoの大盛り4,950円より安くなります。楽天経済圏ユーザーはSPUの恩恵を加味すると楽天モバイルがさらに有利です。</div>
                 </div>
               </div>
             </div>
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-2" aria-controls="faq-panel-2">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">ahamoから楽天モバイルに乗り換えたらポイントはもらえる？</span>
-                <span class="faq-question__icon">+</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-2" aria-labelledby="faq-btn-2">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">はい。紹介リンク経由で申し込むと、MNP乗り換えの場合は最大14,000ポイント、新規申し込みの場合は11,000ポイントが獲得できます。キャンペーン条件は変更になる場合があるため、申し込み前に公式サイトでご確認ください。</div>
                 </div>
               </div>
             </div>
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-3" aria-controls="faq-panel-3">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">楽天モバイルの電波はahamoより弱い？</span>
-                <span class="faq-question__icon">+</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-3" aria-labelledby="faq-btn-3">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">都市部・生活圏では実用上の差はほぼありません。ahamoはdocomo回線でエリアが広く安定していますが、楽天モバイルも人口カバー率99%以上を達成しており日常使いには問題ありません。山間部・離島などは楽天モバイルが不利な場合があるため、エリアマップで事前確認を推奨します。</div>
                 </div>
               </div>
             </div>
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-4" aria-controls="faq-panel-4">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">楽天経済圏を使っていない場合、どちらがいい？</span>
-                <span class="faq-question__icon">+</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-4" aria-labelledby="faq-btn-4">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">楽天経済圏を全く使っていない場合はahamoが電波の安定性・大容量（30GB）・シンプルな使い勝手の面で優位です。ただ、楽天モバイルに乗り換えをきっかけに楽天カードやSPUを活用し始めると、トータルのコスパが逆転するケースもあります。家計全体での最適化を考えるなら、楽天経済圏の活用も合わせて検討する価値があります。</div>
                 </div>

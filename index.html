@@ -133,6 +133,8 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
   <!-- ヘッダー -->
   <header class="site-header">
     <div class="container header-inner">
@@ -143,6 +145,8 @@
       </nav>
     </div>
   </header>
+
+  <main id="main-content">
 
   <!-- ヒーロー -->
   <section class="hero">
@@ -294,12 +298,12 @@
       <div class="faq-list">
 
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" id="faq-btn-1" aria-controls="faq-panel-1">
             <span class="faq-question__q">Q</span>
             <span class="faq-question__text">今の電話番号はそのまま使えますか？</span>
             <span class="faq-question__icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer" role="region">
+          <div class="faq-answer" role="region" id="faq-panel-1" aria-labelledby="faq-btn-1">
             <div class="faq-answer__inner">
               <p class="faq-answer__body">はい、MNP（番号ポータビリティ）を利用することで今の電話番号をそのまま引き継げます。多くのキャリア（ドコモ・au・ソフトバンクなど）はMNPワンストップに対応しており、MNP予約番号の取得なしで楽天モバイルの申し込みページだけで手続きが完結します。一部のキャリアではMNP予約番号が必要な場合があります。</p>
             </div>
@@ -307,12 +311,12 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" id="faq-btn-2" aria-controls="faq-panel-2">
             <span class="faq-question__q">Q</span>
             <span class="faq-question__text">契約期間の縛りや解約金はありますか？</span>
             <span class="faq-question__icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer" role="region">
+          <div class="faq-answer" role="region" id="faq-panel-2" aria-labelledby="faq-btn-2">
             <div class="faq-answer__inner">
               <p class="faq-answer__body">楽天モバイルには契約期間の縛りはありません。いつでも解約・プラン変更が可能です。ただし2025年4月1日以降に回線利用を開始した場合、1年以内の解約には解約事務手数料（最大1,078円税込）が発生します。1年経過後は0円です。</p>
             </div>
@@ -320,12 +324,12 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" id="faq-btn-3" aria-controls="faq-panel-3">
             <span class="faq-question__q">Q</span>
             <span class="faq-question__text">どのスマホでも使えますか？</span>
             <span class="faq-question__icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer" role="region">
+          <div class="faq-answer" role="region" id="faq-panel-3" aria-labelledby="faq-btn-3">
             <div class="faq-answer__inner">
               <p class="faq-answer__body">SIMロックが解除されたスマホであれば基本的に使えます。ただし機種によって対応バンドが異なるため、楽天モバイル公式サイトの動作確認済み端末リストで事前確認をおすすめします。</p>
             </div>
@@ -333,12 +337,12 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" id="faq-btn-4" aria-controls="faq-panel-4">
             <span class="faq-question__q">Q</span>
             <span class="faq-question__text">紹介リンクから申し込むのは通常と何が違いますか？</span>
             <span class="faq-question__icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer" role="region">
+          <div class="faq-answer" role="region" id="faq-panel-4" aria-labelledby="faq-btn-4">
             <div class="faq-answer__inner">
               <p class="faq-answer__body">手続きの流れや料金はまったく同じです。紹介リンク経由で申し込むと楽天モバイルの社員紹介プログラムが適用され、申し込んだ方に最大14,000ポイントが付与される特典があります。通常申し込みより確実にお得です。</p>
             </div>
@@ -346,12 +350,12 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" id="faq-btn-5" aria-controls="faq-panel-5">
             <span class="faq-question__q">Q</span>
             <span class="faq-question__text">申し込みから開通までどのくらいかかりますか？</span>
             <span class="faq-question__icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer" role="region">
+          <div class="faq-answer" role="region" id="faq-panel-5" aria-labelledby="faq-btn-5">
             <div class="faq-answer__inner">
               <p class="faq-answer__body">eSIMを選択した場合は最短当日に開通できます。物理SIM（nanoSIM）の場合は申し込み完了から最短2日でSIMカードが届きます。急ぎの方にはeSIMがおすすめです。</p>
             </div>
@@ -359,12 +363,12 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" id="faq-btn-6" aria-controls="faq-panel-6">
             <span class="faq-question__q">Q</span>
             <span class="faq-question__text">楽天IDを持っていなくても申し込めますか？</span>
             <span class="faq-question__icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer" role="region">
+          <div class="faq-answer" role="region" id="faq-panel-6" aria-labelledby="faq-btn-6">
             <div class="faq-answer__inner">
               <p class="faq-answer__body">楽天モバイルの申し込みには楽天IDが必要です。ただし楽天IDは無料で簡単に作成できます。<a href="https://www.rakuten.co.jp/myrakuten/help/" target="_blank" rel="noopener noreferrer">こちら</a>から事前に作成するか、申し込みページからそのまま新規作成できます。</p>
             </div>
@@ -372,12 +376,12 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" id="faq-btn-7" aria-controls="faq-panel-7">
             <span class="faq-question__q">Q</span>
             <span class="faq-question__text">通話品質やエリアは問題ありませんか？</span>
             <span class="faq-question__icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer" role="region">
+          <div class="faq-answer" role="region" id="faq-panel-7" aria-labelledby="faq-btn-7">
             <div class="faq-answer__inner">
               <p class="faq-answer__body">楽天モバイルは人口カバー率99.9%超（楽天モバイル公式発表）のエリアをカバーしています。さらにパートナーエリア（au回線）もあるため、地方や郊外でもつながりやすくなっています。</p>
             </div>
@@ -385,12 +389,12 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" id="faq-btn-8" aria-controls="faq-panel-8">
             <span class="faq-question__q">Q</span>
             <span class="faq-question__text">家族で申し込むとお得になりますか？</span>
             <span class="faq-question__icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer" role="region">
+          <div class="faq-answer" role="region" id="faq-panel-8" aria-labelledby="faq-btn-8">
             <div class="faq-answer__inner">
               <p class="faq-answer__body">はい、家族それぞれが紹介リンクから申し込むことで1人ずつ最大14,000ポイントの特典を受け取れます。元々の料金が安いため、家族全員で乗り換えると月々の節約効果が大きくなります。</p>
             </div>
@@ -398,12 +402,12 @@
         </div>
 
         <div class="faq-item">
-          <button class="faq-question" aria-expanded="false">
+          <button class="faq-question" aria-expanded="false" id="faq-btn-9" aria-controls="faq-panel-9">
             <span class="faq-question__q">Q</span>
             <span class="faq-question__text">データ使用量が少ない月は安くなりますか？</span>
             <span class="faq-question__icon" aria-hidden="true">+</span>
           </button>
-          <div class="faq-answer" role="region">
+          <div class="faq-answer" role="region" id="faq-panel-9" aria-labelledby="faq-btn-9">
             <div class="faq-answer__inner">
               <p class="faq-answer__body">はい、楽天モバイルはデータ使用量に応じて自動的に料金が変わる従量制です。〜3GBなら968円、〜20GBなら2,068円、20GB超は無制限で3,168円（すべて税込）。使わなかった月は自動的に安くなります。</p>
             </div>
@@ -465,11 +469,7 @@
           <span class="article-card__text">【速報】楽天スーパーSALEにAIコンシェルジュ登場｜先行セール×AI攻略を両取りする方法</span>
           <span class="article-card__arrow">→</span>
         </a>
-        <a href="articles/supersale-presale-2026/" class="article-card">
-          <span class="article-card__icon">🛒</span>
-          <span class="article-card__text">楽天スーパーSALE先行セールに24時間早く参加する方法【6月2日締切】</span>
-          <span class="article-card__arrow">→</span>
-        </a>
+
         <a href="articles/monthly-report-2026-05/" class="article-card">
           <span class="article-card__icon">📊</span>
           <span class="article-card__text">楽天ポイント実績公開｜2026年5月は2,199ポイント獲得【社員の全内訳】</span>
@@ -506,6 +506,8 @@
       <p class="cta-urgency">※ 紹介特典は予告なく変更・終了する場合があります</p>
     </div>
   </section>
+
+  </main><!-- /#main-content -->
 
   <!-- フッター -->
   <footer class="footer">

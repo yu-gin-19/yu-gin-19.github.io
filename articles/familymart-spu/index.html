@@ -111,6 +111,8 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
   <header class="site-header">
     <div class="container header-inner">
       <a href="/" class="site-logo">🏮 楽天の中の人のポイ活メディア</a>
@@ -121,7 +123,7 @@
     </div>
   </header>
 
-  <main class="article-wrap">
+  <main id="main-content" class="article-wrap">
     <div class="container">
 
       <nav class="breadcrumb">
@@ -401,36 +403,36 @@
           <h2>よくある質問</h2>
           <div class="faq-list">
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-1" aria-controls="faq-panel-1">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">ファミリーマートのSPUはいつから始まりますか？</span>
                 <span class="faq-question__icon">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-1" aria-labelledby="faq-btn-1">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">2026年7月1日（水）0:00からです。エントリーは不要ですが、利用登録が必要です。7月1日より前に利用登録しておくとスムーズです。</div>
                 </div>
               </div>
             </div>
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-2" aria-controls="faq-panel-2">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">ファミペイで支払ってもSPUの対象になりますか？</span>
                 <span class="faq-question__icon">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-2" aria-labelledby="faq-btn-2">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">楽天ポイントカードとファミペイを連携している場合は対象になります。他社カードと連携した状態では対象外です。楽天ペイで支払う場合は自動的に楽天ポイントカードが提示されるため、別途提示は不要です。</div>
                 </div>
               </div>
             </div>
             <div class="faq-item">
-              <button class="faq-question" aria-expanded="false">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-3" aria-controls="faq-panel-3">
                 <span class="faq-question__q">Q</span>
                 <span class="faq-question__text">月3,000円の集計はいつリセットされますか？</span>
                 <span class="faq-question__icon">+</span>
               </button>
-              <div class="faq-answer">
+              <div class="faq-answer" role="region" id="faq-panel-3" aria-labelledby="faq-btn-3">
                 <div class="faq-answer__inner">
                   <div class="faq-answer__body">毎月1日にリセットされます。前月の購入は翌月の集計には持ち越されません。月ごとに条件を達成する必要があります。</div>
                 </div>

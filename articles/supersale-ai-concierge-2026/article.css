@@ -517,3 +517,17 @@
     font-size: 15px;
   }
 }
+
+/* h1内サブテキスト */
+.article-title-sub {
+  display: block;
+  font-size: clamp(16px, 2.5vw, 20px);
+  font-weight: 700;
+  color: #c0392b;
+}
+
+/* 公開日メタ情報 */
+.article-meta__date {
+  margin-left: 12px;
+  color: #696969;
+}

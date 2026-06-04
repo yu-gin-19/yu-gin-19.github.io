@@ -8,10 +8,10 @@
 
 /* ===== アクセシビリティ ===== */
 
-/* C1: スキップリンク */
+/* C1: スキップリンク（非フォーカス時は画面外、フォーカス時のみ表示） */
 .skip-link {
-  position: absolute;
-  top: -44px;
+  position: fixed;
+  top: -100%;
   left: 0;
   background: #1a1a1a;
   color: #fff;

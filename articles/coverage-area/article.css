@@ -323,12 +323,11 @@
   font-weight: 700;
   color: #333;
   margin: 20px 0;
-  display: flex;
-  align-items: center;
-  gap: 12px;
+  line-height: 1.7;
 }
 
 .point-label {
+  display: inline;
   background: var(--color-primary);
   color: #fff;
   font-size: 11px;
@@ -336,7 +335,9 @@
   padding: 3px 10px;
   border-radius: 4px;
   letter-spacing: 0.05em;
-  flex-shrink: 0;
+  margin-right: 8px;
+  white-space: nowrap;
+  vertical-align: middle;
 }
 
 /* まとめ比較テーブル */
@@ -560,9 +561,4 @@
     font-size: 12px;
   }
 
-  .point-box {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
 }

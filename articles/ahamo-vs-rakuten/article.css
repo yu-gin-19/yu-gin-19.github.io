@@ -57,6 +57,51 @@
   color: #888;
 }
 
+/* この記事でわかることボックス */
+.article-summary-box {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 0 0 24px;
+}
+
+.article-summary-box__title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #888;
+  margin-bottom: 10px;
+  letter-spacing: 0.05em;
+}
+
+.article-summary-box ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.article-summary-box ul li {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+  padding: 5px 0 5px 20px;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.article-summary-box ul li:last-child {
+  border-bottom: none;
+}
+
+.article-summary-box ul li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: 900;
+  font-size: 13px;
+}
+
 /* セクション */
 .article-section {
   margin-bottom: 56px;
@@ -590,6 +635,58 @@
   font-size: 15px;
   line-height: 1.85;
   color: #333;
+}
+
+/* 要点箇条書きブロック */
+.summary-points {
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin: 16px 0;
+}
+
+.summary-points p {
+  font-size: 13px;
+  color: #888;
+  margin: 0 0 8px;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+.summary-points ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.summary-points ul li {
+  font-size: 14px;
+  line-height: 1.75;
+  color: #333;
+  padding: 5px 0 5px 18px;
+  position: relative;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.summary-points ul li:last-child {
+  border-bottom: none;
+}
+
+.summary-points ul li::before {
+  content: "▸";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-size: 12px;
+  top: 7px;
+}
+
+/* セクション見出しの区切りを強化 */
+.article-section h2 {
+  border-left: 4px solid var(--color-primary);
+  padding-left: 12px;
+  margin-bottom: 20px;
 }
 
 /* スマホ対応 */

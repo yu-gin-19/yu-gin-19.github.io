@@ -1,0 +1,333 @@
+/* ===================================================
+   savings-calc/article.css
+   fit-check/article.css を継承し、この記事固有の
+   コンポーネントのみ追加定義する
+   =================================================== */
+
+/* --- fit-check/article.css の全スタイルを import --- */
+@import url("../fit-check/article.css");
+
+/* 最終セクション（まとめ）にも他セクション同様の余白と区切りを維持する */
+.article-section:last-of-type {
+  border-bottom: 1px solid #eee;
+}
+
+/* 中盤CTAとその直後のセクションの間隔 */
+.article-cta--mid {
+  margin-bottom: 56px;
+}
+
+/* ===== 記事タイトルのサブテキスト ===== */
+.title-sub {
+  display: block;
+  font-size: clamp(16px, 2.5vw, 22px);
+  font-weight: 700;
+  color: #555;
+  margin-top: 6px;
+}
+
+/* ===== 著者実収支カード ===== */
+.real-numbers-card {
+  border: 2px solid var(--color-primary);
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 24px 0;
+}
+
+.real-numbers-card__header {
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+  padding: 12px 24px;
+  letter-spacing: 0.04em;
+}
+
+.real-numbers-grid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  padding: 24px;
+  background: #fff8fc;
+  flex-wrap: wrap;
+}
+
+.real-numbers-grid__item {
+  text-align: center;
+  flex: 1;
+  min-width: 120px;
+}
+
+.real-numbers-grid__item--before {
+  opacity: 0.7;
+}
+
+.real-numbers-grid__item--after {
+  color: var(--color-primary);
+}
+
+.real-numbers-grid__label {
+  font-size: 12px;
+  font-weight: 700;
+  color: #888;
+  margin-bottom: 6px;
+}
+
+.real-numbers-grid__item--after .real-numbers-grid__label {
+  color: var(--color-primary);
+}
+
+.real-numbers-grid__price {
+  font-size: 15px;
+  font-weight: 700;
+  color: #333;
+  line-height: 1.2;
+}
+
+.real-numbers-grid__item--after .real-numbers-grid__price {
+  color: var(--color-primary);
+}
+
+.price-large {
+  font-size: 32px;
+  font-weight: 900;
+}
+
+.real-numbers-grid__note {
+  font-size: 11px;
+  color: #888;
+  margin-top: 4px;
+}
+
+.real-numbers-grid__arrow {
+  font-size: 28px;
+  color: var(--color-primary);
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.real-numbers-saving {
+  background: var(--color-primary-bg);
+  border-top: 1px solid var(--color-primary-light);
+  padding: 14px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.saving-label {
+  font-size: 13px;
+  font-weight: 700;
+  color: #555;
+}
+
+.saving-amount {
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--color-primary);
+}
+
+.saving-year {
+  font-size: 14px;
+  font-weight: 700;
+  color: #555;
+}
+
+/* ===== 免責テキスト ===== */
+.article-disclaimer {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.8;
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 16px 0;
+}
+
+.article-disclaimer strong {
+  color: #555;
+}
+
+/* ===== 料金プラン テーブル ===== */
+.plan-table-wrap {
+  overflow-x: auto;
+  margin: 24px 0;
+}
+
+.plan-table-wrap table {
+  min-width: 360px;
+  width: 100%;
+}
+
+/* ===== 試算テーブル ===== */
+.calc-table-wrap {
+  overflow-x: auto;
+  margin: 24px 0;
+}
+
+.calc-table-wrap table {
+  min-width: 400px;
+  width: 100%;
+}
+
+.saving-cell {
+  color: var(--color-primary);
+  font-weight: 700;
+}
+
+.highlight-row {
+  background: var(--color-primary-bg);
+}
+
+.table-note {
+  display: block;
+  font-size: 11px;
+  color: #888;
+  font-weight: 400;
+}
+
+/* ===== プラン特徴リスト ===== */
+.plan-features {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.plan-feature-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.plan-feature-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.plan-feature-body strong {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 2px;
+}
+
+.plan-feature-body p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ===== SPU説明ブロック ===== */
+.spu-explain {
+  border: 2px solid var(--color-primary-light);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 20px 0;
+}
+
+.spu-explain__header {
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  padding: 10px 20px;
+  letter-spacing: 0.04em;
+}
+
+.spu-explain__text {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.8;
+  padding: 14px 20px;
+  margin: 0;
+  background: #fff8fc;
+}
+
+.spu-explain__text strong {
+  color: var(--color-primary);
+}
+
+/* ===== 内部リンクブロック ===== */
+.internal-links {
+  margin-top: 32px;
+}
+
+.internal-links__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+/* ===== スマホ対応（SP-first 追加調整） ===== */
+@media (max-width: 600px) {
+  .real-numbers-grid {
+    gap: 8px;
+    padding: 16px;
+  }
+
+  .real-numbers-grid__arrow {
+    transform: rotate(90deg);
+    font-size: 22px;
+  }
+
+  .price-large {
+    font-size: 26px;
+  }
+
+  .saving-amount {
+    font-size: 18px;
+  }
+
+  .real-numbers-saving {
+    flex-direction: column;
+    gap: 4px;
+    text-align: center;
+    padding: 12px 16px;
+  }
+
+  .plan-table-wrap table,
+  .calc-table-wrap table {
+    min-width: 320px;
+  }
+
+  .plan-feature-item {
+    padding: 12px;
+  }
+
+  .spu-explain__text {
+    padding: 12px 14px;
+  }
+}
+
+/* ===== スクリーンショット ===== */
+.screenshot-figure {
+  margin: 16px 0 0;
+  text-align: center;
+}
+
+.screenshot-img {
+  max-width: 320px;
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  border: 1px solid #e0e0e0;
+  display: block;
+  margin: 0 auto;
+}
+
+.screenshot-caption {
+  font-size: 12px;
+  color: #999;
+  margin-top: 6px;
+}

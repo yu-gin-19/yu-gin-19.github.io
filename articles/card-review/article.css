@@ -1,0 +1,264 @@
+/* ===================================================
+   card-review/article.css
+   fit-check/article.css を継承し、この記事固有の
+   コンポーネントのみ追加定義する
+   =================================================== */
+
+/* --- fit-check/article.css の全スタイルを import --- */
+@import url("../fit-check/article.css");
+
+/* ===== 審査基準リスト（カード型） ===== */
+.criteria-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+}
+
+.criteria-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  background: #fafafa;
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.criteria-item:last-child {
+  margin-bottom: 0;
+}
+
+.criteria-item__num {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  background: #555;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.criteria-item__body strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.criteria-item__body p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===== 再申請チェックリスト（fit list流用しない独自カード） ===== */
+.recheck-list {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0;
+  background: #fff8fc;
+  border: 2px solid var(--color-primary-light);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.recheck-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--color-primary-light);
+}
+
+.recheck-item:last-child {
+  border-bottom: none;
+}
+
+.recheck-item__icon {
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 900;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+}
+
+.recheck-item__body strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+  line-height: 1.5;
+}
+
+.recheck-item__body p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===== 再申請までの推奨期間タイムライン ===== */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  margin: 20px 0;
+}
+
+.timeline__item {
+  display: flex;
+  gap: 16px;
+  padding-bottom: 20px;
+  position: relative;
+}
+
+.timeline__item:not(:last-child)::before {
+  content: "";
+  position: absolute;
+  left: 15px;
+  top: 32px;
+  bottom: 0;
+  width: 2px;
+  background: var(--color-primary-light);
+}
+
+.timeline__marker {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+.timeline__body strong {
+  display: block;
+  font-size: 15px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+}
+
+.timeline__body p {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ===== 入口比較カード（カード vs モバイル） ===== */
+.entry-compare {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.entry-compare__card {
+  border-radius: 14px;
+  padding: 20px;
+  border: 2px solid #e0e0e0;
+  background: #fafafa;
+}
+
+.entry-compare__card--highlight {
+  border-color: var(--color-primary);
+  background: var(--color-primary-bg);
+}
+
+.entry-compare__label {
+  font-size: 12px;
+  font-weight: 900;
+  color: #888;
+  letter-spacing: 0.05em;
+  margin-bottom: 8px;
+}
+
+.entry-compare__card--highlight .entry-compare__label {
+  color: var(--color-primary);
+}
+
+.entry-compare__title {
+  font-size: 17px;
+  font-weight: 900;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.entry-compare__card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.entry-compare__card li {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.8;
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 4px;
+}
+
+.entry-compare__card li::before {
+  content: "・";
+  position: absolute;
+  left: 0;
+}
+
+/* ===== 要確認・免責テキスト（savings-calc流用） ===== */
+.article-disclaimer {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.8;
+  background: #f7f7f7;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 16px 0;
+}
+
+.article-disclaimer strong {
+  color: #555;
+}
+
+/* ===== スマホ対応（SP-first追加分） ===== */
+@media (max-width: 600px) {
+  .criteria-item,
+  .recheck-item {
+    padding: 14px 16px;
+    gap: 10px;
+  }
+
+  .entry-compare {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline__marker {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+}

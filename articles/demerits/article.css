@@ -289,10 +289,30 @@
   margin-top: 48px;
 }
 
+/* 中間CTA：本文セクション直後（末尾より前）に置くため上下マージンを調整 */
+.article-cta--mid {
+  margin-top: 0;
+  margin-bottom: 48px;
+}
+
 .article-cta__title {
   font-size: 18px;
   font-weight: 800;
   margin-bottom: 12px;
+}
+
+/* CTA直前の安心材料・後押しリマインド（末尾CTA用） */
+.article-cta__reminder {
+  display: inline-block;
+  background: #fff;
+  border: 1px solid var(--color-primary-light);
+  border-radius: 20px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 16px;
+  line-height: 1.6;
 }
 
 .article-cta__sub {
@@ -362,6 +382,18 @@
   font-size: 14px;
   line-height: 1.8;
   color: #555;
+}
+
+/* 内部リンク導線（あわせて読みたい） */
+.internal-links {
+  margin-top: 32px;
+}
+
+.internal-links__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 12px;
 }
 
 /* スマホ対応 */

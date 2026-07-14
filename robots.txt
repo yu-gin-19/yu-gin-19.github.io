@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yu-gin-19.github.io/sitemap.xml

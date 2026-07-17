@@ -576,6 +576,17 @@
   text-decoration: underline;
 }
 
+/* ===== CTA注記の補足テキスト（コンパクト版） =====
+   従来 style="font-size:0.8rem;color:#666;margin-bottom:8px;" を
+   直書きしていた箇所をクラス化。fit-checkを継承チェーンの起点として
+   ここに定義することで、savings-calc・au-switch・card-review全体で
+   共通利用できるようにする。 */
+.article-cta__note--compact {
+  font-size: 0.8rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
 /* ===== visually-hidden（スクリーンリーダー用） ===== */
 .visually-hidden {
   position: absolute;

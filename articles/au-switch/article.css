@@ -21,9 +21,7 @@
 }
 
 /* ===== 末尾CTAの「安心材料」リマインドバッジ =====
-   demerits/article.css で先行定義済みのパターンをau-switchにも適用。
-   card-review/index.html も同クラスを使用しているが未定義のまま（要:
-   共通化するなら fit-check/article.css への昇格を検討・ユーザー確認要）。 */
+   demerits/article.css で先行定義済みのパターンをau-switchにも適用。 */
 .article-cta__reminder {
   display: inline-block;
   background: #fff;
@@ -35,16 +33,6 @@
   color: #555;
   margin-bottom: 16px;
   line-height: 1.6;
-}
-
-/* ===== CTA注記の補足テキスト（インラインstyle撤廃） =====
-   従来 style="font-size:0.8rem;color:#666;margin-bottom:8px;" を
-   直書きしていた箇所をクラス化。他記事（card-review・savings-calc）
-   にも同じインライン指定があるが、今回はau-switch内のみ対応。 */
-.article-cta__note--compact {
-  font-size: 0.8rem;
-  color: #666;
-  margin-bottom: 8px;
 }
 
 /* ===== スマホ対応（SP-first追加分） ===== */

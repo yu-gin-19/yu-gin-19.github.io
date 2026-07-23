@@ -595,6 +595,63 @@ th.highlight, td.highlight {
   margin-bottom: 28px;
 }
 
+/* 記事一覧 目次（カテゴリアンカーリンク） */
+.article-toc {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  background: #fafafa;
+  border: 1px solid #eee;
+  border-radius: 16px;
+  padding: 20px;
+}
+
+.article-toc__heading {
+  font-size: 13px;
+  font-weight: 700;
+  color: #767676;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.article-toc__list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.article-toc__list li {
+  flex: 1 1 auto;
+}
+
+.article-toc__link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  background: var(--color-primary-bg);
+  border: 1px solid var(--color-primary-light);
+  color: var(--color-primary);
+  font-size: 13px;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50px;
+  padding: 8px 16px;
+  transition: background 0.2s, border-color 0.2s;
+}
+
+.article-toc__link:hover {
+  background: var(--color-primary-light);
+  border-color: var(--color-primary);
+}
+
+@media (min-width: 480px) {
+  .article-toc__list li {
+    flex: 1 1 calc(50% - 5px);
+  }
+}
+
 /* 記事一覧カテゴリ見出し */
 .article-category {
   max-width: 600px;

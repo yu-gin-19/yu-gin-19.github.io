@@ -250,6 +250,49 @@
   margin: 0;
 }
 
+.diagnosis-input {
+  flex: 0 0 auto;
+  width: 22px;
+  height: 22px;
+  margin-top: 4px;
+  accent-color: var(--color-primary-dark);
+  cursor: pointer;
+}
+
+.diagnosis-live {
+  margin-top: 24px;
+  padding: 22px 24px;
+  border: 2px solid var(--color-primary-light);
+  border-radius: 14px;
+  background: #fff8fc;
+}
+
+.diagnosis-live__label {
+  color: var(--color-primary-dark);
+  font-size: 13px;
+  font-weight: 900;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.diagnosis-live__score {
+  color: #1a1a1a;
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.diagnosis-live__score strong {
+  color: var(--color-primary-dark);
+  font-size: 24px;
+}
+
+.diagnosis-live__message {
+  color: #444;
+  font-size: 14px;
+  line-height: 1.75;
+  margin: 0;
+}
+
 /* 結果ボックス */
 .result-box {
   border-radius: 12px;

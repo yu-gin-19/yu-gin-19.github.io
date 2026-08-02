@@ -942,6 +942,104 @@ th.highlight, td.highlight {
   margin: 0 8px;
 }
 
+/* 重要表示・判断導線（優先ページ共通） */
+.disclosure-banner {
+  background: #fff8e6;
+  border-bottom: 1px solid #f0d889;
+  color: #4a3a05;
+  font-size: 13px;
+  line-height: 1.7;
+  padding: 12px 0;
+}
+
+.disclosure-banner strong {
+  color: #1a1a1a;
+}
+
+.hero-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.hero-actions .btn-primary,
+.hero-actions .btn-secondary {
+  margin-top: 0;
+}
+
+.hero-direct {
+  color: #555;
+  font-size: 13px;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.hero-direct:hover {
+  color: var(--color-primary-dark);
+}
+
+.decision-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.decision-card {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 170px;
+  padding: 22px 18px;
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  color: #1a1a1a;
+  text-decoration: none;
+  background: #fff;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+}
+
+.decision-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary-light);
+  box-shadow: 0 8px 24px rgba(204, 0, 111, 0.1);
+}
+
+.decision-card__number {
+  color: var(--color-primary-dark);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+}
+
+.decision-card__title {
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+.decision-card__text {
+  color: #555;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.decision-card__arrow {
+  color: var(--color-primary-dark);
+  font-size: 13px;
+  font-weight: 700;
+  margin-top: auto;
+}
+
+.rate-note {
+  margin-top: 10px;
+  color: #555;
+  font-size: 13px;
+  line-height: 1.7;
+  text-align: center;
+}
+
 /* スマホ対応 */
 @media (max-width: 600px) {
   .hero { padding: 48px 0 40px; }
@@ -953,9 +1051,12 @@ th.highlight, td.highlight {
   .step { max-width: 100%; min-width: unset; width: 100%; }
   .site-logo { font-size: 13px; }
   .site-nav { gap: 16px; }
-  .site-nav a { font-size: 13px; }
+  .site-nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; }
   .faq-question { padding: 16px; font-size: 14px; }
   .faq-answer__body { padding: 0 16px 16px 54px; }
+  .decision-grid { grid-template-columns: 1fr; }
+  .decision-card { min-height: auto; }
+  .disclosure-banner { font-size: 12px; }
 }
 
 /* a1: 記事目次 */

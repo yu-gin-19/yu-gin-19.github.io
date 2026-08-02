@@ -59,7 +59,7 @@ def main():
 
     # 上部ラベル：サイト名（スキル標準：本文14〜18px → OGP縮小考慮で32px）
     f_label = ImageFont.truetype(FONT_MEDIUM, 32)
-    label_text = "楽天の中の人のポイ活メディア"
+    label_text = "楽天社員の損しない選び方"
     bbox = draw.textbbox((0, 0), label_text, font=f_label)
     text_w = bbox[2] - bbox[0]
     icon_r = 13

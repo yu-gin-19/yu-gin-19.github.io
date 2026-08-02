@@ -69,7 +69,7 @@ def main():
     icon_cx = margin + icon_r
     icon_cy = 53
     draw.ellipse([icon_cx - icon_r, icon_cy - icon_r, icon_cx + icon_r, icon_cy + icon_r], fill=(224, 48, 48))
-    draw.text((margin + icon_r * 2 + 10, 40), "楽天の中の人のポイ活メディア", font=f_label, fill=COLOR_WHITE_SUB)
+    draw.text((margin + icon_r * 2 + 10, 40), "楽天社員の損しない選び方", font=f_label, fill=COLOR_WHITE_SUB)
 
     # カテゴリバッジ
     f_badge = ImageFont.truetype(FONT_MEDIUM, 24)

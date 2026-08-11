@@ -1049,9 +1049,27 @@ th.highlight, td.highlight {
   .btn-primary { font-size: 15px; padding: 16px 28px; }
   .step-arrow { display: none; }
   .step { max-width: 100%; min-width: unset; width: 100%; }
-  .site-logo { font-size: 13px; }
-  .site-nav { gap: 16px; }
-  .site-nav a { display: inline-flex; align-items: center; min-height: 44px; font-size: 13px; }
+  .header-inner { flex-direction: column; align-items: stretch; padding-top: 10px; padding-bottom: 0; }
+  .site-logo { width: 100%; font-size: 13px; padding-bottom: 10px; }
+  .site-nav {
+    width: 100%;
+    gap: 0;
+    border-top: 1px solid #eee;
+  }
+  .site-nav a {
+    flex: 1 1 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 44px;
+    padding: 0 4px;
+    white-space: nowrap;
+    font-size: clamp(11px, 3.2vw, 13px);
+    line-height: 1.2;
+    text-align: center;
+  }
+  html { scroll-padding-top: 96px; }
   .faq-question { padding: 16px; font-size: 14px; }
   .faq-answer__body { padding: 0 16px 16px 54px; }
   .decision-grid { grid-template-columns: 1fr; }

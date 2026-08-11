@@ -102,6 +102,7 @@
     gtag('js', new Date());
     gtag('config', 'G-W82F5QSC9N');
   </script>
+  <script src="../../components/cta-tracking.js"></script>
   <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="article.css" />
 </head>
@@ -155,7 +156,7 @@
         <!-- 上部導線：直接申込みではなく向き・不向き診断へ -->
         <div class="referral-offer referral-offer--maybe" style="margin:0 0 32px;">
           <p class="referral-offer__note" style="margin-top:0;">デメリットが自分にとってどのくらい影響するかは、生活圏や使い方によって変わります。まずは1分診断で向き・不向きを確認してください。</p>
-          <a href="/articles/fit-check/" class="btn-secondary">1分で向き・不向きを確認する →</a>
+          <a href="/articles/fit-check/" class="btn-secondary" onclick="trackCta('journey_click', {'page_type': 'demerits', 'cta_position': 'top', 'reader_stage': 'explore', 'destination': 'fit-check'})">1分で向き・不向きを確認する →</a>
         </div>
 
         <!-- 導入 -->
@@ -321,16 +322,8 @@
           </div>
         </section>
 
-        <!-- 中間CTA -->
-        <div class="article-cta article-cta--mid">
-          <p class="article-cta__title">ここまで読んで「それでも良さそう」と思えた方へ</p>
-          <p class="article-cta__sub">社員の紹介リンクから申し込むと乗り換えで<strong>14,000pt</strong>、新規で<strong>11,000pt</strong>もらえます。通常の申し込みと手順はまったく同じです。</p>
-          <a href="https://r10.to/h5zkrv" aria-label="紹介リンクから申し込む（乗り換え14,000P）（新しいタブで開きます）" class="btn-primary" onclick="gtag('event', 'cta_click', {'event_category': 'referral', 'event_label': 'demerits-mid', 'event_value': 1})" target="_blank" rel="noopener noreferrer">
-            紹介リンクから申し込む（乗り換え14,000P）
-          </a>
-          <p class="article-cta__note">※適用には条件があります。申込み前に<a href="/articles/campaign-guide/">キャンペーン解説</a>をご確認ください。</p>
-          <p class="article-cta__note">まだ迷っている方は、この先の「よくある疑問」もご確認ください。</p>
-        </div>
+        <!-- 中間の軽い導線 -->
+        <p class="article-text">ここまでの内容が気になった方は、<a href="/articles/fit-check/" onclick="trackCta('journey_click', {'page_type': 'demerits', 'cta_position': 'mid', 'reader_stage': 'explore', 'destination': 'fit-check'})">向き・不向き診断</a>で自分にどれくらい影響するか確認できます。</p>
 
         <!-- FAQ -->
         <section class="article-section">
@@ -409,15 +402,19 @@
         </div>
 
         <!-- CTA -->
-        <div class="article-cta">
-          <p class="article-cta__reminder">4つの弱点は、どれも「致命的な欠点」ではないと確認できました</p>
-          <p class="article-cta__title">納得して申し込みたい方へ</p>
-          <p class="article-cta__sub">社員の紹介リンクから申し込むと乗り換えで<strong>14,000pt</strong>、新規で<strong>11,000pt</strong>もらえます。通常の申し込みと手順はまったく同じです。</p>
-          <a href="https://r10.to/h5zkrv" aria-label="紹介リンクから申し込む（乗り換え14,000P）（新しいタブで開きます）" class="btn-primary" onclick="gtag('event', 'cta_click', {'event_category': 'referral', 'event_label': 'demerits-bottom', 'event_value': 1})" target="_blank" rel="noopener noreferrer">
-            紹介リンクから申し込む（乗り換え14,000P）
+        <div class="article-cta" data-cta-type="A">
+          <p class="article-cta__title">デメリットが自分にどれくらい影響するか確認する</p>
+          <p class="article-cta__sub">
+            ここまでの内容が自分にどれくらい影響するかは、生活圏や使い方によって変わります。<br>
+            1分でできる診断で、向いているかどうかをまず確認してください。
+          </p>
+          <a href="/articles/fit-check/" class="btn-primary"
+             onclick="trackCta('journey_click', {'page_type': 'demerits', 'cta_position': 'bottom', 'reader_stage': 'explore', 'destination': 'fit-check'})">
+            向き・不向きを1分で確認する
           </a>
-          <p class="article-cta__note">※適用には条件があります。申込み前に<a href="/articles/campaign-guide/">キャンペーン解説</a>をご確認ください。</p>
-          <p class="article-cta__note">まだ迷っている方は <a href="/articles/savings-calc/">実際の節約額シミュレーションを見る →</a></p>
+          <p class="article-cta__note">
+            料金の目安を先に知りたい方は <a href="/articles/savings-calc/" onclick="trackCta('journey_click', {'page_type': 'demerits', 'cta_position': 'bottom-note', 'reader_stage': 'explore', 'destination': 'savings-calc'})">料金試算</a> もあわせてご確認ください。
+          </p>
         </div>
 
       </article>

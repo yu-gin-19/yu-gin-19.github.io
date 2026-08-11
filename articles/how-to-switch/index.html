@@ -91,6 +91,7 @@
     gtag('js', new Date());
     gtag('config', 'G-W82F5QSC9N');
   </script>
+  <script src="../../components/cta-tracking.js"></script>
   <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="article.css" />
 </head>
@@ -146,11 +147,16 @@
         </header>
 
         <!-- 上部CTA：すでに申込みを決めている方へ -->
-        <div class="referral-offer" style="margin:0 0 32px;">
-          <p class="referral-offer__title">すでに申込みを決めている方へ</p>
-          <p class="referral-offer__points">社員紹介キャンペーン：乗り換え<strong>14,000pt</strong>／新規<strong>11,000pt</strong></p>
-          <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="社員紹介キャンペーンから申し込む（新しいタブで開きます）" onclick="gtag('event', 'referral_cta_click', {'page_type': 'how-to-switch', 'cta_position': 'top', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">社員紹介キャンペーンから申し込む</a><br>
-          <a href="/articles/campaign-guide/" class="referral-offer__link">適用条件を確認する →</a>
+        <div class="referral-offer" style="margin:0 0 32px;" data-cta-type="C">
+          <p class="referral-offer__title">キャンペーン条件を確認する</p>
+          <p class="referral-offer__target">対象：申し込みを具体的に検討している方</p>
+          <p class="referral-offer__points">特典の目安：乗り換え<strong>14,000pt</strong>／新規<strong>11,000pt</strong>（条件あり）</p>
+          <a href="/articles/campaign-guide/" class="btn-primary referral-offer__btn" onclick="trackCta('journey_click', {'page_type': 'how-to-switch', 'cta_position': 'top', 'reader_stage': 'apply', 'destination': 'campaign-guide'})">
+            キャンペーン条件を確認する
+          </a>
+          <a href="https://r10.to/h5zkrv" class="referral-offer__link" target="_blank" rel="noopener noreferrer" aria-label="条件を確認済みの方はこちら（新しいタブで開きます）" onclick="trackCta('referral_cta_click', {'page_type': 'how-to-switch', 'cta_position': 'top-sub', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})">
+            条件を確認済みの方はこちら →
+          </a>
         </div>
 
         <!-- 全体の流れ -->
@@ -188,12 +194,12 @@
           <p class="article-text">紹介リンクから楽天モバイルの申し込みページへ進みます。楽天IDでログインして、必要事項を入力するだけ。</p>
           <p class="article-text">本人確認はスマホのカメラで完結します。<strong>運転免許証などの本人確認書類と自分の顔を撮影するだけ</strong>で、あっという間に本人確認が終わります。難しい操作は何もありません。</p>
 
-          <div class="step1-cta">
+          <div class="step1-cta" data-cta-type="C">
             <p class="step1-cta__text">従業員紹介特典は<strong>乗り換え14,000pt／新規11,000pt</strong>です</p>
-            <a href="https://r10.to/h5zkrv" aria-label="従業員紹介特典で申し込む（新しいタブで開きます）" class="btn-primary" onclick="gtag('event', 'referral_cta_click', {'page_type': 'howto', 'cta_position': 'middle', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">
-              従業員紹介特典で申し込む
+            <a href="/articles/campaign-guide/" aria-label="キャンペーン条件を確認する" class="btn-primary" onclick="trackCta('journey_click', {'page_type': 'how-to-switch', 'cta_position': 'step1', 'reader_stage': 'apply', 'destination': 'campaign-guide'})">
+              キャンペーン条件を確認する
             </a>
-            <p class="step1-cta__note">※条件・付与時期・併用不可キャンペーンをリンク先で確認してください</p>
+            <p class="step1-cta__note">条件を確認済みの方は <a href="https://r10.to/h5zkrv" target="_blank" rel="noopener noreferrer" onclick="trackCta('referral_cta_click', {'page_type': 'how-to-switch', 'cta_position': 'step1-sub', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})">紹介リンクから申し込む →</a></p>
           </div>
 
           <div class="point-box">
@@ -320,13 +326,14 @@
         </div>
 
         <!-- CTA -->
-        <div class="article-cta">
-          <p class="article-cta__title">手順と必要なものを確認できた方へ</p>
-          <p class="article-cta__sub">従業員紹介特典は、乗り換えで<strong>14,000ポイント</strong>、新規で<strong>11,000ポイント</strong>です。</p>
-          <a href="https://r10.to/h5zkrv" aria-label="従業員紹介特典で申し込む（新しいタブで開きます）" class="btn-primary" onclick="gtag('event', 'referral_cta_click', {'page_type': 'howto', 'cta_position': 'bottom', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">
-            従業員紹介特典で申し込む
+        <div class="article-cta" data-cta-type="C">
+          <p class="article-cta__title">キャンペーン条件を確認する</p>
+          <p class="article-cta__sub">対象条件・付与時期を確認してから申し込むと安心です。乗り換えで<strong>14,000ポイント</strong>、新規で<strong>11,000ポイント</strong>が目安です。</p>
+          <a href="/articles/campaign-guide/" class="btn-primary" onclick="trackCta('journey_click', {'page_type': 'how-to-switch', 'cta_position': 'bottom', 'reader_stage': 'apply', 'destination': 'campaign-guide'})">
+            キャンペーン条件を確認する
           </a>
-          <p class="article-cta__note">※条件・付与時期・併用不可キャンペーンをリンク先でご確認ください。まだ迷っている方は <a href="/articles/fit-check/">向き・不向きを確認する →</a></p>
+          <p class="article-cta__note">条件を確認済みの方は <a href="https://r10.to/h5zkrv" target="_blank" rel="noopener noreferrer" onclick="trackCta('referral_cta_click', {'page_type': 'how-to-switch', 'cta_position': 'bottom-sub', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})">紹介リンクから申し込む →</a></p>
+          <p class="article-cta__note">まだ迷っている方は <a href="/articles/fit-check/" onclick="trackCta('journey_click', {'page_type': 'how-to-switch', 'cta_position': 'bottom-note', 'reader_stage': 'apply', 'destination': 'fit-check'})">向き・不向きを確認する →</a></p>
         </div>
 
       </article>

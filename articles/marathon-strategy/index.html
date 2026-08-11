@@ -63,6 +63,7 @@
     gtag('js', new Date());
     gtag('config', 'G-W82F5QSC9N');
   </script>
+  <script src="../../components/cta-tracking.js"></script>
   <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="../spu-4x/article.css" />
   <link rel="stylesheet" href="article-marathon.css" />
@@ -297,7 +298,7 @@
 
           <div class="referral-offer referral-offer--maybe" style="margin-top:24px;">
             <p class="referral-offer__note" style="margin-top:0;">楽天モバイルの社員紹介キャンペーンの対象条件・付与時期をあらかじめ確認しておくと、マラソン前の準備がスムーズです。</p>
-            <a href="/articles/campaign-guide/" class="referral-offer__link">キャンペーン解説を見る →</a>
+            <a href="/articles/campaign-guide/" class="referral-offer__link" onclick="trackCta('journey_click', {'page_type': 'marathon-strategy', 'cta_position': 'mid', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">キャンペーン解説を見る →</a>
           </div>
         </section>
 
@@ -326,12 +327,11 @@
 
         <!-- CTA -->
         <div class="article-cta">
-          <p class="article-cta__title">社員紹介リンクから申し込むと<strong>乗り換えで14,000pt・新規で11,000pt</strong>もらえます</p>
-          <p class="article-cta__sub">楽天モバイルを追加してSPUを+6倍にしておくと、次のマラソンからポイント獲得量が大きく変わります。</p>
-          <a href="https://r10.to/h5zkrv" aria-label="紹介リンクから申し込む（乗り換え14,000P）（新しいタブで開きます）" class="btn-primary" onclick="gtag('event', 'cta_click', {'event_category': 'referral', 'event_label': document.title})" target="_blank" rel="noopener noreferrer">
-            紹介リンクから申し込む（乗り換え14,000P）
+          <p class="article-cta__title">社員紹介キャンペーンの条件を確認する</p>
+          <p class="article-cta__sub">楽天モバイルを追加してSPUを+6倍にしておくと、次のマラソンからポイント獲得量が大きく変わります。社員紹介キャンペーンは乗り換えで14,000pt・新規で11,000ptが目安です（条件あり）。</p>
+          <a href="/articles/campaign-guide/" aria-label="キャンペーン条件を確認する" class="btn-primary" onclick="trackCta('journey_click', {'page_type': 'marathon-strategy', 'cta_position': 'bottom', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">
+            キャンペーン条件を確認する
           </a>
-          <p class="article-cta__note">まだ迷っている方は <a href="/">紹介ページの詳細を見る →</a></p>
         </div>
 
       </article>

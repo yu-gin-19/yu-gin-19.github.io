@@ -122,6 +122,7 @@
     gtag('js', new Date());
     gtag('config', 'G-W82F5QSC9N');
   </script>
+  <script src="../../components/cta-tracking.js"></script>
 
   <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="article.css" />
@@ -135,7 +136,7 @@
       <a href="/" class="site-logo">🏮 楽天社員の損しない選び方</a>
       <nav class="site-nav" aria-label="グローバルナビゲーション">
         <a href="#section-fit">1分診断</a>
-        <a href="/articles/campaign-guide/">紹介特典</a>
+        <a href="/articles/campaign-guide/" onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'nav', 'reader_stage': 'explore', 'destination': 'campaign-guide'})">紹介特典</a>
         <a href="/articles/">記事一覧</a>
       </nav>
     </div>
@@ -339,14 +340,14 @@
               <p class="referral-offer__title">楽天社員紹介キャンペーン</p>
               <p class="referral-offer__points">特典：乗り換え<strong>14,000pt</strong>／新規<strong>11,000pt</strong></p>
               <p class="referral-offer__note">注意：適用には条件があります。申込み前にキャンペーン解説を確認してください</p>
-              <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="社員紹介キャンペーンから申し込む（新しいタブで開きます）" onclick="gtag('event', 'referral_cta_click', {'page_type': 'fit-check', 'cta_position': 'result-fit', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">社員紹介キャンペーンから申し込む</a><br>
-              <a href="/articles/campaign-guide/" class="referral-offer__link">適用条件を確認する →</a>
+              <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="社員紹介キャンペーンから申し込む（新しいタブで開きます）" onclick="trackCta('referral_cta_click', {'page_type': 'fit-check', 'cta_position': 'result-fit', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">社員紹介キャンペーンから申し込む</a><br>
+              <a href="/articles/campaign-guide/" class="referral-offer__link" onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-fit-sub', 'reader_stage': 'apply', 'destination': 'campaign-guide'})">適用条件を確認する →</a>
             </div>
             <div class="referral-offer referral-offer--maybe" id="result-cta-maybe" hidden>
               <p class="referral-offer__result-label">診断結果：判断が分かれます</p>
               <p class="referral-offer__note">注意条件が多めです。すぐに申し込まず、エリアと適用条件を確認してから判断してください。</p>
               <a href="/articles/coverage-area/" class="btn-secondary">エリア確認方法を見る →</a><br>
-              <a href="/articles/campaign-guide/" class="referral-offer__link">適用条件を確認する →</a>
+              <a href="/articles/campaign-guide/" class="referral-offer__link" onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-maybe-sub', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">適用条件を確認する →</a>
             </div>
             <div class="referral-offer referral-offer--maybe" id="result-cta-unfit" hidden>
               <p class="referral-offer__result-label">診断結果：現時点では向いていない可能性があります</p>
@@ -629,7 +630,7 @@
         <div class="article-cta">
           <p class="article-cta__title">診断の次は、紹介特典の条件確認へ</p>
           <p class="article-cta__sub">対象条件・付与時期・申し込み手順を確認してから、従業員紹介ページへ進めます。</p>
-          <a href="/articles/campaign-guide/" class="btn-primary" onclick="gtag('event', 'journey_click', {'page_type': 'comparison', 'cta_position': 'bottom', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">従業員紹介特典の条件を見る</a>
+          <a href="/articles/campaign-guide/" class="btn-primary" onclick="trackCta('journey_click', {'page_type': 'comparison', 'cta_position': 'bottom', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">従業員紹介特典の条件を見る</a>
           <p class="article-cta__note">まだ迷っている方は <a href="/articles/demerits/">デメリット記事でさらに詳しく確認する →</a></p>
         </div>
 

@@ -63,7 +63,7 @@
         "name": "紹介リンクとは何ですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "楽天従業員が発行できる紹介リンクです。このリンク経由で申し込むと、乗り換え（MNP）で14,000ポイント、新規申し込みで11,000ポイントの特典があります。申し込み手順は通常と同じです。条件や特典内容は変更される場合があります。"
+          "text": "楽天従業員が発行できる紹介リンクです。このリンク経由で申し込むと、乗り換え（MNP）で14,000ポイント、新規申し込みで11,000ポイントの特典があります。基本的な申込手順は通常と同様ですが、従業員紹介特典を利用するには最初に紹介リンクを経由し、紹介ページで楽天IDにログインしてから申し込みます。条件や特典内容は変更される場合があります。"
         }
       },
       {
@@ -79,7 +79,7 @@
         "name": "手順は普通の申し込みと同じですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "はい、まったく同じです。このページの紹介リンクをタップして申込み画面に進むだけで特別な操作は不要です。"
+          "text": "基本的な申込手順は通常と同様ですが、従業員紹介特典を利用するには最初に紹介リンクを経由し、紹介ページで楽天IDにログインしてから申し込みます。"
         }
       },
       {
@@ -102,6 +102,7 @@
     gtag('js', new Date());
     gtag('config', 'G-W82F5QSC9N');
   </script>
+  <script src="../../components/cta-tracking.js"></script>
   <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="article.css" />
 </head>
@@ -139,12 +140,21 @@
         <header class="article-header">
           <div class="article-label">従業員紹介キャンペーン</div>
           <h1 class="article-title">楽天モバイル 従業員紹介キャンペーン<br>乗り換え14,000pt・新規11,000pt</h1>
-          <p class="article-lead">このページの紹介リンクから申し込むと、乗り換えで<strong>14,000ポイント</strong>、新規で<strong>11,000ポイント</strong>の特典があります。手順は通常の申し込みと同じですが、対象条件と付与時期は先に確認してください。</p>
+          <p class="article-lead">このページの紹介リンクから申し込むと、乗り換えで<strong>14,000ポイント</strong>、新規で<strong>11,000ポイント</strong>の特典があります。基本的な申込手順は通常と同様ですが、従業員紹介特典を利用するには紹介リンクを経由し、楽天IDでログインしてから申し込む必要があります。対象条件と付与時期も事前にご確認ください。</p>
 
           <div class="article-meta">
             <span>👤 楽天社員の損しない選び方｜元楽天モバイル事業・現楽天市場担当</span>
           </div>
         </header>
+
+        <!-- 結論ボックス -->
+        <div class="honest-box" id="section-conclusion">
+          <div class="honest-box__title">結論</div>
+          <p>
+            対象条件を満たす場合、このページの紹介リンク経由で従業員紹介特典を利用して申し込めます（乗り換え<strong>14,000pt</strong>／新規<strong>11,000pt</strong>。基本的な申込手順は通常と同様ですが、紹介ページで楽天IDにログインしてから申し込みます）。
+            対象になるかどうかは次の「対象者チェック」で、条件の詳細はこの後で確認できます。
+          </p>
+        </div>
 
         <!-- セクション1：ヒーロー数字エリア（導入） -->
         <section class="article-section" id="section-1">
@@ -168,7 +178,7 @@
             <p class="referral-offer__target">対象：楽天モバイルへ乗り換え・新規契約を検討している方</p>
             <p class="referral-offer__points">特典：乗り換え<strong>14,000pt</strong>／新規<strong>11,000pt</strong></p>
             <p class="referral-offer__note">注意：適用には条件があります。下記の条件を確認してから申し込んでください</p>
-            <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="社員紹介キャンペーンから申し込む（新しいタブで開きます）" onclick="gtag('event', 'referral_cta_click', {'page_type': 'campaign', 'cta_position': 'after_points', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">社員紹介キャンペーンから申し込む</a>
+            <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="社員紹介キャンペーンから申し込む（新しいタブで開きます）" onclick="trackCta('referral_cta_click', {'page_type': 'campaign', 'cta_position': 'after_points', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">社員紹介キャンペーンから申し込む</a>
             <p class="referral-offer__note" style="margin:8px 0 0;">※ボタンをタップすると楽天公式のログイン・申込み画面へ移動します</p>
           </div>
 
@@ -176,8 +186,25 @@
 
           <div class="point-box">
             <span class="point-label">POINT</span><br>
-            申し込みの手順は通常とまったく同じ。特別な操作は一切不要です。リンクをタップして、そのまま申し込むだけ。
+            基本的な申込手順は通常と同様ですが、従業員紹介特典を利用するには最初に紹介リンクを経由し、紹介ページで楽天IDにログインしてから申し込みます。
           </div>
+        </section>
+
+        <!-- 対象者チェック -->
+        <section class="article-section" id="section-target">
+          <h2>こんな方が対象です</h2>
+          <p class="article-text">申し込む前に、次の項目に当てはまるか確認してください。</p>
+
+          <ul class="checklist">
+            <li>楽天モバイルへの乗り換え・新規契約を具体的に検討している</li>
+            <li>まだ公式サイトに直接アクセスして申し込んでいない</li>
+            <li>楽天モバイル最強プランへの加入を予定している</li>
+            <li>「自分に向いているか」の判断はすでについている</li>
+          </ul>
+
+          <p class="table-note" style="text-align:center; margin-top:12px;">
+            まだ判断がついていない方は <a href="/articles/fit-check/" onclick="trackCta('journey_click', {'page_type': 'campaign', 'cta_position': 'target-check', 'reader_stage': 'consider', 'destination': 'fit-check'})">向き・不向き診断</a> で先に確認できます。
+          </p>
         </section>
 
         <!-- セクション2：比較カード -->
@@ -188,13 +215,13 @@
           <!-- 比較カード -->
           <div class="compare-cards">
             <div class="compare-card compare-card--normal">
-              <div class="compare-card__title">普通の申し込み</div>
-              <div class="compare-card__point">公式キャンペーン分のみ</div>
-              <div class="compare-card__note">従業員紹介ポイントなし</div>
+              <div class="compare-card__title">従業員紹介特典は利用しない申込方法</div>
+              <div class="compare-card__point">従業員紹介特典の対象外</div>
+              <div class="compare-card__note">この紹介リンク経由の特典は付与されません</div>
             </div>
             <div class="compare-card__vs">VS</div>
             <div class="compare-card compare-card--special">
-              <div class="compare-card__title">従業員紹介リンクから</div>
+              <div class="compare-card__title">対象条件を満たした場合、従業員紹介特典の対象</div>
               <div class="compare-card__point">乗り換え14,000pt</div>
               <div class="compare-card__note">新規申し込みは11,000pt</div>
             </div>
@@ -202,7 +229,7 @@
 
           <div class="honest-box">
             <div class="honest-box__title">正直なコメント</div>
-            <p>普通の申し込みでも、その時点の公式キャンペーンのポイントはもらえます。<strong>従業員紹介特典を受けるには、対象の紹介リンクを経由して申し込む必要があります。</strong>申し込み後に紹介リンク経由へ切り替えることはできないため、対象にしたい方は申し込み前にこのリンクを使ってください。</p>
+            <p>従業員紹介特典は利用しない申込方法では、この紹介リンク経由の特典対象にはなりません。<strong>従業員紹介特典を受けるには、対象の紹介リンクを経由して申し込む必要があります。</strong>申し込み後に紹介リンク経由へ切り替えることはできないため、対象にしたい方は申し込み前にこのリンクを使ってください。その他のキャンペーンの適用条件・併用可否はそれぞれ異なるため、申込前に最新条件をご確認ください。</p>
           </div>
         </section>
 
@@ -235,14 +262,9 @@
             </div>
           </div>
 
-          <div class="referral-offer">
-            <p class="referral-offer__title">楽天社員紹介キャンペーン</p>
-            <p class="referral-offer__target">対象：楽天モバイルへ乗り換え・新規契約を検討している方</p>
-            <p class="referral-offer__points">特典：乗り換え<strong>14,000pt</strong>／新規<strong>11,000pt</strong></p>
-            <p class="referral-offer__note">注意：適用には条件があります。上記の条件をご確認のうえお申し込みください</p>
-            <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="社員紹介キャンペーンから申し込む（新しいタブで開きます）" onclick="gtag('event', 'referral_cta_click', {'page_type': 'campaign', 'cta_position': 'after_conditions', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">社員紹介キャンペーンから申し込む</a>
-            <p class="referral-offer__note" style="margin:8px 0 0;">※ボタンをタップすると楽天公式のログイン・申込み画面へ移動します</p>
-          </div>
+          <p class="table-note" style="text-align:center; margin-top:16px;">
+            条件を確認できたら、このあとの「申し込み手順」または <a href="#section-precheck">ページ末尾のチェックリスト</a> からお申し込みいただけます。
+          </p>
 
           <div class="point-box">
             <span class="point-label">POINT</span><br>
@@ -297,7 +319,7 @@
                 <div class="step-content__title">このページの紹介リンクをタップして申込み画面へ</div>
                 <div class="step-content__body">
                   下のボタンから紹介ページへ進み、楽天IDにログインしてから申し込みへ進みます。申し込みに使う楽天IDと、紹介ページでログインする楽天IDを同じにしてください。<br>
-                  <a href="https://r10.to/h5zkrv" class="btn-primary" style="margin-top:12px; display:inline-block;" aria-label="紹介リンクから申し込み画面へ進む（新しいタブで開きます）" onclick="gtag('event', 'referral_cta_click', {'page_type': 'campaign', 'cta_position': 'step2', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">紹介リンクから申し込み画面へ進む</a><br>
+                  <a href="https://r10.to/h5zkrv" class="btn-primary" style="margin-top:12px; display:inline-block;" aria-label="紹介リンクから申し込み画面へ進む（新しいタブで開きます）" onclick="trackCta('referral_cta_click', {'page_type': 'campaign', 'cta_position': 'step2', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">紹介リンクから申し込み画面へ進む</a><br>
                   <span style="font-size:14px;color:#888;">※タップすると楽天公式のログイン・申込み画面へ移動します</span>
                 </div>
               </div>
@@ -345,7 +367,7 @@
               </button>
               <div class="faq-answer" role="region" id="faq-panel-1" aria-labelledby="faq-btn-1">
                 <div class="faq-answer__inner">
-                  <div class="faq-answer__body">楽天従業員が発行できる紹介リンクです。このリンク経由で申し込むと、乗り換え（MNP）で<strong>14,000ポイント</strong>、新規申し込みで<strong>11,000ポイント</strong>の特典があります。申し込み手順は通常と同じです。（条件あり・変更になる場合があります）</div>
+                  <div class="faq-answer__body">楽天従業員が発行できる紹介リンクです。このリンク経由で申し込むと、乗り換え（MNP）で<strong>14,000ポイント</strong>、新規申し込みで<strong>11,000ポイント</strong>の特典があります。基本的な申込手順は通常と同様ですが、従業員紹介特典を利用するには最初に紹介リンクを経由し、紹介ページで楽天IDにログインしてから申し込みます。（条件あり・変更になる場合があります）</div>
                 </div>
               </div>
             </div>
@@ -369,7 +391,7 @@
               </button>
               <div class="faq-answer" role="region" id="faq-panel-3" aria-labelledby="faq-btn-3">
                 <div class="faq-answer__inner">
-                  <div class="faq-answer__body">はい、まったく同じです。このページの紹介リンクをタップして申込み画面に進むだけで特別な操作は不要です。</div>
+                  <div class="faq-answer__body">基本的な申込手順は通常と同様ですが、従業員紹介特典を利用するには最初に紹介リンクを経由し、紹介ページで楽天IDにログインしてから申し込みます。</div>
                 </div>
               </div>
             </div>
@@ -397,7 +419,7 @@
             <ul>
               <li>乗り換え（MNP）で<strong>14,000ポイント</strong>、新規で<strong>11,000ポイント</strong>（条件あり）</li>
               <li>従業員紹介特典を受けるには、対象の紹介リンクを経由して申し込む必要がある</li>
-              <li>手順は<strong>通常申込みとまったく同じ</strong>。特別な操作は不要</li>
+              <li>基本的な申込手順は<strong>通常と同様</strong>だが、紹介ページで楽天IDにログインしてから申し込む</li>
               <li>開通は適用条件の一つ。<strong>対象プランへの加入や申込み方法など、ほかの条件も事前に確認が必要</strong></li>
               <li>キャンペーン内容は<strong>予告なく変更になる場合</strong>があります。申込み前に必ず公式サイトで確認してください</li>
             </ul>
@@ -406,11 +428,18 @@
           <p class="article-text">乗り換えを迷っている方は、<a href="/articles/regret-reasons/">後悔した理由まとめ</a>や<a href="/articles/how-to-switch/">乗り換え手順の解説</a>もあわせてご覧ください。自分に合っているか確認してから申し込むと安心です。</p>
         </section>
 
-        <!-- LINE誘導 -->
-        <div class="line-cta" style="margin:40px 0 0;">
-          <p class="line-cta__text">新記事・キャンペーン情報をいち早くお届けします。<br>LINE公式アカウントの友だち追加はこちら。</p>
-          <a href="https://line.me/R/ti/p/@758johit" aria-label="LINE友だち追加（新しいタブで開きます）" class="btn-line" target="_blank" rel="noopener noreferrer">LINE友だち追加</a>
-        </div>
+        <!-- 申込み前チェック -->
+        <section class="article-section" id="section-precheck">
+          <h2>申込み前チェック</h2>
+          <p class="article-text">下記を確認してから、紹介リンクへ進んでください。</p>
+
+          <ul class="checklist">
+            <li>乗り換え（MNP）は<strong>14,000pt</strong>、新規は<strong>11,000pt</strong>（対象プラン・回線開通などの条件あり）</li>
+            <li>このページの<strong>紹介リンク経由</strong>で申し込む（公式サイトに直接アクセスすると対象外）</li>
+            <li>キャンペーン条件は<strong>楽天モバイル公式サイトの最新情報</strong>で確認済み</li>
+            <li>申し込みは<strong>楽天モバイル公式サイト</strong>（紹介リンク経由）で行う</li>
+          </ul>
+        </section>
 
         <!-- 末尾CTA -->
         <div class="article-cta" id="apply-cta">
@@ -420,11 +449,17 @@
             新規なら<strong>11,000ポイント</strong>。<br>
             条件を確認し、紹介ページで楽天IDにログインしてから申し込みます。
           </p>
-          <a href="https://r10.to/h5zkrv" aria-label="従業員紹介特典で申し込む（新しいタブで開きます）" class="btn-primary" onclick="gtag('event', 'referral_cta_click', {'page_type': 'campaign', 'cta_position': 'bottom', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">
+          <a href="https://r10.to/h5zkrv" aria-label="従業員紹介特典で申し込む（新しいタブで開きます）" class="btn-primary" onclick="trackCta('referral_cta_click', {'page_type': 'campaign', 'cta_position': 'bottom', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">
             従業員紹介特典で申し込む
           </a>
           <p class="article-cta__note">※ポイント付与には対象プランへの加入・回線開通などの条件があります。内容は予告なく変更される場合があります。必ずリンク先の最新条件をご確認ください。ボタンをタップすると楽天公式のログイン・申込み画面へ移動します。</p>
           <p class="article-cta__note">まだ迷っている方は <a href="/articles/fit-check/">向き・不向き診断</a>や<a href="/articles/savings-calc/">料金試算</a>で確認できます →</p>
+        </div>
+
+        <!-- LINE誘導 -->
+        <div class="line-cta" style="margin:40px 0 0;">
+          <p class="line-cta__text">新記事・キャンペーン情報をいち早くお届けします。<br>LINE公式アカウントの友だち追加はこちら。</p>
+          <a href="https://line.me/R/ti/p/@758johit" aria-label="LINE友だち追加（新しいタブで開きます）" class="btn-line" target="_blank" rel="noopener noreferrer">LINE友だち追加</a>
         </div>
 
       </article>

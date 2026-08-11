@@ -104,6 +104,7 @@
     gtag('js', new Date());
     gtag('config', 'G-W82F5QSC9N');
   </script>
+  <script src="../../components/cta-tracking.js"></script>
   <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="article.css" />
 </head>
@@ -468,14 +469,15 @@
             <p>迷っている方には「まず楽天モバイルを試す」が合理的な選択です。解約手数料は1年以内のみ最大1,078円、以降は0円。合わなければ移行できます。</p>
           </div>
 
-          <div class="referral-offer">
-            <p class="referral-offer__title">楽天社員紹介キャンペーン</p>
-            <p class="referral-offer__target">対象：楽天モバイルへ乗り換え・新規契約を検討している方</p>
-            <p class="referral-offer__points">特典：乗り換え<strong>14,000pt</strong>／新規<strong>11,000pt</strong></p>
-            <p class="referral-offer__note">注意：適用には条件があります。申込み前にキャンペーン解説を確認してください</p>
-            <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="社員紹介キャンペーンから申し込む（新しいタブで開きます）" onclick="gtag('event', 'referral_cta_click', {'page_type': 'ahamo-vs-rakuten', 'cta_position': 'mid', 'offer_type': 'employee_referral', 'reader_stage': 'consider'})" target="_blank" rel="noopener noreferrer">社員紹介キャンペーンから申し込む</a><br>
-            <a href="/articles/campaign-guide/" class="referral-offer__link">適用条件を確認する →</a>
-            <p class="referral-offer__note" style="margin:12px 0 0;">ahamoが向いている方は<a href="https://ahamo.com/" target="_blank" rel="noopener noreferrer">ahamo公式サイト</a>もあわせてご確認ください。</p>
+          <div class="article-cta article-cta--mid" data-cta-type="B">
+            <p class="article-cta__title">料金差を具体的に確認する</p>
+            <p class="article-cta__sub">自分の使用量なら、実際どれくらい差が出るか試算できます。</p>
+            <a href="/articles/savings-calc/" class="btn-primary" onclick="trackCta('journey_click', {'page_type': 'ahamo-vs-rakuten', 'cta_position': 'mid', 'reader_stage': 'consider', 'destination': 'savings-calc'})">
+              料金を試算する
+            </a>
+            <p class="article-cta__note">条件だけ先に見たい方は <a href="/articles/campaign-guide/" onclick="trackCta('journey_click', {'page_type': 'ahamo-vs-rakuten', 'cta_position': 'mid-note', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">キャンペーン条件を確認する →</a></p>
+            <p class="article-cta__note">条件を確認済みで楽天モバイルへ申し込む方は <a href="https://r10.to/h5zkrv" target="_blank" rel="noopener noreferrer" onclick="trackCta('referral_cta_click', {'page_type': 'ahamo-vs-rakuten', 'cta_position': 'mid-referral', 'offer_type': 'employee_referral', 'reader_stage': 'consider'})">紹介リンクから申し込む →</a></p>
+            <p class="article-cta__note">ahamoが向いている方は<a href="https://ahamo.com/" target="_blank" rel="noopener noreferrer">ahamo公式サイト</a>もあわせてご確認ください。</p>
           </div>
         </section>
 
@@ -570,13 +572,16 @@
         </div>
 
         <!-- CTA -->
-        <div class="article-cta">
-          <p class="article-cta__title">楽天モバイルに乗り換えるなら、紹介経由がお得です</p>
-          <p class="article-cta__sub">紹介リンク経由で申し込むと<br>MNP乗り換えなら<strong>14,000ポイント</strong>、<br>新規契約なら<strong>11,000ポイント</strong>獲得できます。<br>通常の申し込みと手順はまったく同じです。</p>
-          <a href="https://r10.to/h5zkrv" aria-label="紹介リンクから申し込む（乗り換え14,000P）（新しいタブで開きます）" class="btn-primary" onclick="gtag('event', 'cta_click', {'event_category': 'referral', 'event_label': document.title})" target="_blank" rel="noopener noreferrer">
-            紹介リンクから申し込む（乗り換え14,000P）
+        <div class="article-cta" data-cta-type="B">
+          <p class="article-cta__title">料金とキャンペーンを確認する</p>
+          <p class="article-cta__sub">比較の続きとして、実際の料金差とキャンペーンの適用条件を確認できます。</p>
+          <a href="/articles/savings-calc/" class="btn-primary"
+             onclick="trackCta('journey_click', {'page_type': 'ahamo-vs-rakuten', 'cta_position': 'bottom', 'reader_stage': 'consider', 'destination': 'savings-calc'})">
+            料金を試算する
           </a>
-          <p class="article-cta__note">まだ迷っている方は <a href="/">紹介ページの詳細を見る →</a></p>
+          <p class="article-cta__note">
+            条件だけ先に見たい方は <a href="/articles/campaign-guide/" onclick="trackCta('journey_click', {'page_type': 'ahamo-vs-rakuten', 'cta_position': 'bottom-note', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">キャンペーン条件を確認する →</a>
+          </p>
         </div>
 
       </article>

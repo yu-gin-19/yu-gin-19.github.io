@@ -110,6 +110,7 @@
     gtag('js', new Date());
     gtag('config', 'G-W82F5QSC9N');
   </script>
+  <script src="../../components/cta-tracking.js"></script>
   <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="article.css" />
 </head>
@@ -482,8 +483,8 @@
             <p class="referral-offer__target">対象：楽天モバイルへ乗り換え・新規契約を検討している方</p>
             <p class="referral-offer__points">特典：乗り換え<strong>14,000pt</strong>／新規<strong>11,000pt</strong></p>
             <p class="referral-offer__note">注意：適用には条件があります。申込み前にキャンペーン解説を確認してください</p>
-            <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="社員紹介キャンペーンから申し込む（新しいタブで開きます）" onclick="gtag('event', 'referral_cta_click', {'page_type': 'spu-checklist', 'cta_position': 'mid', 'offer_type': 'employee_referral', 'reader_stage': 'consider'})" target="_blank" rel="noopener noreferrer">社員紹介キャンペーンから申し込む</a><br>
-            <a href="/articles/campaign-guide/" class="referral-offer__link">適用条件を確認する →</a>
+            <a href="/articles/campaign-guide/" class="btn-primary referral-offer__btn" aria-label="キャンペーン条件を確認する" onclick="trackCta('journey_click', {'page_type': 'spu-checklist', 'cta_position': 'mid', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">キャンペーン条件を確認する</a>
+            <a href="https://r10.to/h5zkrv" class="referral-offer__link" target="_blank" rel="noopener noreferrer" aria-label="条件を確認済みの方はこちら（新しいタブで開きます）" onclick="trackCta('referral_cta_click', {'page_type': 'spu-checklist', 'cta_position': 'mid-sub', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})">条件を確認済みの方はこちら →</a>
           </div>
 
           <p class="article-text">楽天カードと楽天モバイルを組み合わせると、それだけでSPU+6倍（要確認）になります。詳しい組み合わせ効果は<a href="/articles/card-mobile-spu/">「楽天カード×楽天モバイルのSPU」</a>をご覧ください。</p>
@@ -607,18 +608,18 @@
 
         <!-- CTA -->
         <div class="article-cta">
-          <p class="article-cta__title">SPUをフル活用するなら、楽天モバイルが最初の一手です</p>
+          <p class="article-cta__title">キャンペーン条件を確認する</p>
           <p class="article-cta__sub">
-            紹介リンク経由で申し込むと<br>
+            対象条件を満たす場合、紹介リンク経由で申し込むと<br>
             乗り換えなら<strong>14,000ポイント</strong>、<br>
             新規申し込みでも<strong>11,000ポイント</strong>獲得できます。<br>
-            通常の申し込みと手順はまったく同じです。
+            基本的な申込手順は通常と同様ですが、紹介ページで楽天IDにログインしてから申し込みます。
           </p>
-          <a href="https://r10.to/h5zkrv" aria-label="紹介リンクから申し込む（乗り換え14,000P）（新しいタブで開きます）" class="btn-primary" onclick="gtag('event', 'cta_click', {'event_category': 'referral', 'event_label': document.title})" target="_blank" rel="noopener noreferrer">
-            紹介リンクから申し込む（乗り換え14,000P）
+          <a href="/articles/campaign-guide/" aria-label="キャンペーン条件を確認する" class="btn-primary" onclick="trackCta('journey_click', {'page_type': 'spu-checklist', 'cta_position': 'bottom', 'reader_stage': 'apply', 'destination': 'campaign-guide'})">
+            キャンペーン条件を確認する
           </a>
           <p class="article-cta__note" style="margin-top:8px; font-size:12px; color:#666;">※ポイント付与には楽天モバイル最強プランへの加入・回線開通が必要です。付与時期・条件はキャンペーンにより異なります。キャンペーン内容は予告なく変更される場合があります。詳細は<a href="https://network.mobile.rakuten.co.jp/" target="_blank" rel="noopener noreferrer">楽天モバイル公式サイト</a>をご確認ください。</p>
-          <p class="article-cta__note">まだ迷っている方は <a href="/">紹介ページの詳細を見る →</a></p>
+          <p class="article-cta__note">条件を確認済みの方は <a href="https://r10.to/h5zkrv" target="_blank" rel="noopener noreferrer" onclick="trackCta('referral_cta_click', {'page_type': 'spu-checklist', 'cta_position': 'bottom-sub', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})">紹介リンクから申し込む →</a></p>
         </div>
 
       </article>

@@ -137,6 +137,7 @@
     gtag('js', new Date());
     gtag('config', 'G-W82F5QSC9N');
   </script>
+  <script src="../../components/cta-tracking.js"></script>
 
   <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="article.css" />
@@ -297,20 +298,14 @@
         </section>
 
         <!-- 中間CTA -->
-        <div class="article-cta article-cta--mid">
-          <p class="article-cta__title">5年分の実績を見て「乗り換えてもよさそう」と思った方へ</p>
-          <p class="article-cta__sub">従業員紹介特典は、他社からの乗り換えで<strong>14,000ポイント</strong>、新規契約で<strong>11,000ポイント</strong>です。適用には条件があるため、申込み前にキャンペーン解説をご確認ください。</p>
-          <p class="article-cta__note article-cta__note--compact">※適用には条件があります。申込み前に<a href="/articles/campaign-guide/">キャンペーン解説</a>をご確認ください。キャンペーン内容は予告なく変更される場合があります。</p>
-          <a
-            href="https://r10.to/h5zkrv"
-            class="btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="楽天モバイルを紹介リンクから申し込む（乗り換え14,000P）（新しいタブで開きます）"
-            onclick="gtag('event', 'cta_click', {'event_category': 'referral', 'event_label': 'au-switch-mid', 'event_value': 1})"
-          >
-            紹介リンクから申し込む（乗り換え14,000P）
+        <div class="article-cta article-cta--mid" data-cta-type="B">
+          <p class="article-cta__title">料金差を具体的に確認する</p>
+          <p class="article-cta__sub">自分の使用量なら、実際どれくらい差が出るか試算できます。</p>
+          <a href="/articles/savings-calc/" class="btn-primary" onclick="trackCta('journey_click', {'page_type': 'au-switch', 'cta_position': 'mid', 'reader_stage': 'consider', 'destination': 'savings-calc'})">
+            料金を試算する
           </a>
+          <p class="article-cta__note">条件だけ先に見たい方は <a href="/articles/campaign-guide/" onclick="trackCta('journey_click', {'page_type': 'au-switch', 'cta_position': 'mid-note', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">キャンペーン条件を確認する →</a></p>
+          <p class="article-cta__note">条件を確認済みで申し込む方は <a href="https://r10.to/h5zkrv" target="_blank" rel="noopener noreferrer" onclick="trackCta('referral_cta_click', {'page_type': 'au-switch', 'cta_position': 'mid-referral', 'offer_type': 'employee_referral', 'reader_stage': 'consider'})">紹介リンクから申し込む →</a></p>
           <p class="article-cta__note">エリアが不安な方は先に <a href="#section-honest">「電波は最初、しんどかった」</a> の章を読んでから判断してください。</p>
         </div>
 
@@ -450,21 +445,16 @@
         </div>
 
         <!-- 末尾CTA -->
-        <div class="article-cta">
-          <p class="article-cta__reminder">5年間の記録と数字が証明する、正直な体験談です</p>
-          <p class="article-cta__title">同じ選択をしたい方へ</p>
-          <p class="article-cta__sub">従業員紹介特典は、他社からの乗り換えで<strong>14,000ポイント</strong>、新規契約で<strong>11,000ポイント</strong>です。適用には条件があるため、申込み前にキャンペーン解説をご確認ください。</p>
-          <p class="article-cta__note article-cta__note--compact">※適用には条件があります。申込み前に<a href="/articles/campaign-guide/">キャンペーン解説</a>をご確認ください。キャンペーン内容は予告なく変更される場合があります。</p>
-          <a
-            href="https://r10.to/h5zkrv"
-            class="btn-primary"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="楽天モバイルを紹介リンクから申し込む（乗り換え14,000P）（新しいタブで開きます）"
-            onclick="gtag('event', 'cta_click', {'event_category': 'referral', 'event_label': 'au-switch-bottom', 'event_value': 1})"
-          >
-            紹介リンクから申し込む（乗り換え14,000P）
+        <div class="article-cta" data-cta-type="B">
+          <p class="article-cta__title">料金とキャンペーンを確認する</p>
+          <p class="article-cta__sub">比較の続きとして、実際の料金差とキャンペーンの適用条件を確認できます。</p>
+          <a href="/articles/savings-calc/" class="btn-primary"
+             onclick="trackCta('journey_click', {'page_type': 'au-switch', 'cta_position': 'bottom', 'reader_stage': 'consider', 'destination': 'savings-calc'})">
+            料金を試算する
           </a>
+          <p class="article-cta__note">
+            条件だけ先に見たい方は <a href="/articles/campaign-guide/" onclick="trackCta('journey_click', {'page_type': 'au-switch', 'cta_position': 'bottom-note', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">キャンペーン条件を確認する →</a>
+          </p>
           <p class="article-cta__note">エリアが不安な方は <a href="/articles/coverage-area/">エリア確認と対処法の記事 →</a></p>
         </div>
 

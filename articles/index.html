@@ -26,6 +26,7 @@
     gtag('js', new Date());
     gtag('config', 'G-W82F5QSC9N');
   </script>
+  <script src="../components/cta-tracking.js"></script>
   <link rel="stylesheet" href="../style.css" />
 </head>
 <body>
@@ -61,7 +62,7 @@
           <span class="decision-card__text">今の料金とデータ量を入れて節約額を試算できます。</span>
           <span class="decision-card__arrow">料金試算へ →</span>
         </a>
-        <a class="decision-card" href="campaign-guide/">
+        <a class="decision-card" href="campaign-guide/" onclick="trackCta('journey_click', {'page_type': 'articles-index', 'cta_position': 'card', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">
           <span class="decision-card__number">STEP 03</span>
           <span class="decision-card__title">条件を確認して申し込みたい</span>
           <span class="decision-card__text">対象・付与時期・申し込み前の注意点を確認します。</span>
@@ -87,7 +88,7 @@
             <span class="article-card__text">楽天モバイルへの乗り換えはたった4ステップ！社員がわかりやすく解説</span>
             <span class="article-card__arrow" aria-hidden="true">→</span>
           </a>
-          <a href="campaign-guide/" class="article-card">
+          <a href="campaign-guide/" class="article-card" onclick="trackCta('journey_click', {'page_type': 'articles-index', 'cta_position': 'article-card', 'reader_stage': 'explore', 'destination': 'campaign-guide'})">
             <span class="article-card__icon" aria-hidden="true">🎁</span>
             <span class="article-card__text">楽天モバイル 乗り換えキャンペーンまとめ｜今申し込むなら社員はこう使う</span>
             <span class="article-card__arrow" aria-hidden="true">→</span>
@@ -207,14 +208,27 @@
   </section>
 
   <!-- CTA -->
-  <section class="section cta-section">
+  <section class="section cta-section" aria-labelledby="cta-title">
     <div class="container">
-      <h2 class="cta-title">記事を読んで気になった方へ<br><span class="cta-point">社員紹介リンクなら乗り換え14,000pt／新規11,000pt</span></h2>
-      <p class="cta-sub">通常の申し込みとまったく同じ手順。このリンクを踏むだけで特典対象になります。</p>
-      <a href="https://r10.to/h5zkrv" aria-label="今すぐ申し込む（乗り換え14,000pt・新規11,000pt）（新しいタブで開きます）" class="btn-primary" onclick="gtag('event', 'cta_click', {'event_category': 'referral', 'event_label': 'articles-index-bottom', 'event_value': 1})" target="_blank" rel="noopener noreferrer">
-        今すぐ申し込む（乗り換え14,000pt・新規11,000pt）
-      </a>
-      <p class="cta-urgency">※ 適用には条件があります。特典は予告なく変更・終了する場合があります。申込み前に<a href="campaign-guide/">キャンペーン解説</a>をご確認ください。</p>
+      <h2 class="cta-title" id="cta-title">楽天モバイルを検討中の方へ</h2>
+      <p class="cta-sub">気になる記事が見つかったら、次はこの3つで具体的に判断できます。</p>
+
+      <div class="hero-actions">
+        <a class="btn-primary" href="fit-check/"
+           onclick="trackCta('journey_click', {'page_type': 'articles-index', 'cta_position': 'bottom', 'reader_stage': 'explore', 'destination': 'fit-check'})">
+          自分に向いているか確認する
+        </a>
+        <a class="btn-secondary" href="savings-calc/"
+           onclick="trackCta('journey_click', {'page_type': 'articles-index', 'cta_position': 'bottom', 'reader_stage': 'consider', 'destination': 'savings-calc'})">
+          料金を確認する →
+        </a>
+        <a class="btn-secondary" href="campaign-guide/"
+           onclick="trackCta('journey_click', {'page_type': 'articles-index', 'cta_position': 'bottom', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">
+          キャンペーンを確認する →
+        </a>
+      </div>
+
+      <p class="rate-note">特典の対象条件・最新情報は各リンク先でご確認ください。</p>
     </div>
   </section>
   </main><!-- /#main-content -->

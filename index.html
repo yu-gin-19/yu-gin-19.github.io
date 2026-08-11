@@ -33,6 +33,7 @@
     gtag('js', new Date());
     gtag('config', 'G-W82F5QSC9N');
   </script>
+  <script src="components/cta-tracking.js"></script>
   <link rel="stylesheet" href="style.css" />
   <!-- WebSite構造化データ -->
   <script type="application/ld+json">
@@ -117,7 +118,7 @@
       <a href="/" class="site-logo">🏮 楽天社員の損しない選び方</a>
       <nav class="site-nav" aria-label="グローバルナビゲーション">
         <a href="articles/fit-check/">向き・不向き</a>
-        <a href="articles/campaign-guide/">紹介特典</a>
+        <a href="articles/campaign-guide/" onclick="trackCta('journey_click', {'page_type': 'home', 'cta_position': 'nav', 'reader_stage': 'explore', 'destination': 'campaign-guide'})">紹介特典</a>
         <a href="articles/">記事一覧</a>
       </nav>
     </div>
@@ -142,8 +143,8 @@
         <p class="hero-record">楽天モバイルを5年以上利用。元担当者として、向いていないケースも含めて解説します。</p>
         <div class="hero-actions">
           <a class="btn-primary" href="articles/fit-check/">1分で向き・不向きを確認する</a>
-          <a class="btn-secondary" href="articles/campaign-guide/">従業員紹介特典の条件を見る →</a>
-          <a id="apply" class="hero-direct" href="https://r10.to/h5zkrv" onclick="gtag('event', 'referral_cta_click', {'page_type': 'home', 'cta_position': 'hero', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">すでに決めている方は紹介特典で申し込む</a>
+          <a class="btn-secondary" href="articles/campaign-guide/" onclick="trackCta('journey_click', {'page_type': 'home', 'cta_position': 'hero', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">従業員紹介特典の条件を見る →</a>
+          <a id="apply" class="hero-direct" href="https://r10.to/h5zkrv" onclick="trackCta('referral_cta_click', {'page_type': 'home', 'cta_position': 'hero', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">すでに決めている方は紹介特典で申し込む</a>
         </div>
         <p class="hero-note">※ 特典は条件付きです。内容は変更・終了する場合があるため、申し込み前にリンク先をご確認ください。</p>
       </div>
@@ -196,7 +197,7 @@
           <span class="decision-card__text">今の料金とデータ量を入れて、節約額を試算できます。</span>
           <span class="decision-card__arrow">料金試算へ →</span>
         </a>
-        <a class="decision-card" href="articles/campaign-guide/">
+        <a class="decision-card" href="articles/campaign-guide/" onclick="trackCta('journey_click', {'page_type': 'home', 'cta_position': 'card', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">
           <span class="decision-card__number">CHECK 03</span>
           <span class="decision-card__title">紹介特典の条件は？</span>
           <span class="decision-card__text">対象・付与時期・申し込み前の注意点を確認します。</span>
@@ -315,8 +316,8 @@
         <p class="referral-offer__target">対象：楽天モバイルへ乗り換え・新規契約を検討している方</p>
         <p class="referral-offer__points">特典：乗り換え<strong>14,000pt</strong>／新規<strong>11,000pt</strong></p>
         <p class="referral-offer__note">注意：適用には条件があります。申込み前にキャンペーン解説を確認してください</p>
-        <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="社員紹介キャンペーンから申し込む（新しいタブで開きます）" onclick="gtag('event', 'referral_cta_click', {'page_type': 'home', 'cta_position': 'mid', 'offer_type': 'employee_referral', 'reader_stage': 'consider'})" target="_blank" rel="noopener noreferrer">社員紹介キャンペーンから申し込む</a><br>
-        <a href="articles/campaign-guide/" class="referral-offer__link">適用条件を確認する →</a>
+        <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="社員紹介キャンペーンから申し込む（新しいタブで開きます）" onclick="trackCta('referral_cta_click', {'page_type': 'home', 'cta_position': 'mid', 'offer_type': 'employee_referral', 'reader_stage': 'consider'})" target="_blank" rel="noopener noreferrer">社員紹介キャンペーンから申し込む</a><br>
+        <a href="articles/campaign-guide/" class="referral-offer__link" onclick="trackCta('journey_click', {'page_type': 'home', 'cta_position': 'mid-sub', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">適用条件を確認する →</a>
       </div>
     </div>
   </section>
@@ -441,7 +442,7 @@
           <span class="article-card__text">楽天モバイルへの乗り換えはたった4ステップ！社員がわかりやすく解説</span>
           <span class="article-card__arrow" aria-hidden="true">→</span>
         </a>
-        <a href="articles/campaign-guide/" class="article-card">
+        <a href="articles/campaign-guide/" class="article-card" onclick="trackCta('journey_click', {'page_type': 'home', 'cta_position': 'article-card', 'reader_stage': 'explore', 'destination': 'campaign-guide'})">
           <span class="article-card__icon" aria-hidden="true">🎁</span>
           <span class="article-card__text">楽天モバイル 乗り換えキャンペーンまとめ｜今申し込むなら社員はこう使う</span>
           <span class="article-card__arrow" aria-hidden="true">→</span>
@@ -516,7 +517,7 @@
     <div class="container">
       <h2 class="cta-title">条件を確認して申し込む方へ<br><span class="cta-point">乗り換え14,000pt／新規11,000pt</span></h2>
       <p class="cta-sub">紹介リンクを経由し、対象条件を満たす必要があります。</p>
-      <a href="https://r10.to/h5zkrv" aria-label="従業員紹介特典で申し込む（新しいタブで開きます）" class="btn-primary" onclick="gtag('event', 'referral_cta_click', {'page_type': 'home', 'cta_position': 'bottom', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">
+      <a href="https://r10.to/h5zkrv" aria-label="従業員紹介特典で申し込む（新しいタブで開きます）" class="btn-primary" onclick="trackCta('referral_cta_click', {'page_type': 'home', 'cta_position': 'bottom', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">
         従業員紹介特典で申し込む
       </a>
       <p class="cta-urgency">※ 特典は条件付きです。申し込み前にリンク先で最新条件をご確認ください。</p>

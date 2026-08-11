@@ -128,6 +128,7 @@
     gtag('js', new Date());
     gtag('config', 'G-W82F5QSC9N');
   </script>
+  <script src="../../components/cta-tracking.js"></script>
 
   <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="article.css" />
@@ -327,8 +328,8 @@
         <div class="article-cta article-cta--mid">
           <p class="article-cta__title">楽天モバイルという選択肢もあります</p>
           <p class="article-cta__sub">クレジットカードをお持ちでない方でも、<strong>楽天モバイルは口座振替やデビットカードで申し込める場合があります。</strong>楽天カードとは別のサービスとして、任意でご検討ください。</p>
-          <a href="https://r10.to/h5zkrv" aria-label="楽天モバイルを紹介リンクから申し込む（乗り換え14,000P）（新しいタブで開きます）" class="btn-primary" onclick="gtag('event', 'cta_click', {'event_category': 'referral', 'event_label': 'card-review-mid', 'event_value': 1})" target="_blank" rel="noopener noreferrer">
-            紹介リンクから申し込む（乗り換え14,000P）
+          <a href="/articles/campaign-guide/" aria-label="楽天モバイルのキャンペーン条件を確認する" class="btn-primary" onclick="trackCta('journey_click', {'page_type': 'card-review', 'cta_position': 'mid', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">
+            キャンペーン条件を確認する
           </a>
           <p class="article-cta__note">詳しくは、この先の「楽天カードとは別に検討できる選択肢：楽天モバイル」で解説しています。</p>
         </div>
@@ -480,10 +481,10 @@
         <div class="article-cta">
           <p class="article-cta__reminder">楽天モバイルは楽天カードとは別に検討できる選択肢です</p>
           <p class="article-cta__title">楽天モバイルという選択肢を検討したい方へ</p>
-          <p class="article-cta__sub">社員の紹介リンクから申し込むと、乗り換えで<strong>14,000pt</strong>、新規でも<strong>11,000pt</strong>もらえます。通常の申し込みと手順はまったく同じです。</p>
-          <p class="article-cta__note article-cta__note--compact">※適用には条件があります。ポイントの内訳・付与時期など詳細は<a href="/articles/campaign-guide/">キャンペーン解説</a>でご確認ください。キャンペーン内容は予告なく変更される場合があります。</p>
-          <a href="https://r10.to/h5zkrv" aria-label="紹介リンクから申し込む（乗り換え14,000P）（新しいタブで開きます）" class="btn-primary" onclick="gtag('event', 'cta_click', {'event_category': 'referral', 'event_label': 'card-review-bottom', 'event_value': 1})" target="_blank" rel="noopener noreferrer">
-            紹介リンクから申し込む（乗り換え14,000P）
+          <p class="article-cta__sub">社員紹介キャンペーンは、乗り換えで<strong>14,000pt</strong>、新規でも<strong>11,000pt</strong>が目安です（条件あり）。</p>
+          <p class="article-cta__note article-cta__note--compact">※適用には条件があります。ポイントの内訳・付与時期など詳細は<a href="/articles/campaign-guide/" onclick="trackCta('journey_click', {'page_type': 'card-review', 'cta_position': 'bottom-note', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">キャンペーン解説</a>でご確認ください。キャンペーン内容は予告なく変更される場合があります。</p>
+          <a href="/articles/campaign-guide/" aria-label="キャンペーン条件を確認する" class="btn-primary" onclick="trackCta('journey_click', {'page_type': 'card-review', 'cta_position': 'bottom', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">
+            キャンペーン条件を確認する
           </a>
           <p class="article-cta__note">まだ迷っている方は <a href="/articles/fit-check/">向いてる人・向いてない人の診断記事 →</a></p>
         </div>

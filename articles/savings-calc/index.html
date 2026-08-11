@@ -220,6 +220,30 @@
             <p class="calc-result__message" id="calc-message">年間で約2.7万円安くなる試算です。</p>
           </div>
           <p class="article-disclaimer">※概算です。端末代・通話料・オプション料・各社のセット割は含みません。データ使用量が20GBを超える場合は通常料金3,278円で計算します。</p>
+
+          <!-- 試算結果CTA：入力操作をするまで非表示 -->
+          <div id="calc-result-cta">
+            <div class="referral-offer referral-offer--fit" id="calc-result-cta-save" hidden>
+              <p class="referral-offer__result-label">試算結果：節約になります</p>
+              <p class="referral-offer__title">楽天社員紹介キャンペーン</p>
+              <p class="referral-offer__points">特典：乗り換え<strong>14,000pt</strong>／新規<strong>11,000pt</strong></p>
+              <p class="referral-offer__note">注意：適用には条件があります。申込み前にキャンペーン解説を確認してください</p>
+              <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="社員紹介キャンペーンから申し込む（新しいタブで開きます）" onclick="gtag('event', 'referral_cta_click', {'page_type': 'savings-calc', 'cta_position': 'result-save', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">社員紹介キャンペーンから申し込む</a><br>
+              <a href="/articles/campaign-guide/" class="referral-offer__link">適用条件を確認する →</a>
+            </div>
+            <div class="referral-offer referral-offer--maybe" id="calc-result-cta-even" hidden>
+              <p class="referral-offer__result-label">試算結果：ほぼ同額です</p>
+              <p class="referral-offer__note">料金差が小さいため、通信エリアや通話方法、特典を含めて判断してください。</p>
+              <a href="/articles/coverage-area/" class="btn-secondary">エリア確認方法を見る →</a><br>
+              <a href="/articles/campaign-guide/" class="referral-offer__link">適用条件を確認する →</a>
+            </div>
+            <div class="referral-offer referral-offer--maybe" id="calc-result-cta-high" hidden>
+              <p class="referral-offer__result-label">試算結果：今より高くなる可能性があります</p>
+              <p class="referral-offer__note">この条件では今より料金が高くなる試算です。無理に楽天モバイルをおすすめはしません。料金以外のメリットを確認したい方は、比較記事やエリア確認をご覧ください。</p>
+              <a href="/articles/ahamo-vs-rakuten/" class="referral-offer__link">他社との比較記事を見る →</a><br>
+              <a href="/articles/coverage-area/" class="referral-offer__link">エリア確認方法を見る →</a>
+            </div>
+          </div>
         </section>
 
         <!-- セクション1: 著者実収支 -->
@@ -674,6 +698,9 @@
       var monthlySaving = document.getElementById('monthly-saving');
       var yearlySaving = document.getElementById('yearly-saving');
       var message = document.getElementById('calc-message');
+      var ctaSave = document.getElementById('calc-result-cta-save');
+      var ctaEven = document.getElementById('calc-result-cta-even');
+      var ctaHigh = document.getElementById('calc-result-cta-high');
 
       function yen(value) {
         return new Intl.NumberFormat('ja-JP').format(Math.abs(Math.round(value))) + '円';
@@ -690,18 +717,33 @@
         monthlySaving.textContent = diff >= 0 ? yen(diff) : '＋' + yen(diff);
         yearlySaving.textContent = diff >= 0 ? yen(diff * 12) : '＋' + yen(diff * 12);
 
-        if (diff > 0) {
+        if (diff > 300) {
           message.textContent = '年間で約' + yen(diff * 12) + '安くなる試算です。';
-        } else if (diff < 0) {
+        } else if (diff < -300) {
           message.textContent = '今より年間で約' + yen(diff * 12) + '高くなる試算です。料金以外のメリットも含めて判断してください。';
         } else {
-          message.textContent = '月額はほぼ同じ試算です。電波・通話・ポイントの条件で比較してください。';
+          message.textContent = '料金差が小さいため、通信エリアや通話方法、特典を含めて判断してください。';
+        }
+
+        return diff;
+      }
+
+      function updateResultCTA(diff) {
+        ctaSave.hidden = true;
+        ctaEven.hidden = true;
+        ctaHigh.hidden = true;
+        if (diff > 300) {
+          ctaSave.hidden = false;
+        } else if (diff < -300) {
+          ctaHigh.hidden = false;
+        } else {
+          ctaEven.hidden = false;
         }
       }
 
       [currentFee, monthlyData, familyDiscount].forEach(function (input) {
-        input.addEventListener('input', calculate);
-        input.addEventListener('change', calculate);
+        input.addEventListener('input', function () { updateResultCTA(calculate()); });
+        input.addEventListener('change', function () { updateResultCTA(calculate()); });
       });
       calculate();
     })();

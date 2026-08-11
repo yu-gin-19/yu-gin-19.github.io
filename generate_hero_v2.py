@@ -121,15 +121,15 @@ def main():
     draw.text((n_x0 + 12, mid_sy), "SPU", font=f_spu_lbl, fill=C_PRIMARY, anchor="lm")
     draw.text((n_x1 - 12, mid_sy), "+4倍", font=f_spu_val, fill=C_PRIMARY, anchor="rm")
 
-    # ---- 右上バッジ「最大14,000P」（スキル：CTAが視覚的に目立つ） ----
+    # ---- 右上バッジ「乗り換え14,000P」（スキル：CTAが視覚的に目立つ） ----
     bx, by, br = 356, 104, 44
     # 影
     draw.ellipse([bx - br + 3, by - br + 3, bx + br + 3, by + br + 3], fill="#D4910A")
     # バッジ本体
     draw.ellipse([bx - br, by - br, bx + br, by + br], fill=C_GOLD)
-    f_b1 = ImageFont.truetype(FONT_BOLD, 13)
+    f_b1 = ImageFont.truetype(FONT_BOLD, 11)
     f_b2 = ImageFont.truetype(FONT_BOLD, 12)
-    draw.text((bx, by - 10), "最大",    font=f_b1, fill="#FFFFFF", anchor="mm")
+    draw.text((bx, by - 10), "乗り換え",  font=f_b1, fill="#FFFFFF", anchor="mm")
     draw.text((bx, by + 6),  "14,000P", font=f_b2, fill="#FFFFFF", anchor="mm")
 
     # ---- 下部キャプション（スキル標準：サブキャッチ24〜36px → 22px）----

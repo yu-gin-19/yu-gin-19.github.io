@@ -610,7 +610,7 @@
 
 .article-cta__note {
   margin-top: 16px;
-  font-size: 13px;
+  font-size: 14px;
   color: #888;
 }
 
@@ -625,7 +625,7 @@
    ここに定義することで、savings-calc・au-switch・card-review全体で
    共通利用できるようにする。 */
 .article-cta__note--compact {
-  font-size: 0.8rem;
+  font-size: 14px;
   color: #666;
   margin-bottom: 8px;
 }

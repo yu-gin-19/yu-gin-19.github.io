@@ -332,12 +332,27 @@
             </table>
           </div>
 
-          <!-- 中盤CTA -->
-          <div class="article-cta article-cta--mid">
-            <p class="article-cta__title">向いている可能性が高かった方へ</p>
-            <p class="article-cta__sub">次に、従業員紹介特典の対象条件と付与時期を確認してください。乗り換えは<strong>14,000pt</strong>、新規は<strong>11,000pt</strong>です。</p>
-            <a href="/articles/campaign-guide/" class="btn-primary" onclick="gtag('event', 'journey_click', {'page_type': 'comparison', 'cta_position': 'middle', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">紹介特典の条件を確認する</a>
-            <p class="article-cta__note">まだ迷っている方は、この先の「向いてない理由と対処法」をご確認ください。</p>
+          <!-- 中盤CTA：診断結果に応じて表示を切り替える（初期状態は非表示） -->
+          <div id="result-cta">
+            <div class="referral-offer referral-offer--fit" id="result-cta-fit" hidden>
+              <p class="referral-offer__result-label">診断結果：向いている可能性が高いです</p>
+              <p class="referral-offer__title">楽天社員紹介キャンペーン</p>
+              <p class="referral-offer__points">特典：乗り換え<strong>14,000pt</strong>／新規<strong>11,000pt</strong></p>
+              <p class="referral-offer__note">注意：適用には条件があります。申込み前にキャンペーン解説を確認してください</p>
+              <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="社員紹介キャンペーンから申し込む（新しいタブで開きます）" onclick="gtag('event', 'referral_cta_click', {'page_type': 'fit-check', 'cta_position': 'result-fit', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">社員紹介キャンペーンから申し込む</a><br>
+              <a href="/articles/campaign-guide/" class="referral-offer__link">適用条件を確認する →</a>
+            </div>
+            <div class="referral-offer referral-offer--maybe" id="result-cta-maybe" hidden>
+              <p class="referral-offer__result-label">診断結果：判断が分かれます</p>
+              <p class="referral-offer__note">注意条件が多めです。すぐに申し込まず、エリアと適用条件を確認してから判断してください。</p>
+              <a href="/articles/coverage-area/" class="btn-secondary">エリア確認方法を見る →</a><br>
+              <a href="/articles/campaign-guide/" class="referral-offer__link">適用条件を確認する →</a>
+            </div>
+            <div class="referral-offer referral-offer--maybe" id="result-cta-unfit" hidden>
+              <p class="referral-offer__result-label">診断結果：現時点では向いていない可能性があります</p>
+              <p class="referral-offer__note">申し込みを急がず、この先の「向いてない理由と対処法」を確認してから判断することをおすすめします。</p>
+              <a href="#section-detail-unfit" class="referral-offer__link">向いてない理由と対処法を見る →</a>
+            </div>
           </div>
         </section>
 
@@ -637,6 +652,9 @@
       var fitScore = document.getElementById('fit-score');
       var unfitScore = document.getElementById('unfit-score');
       var message = document.getElementById('diagnosis-message');
+      var resultFit = document.getElementById('result-cta-fit');
+      var resultMaybe = document.getElementById('result-cta-maybe');
+      var resultUnfit = document.getElementById('result-cta-unfit');
 
       function updateDiagnosis() {
         var fit = document.querySelectorAll('.diagnosis-input--fit:checked').length;
@@ -644,14 +662,24 @@
         fitScore.textContent = String(fit);
         unfitScore.textContent = String(unfit);
 
+        resultFit.hidden = true;
+        resultMaybe.hidden = true;
+        resultUnfit.hidden = true;
+
         if (fit === 0 && unfit === 0) {
           message.textContent = '当てはまる項目にチェックを付けると、ここに目安が表示されます。';
         } else if (fit >= 3 && unfit <= 1) {
           message.textContent = '向いている可能性が高いです。生活圏の電波を確認したうえで、紹介特典の条件へ進んでください。';
+          resultFit.hidden = false;
+        } else if (fit <= 2 && unfit >= 2) {
+          message.textContent = '現時点では他社の方が合っている可能性があります。下の対処法を確認してから判断してください。';
+          resultUnfit.hidden = false;
         } else if (unfit >= 2) {
           message.textContent = '注意条件が多めです。すぐに申し込まず、下の対処法と公式エリアマップを確認してください。';
+          resultMaybe.hidden = false;
         } else {
           message.textContent = '向き不向きが分かれる結果です。料金差と注意条件のどちらを重く見るかで判断してください。';
+          resultMaybe.hidden = false;
         }
       }
 

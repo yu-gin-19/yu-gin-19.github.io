@@ -436,7 +436,7 @@
 
 .article-cta__note {
   margin-top: 16px;
-  font-size: 13px;
+  font-size: 14px;
   color: #888;
 }
 
@@ -446,7 +446,7 @@
 }
 
 .article-cta__note--compact {
-  font-size: 12px;
+  font-size: 14px;
   color: #999;
   line-height: 1.7;
   margin-top: 8px;

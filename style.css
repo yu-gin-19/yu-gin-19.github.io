@@ -230,7 +230,7 @@ body {
 
 .hero-note {
   margin-top: 12px;
-  font-size: 12px;
+  font-size: 14px;
   color: #696969;
 }
 
@@ -583,7 +583,7 @@ th.highlight, td.highlight {
 
 .cta-urgency {
   margin-top: 16px;
-  font-size: 12px;
+  font-size: 14px;
   color: #767676;
 }
 
@@ -1089,4 +1089,102 @@ th.highlight, td.highlight {
 .toc__list a:hover {
   color: var(--color-primary);
   text-decoration: underline;
+}
+
+/* ===== 共通申込み枠（社員紹介キャンペーン） ===== */
+.referral-offer {
+  background: #fff;
+  border: 1px solid var(--color-primary-light);
+  border-radius: 16px;
+  padding: 28px 24px;
+  margin: 32px auto;
+  max-width: 480px;
+  text-align: center;
+}
+
+.referral-offer__title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 10px;
+}
+
+.referral-offer__target,
+.referral-offer__points {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.7;
+  margin-bottom: 6px;
+}
+
+.referral-offer__points strong {
+  color: var(--color-primary);
+  font-size: 17px;
+  font-weight: 900;
+}
+
+.referral-offer__note {
+  font-size: 14px;
+  color: #696969;
+  line-height: 1.7;
+  margin: 10px 0 20px;
+}
+
+.referral-offer__btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  width: 100%;
+  max-width: 320px;
+}
+
+.referral-offer__link {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.referral-offer__link:hover {
+  opacity: 0.7;
+}
+
+.referral-offer__result-label {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 4px 14px;
+  border-radius: 50px;
+  margin-bottom: 14px;
+}
+
+.referral-offer--fit .referral-offer__result-label {
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+}
+
+.referral-offer--maybe {
+  border-color: #e0e0e0;
+}
+
+.referral-offer--maybe .referral-offer__result-label {
+  background: #f0f0f0;
+  color: #666;
+}
+
+/* 横スクロールできる表の直前に置く注意書き */
+.scroll-hint {
+  font-size: 13px;
+  color: #767676;
+  margin-bottom: 8px;
+  text-align: right;
+}
+
+/* スマホ対応 */
+@media (max-width: 600px) {
+  .referral-offer { padding: 24px 20px; margin: 24px auto; }
+  .referral-offer__btn { max-width: 100%; }
 }

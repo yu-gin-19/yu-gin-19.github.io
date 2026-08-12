@@ -34,7 +34,7 @@
       "description": "生活圏・データ量・通話・サポートの必要度から、楽天モバイルが自分に合うかを1分で確認できる診断記事です。",
       "image": "https://yu-gin-19.github.io/articles/fit-check/OGP_fit-check.png",
       "datePublished": "2026-06-26",
-      "dateModified": "2026-08-02",
+      "dateModified": "2026-08-11",
       "author": {
         "@type": "Person",
         "name": "楽天社員の損しない選び方"
@@ -82,7 +82,7 @@
           "name": "楽天モバイルはどんな人に向いていますか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "楽天モバイルに向いている人は、主に都市部・郊外在住で屋外での利用が中心の方、楽天市場や楽天カードを使っている方、データ通信をたくさん使う方、オンライン手続きに抵抗がない方です。20GBを超える場合は月3,278円で国内データを無制限で利用できます。"
+            "text": "楽天モバイルに向いている人は、自宅・職場・通勤路を公式エリアマップで確認し、建物内・地下を含む主な利用場所のリスクを理解した上で使える方、楽天市場や楽天カードを使っている方、データ通信をたくさん使う方、オンライン手続きに抵抗がない方です。20GBを超える場合は月3,278円で国内データを無制限で利用できます。"
           }
         },
         {
@@ -90,7 +90,7 @@
           "name": "楽天モバイルに向いていない人はどんな人ですか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "楽天モバイルに向いていない人は、山間部・離島など電波が届きにくいエリアに住んでいる方、店頭でのサポートを必要とするスマホ初心者の方、通話を0120や0570などのフリーダイヤルに頻繁にかける方などです。ただし、ほとんどの弱点には対処法があるため、デメリットを理解した上で判断することをおすすめします。"
+            "text": "楽天モバイルに向いていない人は、主な利用場所が公式エリアマップ上でサービスエリア外、または実際に通信不足を確認していて予備回線を用意できない方、店頭でのサポートを必要とするスマホ初心者の方、通話を0570（ナビダイヤル）や188などRakuten Linkの無料対象外番号に頻繁にかける方などです。ただし、ほとんどの弱点には対処法があるため、デメリットを理解した上で判断することをおすすめします。"
           }
         },
         {
@@ -106,7 +106,7 @@
           "name": "楽天モバイルはauから乗り換えても大丈夫ですか？",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "都市部・郊外に住んでいて、月額コストを下げたい方であれば問題ありません。実際に筆者もauから乗り換えて5年以上使用しており、通常の生活圏では繋がりにくさを感じる場面はほぼありません。乗り換え前にエリアマップで自宅・職場を確認することをおすすめします。"
+            "text": "月額コストを下げたい方には有力な選択肢です。実際に筆者もauから乗り換えて5年以上使用していますが、通信状況は場所・建物・端末・時間帯で変わるため一律には判断できません。自宅・職場・通勤路など、よく行く場所を公式エリアマップで確認してから判断することをおすすめします。"
           }
         }
       ]
@@ -205,17 +205,17 @@
             <div class="checklist-card__header checklist-card__header--fit">向いてる人チェックリスト</div>
             <ul class="fit-list">
               <li class="fit-list__item">
-                <input class="diagnosis-input diagnosis-input--fit" type="checkbox" aria-label="都市部・郊外に住んでいる、または通勤している" />
+                <input class="diagnosis-input diagnosis-input--fit diagnosis-input--coverage-ok" type="checkbox" aria-label="主な利用場所が公式マップ上でサービスエリア内だと確認でき、マップは目安であることも理解している" />
                 <div class="fit-list__body">
-                  <strong>都市部・郊外に住んでいる（または通勤している）</strong>
-                  <p>楽天回線の人口カバー率は99%以上。都市部・郊外での日常利用は問題ないケースがほとんど。</p>
+                  <strong>主な利用場所が公式マップ上でサービスエリア内だと確認でき、マップは目安であることも理解している</strong>
+                  <p>楽天モバイルの公式発表では、2024年10月末時点の4G「データ高速無制限エリア」の人口カバー率は99.9%（auローミングエリアを含む数値）です。公式エリアマップは計算上の判定に基づく目安であり、実際の通信品質を保証するものではありません。自宅・職場・通勤路など主な利用場所をマップで確認した上で、その前提を理解して使える方に向いています。</p>
                 </div>
               </li>
               <li class="fit-list__item">
                 <input class="diagnosis-input diagnosis-input--fit" type="checkbox" aria-label="楽天市場・楽天カードをすでに使っている" />
                 <div class="fit-list__body">
                   <strong>楽天市場・楽天カードをすでに使っている</strong>
-                  <p>楽天モバイルを契約するとSPUが上がり、楽天市場のポイント還元率が上乗せされる。楽天経済圏ユーザーは費用対効果が高い。</p>
+                  <p>対象プラン契約＋SPUエントリーで、楽天市場の対象購入に+4倍（自動付与ではなく、エントリーが必要）。楽天経済圏ユーザーは費用対効果が高い。</p>
                 </div>
               </li>
               <li class="fit-list__item">
@@ -243,8 +243,8 @@
           </div>
 
           <div class="result-box result-box--fit">
-            <div class="result-box__title">3つ以上当てはまった方へ</div>
-            <p>楽天モバイルはあなたに向いている可能性が高いです。向いてない人のチェックリストも確認した上で、総合的に判断してください。</p>
+            <div class="result-box__title">チェック数の目安について</div>
+            <p>チェック数だけでは確定できません。エリアの確認結果も含め、下に表示される診断結果を確認してください。</p>
           </div>
         </section>
 
@@ -257,10 +257,10 @@
             <div class="checklist-card__header checklist-card__header--unfit">向いてない人チェックリスト</div>
             <ul class="unfit-list">
               <li class="unfit-list__item">
-                <input class="diagnosis-input diagnosis-input--unfit" type="checkbox" aria-label="山間部・離島など電波が届きにくいエリアに住んでいる" />
+                <input class="diagnosis-input diagnosis-input--unfit diagnosis-input--coverage-stop" type="checkbox" aria-label="主な利用場所がエリア外、または実際に通信不足を確認しており、予備回線を用意できない" />
                 <div class="unfit-list__body">
-                  <strong>山間部・離島など電波が届きにくいエリアに住んでいる</strong>
-                  <p>楽天回線エリアは都市部中心。山間部や離島では繋がりにくい場合がある。事前にエリアマップで確認が必要。</p>
+                  <strong>主な利用場所がエリア外、または実際に通信不足を確認しており、予備回線を用意できない</strong>
+                  <p>公式エリアマップで自宅・職場・通勤路がサービスエリア外と表示される、または実際に使ってみて通信不足を確認したことがあり、かつデュアルSIMなどの予備回線を用意できない場合は、乗り換えに特に慎重な判断が必要です。</p>
                 </div>
               </li>
               <li class="unfit-list__item">
@@ -271,10 +271,10 @@
                 </div>
               </li>
               <li class="unfit-list__item">
-                <input class="diagnosis-input diagnosis-input--unfit" type="checkbox" aria-label="0120・0570などへ頻繁に電話する" />
+                <input class="diagnosis-input diagnosis-input--unfit" type="checkbox" aria-label="0570・188など無料対象外の番号へ頻繁に電話する" />
                 <div class="unfit-list__body">
-                  <strong>0120・0570などのフリーダイヤルに毎日のようにかける</strong>
-                  <p>Rakuten Linkアプリから0120・0570への発信はできない。通常の電話アプリからの発信には通話料がかかる。</p>
+                  <strong>0570（ナビダイヤル）や188など、Rakuten Linkの無料対象外番号に毎日のようにかける</strong>
+                  <p>0570や188などの一部番号は、Rakuten Link利用時も無料対象外で、OS標準の電話アプリに切り替わり有料になる。料金は番号・サービスごとに異なる。</p>
                 </div>
               </li>
               <li class="unfit-list__item">
@@ -303,11 +303,14 @@
         <section class="article-section" aria-labelledby="section-result">
           <h2 id="section-result">診断結果の見方と次のアクション</h2>
 
+          <p class="article-text">エリアの確認状況を最優先で判定し、その上で向いてる人・向いてない人チェックの数を見ます。</p>
+
           <div class="diagnosis-table-wrap">
             <table>
               <caption class="visually-hidden">診断結果の目安</caption>
               <thead>
                 <tr>
+                  <th scope="col">エリア確認の状況</th>
                   <th scope="col">向いてる人チェック</th>
                   <th scope="col">向いてない人チェック</th>
                   <th scope="col">判断の目安</th>
@@ -315,16 +318,31 @@
               </thead>
               <tbody>
                 <tr>
+                  <td>エリア外、または通信不足を確認済みで予備回線なし</td>
+                  <td>問わない</td>
+                  <td>問わない</td>
+                  <td>他の点数に関わらず<strong>現時点では向いていない可能性</strong>が高い</td>
+                </tr>
+                <tr>
+                  <td>未確認</td>
+                  <td>問わない</td>
+                  <td>問わない</td>
+                  <td>生活圏を確認できるまでは判断保留</td>
+                </tr>
+                <tr>
+                  <td>サービスエリア内と確認済み</td>
                   <td>3つ以上</td>
                   <td>0〜1つ</td>
                   <td class="highlight"><strong>向いている</strong>。乗り換えを前向きに検討できる</td>
                 </tr>
                 <tr>
+                  <td>サービスエリア内と確認済み</td>
                   <td>3つ以上</td>
                   <td>2つ以上</td>
                   <td>向いてない項目の対処法を確認してから判断する</td>
                 </tr>
                 <tr>
+                  <td>サービスエリア内と確認済み</td>
                   <td>2つ以下</td>
                   <td>2つ以上</td>
                   <td>現時点では他社の方が合っている可能性がある</td>
@@ -345,7 +363,7 @@
             </div>
             <div class="referral-offer referral-offer--maybe" id="result-cta-maybe" hidden>
               <p class="referral-offer__result-label">診断結果：判断が分かれます</p>
-              <p class="referral-offer__note">注意条件が多めです。すぐに申し込まず、エリアと適用条件を確認してから判断してください。</p>
+              <p class="referral-offer__note">エリアの確認が済んでいないか、注意条件が多めです。すぐに申し込まず、エリアと適用条件を確認してから判断してください。</p>
               <a href="/articles/coverage-area/" class="btn-secondary">エリア確認方法を見る →</a><br>
               <a href="/articles/campaign-guide/" class="referral-offer__link" onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-maybe-sub', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">適用条件を確認する →</a>
             </div>
@@ -375,7 +393,7 @@
           <section aria-labelledby="fit-detail-2">
             <div class="detail-label detail-label--fit">向いてる理由 2</div>
             <h3 id="fit-detail-2">楽天経済圏との相性がいい</h3>
-            <p class="article-text">楽天モバイルを契約すると、楽天市場でのお買い物時にポイント還元率が上乗せされます（SPU：スーパーポイントアッププログラム）。楽天カードと合わせて使っている方は、毎月の買い物で得られるポイントが増えます。</p>
+            <p class="article-text">楽天モバイルの対象プランを契約し、SPU（スーパーポイントアッププログラム）にエントリーすると、楽天市場の対象購入がポイント+4倍になります。自動的に上がるわけではなく、契約後にエントリーが必要な点に注意してください。楽天カードと合わせて使っている方は、毎月の買い物で得られるポイントがさらに増えます。</p>
             <p class="article-text">月額料金を払いながら、使い方によってはポイントという形で一部が還ってくるイメージです。楽天市場をよく使う方には、相乗効果があります。</p>
             <div class="point-box">
               <span class="point-label">POINT</span>
@@ -385,8 +403,8 @@
 
           <section aria-labelledby="fit-detail-3">
             <div class="detail-label detail-label--fit">向いてる理由 3</div>
-            <h3 id="fit-detail-3">Rakuten Linkで通話が実質無料</h3>
-            <p class="article-text">「Rakuten Link」アプリを使えば、国内通話が無料・無制限でかけられます。通常の電話と同じように相手を呼び出せ、受電も同じアプリで受けられます。</p>
+            <h3 id="fit-detail-3">Rakuten Linkで通話が原則無料</h3>
+            <p class="article-text">「Rakuten Link」アプリを使えば、国内通話が原則無料・無制限でかけられます（0570や188など一部番号は無料対象外）。Androidでは発信・着信ともにアプリ内で完結しますが、iOSでは相手や着信種別によって標準の電話アプリで着信する仕様があります。</p>
             <p class="article-text">大手キャリアで月1,100円のかけ放題オプションを追加していた方にとっては、その分もコスト削減になります。</p>
           </section>
         </section>
@@ -399,8 +417,8 @@
           <section aria-labelledby="unfit-detail-1">
             <div class="detail-label detail-label--unfit">向いてない理由 1</div>
             <h3 id="unfit-detail-1">山間部・離島のエリア問題</h3>
-            <div class="impact-badge impact-badge--mid">影響度：居住エリアによる（都市部は問題なし）</div>
-            <p class="article-text">楽天回線の人口カバー率は99%以上ですが、山間部や離島では繋がりにくい場合があります。これは事実として認めます。</p>
+            <div class="impact-badge impact-badge--mid">影響度：居住エリアによる</div>
+            <p class="article-text">楽天モバイルの公式発表では、2024年10月末時点の4G「データ高速無制限エリア」の人口カバー率は99.9%です。ただしこれはauローミングエリアを含む数値であり、山間部や離島など実際に電波が届きにくい場所は存在します。これは事実として認めます。</p>
             <div class="cover-box">
               <div class="cover-box__title">対処法</div>
               <ul>
@@ -409,7 +427,7 @@
                 <li>デュアルSIM対応スマホなら、別回線との2枚挿しで補完できる</li>
               </ul>
             </div>
-            <p class="article-text">エリアマップで「自宅・職場が楽天回線エリア内」と確認できれば、この問題はほぼ解消します。確認せずに乗り換えるのが一番のリスクです。</p>
+            <p class="article-text">エリアマップは計算上の判定に基づく目安であり、実際の電波状況と異なる場合があります。特に建物内・地下では差が出ることがあるため、自宅・職場をエリアマップで確認した上で、通信の重要度が高い方はデュアルSIMなどで実際の利用環境を試してから乗り換えを判断してください。確認せずに乗り換えるのが一番のリスクです。</p>
             <div class="related-article">
               <a href="/articles/coverage-area/" class="related-article__link">
                 <span class="related-article__icon" aria-hidden="true">📡</span>
@@ -436,18 +454,18 @@
 
           <section aria-labelledby="unfit-detail-3">
             <div class="detail-label detail-label--unfit">向いてない理由 3</div>
-            <h3 id="unfit-detail-3">フリーダイヤル問題</h3>
+            <h3 id="unfit-detail-3">一部番号への通話料の問題</h3>
             <div class="impact-badge impact-badge--low">影響度：Rakuten Linkを活用すれば限定的</div>
-            <p class="article-text">Rakuten Linkアプリからは、0120・0570などのフリーダイヤル・ナビダイヤルへの発信ができません。これを知らずに乗り換えると不便に感じることがあります。</p>
+            <p class="article-text">Rakuten Linkを使っても、0570（ナビダイヤル）や188などの一部番号は無料対象外で、OS標準の電話アプリに切り替わり有料になります。料金は番号・サービスごとに異なるため、発信先の案内や公式情報の確認が必要です。これを知らずに乗り換えると、想定外の請求に気づくことがあります。</p>
             <div class="cover-box">
               <div class="cover-box__title">対処法</div>
               <ul>
-                <li>通常の通話（個人・会社の携帯・固定電話）はRakuten Linkで無料</li>
-                <li>0120・0570への発信は通常の電話アプリを使う（有料。頻度が低ければ影響は小さい）</li>
-                <li>「15分かけ放題オプション」（月1,100円）は0120・0570には非対応のため不要な場合が多い</li>
+                <li>通常の通話（個人・家族・友人・固定電話など）はRakuten Linkで原則無料</li>
+                <li>0570・188など無料対象外の番号への発信は通話料がかかる（頻度が低ければ影響は小さい）</li>
+                <li>通話定額オプション（かけ放題）も、0570・188などの無料対象外番号は対象外となるのが一般的。該当番号への発信が多い方は契約前に条件を確認する</li>
               </ul>
             </div>
-            <p class="article-text">0120・0570への発信が毎日必要な方（コールセンター系の業務など）は、この点を特に注意してください。日常の通話ではRakuten Linkで十分な方がほとんどです。</p>
+            <p class="article-text">0570・188など無料対象外番号への発信が毎日必要な方（コールセンター系の業務など）は、この点を特に注意してください。日常の通話ではRakuten Linkが原則無料の範囲でカバーできる方がほとんどです。</p>
           </section>
 
           <section aria-labelledby="unfit-detail-4">
@@ -489,14 +507,19 @@
               </thead>
               <tbody>
                 <tr>
-                  <td>居住エリア</td>
-                  <td>都市部・郊外</td>
+                  <td>生活圏の確認</td>
+                  <td>公式マップで主な利用場所がサービスエリア内だと確認済み、マップが目安であることも理解している</td>
                   <td class="highlight">向いてる</td>
                 </tr>
                 <tr>
-                  <td>居住エリア</td>
-                  <td>山間部・離島</td>
-                  <td>要エリア確認</td>
+                  <td>生活圏の確認</td>
+                  <td>まだ公式マップで確認していない</td>
+                  <td>判断保留（要エリア確認）</td>
+                </tr>
+                <tr>
+                  <td>生活圏の確認</td>
+                  <td>エリア外、または実際に通信不足を確認済みで予備回線を用意できない</td>
+                  <td>向いていない可能性が高い</td>
                 </tr>
                 <tr>
                   <td>楽天利用状況</td>
@@ -520,7 +543,7 @@
                 </tr>
                 <tr>
                   <td>通話スタイル</td>
-                  <td>0120・0570に毎日かける</td>
+                  <td>0570・188など無料対象外番号に毎日かける</td>
                   <td>慎重に判断</td>
                 </tr>
                 <tr>
@@ -534,7 +557,7 @@
 
           <div class="summary-box">
             <div class="summary-box__title">「向いてる人」の方が多い方へ</div>
-            <p>向いてない項目があったとしても、ほとんどの場合は対処法があります。特にエリアは事前確認で解消できます。<br><br>乗り換えが怖い方は、<strong>1回線だけ試してみる</strong>という選択肢もあります。解約はいつでもアプリから可能です（1年以内は解約事務手数料が発生する場合があります）。</p>
+            <p>向いてない項目があったとしても、ほとんどの場合は対処法があります。公式マップの確認でリスクは下げられますが、実際の通信品質を保証するものではありません。<br><br>乗り換えが怖い方は、<strong>1回線だけ試してみる</strong>という選択肢もあります。解約はいつでもアプリから可能です（1年以内は解約事務手数料が発生する場合があります）。</p>
           </div>
         </section>
 
@@ -551,7 +574,7 @@
               </button>
               <div class="faq-answer" role="region" id="faq-panel-1" aria-labelledby="faq-btn-1">
                 <div class="faq-answer__inner">
-                  <div class="faq-answer__body">私自身がauから乗り換えて5年以上になります。都市部での日常利用であれば、繋がりにくさを感じる場面はほぼありません。エリアを事前確認する、Rakuten Linkを使いこなす、この2点を押さえれば後悔リスクは大きく下がります。</div>
+                  <div class="faq-answer__body">私自身がauから乗り換えて5年以上になります。通信状況は場所・建物・端末・時間帯で変わるため一律には判断できません。自宅・職場・通勤路など、よく行く場所を公式エリアマップで確認する、Rakuten Linkを使いこなす、この2点を押さえれば後悔リスクは大きく下がります。</div>
                 </div>
               </div>
             </div>
@@ -564,7 +587,7 @@
               </button>
               <div class="faq-answer" role="region" id="faq-panel-2" aria-labelledby="faq-btn-2">
                 <div class="faq-answer__inner">
-                  <div class="faq-answer__body">都市部在住で楽天市場・楽天カードを使っていて、データ通信量が多い方が最もメリットを受けやすいです。月額コストの削減に加え、楽天経済圏でのポイント還元も増えるため、複合的な恩恵があります。</div>
+                  <div class="faq-answer__body">自宅・職場・通勤路を公式エリアマップで確認済みで、楽天市場・楽天カードを使っていて、データ通信量が多い方が最もメリットを受けやすいです。月額コストの削減に加え、楽天経済圏でのポイント還元も増えるため、複合的な恩恵があります。</div>
                 </div>
               </div>
             </div>
@@ -660,6 +683,8 @@
       function updateDiagnosis() {
         var fit = document.querySelectorAll('.diagnosis-input--fit:checked').length;
         var unfit = document.querySelectorAll('.diagnosis-input--unfit:checked').length;
+        var coverageOk = document.querySelector('.diagnosis-input--coverage-ok:checked') !== null;
+        var coverageStop = document.querySelector('.diagnosis-input--coverage-stop:checked') !== null;
         fitScore.textContent = String(fit);
         unfitScore.textContent = String(unfit);
 
@@ -667,16 +692,35 @@
         resultMaybe.hidden = true;
         resultUnfit.hidden = true;
 
+        // 優先順1: 何も選択されていない場合は初期案内のみ表示
         if (fit === 0 && unfit === 0) {
           message.textContent = '当てはまる項目にチェックを付けると、ここに目安が表示されます。';
-        } else if (fit >= 3 && unfit <= 1) {
-          message.textContent = '向いている可能性が高いです。生活圏の電波を確認したうえで、紹介特典の条件へ進んでください。';
+          return;
+        }
+
+        // 優先順2: 停止条件（エリア外・通信不足確認済みで予備回線なし）は他の点数より優先。coverage-okと同時選択でも停止条件を優先する
+        if (coverageStop) {
+          message.textContent = '現時点では向いていない可能性があります。主な利用場所がエリア外、または通信不足が確認されており予備回線もない状態のため、他の項目の点数に関わらず慎重な判断をおすすめします。';
+          resultUnfit.hidden = false;
+          return;
+        }
+
+        // 優先順3: エリア確認（サービスエリア内）が済んでいない場合は判断保留
+        if (!coverageOk) {
+          message.textContent = '生活圏を確認できるまでは判断を保留してください。公式エリアマップで主な利用場所を確認したうえで、あらためてチェックしてみてください。';
+          resultMaybe.hidden = false;
+          return;
+        }
+
+        // 優先順4以降: エリア確認済みの場合のみ、既存の点数基準で判定
+        if (fit >= 3 && unfit <= 1) {
+          message.textContent = '向いている可能性が高いです。紹介特典の条件へ進んでください。';
           resultFit.hidden = false;
         } else if (fit <= 2 && unfit >= 2) {
           message.textContent = '現時点では他社の方が合っている可能性があります。下の対処法を確認してから判断してください。';
           resultUnfit.hidden = false;
         } else if (unfit >= 2) {
-          message.textContent = '注意条件が多めです。すぐに申し込まず、下の対処法と公式エリアマップを確認してください。';
+          message.textContent = '注意条件が多めです。すぐに申し込まず、下の対処法を確認してください。';
           resultMaybe.hidden = false;
         } else {
           message.textContent = '向き不向きが分かれる結果です。料金差と注意条件のどちらを重く見るかで判断してください。';

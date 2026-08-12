@@ -6,6 +6,9 @@ OGP画像生成スクリプト（rakuten-link-guide記事用）
 - 左側：サイト名ラベル・見出し2行・カテゴリバッジ
 - 右下：「個人運営・非公式」の注記バッジ
 
+フォントは Windows / macOS / Linux の日本語フォント候補を順に探索し、
+見つからない場合は例外を送出して停止する（豆腐文字を出力しない）。
+
 出力: OGP_rakuten-link-guide.png（1200×630px）
 """
 
@@ -14,8 +17,46 @@ from PIL import Image, ImageDraw, ImageFont
 
 W, H = 1200, 630
 
-FONT_BOLD = "/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc"
-FONT_MEDIUM = "/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc"
+FONT_CANDIDATES = [
+    # macOS
+    (
+        "/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc",
+        "/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc",
+    ),
+    # Windows（游ゴシック）
+    (
+        r"C:\Windows\Fonts\YuGothB.ttc",
+        r"C:\Windows\Fonts\YuGothM.ttc",
+    ),
+    # Windows（メイリオ、太字が無いため regular を bold 代わりに使用）
+    (
+        r"C:\Windows\Fonts\meiryob.ttc",
+        r"C:\Windows\Fonts\meiryo.ttc",
+    ),
+    # Linux（Noto Sans CJK JP）
+    (
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
+        "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
+    ),
+    (
+        "/usr/share/fonts/truetype/noto/NotoSansCJKjp-Bold.otf",
+        "/usr/share/fonts/truetype/noto/NotoSansCJKjp-Regular.otf",
+    ),
+]
+
+
+def resolve_fonts():
+    for bold_path, medium_path in FONT_CANDIDATES:
+        if os.path.isfile(bold_path) and os.path.isfile(medium_path):
+            return bold_path, medium_path
+    raise SystemExit(
+        "[エラー] 日本語フォントが見つかりませんでした。豆腐文字を防ぐため生成を中止します。\n"
+        "以下のいずれかのフォントを用意してください:\n"
+        + "\n".join(f"  - {b} / {m}" for b, m in FONT_CANDIDATES)
+    )
+
+
+FONT_BOLD, FONT_MEDIUM = resolve_fonts()
 
 COLOR_PINK = (255, 0, 140)
 COLOR_BLACK = (28, 28, 28)
@@ -26,6 +67,8 @@ COLOR_ACCENT = (245, 197, 24)
 BASE_DIR = os.path.dirname(__file__)
 CHAR_PATH = os.path.join(BASE_DIR, "..", "..", "sns", "images", "character.png")
 OUT_PATH = os.path.join(BASE_DIR, "OGP_rakuten-link-guide.png")
+
+MAX_TEXT_WIDTH = 620
 
 
 def diagonal_gradient(img):
@@ -53,6 +96,20 @@ def draw_diamond_grid(img):
     img.paste(Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB"), (0, 0))
 
 
+def fit_font(draw, text, font_path, max_width, start_size, min_size=26):
+    """text が max_width に収まるまでフォントサイズを縮小する（文字切れ・はみ出し防止）。"""
+    size = start_size
+    if not text:
+        return ImageFont.truetype(font_path, start_size)
+    while size > min_size:
+        f = ImageFont.truetype(font_path, size)
+        bbox = draw.textbbox((0, 0), text, font=f)
+        if (bbox[2] - bbox[0]) <= max_width:
+            return f
+        size -= 2
+    return ImageFont.truetype(font_path, min_size)
+
+
 def main():
     img = Image.new("RGB", (W, H))
     diagonal_gradient(img)
@@ -70,7 +127,7 @@ def main():
     draw.text((margin + icon_r * 2 + 10, 40), "楽天社員の損しない選び方", font=f_label, fill=COLOR_WHITE_SUB)
 
     f_badge = ImageFont.truetype(FONT_MEDIUM, 24)
-    badge_text = "通話品質・音質を検証"
+    badge_text = "通話品質・音質を解説"
     bbox = draw.textbbox((0, 0), badge_text, font=f_badge)
     bw = bbox[2] - bbox[0] + 32
     bh = bbox[3] - bbox[1] + 18
@@ -78,11 +135,12 @@ def main():
     draw.rounded_rectangle([margin, badge_y, margin + bw, badge_y + bh], radius=6, fill=COLOR_PINK)
     draw.text((margin + 16, badge_y + 9), badge_text, font=f_badge, fill=COLOR_WHITE)
 
-    f_title = ImageFont.truetype(FONT_BOLD, 46)
     line1 = "Rakuten Linkの音質は"
-    line2 = "5年使った社員が正直に検証"
-    draw.text((margin, 210), line1, font=f_title, fill=COLOR_WHITE)
-    draw.text((margin, 270), line2, font=f_title, fill=COLOR_WHITE)
+    line2 = "5年使った元担当者が正直に解説"
+    f_title1 = fit_font(draw, line1, FONT_BOLD, MAX_TEXT_WIDTH, start_size=46)
+    f_title2 = fit_font(draw, line2, FONT_BOLD, MAX_TEXT_WIDTH, start_size=46)
+    draw.text((margin, 210), line1, font=f_title1, fill=COLOR_WHITE)
+    draw.text((margin, 270), line2, font=f_title2, fill=COLOR_WHITE)
 
     f_sub = ImageFont.truetype(FONT_MEDIUM, 26)
     draw.text((margin, 350), "個人の体験・感想として正直に書きます", font=f_sub, fill=COLOR_WHITE_SUB)

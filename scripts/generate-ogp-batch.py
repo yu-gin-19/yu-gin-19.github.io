@@ -239,9 +239,9 @@ CONFIGS = [
     {
         "key": "rakuten-link-guide",
         "out": "articles/rakuten-link-guide/OGP_rakuten-link-guide.png",
-        "badge": "通話品質・音質を検証",
+        "badge": "通話品質・音質を解説",
         "line1": "Rakuten Linkの音質は",
-        "line2": "5年使った社員が正直に検証",
+        "line2": "5年使った元担当者が正直に解説",
         "sub": "個人の体験・感想として正直に書きます",
     },
 ]

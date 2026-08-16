@@ -1,71 +1,80 @@
 """
-OGP画像 一括生成／再生成スクリプト（共通版）
+OGP画像 一括生成／再生成スクリプト（共通版・ChatGPT提供の文字なし背景＋3D素材版）
 
-articles/au-switch/generate_ogp.py, articles/card-review/generate_ogp.py,
-articles/rakuten-link-guide/generate_ogp.py のロジック（斜め方向ピンク→ブラック
-グラデーション、ダイヤ格子の装飾線、右側キャラクター、左側サイト名ラベル＋
-カテゴリバッジ＋見出し2行、右下「個人運営・非公式」注記バッジ）を共通化し、
-記事ごとの設定（CONFIGS）から複数のOGP画像をまとめて再生成する。
+背景2点（scripts/ogp_assets/backgrounds/）と記事別3D素材23点
+（scripts/ogp_assets/objects/）はChatGPT側で作成済みのものをそのまま使用する。
+このスクリプトが担当するのは、ネイティブ解像度での文字配置・3D素材の
+contain合成・1200×630pxへの最終リサイズのみで、背景や3D素材、アイコンを
+Pillowで新たに描き直すことはしない。
+
+記事ごとの文言・テンプレート種別・出力先・3D素材ファイル名は CONFIGS の
+1箇所にすべて集約し、描画関数側にページ固有の文言やファイル名を
+直書きしない。
 
 - 出力サイズ：1200×630px 固定
+- E案：黒〜チャコール背景＋巨大数字（本体=白／単位=マゼンタ）
+- A案：濃紺背景＋大見出し＋右側3D素材1点
 - ブランド表記は「楽天社員の損しない選び方」に統一
-- 「個人運営・非公式」表示は維持
+- 「個人運営・非公式」表示は全23枚に維持
 - フォントは Windows / macOS / Linux の日本語フォント候補を順に探索し、
   見つからない場合は例外を送出して停止する（豆腐文字を出力しない）
+- 素材が23件揃っていない・RGBAでない・出力先が重複している場合は、
+  生成前に例外で停止する
 
 使い方:
     python scripts/generate-ogp-batch.py            # CONFIGS 全件を再生成
-    python scripts/generate-ogp-batch.py --only securities-spu spu-4x
-    python scripts/generate-ogp-batch.py --grid     # 生成後、一覧グリッド画像も出力
+    python scripts/generate-ogp-batch.py --only top-page fit-check articles-index
+    python scripts/generate-ogp-batch.py --grid     # 生成後、一覧グリッド画像も出力（Git管理対象外）
 """
 
 import argparse
-import math
 import os
-import sys
 
 from PIL import Image, ImageDraw, ImageFont
 
-W, H = 1200, 630
+FINAL_W, FINAL_H = 1200, 630
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CHAR_PATH = os.path.join(REPO_ROOT, "sns", "images", "character.png")
 SCRIPTS_DIR = os.path.dirname(os.path.abspath(__file__))
+ASSETS_DIR = os.path.join(SCRIPTS_DIR, "ogp_assets")
+BG_DIR = os.path.join(ASSETS_DIR, "backgrounds")
+OBJ_DIR = os.path.join(ASSETS_DIR, "objects")
 GRID_OUT_PATH = os.path.join(SCRIPTS_DIR, "ogp_grid_preview.png")
 
+BG_E_PATH = os.path.join(BG_DIR, "e-black-magenta-empty.png")
+BG_A_PATH = os.path.join(BG_DIR, "a-navy-empty.png")
+
 BRAND_LABEL = "楽天社員の損しない選び方"
+BRAND_HIGHLIGHT = "損しない"
 NOTE_TEXT = "個人運営・非公式"
 
-COLOR_PINK = (255, 0, 140)
-COLOR_BLACK = (28, 28, 28)
 COLOR_WHITE = (255, 255, 255)
-COLOR_WHITE_SUB = (255, 221, 221)
-COLOR_ACCENT = (245, 197, 24)
+COLOR_MAGENTA = (255, 20, 145)
+COLOR_YELLOW = (255, 205, 40)
+COLOR_MINT = (110, 231, 183)
+COLOR_NAVY_TEXT = (18, 24, 58)
+COLOR_NOTE = (210, 214, 226)
+COLOR_NOTE_STROKE = (10, 10, 14)
 
-MARGIN = 60
-# 右側キャラクターと重ならないよう、本文テキストの最大幅を制限する
-MAX_TEXT_WIDTH = 620
+COLOR_ROLES = {"white": COLOR_WHITE, "magenta": COLOR_MAGENTA, "yellow": COLOR_YELLOW}
+
+# 3D素材のデフォルト配置領域（背景ネイティブ座標／containで縦横比維持）
+ASSET_BOX_E = (900, 45, 1700, 885)   # E案背景 1730x909
+ASSET_BOX_A = (1120, 45, 1700, 885)  # A案背景 1731x909
+
+# 見出し系テキストの最大幅（ネイティブ座標）。右端が素材領域の左端から
+# 常に50px以上離れるように、素材領域の左端より手前で頭打ちにする。
+E_TEXT_MAX_WIDTH = 790     # 右端キャップ = 56+790=846 ＜ 900-50
+A_TEXT_MAX_WIDTH = 1000    # 右端キャップ = 66+1000=1066 ＜ 1120-50
 
 # --- フォント候補（優先順） -------------------------------------------------
-# (bold候補, medium/regular候補) のタプルを OS ごとに列挙し、
-# 実在する最初の組み合わせを採用する。
 FONT_CANDIDATES = [
-    # macOS
+    (r"C:\Windows\Fonts\YuGothB.ttc", r"C:\Windows\Fonts\YuGothM.ttc"),
+    (r"C:\Windows\Fonts\meiryob.ttc", r"C:\Windows\Fonts\meiryo.ttc"),
     (
         "/System/Library/Fonts/ヒラギノ角ゴシック W6.ttc",
         "/System/Library/Fonts/ヒラギノ角ゴシック W3.ttc",
     ),
-    # Windows（游ゴシック）
-    (
-        r"C:\Windows\Fonts\YuGothB.ttc",
-        r"C:\Windows\Fonts\YuGothM.ttc",
-    ),
-    # Windows（メイリオ、太字が無いため regular を bold 代わりに使用）
-    (
-        r"C:\Windows\Fonts\meiryob.ttc",
-        r"C:\Windows\Fonts\meiryo.ttc",
-    ),
-    # Linux（Noto Sans CJK JP）
     (
         "/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc",
         "/usr/share/fonts/opentype/noto/NotoSansCJK-Regular.ttc",
@@ -91,305 +100,463 @@ def resolve_fonts():
 FONT_BOLD, FONT_MEDIUM = resolve_fonts()
 
 
+def font(size):
+    return ImageFont.truetype(FONT_BOLD, size)
+
+
+def text_w(draw, s, f):
+    b = draw.textbbox((0, 0), s, font=f)
+    return b[2] - b[0]
+
+
+def fit_font(draw, text, max_width, start_size, min_size):
+    size = start_size
+    if not text:
+        return font(start_size)
+    while size > min_size:
+        f = font(size)
+        if text_w(draw, text, f) <= max_width:
+            return f
+        size -= 2
+    return font(min_size)
+
+
+def fit_font_segments(draw, segments, max_width, start_size, min_size):
+    """segments = [(text, color_role), ...] を1本のフォントサイズで幅に収める。"""
+    joined = "".join(s for s, _ in segments)
+    return fit_font(draw, joined, max_width, start_size, min_size)
+
+
+def draw_segments(draw, x, y, segments, f):
+    for text, role in segments:
+        color = COLOR_ROLES[role]
+        draw.text((x, y), text, font=f, fill=color)
+        x += text_w(draw, text, f)
+    return x
+
+
 # --- 記事ごとの設定 ----------------------------------------------------------
-# out: 出力先（REPO_ROOT からの相対パス）
-# badge: カテゴリバッジ文言
-# line1 / line2: 見出し（2行、line2 は空文字可）
-# sub: サブコピー（無い場合は None）
+# out: 出力先（REPO_ROOT からの相対パス。既存の公開パスを維持しリンク切れを防ぐ）
+# template: "E"（巨大数字） or "A"（大見出し＋アイコン素材）
+# asset: scripts/ogp_assets/objects/ 内のファイル名
+# 必要な場合のみ asset_box（ネイティブ座標のx0,y0,x1,y1）または
+# asset_offset（dx,dy）でページ別に微調整する（描画関数側のkey分岐は作らない）
 CONFIGS = [
+    # ------------------------------------------------------------------ E案（10件）
     {
-        "key": "ahamo-vs-rakuten",
-        "out": "articles/ahamo-vs-rakuten/ogp.png",
-        "badge": "比較記事",
-        "line1": "楽天モバイルとahamoを比較",
-        "line2": "社員が正直に選ぶならどっち？",
-        "sub": None,
+        "key": "top-page",
+        "out": "images/ogp.png",
+        "template": "E",
+        "line1": "社員紹介リンク経由で",
+        "line2": "他社から乗り換えなら",
+        "number": "14,000",
+        "unit": "pt",
+        "note": "新規契約でも11,000pt",
+        "asset": "top-page-points-phone-bars-rgba.png",
     },
     {
-        "key": "cancel-guide",
-        "out": "articles/cancel-guide/ogp.png",
-        "badge": "解約・手続きガイド",
-        "line1": "解約前に確認すべきこと｜",
-        "line2": "社員が正直に話す損しない辞め方",
-        "sub": None,
+        "key": "campaign-guide",
+        "out": "articles/campaign-guide/ogp.png",
+        "template": "E",
+        "line1": "社員紹介キャンペーンなら",
+        "line2": "他社から乗り換えで",
+        "number": "14,000",
+        "unit": "pt",
+        "note": "新規契約でも11,000pt",
+        "asset": "campaign-guide-gift-points-rgba.png",
     },
     {
         "key": "card-mobile-spu",
         "out": "articles/card-mobile-spu/ogp.png",
-        "badge": "SPU解説",
+        "template": "E",
         "line1": "楽天カード＋楽天モバイルで",
-        "line2": "合計7倍",
-        "sub": None,
-    },
-    {
-        "key": "coverage-area",
-        "out": "articles/coverage-area/ogp.png",
-        "badge": "エリア解説",
-        "line1": "楽天モバイルが繋がらない？",
-        "line2": "エリア確認と対処法を元担当者が解説",
-        "sub": None,
-    },
-    {
-        "key": "demerits",
-        "out": "articles/demerits/ogp.png",
-        "badge": "デメリット解説",
-        "line1": "楽天モバイルの弱点4つを",
-        "line2": "社員が正直に解説します",
-        "sub": None,
+        "line2": "SPUをまとめてアップ",
+        "number": "合計7",
+        "unit": "倍",
+        "note": "5と0のつく日は合計8倍",
+        "asset": "card-mobile-spu-card-phone-growth-rgba.png",
     },
     {
         "key": "familymart-spu",
         "out": "articles/familymart-spu/ogp.png",
-        "badge": "SPU解説",
-        "line1": "ファミリーマートがSPUに追加",
-        "line2": "+0.5倍の条件を解説",
-        "sub": None,
-    },
-    {
-        "key": "marathon-strategy",
-        "out": "articles/marathon-strategy/ogp.png",
-        "badge": "マラソン攻略",
-        "line1": "楽天お買い物マラソンを攻略する",
-        "line2": "3つのポイント",
-        "sub": None,
-    },
-    {
-        "key": "monthly-report-2026-05",
-        "out": "articles/monthly-report-2026-05/ogp.png",
-        "badge": "実績公開",
-        "line1": "楽天ポイント実績公開",
-        "line2": "",
-        "sub": None,
-    },
-    {
-        "key": "rakuten-card",
-        "out": "articles/rakuten-card/ogp.png",
-        "badge": "カード解説",
-        "line1": "楽天カードは作るべき？",
-        "line2": "社員が本音で答えます",
-        "sub": None,
-    },
-    {
-        "key": "regret-reasons",
-        "out": "articles/regret-reasons/ogp.png",
-        "badge": "後悔・対策",
-        "line1": "楽天モバイルで後悔した",
-        "line2": "5つの理由と対策",
-        "sub": None,
+        "template": "E",
+        "line1": "ファミリーマート利用で",
+        "line2": "楽天市場のSPUに追加",
+        "number": "+0.5",
+        "unit": "倍",
+        "note": "月3,000円以上＋利用登録が条件",
+        "asset": "familymart-spu-store-bag-points-rgba.png",
     },
     {
         "key": "securities-spu",
         "out": "articles/securities-spu/ogp.png",
-        "badge": "SPU解説",
-        "line1": "NISAだけでは対象外",
-        "line2": "投資信託SPU+0.5倍の4条件",
-        "sub": None,
+        "template": "E",
+        "line1": "楽天証券のSPUは",
+        "line2": "NISAだけでは対象外",
+        "number": "+0.5",
+        "unit": "倍",
+        "note": "投資信託SPUの条件を解説",
+        "asset": "securities-spu-investment-chart-rgba.png",
     },
     {
         "key": "spu-4x",
         "out": "articles/spu-4x/ogp.png",
-        "badge": "SPU解説",
+        "template": "E",
         "line1": "対象プラン契約＋エントリーで",
-        "line2": "SPU+4倍",
-        "sub": None,
+        "line2": "楽天モバイルのSPU",
+        "number": "+4",
+        "unit": "倍",
+        "note": "楽天市場のポイントが上乗せ",
+        "asset": "spu-4x-growth-four-bars-rgba.png",
     },
     {
         "key": "spu-checklist",
         "out": "articles/spu-checklist/ogp.png",
-        "badge": "ポイント攻略",
-        "line1": "楽天SPU最大化",
+        "template": "E",
+        "line1": "楽天SPU最大化の",
         "line2": "完全チェックリスト",
-        "sub": None,
+        "number": "月9,433",
+        "unit": "pt",
+        "note": "社員が毎月実践する項目を公開",
+        "asset": "spu-checklist-checklist-points-rgba.png",
+    },
+    {
+        "key": "marathon-strategy",
+        "out": "articles/marathon-strategy/ogp.png",
+        "template": "E",
+        "line1": "楽天お買い物マラソンを",
+        "line2": "買い回りで攻略",
+        "number": "1,600",
+        "unit": "pt",
+        "note": "社員が実践した3つのコツ",
+        "asset": "marathon-strategy-cart-bags-points-rgba.png",
+    },
+    {
+        "key": "monthly-report-2026-05",
+        "out": "articles/monthly-report-2026-05/ogp.png",
+        "template": "E",
+        "line1": "2026年5月の",
+        "line2": "楽天ポイント実績",
+        "number": "2,199",
+        "unit": "pt",
+        "note": "獲得内訳をすべて公開",
+        "asset": "monthly-report-report-chart-points-rgba.png",
+    },
+    {
+        "key": "au-switch",
+        "out": "articles/au-switch/OGP_au-switch.png",
+        "template": "E",
+        "line1": "auから楽天モバイルへ",
+        "line2": "乗り換えて5年",
+        "number": "26",
+        "unit": "万円以上",
+        "note": "5年間の節約額を公開",
+        "asset": "au-switch-two-phones-savings-rgba.png",
+    },
+    # ------------------------------------------------------------------ A案（13件）
+    {
+        "key": "articles-index",
+        "out": "images/ogp_articles.png",
+        "template": "A",
+        "mid": "楽天モバイルのことなら",
+        "main": [("社員が全部書きました", "white")],
+        "band": "料金・電波・乗り換えを網羅",
+        "asset": "articles-index-documents-rgba.png",
+    },
+    {
+        "key": "ahamo-vs-rakuten",
+        "out": "articles/ahamo-vs-rakuten/ogp.png",
+        "template": "A",
+        "mid": "楽天モバイルとahamo",
+        "main": [("あなたに合うのは", "white"), ("？", "magenta")],
+        "band": "元担当者が違いを比較",
+        "asset": "ahamo-vs-rakuten-compare-phones-rgba.png",
+    },
+    {
+        "key": "cancel-guide",
+        "out": "articles/cancel-guide/ogp.png",
+        "template": "A",
+        "mid": "解約する前に",
+        "main": [("確認したいこと", "white")],
+        "band": "損しない手順を解説",
+        "asset": "cancel-guide-exit-phone-warning-rgba.png",
+    },
+    {
+        "key": "coverage-area",
+        "out": "articles/coverage-area/ogp.png",
+        "template": "A",
+        "mid": "楽天モバイルが",
+        "main": [("つながらない", "white"), ("？", "magenta")],
+        "band": "エリア確認と対処法",
+        "asset": "coverage-area-map-signal-phone-rgba.png",
+    },
+    {
+        "key": "demerits",
+        "out": "articles/demerits/ogp.png",
+        "template": "A",
+        "mid": "契約前に知りたい",
+        "main": [("4つ", "yellow"), ("の弱点", "white")],
+        "band": "元担当者が正直に解説",
+        "asset": "demerits-warning-broken-signal-rgba.png",
+    },
+    {
+        "key": "rakuten-card",
+        "out": "articles/rakuten-card/ogp.png",
+        "template": "A",
+        "mid": "楽天カードは",
+        "main": [("作るべき", "white"), ("？", "magenta")],
+        "band": "メリットと注意点を解説",
+        "asset": "rakuten-card-credit-card-question-rgba.png",
+    },
+    {
+        "key": "regret-reasons",
+        "out": "articles/regret-reasons/ogp.png",
+        "template": "A",
+        "mid": "楽天モバイルで",
+        "main": [("後悔した", "white"), ("5つ", "yellow"), ("の理由", "white")],
+        "band": "失敗しない対策も解説",
+        "asset": "regret-reasons-question-phone-signal-rgba.png",
     },
     {
         "key": "supersale-ai-concierge-2026",
         "out": "articles/supersale-ai-concierge-2026/ogp.png",
-        "badge": "AI活用",
-        "line1": "楽天スーパーSALEに",
-        "line2": "AIコンシェルジュが登場",
-        "sub": None,
-    },
-    {
-        "key": "ogp-articles-index",
-        "out": "images/ogp_articles.png",
-        "badge": "記事一覧",
-        "line1": "楽天モバイルのことなら",
-        "line2": "社員が全部書きました",
-        "sub": None,
-    },
-    # 以下3件は articles/*/generate_ogp.py にソースが個別に存在するが、
-    # 出力済みPNGが更新前（旧ブランド名）のまま残っていたため、
-    # 主文言はそのままにブランド表記のみ揃えて再生成する。
-    {
-        "key": "au-switch",
-        "out": "articles/au-switch/OGP_au-switch.png",
-        "badge": "体験談・5年間の記録",
-        "line1": "auから乗り換えて5年",
-        "line2": "正直な後悔と得した金額",
-        "sub": "5年累計26万円以上の節約を社員が公開",
+        "template": "A",
+        "mid": "楽天スーパーSALEを",
+        "main": [("AI", "magenta"), ("でもっとお得に", "white")],
+        "band": "買い物相談を自動化",
+        "asset": "supersale-ai-concierge-ai-shopping-rgba.png",
     },
     {
         "key": "card-review",
         "out": "articles/card-review/OGP_card-review.png",
-        "badge": "審査対策・再申請ガイド",
-        "line1": "楽天カード審査に落ちた",
-        "line2": "理由と再申請のコツ",
-        "sub": "楽天社員が通過基準を解説",
+        "template": "A",
+        "mid": "楽天カード審査に",
+        "main": [("落ちた理由は", "white"), ("？", "magenta")],
+        "band": "再申請前の対策を解説",
+        "asset": "card-review-card-shield-check-rgba.png",
     },
     {
         "key": "rakuten-link-guide",
         "out": "articles/rakuten-link-guide/OGP_rakuten-link-guide.png",
-        "badge": "通話品質・音質を解説",
-        "line1": "Rakuten Linkの音質は",
-        "line2": "5年使った元担当者が正直に解説",
-        "sub": "個人の体験・感想として正直に書きます",
+        "template": "A",
+        "mid": "Rakuten Linkの",
+        "main": [("音質は大丈夫", "white"), ("？", "magenta")],
+        "band": "5年利用した元担当者が解説",
+        "asset": "rakuten-link-guide-phone-call-waves-rgba.png",
+    },
+    {
+        "key": "fit-check",
+        "out": "articles/fit-check/OGP_fit-check.png",
+        "template": "A",
+        "mid": "楽天モバイルは",
+        "main": [("あなたに向いてる", "white"), ("？", "magenta")],
+        "band": "元担当者の1分診断",
+        "asset": "fit-check-phone-check-warning-rgba.png",
+    },
+    {
+        "key": "how-to-switch",
+        "out": "articles/how-to-switch/ogp.png",
+        "template": "A",
+        "mid": "楽天モバイルへの",
+        "main": [("乗り換えは簡単", "white")],
+        "band": "4ステップで完了",
+        "asset": "how-to-switch-two-phones-arrow-sim-rgba.png",
+    },
+    {
+        "key": "savings-calc",
+        "out": "articles/savings-calc/OGP_savings-calc.png",
+        "template": "A",
+        "mid": "楽天モバイルで",
+        "main": [("いくら節約できる", "white"), ("？", "magenta")],
+        "band": "30秒料金シミュレーション",
+        "asset": "savings-calc-calculator-phone-coins-rgba.png",
     },
 ]
 
 
-def diagonal_gradient(img):
-    """左上=ピンク、右下=ブラックの斜めグラデーション。"""
-    max_dist = math.hypot(W, H)
-    px = img.load()
-    for y in range(H):
-        for x in range(0, W, 2):
-            dist = math.hypot(x, y) / max_dist
-            r = int(COLOR_PINK[0] + (COLOR_BLACK[0] - COLOR_PINK[0]) * dist)
-            g = int(COLOR_PINK[1] + (COLOR_BLACK[1] - COLOR_PINK[1]) * dist)
-            b = int(COLOR_PINK[2] + (COLOR_BLACK[2] - COLOR_PINK[2]) * dist)
-            px[x, y] = (r, g, b)
-            if x + 1 < W:
-                px[x + 1, y] = (r, g, b)
+# --- 検証（生成前に必ず実行） -------------------------------------------------
+
+def validate_configs():
+    errors = []
+
+    if len(CONFIGS) != 23:
+        errors.append(f"CONFIGSが23件ではありません（{len(CONFIGS)}件）")
+
+    outs = [c["out"] for c in CONFIGS]
+    dup_outs = {o for o in outs if outs.count(o) > 1}
+    if dup_outs:
+        errors.append(f"出力先が重複しています: {sorted(dup_outs)}")
+
+    for path, label in [(BG_E_PATH, "E案背景"), (BG_A_PATH, "A案背景")]:
+        if not os.path.isfile(path):
+            errors.append(f"{label}が見つかりません: {path}")
+
+    for cfg in CONFIGS:
+        asset_path = os.path.join(OBJ_DIR, cfg["asset"])
+        if not os.path.isfile(asset_path):
+            errors.append(f"[{cfg['key']}] 3D素材が見つかりません: {asset_path}")
+            continue
+        with Image.open(asset_path) as im:
+            if im.mode != "RGBA":
+                errors.append(f"[{cfg['key']}] 3D素材がRGBAではありません: {cfg['asset']} (mode={im.mode})")
+
+    if errors:
+        raise SystemExit("[エラー] 生成を中止します:\n" + "\n".join(f"  - {e}" for e in errors))
 
 
-def draw_diamond_grid(img):
-    overlay = Image.new("RGBA", (W, H), (0, 0, 0, 0))
-    odraw = ImageDraw.Draw(overlay)
-    step = 60
-    for x in range(-H, W + H, step):
-        odraw.line([(x, 0), (x + H, H)], fill=(255, 255, 255, 30), width=1)
-        odraw.line([(x, H), (x + H, 0)], fill=(255, 255, 255, 30), width=1)
-    img.paste(Image.alpha_composite(img.convert("RGBA"), overlay).convert("RGB"), (0, 0))
+# --- 共通パーツ --------------------------------------------------------------
+
+def composite_asset(img, asset_path, box):
+    with Image.open(asset_path) as src:
+        asset = src.convert("RGBA")
+    bx0, by0, bx1, by1 = box
+    bw, bh = bx1 - bx0, by1 - by0
+    scale = min(bw / asset.width, bh / asset.height)
+    nw, nh = max(1, int(asset.width * scale)), max(1, int(asset.height * scale))
+    resized = asset.resize((nw, nh), Image.LANCZOS)
+    px = bx0 + (bw - nw) // 2
+    py = by0 + (bh - nh) // 2
+    img.paste(resized, (px, py), resized)
 
 
-def fit_font(draw, text, font_path, max_width, start_size, min_size=26):
-    """text が max_width に収まるまでフォントサイズを縮小する（文字切れ・はみ出し防止）。"""
-    size = start_size
-    if not text:
-        return ImageFont.truetype(font_path, start_size)
-    while size > min_size:
-        f = ImageFont.truetype(font_path, size)
-        bbox = draw.textbbox((0, 0), text, font=f)
-        if (bbox[2] - bbox[0]) <= max_width:
-            return f
-        size -= 2
-    return ImageFont.truetype(font_path, min_size)
+def resolve_asset_box(cfg, default_box):
+    if "asset_box" in cfg:
+        return cfg["asset_box"]
+    box = default_box
+    if "asset_offset" in cfg:
+        dx, dy = cfg["asset_offset"]
+        box = (box[0] + dx, box[1] + dy, box[2] + dx, box[3] + dy)
+    return box
 
 
-def load_character():
-    try:
-        char = Image.open(CHAR_PATH).convert("RGBA")
-    except FileNotFoundError:
-        return None
-    datas = char.getdata()
-    new_data = []
-    for r, g, b, a in datas:
-        if r > 245 and g > 245 and b > 245:
-            new_data.append((r, g, b, 0))
-        else:
-            new_data.append((r, g, b, a))
-    char.putdata(new_data)
-    char_h = 560
-    char_w = int(char.width * (char_h / char.height))
-    return char.resize((char_w, char_h), Image.LANCZOS)
+def draw_note(draw, xy, align_right=False):
+    f_note = font(24)
+    if align_right:
+        w = text_w(draw, NOTE_TEXT, f_note)
+        x = xy[0] - w
+    else:
+        x = xy[0]
+    draw.text((x, xy[1]), NOTE_TEXT, font=f_note, fill=COLOR_NOTE,
+              stroke_width=3, stroke_fill=COLOR_NOTE_STROKE)
+
+
+# --- テンプレート本体 ---------------------------------------------------------
+
+def render_e(cfg):
+    img = Image.open(BG_E_PATH).convert("RGB")
+    draw = ImageDraw.Draw(img)
+    W, H = img.size
+
+    # 上部リボン（背景に描画済みの帯の中に白文字でブランド名）
+    f_brand = fit_font(draw, BRAND_LABEL, 800, 46, 30)
+    bbox = draw.textbbox((0, 0), BRAND_LABEL, font=f_brand)
+    ribbon_cy = (72 + 166) // 2
+    draw.text((90, ribbon_cy - (bbox[3] - bbox[1]) // 2 - bbox[1]), BRAND_LABEL,
+               font=f_brand, fill=COLOR_WHITE)
+
+    # 見出し2行（1行目=白／2行目=マゼンタ）
+    f_h1 = fit_font(draw, cfg["line1"], E_TEXT_MAX_WIDTH, 62, 34)
+    draw.text((56, 205), cfg["line1"], font=f_h1, fill=COLOR_WHITE)
+    f_h2 = fit_font(draw, cfg["line2"], E_TEXT_MAX_WIDTH, 62, 34)
+    draw.text((56, 290), cfg["line2"], font=f_h2, fill=COLOR_MAGENTA)
+
+    # 巨大数字（区切り線=536 の下）：本体=白、単位=マゼンタ（本体比55〜70%・ベースライン揃え）
+    # 素材を優先して数字を縮小することはしない。素材側の領域はASSET_BOX_Eで別途確保する。
+    f_num = fit_font(draw, cfg["number"], E_TEXT_MAX_WIDTH, 150, 90)
+    draw.text((52, 575), cfg["number"], font=f_num, fill=COLOR_WHITE)
+    num_w = text_w(draw, cfg["number"], f_num)
+    f_unit = font(int(f_num.size * 0.62))
+    draw.text((52 + num_w + 14, 575 + f_num.size - f_unit.size), cfg["unit"], font=f_unit, fill=COLOR_MAGENTA)
+
+    # 下部囲み（黒背景＋ミント枠＋ミントのチェック＋白文字）
+    old_box = (52, 800, 560, 878)
+    box_scale = 1.3
+    old_w, old_h = old_box[2] - old_box[0], old_box[3] - old_box[1]
+    old_cy = (old_box[1] + old_box[3]) // 2
+    new_w, new_h = old_w * box_scale, old_h * box_scale
+    box = (52, int(old_cy - new_h / 2), int(52 + new_w), int(old_cy + new_h / 2))
+    draw.rounded_rectangle(box, radius=18, fill=(15, 15, 18), outline=COLOR_MINT, width=4)
+    cx, cy = box[0] + int(34 * box_scale), (box[1] + box[3]) // 2
+    off = [(-14, 0), (-3, 13), (18, -16)]
+    check_pts = [(cx + int(dx * box_scale), cy + int(dy * box_scale)) for dx, dy in off]
+    draw.line(check_pts, fill=COLOR_MINT, width=int(6 * box_scale), joint="curve")
+    text_x = box[0] + int(64 * box_scale)
+    note_max_w = box[2] - text_x - 20
+    f_note_box = fit_font(draw, cfg["note"], note_max_w, 41, 26)
+    draw.text((text_x, cy - f_note_box.size // 2 - 2), cfg["note"], font=f_note_box, fill=COLOR_WHITE)
+
+    # 3D素材（縦横比維持・contain合成）
+    asset_path = os.path.join(OBJ_DIR, cfg["asset"])
+    composite_asset(img, asset_path, resolve_asset_box(cfg, ASSET_BOX_E))
+
+    # 個人運営・非公式（右下。素材と重なる可能性があるため暗い縁取りで可読性を確保）
+    draw = ImageDraw.Draw(img)
+    draw_note(draw, (W - 30, H - 48), align_right=True)
+
+    return img.resize((FINAL_W, FINAL_H), Image.LANCZOS)
+
+
+def render_a(cfg):
+    img = Image.open(BG_A_PATH).convert("RGB")
+    draw = ImageDraw.Draw(img)
+    W, H = img.size
+
+    # 上部枠（背景に描画済みの角丸枠の中）：「損しない」だけマゼンタ、他は白
+    idx = BRAND_LABEL.index(BRAND_HIGHLIGHT)
+    brand_segments = [
+        (BRAND_LABEL[:idx], "white"),
+        (BRAND_HIGHLIGHT, "magenta"),
+        (BRAND_LABEL[idx + len(BRAND_HIGHLIGHT):], "white"),
+    ]
+    brand_size = 54
+    while brand_size > 40 and text_w(draw, BRAND_LABEL, font(brand_size)) > (1016 - 71 - 60):
+        brand_size -= 1
+    f_brand = font(brand_size)
+    total_w = text_w(draw, BRAND_LABEL, f_brand)
+    ribbon_cy = (92 + 227) // 2
+    bbox = draw.textbbox((0, 0), BRAND_LABEL, font=f_brand)
+    x = 71 + ((1016 - 71) - total_w) // 2
+    y = ribbon_cy - (bbox[3] - bbox[1]) // 2 - bbox[1]
+    draw_segments(draw, x, y, brand_segments, f_brand)
+
+    # 中見出し（区切り線=389 の上、白）
+    f_mid = fit_font(draw, cfg["mid"], A_TEXT_MAX_WIDTH, 52, 30)
+    draw.text((72, 300), cfg["mid"], font=f_mid, fill=COLOR_WHITE)
+
+    # 大見出し（区切り線下〜黄色帯上、非常に大きい文字。セグメント単位で配色）
+    f_big = fit_font_segments(draw, cfg["main"], A_TEXT_MAX_WIDTH, 148, 72)
+    draw_segments(draw, 66, 450, cfg["main"], f_big)
+
+    # 黄色帯（背景に描画済み）に濃紺文字
+    f_band = fit_font(draw, cfg["band"], 900, 58, 30)
+    bb = draw.textbbox((0, 0), cfg["band"], font=f_band)
+    band_cy = (679 + 811) // 2
+    draw.text((110, band_cy - (bb[3] - bb[1]) // 2 - bb[1]), cfg["band"], font=f_band, fill=COLOR_NAVY_TEXT)
+
+    # 3D素材（縦横比維持・contain合成）
+    asset_path = os.path.join(OBJ_DIR, cfg["asset"])
+    composite_asset(img, asset_path, resolve_asset_box(cfg, ASSET_BOX_A))
+
+    # 個人運営・非公式（黄色帯の下・左）
+    draw = ImageDraw.Draw(img)
+    draw_note(draw, (72, 838))
+
+    return img.resize((FINAL_W, FINAL_H), Image.LANCZOS)
 
 
 def render_one(cfg):
-    img = Image.new("RGB", (W, H))
-    diagonal_gradient(img)
-    draw_diamond_grid(img)
-    img = img.convert("RGB")
-    draw = ImageDraw.Draw(img)
-
-    margin = MARGIN
-
-    # サイト名ラベル（提灯アイコン＋テキスト）
-    f_label = ImageFont.truetype(FONT_MEDIUM, 26)
-    icon_r = 11
-    icon_cx = margin + icon_r
-    icon_cy = 53
-    draw.ellipse(
-        [icon_cx - icon_r, icon_cy - icon_r, icon_cx + icon_r, icon_cy + icon_r],
-        fill=(224, 48, 48),
-    )
-    draw.text(
-        (margin + icon_r * 2 + 10, 40), BRAND_LABEL, font=f_label, fill=COLOR_WHITE_SUB
-    )
-
-    # カテゴリバッジ
-    f_badge = ImageFont.truetype(FONT_MEDIUM, 24)
-    badge_text = cfg["badge"]
-    bbox = draw.textbbox((0, 0), badge_text, font=f_badge)
-    bw = bbox[2] - bbox[0] + 32
-    bh = bbox[3] - bbox[1] + 18
-    badge_y = 100
-    draw.rounded_rectangle(
-        [margin, badge_y, margin + bw, badge_y + bh], radius=6, fill=COLOR_PINK
-    )
-    draw.text((margin + 16, badge_y + 9), badge_text, font=f_badge, fill=COLOR_WHITE)
-
-    # 見出し（最大2行、文字切れ・はみ出し防止のため自動縮小）
-    line1 = cfg["line1"]
-    line2 = cfg.get("line2") or ""
-    f_title1 = fit_font(draw, line1, FONT_BOLD, MAX_TEXT_WIDTH, start_size=54)
-    f_title2 = fit_font(draw, line2, FONT_BOLD, MAX_TEXT_WIDTH, start_size=54) if line2 else None
-
-    if line2:
-        draw.text((margin, 210), line1, font=f_title1, fill=COLOR_WHITE)
-        draw.text((margin, 280), line2, font=f_title2, fill=COLOR_WHITE)
-    else:
-        # 1行のみの場合は縦方向の中央付近に配置
-        draw.text((margin, 245), line1, font=f_title1, fill=COLOR_WHITE)
-
-    # サブコピー（任意）
-    sub = cfg.get("sub")
-    if sub:
-        f_sub = fit_font(draw, sub, FONT_MEDIUM, MAX_TEXT_WIDTH, start_size=28)
-        draw.text((margin, 360), sub, font=f_sub, fill=COLOR_WHITE_SUB)
-
-    # キャラクター画像（右側）
-    char = load_character()
-    if char is not None:
-        char_x = W - char.width + 40
-        char_y = H - char.height - 10
-        img.paste(char, (char_x, char_y), char)
-
-    draw = ImageDraw.Draw(img)
-
-    # 「個人運営・非公式」バッジ（右下）
-    f_note = ImageFont.truetype(FONT_MEDIUM, 22)
-    bbox = draw.textbbox((0, 0), NOTE_TEXT, font=f_note)
-    nw = bbox[2] - bbox[0] + 22
-    nh = bbox[3] - bbox[1] + 12
-    nx0 = W - nw - 30
-    ny0 = H - nh - 24
-    draw.rounded_rectangle(
-        [nx0, ny0, nx0 + nw, ny0 + nh],
-        radius=6,
-        fill=(139, 26, 26),
-        outline=COLOR_ACCENT,
-        width=1,
-    )
-    draw.text((nx0 + 11, ny0 + 6), NOTE_TEXT, font=f_note, fill=COLOR_ACCENT)
-
-    return img
+    if cfg["template"] == "E":
+        return render_e(cfg)
+    return render_a(cfg)
 
 
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--only", nargs="*", help="生成対象を key で絞り込む")
-    parser.add_argument("--grid", action="store_true", help="生成後に一覧グリッド画像も出力する")
+    parser.add_argument("--grid", action="store_true", help="生成後に一覧グリッド画像も出力する（Git管理対象外）")
     args = parser.parse_args()
+
+    validate_configs()
 
     targets = CONFIGS
     if args.only:
@@ -406,7 +573,7 @@ def main():
         os.makedirs(os.path.dirname(out_path), exist_ok=True)
         img.save(out_path, quality=95)
         size = img.size
-        ok = "OK" if size == (W, H) else "NG"
+        ok = "OK" if size == (FINAL_W, FINAL_H) else "NG"
         print(f"[{ok}] {cfg['out']} ({size[0]}x{size[1]})")
         generated.append((cfg, out_path))
 
@@ -418,6 +585,8 @@ def main():
 
 
 def build_grid(paths):
+    import math
+
     cols = 4
     rows = math.ceil(len(paths) / cols)
     thumb_w, thumb_h = 300, 158

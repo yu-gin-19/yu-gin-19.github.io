@@ -26,6 +26,11 @@
   margin-top: 6px;
 }
 
+/* ===== H1改行制御（スマホのみ「楽天モバイル」の直後で改行） ===== */
+.title-break-sp {
+  display: none;
+}
+
 /* ===== 著者実収支カード ===== */
 .real-numbers-card {
   border: 2px solid var(--color-primary);
@@ -271,6 +276,19 @@
 
 /* ===== スマホ対応（SP-first 追加調整） ===== */
 @media (max-width: 600px) {
+  .title-break-sp {
+    display: inline;
+  }
+
+  .article-title {
+    font-size: 22px;
+    line-height: 1.35;
+  }
+
+  .article-header {
+    margin-bottom: 24px;
+  }
+
   .real-numbers-grid {
     gap: 8px;
     padding: 16px;
@@ -334,6 +352,8 @@
 /* ===== 30秒料金シミュレーション ===== */
 .quick-calc {
   scroll-margin-top: 90px;
+  margin-bottom: 24px;
+  padding-bottom: 32px;
 }
 
 .calc-form {
@@ -353,6 +373,13 @@
   color: #333;
   font-size: 14px;
   font-weight: 700;
+}
+
+.calc-field__help {
+  color: #666;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.55;
 }
 
 .calc-input-wrap {
@@ -396,6 +423,15 @@
   border-top: none;
   border-radius: 0 0 14px 14px;
   background: #fff8fc;
+}
+
+.calc-result__status {
+  margin: 0 0 12px;
+  color: #888;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.02em;
 }
 
 .calc-result__plan {

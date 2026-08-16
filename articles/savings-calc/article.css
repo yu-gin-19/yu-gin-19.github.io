@@ -334,6 +334,8 @@
 /* ===== 30秒料金シミュレーション ===== */
 .quick-calc {
   scroll-margin-top: 90px;
+  margin-bottom: 24px;
+  padding-bottom: 32px;
 }
 
 .calc-form {

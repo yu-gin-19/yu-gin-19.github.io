@@ -398,6 +398,15 @@
   background: #fff8fc;
 }
 
+.calc-result__status {
+  margin: 0 0 12px;
+  color: #888;
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
 .calc-result__plan {
   margin-bottom: 16px;
   color: #444;

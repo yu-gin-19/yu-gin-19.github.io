@@ -104,28 +104,104 @@
   margin-bottom: 20px;
 }
 
-/* 影響度バッジ */
-.impact-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 6px 14px;
-  border-radius: 20px;
+/* サブブロック（影響を受けやすい人・契約前の確認方法） */
+.sub-block {
+  margin: 18px 0;
+}
+
+.sub-block__title {
+  font-size: 14px;
+  font-weight: 800;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.sub-block ul {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.sub-block li {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+/* 2カラムグリッド（おすすめ判定・末尾CTAで共用） */
+.two-col-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 24px 0;
+}
+
+/* おすすめしにくい人／選択肢になりやすい人 */
+.recommend-card {
+  border-radius: 12px;
+  padding: 20px 22px;
+}
+
+.recommend-card--no {
+  background: #f7f7f7;
+  border: 1px solid #ddd;
+}
+
+.recommend-card--yes {
+  background: var(--color-primary-bg);
+  border: 1px solid var(--color-primary-light);
+}
+
+.recommend-card__title {
+  font-size: 15px;
+  font-weight: 900;
+  margin-bottom: 12px;
+}
+
+.recommend-card--no .recommend-card__title {
+  color: #666;
+}
+
+.recommend-card--yes .recommend-card__title {
+  color: var(--color-primary);
+}
+
+.recommend-card ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.recommend-card li {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 6px;
+}
+
+/* 末尾CTA：迷っている人／判断できた人の2経路 */
+.cta-paths {
+  text-align: left;
+}
+
+.cta-path {
+  background: #fff;
+  border: 1px solid var(--color-primary-light);
+  border-radius: 12px;
+  padding: 22px;
+}
+
+.cta-path__label {
+  font-size: 12px;
+  font-weight: 900;
+  color: var(--color-primary);
+  margin-bottom: 8px;
+}
+
+.cta-path__note {
   font-size: 13px;
-  font-weight: 700;
-  margin-bottom: 16px;
-}
-
-.impact-badge--low {
-  background: #e8f5e9;
-  color: #2e7d32;
-  border: 1px solid #a5d6a7;
-}
-
-.impact-badge--mid {
-  background: #fff8e1;
-  color: #f57f17;
-  border: 1px solid #ffe082;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 14px;
 }
 
 /* カバー方法ボックス */
@@ -243,16 +319,6 @@
   border-radius: 4px;
   letter-spacing: 0.05em;
   flex-shrink: 0;
-}
-
-/* まとめ比較テーブル */
-.summary-table-wrap {
-  overflow-x: auto;
-  margin: 24px 0;
-}
-
-.summary-table-wrap table {
-  min-width: 480px;
 }
 
 /* まとめボックス */
@@ -403,4 +469,6 @@
   .honest-box { padding: 14px 16px; }
   .summary-box { padding: 24px 16px; }
   .faq-a { padding-left: 20px; }
+  .two-col-grid { grid-template-columns: 1fr; }
+  .cta-path { padding: 18px; }
 }

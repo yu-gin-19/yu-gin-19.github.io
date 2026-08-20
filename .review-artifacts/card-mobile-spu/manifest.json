@@ -1,0 +1,45 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "improve/card-mobile-spu",
+  "source_sha": "53196d9ce5ba28e4bdfcbd93056dc2bcef448247",
+  "target_page": "articles/card-mobile-spu/index.html",
+  "viewports": ["375x812", "768x1024", "1200x900"],
+  "images": [
+    {
+      "path": ".review-artifacts/card-mobile-spu/full_375x812.png",
+      "description": "375px フルページ（先に結論ボックスがファーストビュー直後に表示されることを含む）"
+    },
+    {
+      "path": ".review-artifacts/card-mobile-spu/full_768x1024.png",
+      "description": "768px フルページ"
+    },
+    {
+      "path": ".review-artifacts/card-mobile-spu/full_1200x900.png",
+      "description": "1200px フルページ"
+    },
+    {
+      "path": ".review-artifacts/card-mobile-spu/faq_open_375.png",
+      "description": "375px でFAQをクリックで開いた状態（aria-expanded切り替え確認）"
+    },
+    {
+      "path": ".review-artifacts/card-mobile-spu/table_fixed_2.png",
+      "description": "375px の条件・エントリー・上限の早見表（5列）。横スクロールで閲覧できるよう修正した箇所の拡大"
+    }
+  ],
+  "captured_at": "2026-08-20T22:09:00+09:00",
+  "verified_items": [
+    "375/768/1200pxで横スクロールなし（document.documentElement.scrollWidthとclientWidthが一致）",
+    "375pxの最初の画面（スクロールなし）でH1とリード文から「通常日は合計3倍から7倍、5と0のつく日は合計4倍から8倍」が読める",
+    "FAQをクリック操作・Enterキー操作の両方で開閉でき、aria-expandedが切り替わる",
+    "DOM順序で最終申込CTA（bottom CTA）がLINE CTAより前にあることを確認",
+    "コンソールエラーなし（3ビューポートとも）",
+    "node scripts/validate-content.mjs でエラー0件（禁止語句・矛盾数値・JSON-LD構文・id重複・目次アンカー・aria参照・内部リンク切れを含む）",
+    "git diff --check で問題なし",
+    "5列の早見表が375pxで文字が縦に一文字ずつ折り返される問題を発見し、articles/spu-4x/article.cssに.wide-table-wrapクラスを追加して横スクロールに変更（articles/spu-4x/のページ自体はこのクラスを使用していないため表示に影響なし。375pxで回帰なしを確認）"
+  ],
+  "notes": [
+    "公式ページ3件（楽天モバイルSPU、楽天市場SPU、5と0のつく日）をWebFetchで実装時点の条件を確認し、指示書の固定事実と一致することを確認した（差異なし）",
+    "楽天カード+2倍の特典分上限はカード種別により異なる（プレミアムカード系は月5,000pt、その他は月1,000pt目安）ことを公式ページで確認し、早見表に反映した",
+    "このスクリーンショットはレビュー専用であり、mainへのmerge前に削除される想定"
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "improve/card-mobile-spu-infographics",
+  "source_sha": "a2516987f74ef33676b4faab8c27b317e9067209",
+  "target_page": "articles/card-mobile-spu/index.html",
+  "viewports": ["375x812", "768x1024", "1200x900"],
+  "images": [
+    {
+      "path": ".review-artifacts/card-mobile-spu-infographics/full_375x812.png",
+      "description": "375px フルページ（1列表示）"
+    },
+    {
+      "path": ".review-artifacts/card-mobile-spu-infographics/full_768x1024.png",
+      "description": "768px フルページ"
+    },
+    {
+      "path": ".review-artifacts/card-mobile-spu-infographics/full_1200x900.png",
+      "description": "1200px フルページ"
+    },
+    {
+      "path": ".review-artifacts/card-mobile-spu-infographics/breakdown_cards_375.png",
+      "description": "375pxの内訳カード拡大（通常日／5と0のつく日）"
+    },
+    {
+      "path": ".review-artifacts/card-mobile-spu-infographics/condition_cards_375.png",
+      "description": "375pxの条件カード拡大（主な条件のラベル文字を12px・#555に修正）"
+    },
+    {
+      "path": ".review-artifacts/card-mobile-spu-infographics/alignment_768x1024.png",
+      "description": "768pxの内訳カード2枚を横並びでクロップ。合計7倍／8倍の帯の上端が同じ高さで揃っていることを確認できる"
+    },
+    {
+      "path": ".review-artifacts/card-mobile-spu-infographics/alignment_1200x900.png",
+      "description": "1200pxの内訳カード2枚を横並びでクロップ。合計7倍／8倍の帯の上端が同じ高さで揃っていることを確認できる"
+    }
+  ],
+  "captured_at": "2026-08-20T23:35:00+09:00",
+  "verified_items": [
+    "375×812：1列表示、横スクロールなし（document.documentElement.scrollWidthとclientWidthが一致）",
+    "768×1024：Playwrightで.cms-scenario-card__totalを2枚取得しgetBoundingClientRect() top差を測定 → 0.00px",
+    "1200×900：同上の測定 → 0.00px",
+    "修正方法：.cms-scenario-gridにgrid-template-rows: repeat(5, auto)を定義し、.cms-scenario-cardをgrid-template-rows: subgridでサブグリッド化。見出し・内訳・合計帯・補足行の各行トラック高さが2枚のカードで共有されるため、内訳の行数（3行/4行）や補足文の有無に関わらず合計帯の開始位置が常に一致する。375px（1列表示）ではdisplay:blockに戻し通常の縦積みに復元",
+    "条件名ラベル（.cms-condition-card__fact dt）を11px/#999から12px/#555に変更し、通常文字の目安であるコントラスト比4.5:1以上を確保（白背景に対し約7.45:1）",
+    "内訳カードの見出し（.cms-scenario-card__title）をvar(--color-primary)からvar(--color-primary-dark)に変更し、白背景に対するコントラスト比を約3.73:1から約5.53:1に改善",
+    "既存のカード内容・倍率・文言は変更なし（このコミットの差分はarticles/card-mobile-spu/article.cssのみ）",
+    "本文・計算表・FAQ・CTA・JSON-LDは変更なし（HTMLファイルは今回のコミットで変更していない）",
+    "node scripts/validate-content.mjs：エラー0件",
+    "git diff --check：問題なし",
+    "コンソールエラーなし（3ビューポートとも）",
+    "FAQをクリックで開閉できることを確認（回帰なし）"
+  ],
+  "notes": [
+    "CSS subgridを使用（Chromium/Firefox/Safariとも対応済みの標準機能）。ページ固有クラス（cms-接頭辞）のみの変更で、共有CSS（style.css・articles/spu-4x/article.css）は変更していない",
+    "このスクリーンショットはレビュー専用であり、mainへのmerge前に削除される想定"
+  ]
+}

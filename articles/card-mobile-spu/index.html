@@ -120,6 +120,7 @@
   <script src="../../components/cta-tracking.js"></script>
   <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="../spu-4x/article.css" />
+  <link rel="stylesheet" href="article.css" />
 </head>
 <body>
 
@@ -186,46 +187,61 @@
           <h2 id="section-1">合計7倍・8倍の内訳</h2>
           <p class="article-text">楽天のSPU（スーパーポイントアッププログラム）は、楽天の各サービスを使うほど<strong>楽天市場でのポイント還元率が積み上がる仕組み</strong>です。楽天市場で楽天カード決済をすると、通常分+1倍と特典分+1倍を合わせて+2倍が適用され、基本ポイント1倍と合わせて合計3倍になります。ここに楽天モバイル（対象プランの利用＋SPUエントリー）が加わると+4倍が上乗せされ、<strong>合計7倍</strong>です。さらに5と0のつく日は、開催日ごとのエントリーと楽天カード決済で+1倍が加わり、<strong>合計8倍</strong>になります。</p>
 
-          <div class="table-wrap">
-            <table>
-              <caption>楽天カード＋楽天モバイルのSPU内訳（通常日と5と0のつく日の比較）</caption>
-              <thead>
-                <tr>
-                  <th scope="col">内訳</th>
-                  <th scope="col">通常日</th>
-                  <th scope="col">5と0のつく日</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <th scope="row">楽天市場の基本ポイント</th>
-                  <td>1倍</td>
-                  <td>1倍</td>
-                </tr>
-                <tr>
-                  <th scope="row">楽天カード通常分＋特典分</th>
-                  <td>+2倍</td>
-                  <td>+2倍</td>
-                </tr>
-                <tr>
-                  <th scope="row">楽天モバイルSPU</th>
-                  <td>+4倍</td>
-                  <td>+4倍</td>
-                </tr>
-                <tr>
-                  <th scope="row">5と0のつく日</th>
-                  <td>—</td>
-                  <td>+1倍</td>
-                </tr>
-                <tr>
-                  <th scope="row">この組み合わせの合計</th>
-                  <td class="highlight">7倍</td>
-                  <td class="highlight">8倍</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="cms-scenario-grid">
+            <div class="cms-scenario-card">
+              <h3 class="cms-scenario-card__title">通常日</h3>
+              <dl class="cms-build">
+                <div class="cms-build__row">
+                  <dt>楽天市場の基本</dt>
+                  <dd>1倍</dd>
+                </div>
+                <div class="cms-build__row">
+                  <dt>楽天カード</dt>
+                  <dd>+2倍</dd>
+                </div>
+                <div class="cms-build__row cms-build__row--mobile">
+                  <dt>楽天モバイルSPU</dt>
+                  <dd>+4倍</dd>
+                </div>
+              </dl>
+              <p class="cms-scenario-card__total">
+                <span class="cms-scenario-card__total-eq" aria-hidden="true">=</span>
+                <span class="cms-scenario-card__total-label">合計</span>
+                <span class="cms-scenario-card__total-value">7倍</span>
+              </p>
+              <p class="cms-scenario-card__diff">楽天モバイルを加えると差は<strong>+4倍</strong></p>
+            </div>
+
+            <div class="cms-scenario-card">
+              <h3 class="cms-scenario-card__title">5と0のつく日</h3>
+              <dl class="cms-build">
+                <div class="cms-build__row">
+                  <dt>楽天市場の基本</dt>
+                  <dd>1倍</dd>
+                </div>
+                <div class="cms-build__row">
+                  <dt>楽天カード</dt>
+                  <dd>+2倍</dd>
+                </div>
+                <div class="cms-build__row cms-build__row--mobile">
+                  <dt>楽天モバイルSPU</dt>
+                  <dd>+4倍</dd>
+                </div>
+                <div class="cms-build__row">
+                  <dt>5と0のつく日</dt>
+                  <dd>+1倍</dd>
+                </div>
+              </dl>
+              <p class="cms-scenario-card__total">
+                <span class="cms-scenario-card__total-eq" aria-hidden="true">=</span>
+                <span class="cms-scenario-card__total-label">合計</span>
+                <span class="cms-scenario-card__total-value">8倍</span>
+              </p>
+              <p class="cms-scenario-card__diff">楽天モバイルを加えると差は<strong>+4倍</strong></p>
+              <p class="cms-scenario-card__note">開催日ごとのエントリーと楽天カード決済が必要です。</p>
+            </div>
           </div>
-          <p class="table-note">5と0のつく日の列は、開催日ごとのエントリーと楽天カード決済が条件です。「最大8倍」ではなく、このページで扱う組み合わせでの合計として「8倍」と表記しています。※各特典の倍率・条件は変更になる場合があります。</p>
+          <p class="table-note">どちらも「最大8倍」ではなく、このページで扱う組み合わせでの合計として「7倍」「8倍」と表記しています。※各特典の倍率・条件は変更になる場合があります。</p>
 
           <div class="info-box">
             <div class="info-box__title">📌 SPUのポイントアップは楽天市場のみに適用</div>
@@ -238,49 +254,99 @@
           <h2 id="section-2">条件・エントリー・上限の早見表</h2>
           <p class="article-text">それぞれのプログラムは条件・エントリー方法・上限が異なります。混同しやすいポイントを早見表にまとめます。</p>
 
-          <div class="table-wrap wide-table-wrap">
-            <table>
-              <caption>楽天市場の基本・楽天カード・楽天モバイル・5と0のつく日の比較（2026年8月20日時点）</caption>
-              <thead>
-                <tr>
-                  <th scope="col">プログラム</th>
-                  <th scope="col">倍率</th>
-                  <th scope="col">主な条件</th>
-                  <th scope="col">エントリー</th>
-                  <th scope="col">月間上限・ポイント種別</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td>楽天市場の基本</td>
-                  <td>1倍</td>
-                  <td>楽天市場での通常のお買い物</td>
-                  <td>不要</td>
-                  <td>通常ポイント</td>
-                </tr>
-                <tr>
-                  <td>楽天カード+2倍</td>
-                  <td>+2倍</td>
-                  <td>楽天市場で楽天カード決済（通常分+1倍・特典分+1倍で構成）</td>
-                  <td>不要（保有・利用のみ）</td>
-                  <td>特典分の上限は対象カードにより異なる（プレミアムカード系は月5,000pt、その他のカードは月1,000ptが目安）。特典分は期間限定ポイント。公式条件を確認</td>
-                </tr>
-                <tr>
-                  <td>楽天モバイル+4倍</td>
-                  <td>+4倍</td>
-                  <td>対象プラン（Rakuten最強プランなど）を利用中</td>
-                  <td>初回に1回。達成条件を満たす限り継続し、毎月の再エントリーは不要</td>
-                  <td>月2,000pt・期間限定ポイント</td>
-                </tr>
-                <tr>
-                  <td>5と0のつく日+1倍</td>
-                  <td>+1倍</td>
-                  <td>毎月5・10・15・20・25・30日に楽天カードで決済</td>
-                  <td>開催日ごとに毎回必要</td>
-                  <td>月1,000pt・期間限定ポイント</td>
-                </tr>
-              </tbody>
-            </table>
+          <div class="cms-condition-grid">
+            <div class="cms-condition-card">
+              <div class="cms-condition-card__head">
+                <h3 class="cms-condition-card__name">楽天市場の基本</h3>
+                <p class="cms-condition-card__rate">1倍</p>
+              </div>
+              <dl class="cms-condition-card__facts">
+                <div class="cms-condition-card__fact">
+                  <dt>主な条件</dt>
+                  <dd>楽天市場での通常のお買い物</dd>
+                </div>
+                <div class="cms-condition-card__fact">
+                  <dt>エントリー</dt>
+                  <dd><span class="cms-badge cms-badge--none">不要</span></dd>
+                </div>
+                <div class="cms-condition-card__fact">
+                  <dt>月間上限・ポイント種別</dt>
+                  <dd>通常ポイント</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="cms-condition-card">
+              <div class="cms-condition-card__head">
+                <h3 class="cms-condition-card__name">楽天カード+2倍</h3>
+                <p class="cms-condition-card__rate">+2倍</p>
+              </div>
+              <dl class="cms-condition-card__facts">
+                <div class="cms-condition-card__fact">
+                  <dt>主な条件</dt>
+                  <dd>楽天市場で楽天カード決済（通常分+1倍・特典分+1倍で構成）</dd>
+                </div>
+                <div class="cms-condition-card__fact">
+                  <dt>エントリー</dt>
+                  <dd>
+                    <span class="cms-badge cms-badge--none">不要</span>
+                    <span class="cms-condition-card__fact-detail">不要（保有・利用のみ）</span>
+                  </dd>
+                </div>
+                <div class="cms-condition-card__fact">
+                  <dt>月間上限・ポイント種別</dt>
+                  <dd>特典分の上限は対象カードにより異なる（プレミアムカード系は月5,000pt、その他のカードは月1,000ptが目安）。特典分は期間限定ポイント。公式条件を確認</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="cms-condition-card">
+              <div class="cms-condition-card__head">
+                <h3 class="cms-condition-card__name">楽天モバイル+4倍</h3>
+                <p class="cms-condition-card__rate">+4倍</p>
+              </div>
+              <dl class="cms-condition-card__facts">
+                <div class="cms-condition-card__fact">
+                  <dt>主な条件</dt>
+                  <dd>対象プラン（Rakuten最強プランなど）を利用中</dd>
+                </div>
+                <div class="cms-condition-card__fact">
+                  <dt>エントリー</dt>
+                  <dd>
+                    <span class="cms-badge cms-badge--once">初回1回</span>
+                    <span class="cms-condition-card__fact-detail">初回に1回。達成条件を満たす限り継続し、毎月の再エントリーは不要</span>
+                  </dd>
+                </div>
+                <div class="cms-condition-card__fact">
+                  <dt>月間上限・ポイント種別</dt>
+                  <dd>月2,000pt・期間限定ポイント</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="cms-condition-card">
+              <div class="cms-condition-card__head">
+                <h3 class="cms-condition-card__name">5と0のつく日+1倍</h3>
+                <p class="cms-condition-card__rate">+1倍</p>
+              </div>
+              <dl class="cms-condition-card__facts">
+                <div class="cms-condition-card__fact">
+                  <dt>主な条件</dt>
+                  <dd>毎月5・10・15・20・25・30日に楽天カードで決済</dd>
+                </div>
+                <div class="cms-condition-card__fact">
+                  <dt>エントリー</dt>
+                  <dd>
+                    <span class="cms-badge cms-badge--recurring">🔁 開催日ごとに毎回</span>
+                    <span class="cms-condition-card__fact-detail">開催日ごとに毎回必要</span>
+                  </dd>
+                </div>
+                <div class="cms-condition-card__fact">
+                  <dt>月間上限・ポイント種別</dt>
+                  <dd>月1,000pt・期間限定ポイント</dd>
+                </div>
+              </dl>
+            </div>
           </div>
           <p class="table-note">情報確認日：2026年8月20日。条件・上限は変更になる場合があるため、最新情報は<a href="https://network.mobile.rakuten.co.jp/campaign/spu/" target="_blank" rel="noopener noreferrer" aria-label="楽天モバイルSPU公式ページ（新しいタブで開きます）">楽天モバイルSPU公式ページ</a>・<a href="https://event.rakuten.co.jp/campaign/point-up/everyday/point/" target="_blank" rel="noopener noreferrer" aria-label="楽天市場SPU公式ページ（新しいタブで開きます）">楽天市場SPU公式ページ</a>・<a href="https://event.rakuten.co.jp/card/pointday/" target="_blank" rel="noopener noreferrer" aria-label="5と0のつく日公式ページ（新しいタブで開きます）">5と0のつく日公式ページ</a>でご確認ください。</p>
 

@@ -448,6 +448,11 @@
   font-weight: 700;
 }
 
+/* 列数が多い表：横スクロールを優先し、セル内の文字が縦に潰れるのを防ぐ */
+.wide-table-wrap table {
+  min-width: 760px;
+}
+
 /* 条件・上限の表（項目/内容の2列） */
 .cond-table-wrap table th[scope="row"] {
   background: #f7f7f7;

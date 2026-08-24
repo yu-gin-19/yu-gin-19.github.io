@@ -1,7 +1,9 @@
 {
   "repository": "yu-gin-19/yu-gin-19.github.io",
   "branch": "fix/campaign-guide-table-header-contrast",
-  "source_sha": "feb6551486e9d6ec3221842504646952261b0bd4",
+  "pr": "#7 (Draft)",
+  "source_sha": "622488a84b50d3a0a11c6ece2c4d019014a262a8",
+  "previous_source_sha": "feb6551486e9d6ec3221842504646952261b0bd4",
   "target_page": "https://yu-gin-19.github.io/articles/campaign-guide/",
   "viewport_sizes": ["375x812", "768x1024", "1200x900"],
   "images": [
@@ -10,16 +12,22 @@
     "campaign-guide_768x1024_full.png",
     "campaign-guide_768x1024_table-header.png",
     "campaign-guide_1200x900_full.png",
-    "campaign-guide_1200x900_table-header.png"
+    "campaign-guide_1200x900_table-header.png",
+    "campaign-guide_375x812_step2-cta-note.png",
+    "campaign-guide_768x1024_step2-cta-note.png",
+    "campaign-guide_1200x900_step2-cta-note.png"
   ],
   "captured_at": "2026-08-24T00:00:00+09:00",
+  "updated_at": "2026-08-24T00:30:00+09:00",
   "verified_items": [
     "「キャンペーン条件の整理」表のヘッダー(thead th)が背景#1a1a1a・白文字で明瞭に読める(375/768/1200px)",
     "表の横スクロール(.summary-table-wrapのoverflow-x:auto、min-width:480pxによる内部スクロール)は既存仕様のまま維持され、ページ全体の横スクロールは発生しない(scrollWidth === clientWidthを375/768/1200pxで確認)",
     "パンくず(.breadcrumb / .breadcrumb a)・記事メタ(.article-meta)・CTA注記(.article-cta__note)・チェック項目補足(.condition-card__sub)・FAQ開閉アイコン(.faq-question__icon)の文字色を#696969へ変更し、白背景に対してWCAG AA(4.5:1)を満たすことを計算で確認",
     "ページ内の全テキスト要素に対しコントラスト比の自動監査を実施(修正前59件→修正後41件)。残る41件はブランドのピンク文字(var(--color-primary))・白文字onピンクCTA(前回PRで意図的に決定済み)・LINE/SNSボタンや footer 注記などサイト共通コンポーネントであり、いずれも articles/campaign-guide/article.css の対象外、または既存のブランド/共通デザインとして維持",
     "ステップ2CTAの白文字・下線なし、チェックリスト2箇所の左余白(SP:32px/PC:64px)など前回修正の内容に回帰がないことを確認",
-    "375/768/1200pxいずれもブラウザコンソールエラーなし"
+    "375/768/1200pxいずれもブラウザコンソールエラーなし",
+    "[追加修正] index.html内ステップ2CTA直下の注記(インラインstyle)をcolor:#888からcolor:#696969へ変更し、白背景で約3.54:1→約5.49:1へ改善したことを375/768/1200pxのcomputed style(rgb(105, 105, 105))で確認",
+    "[追加修正] 表ヘッダーの濃色背景・白文字、ステップ2CTAの白文字・下線なし、チェックリストの左余白(SP:32px/PC:64px)いずれも回帰なし。375/768/1200pxでページ全体の横スクロールなし、コンソールエラーなしを確認"
   ],
-  "notes": "index.html内の「※タップすると楽天公式のログイン・申込み画面へ移動します」はインラインstyle=\"color:#888\"で指定されており、コントラスト比3.54:1で基準未達だが、今回の修正対象がarticles/campaign-guide/article.cssのみのため未修正。CSSだけでは!important無しに上書きできないため、対応する場合はindex.html側の修正またはスコープ拡大の判断が必要（未確認事項として報告）。"
+  "notes": "index.html内「※タップすると楽天公式のログイン・申込み画面へ移動します」のインラインcolor:#888は622488a84b50d3a0a11c6ece2c4d019014a262a8でcolor:#696969へ修正済み（前回commit時点の残課題を解消）。"
 }

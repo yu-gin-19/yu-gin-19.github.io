@@ -56,6 +56,331 @@
   color: #333;
 }
 
+/* ===== 共通条件：番号ステップ（修正3-A） ===== */
+.cond-step-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+  background: #f7f7f7;
+  border-radius: 12px;
+  padding: 18px 20px;
+}
+
+.cond-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.cond-step__num {
+  flex-shrink: 0;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+}
+
+.cond-step__title {
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.6;
+}
+
+.cond-step__note {
+  font-size: 12px;
+  color: #666;
+  margin-top: 3px;
+  line-height: 1.6;
+}
+
+/* ===== ポイント投資の原則／例外／最終確認（修正3-B） ===== */
+.rule-note-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.rule-note-list__row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+.rule-note-list__row dt {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  background: var(--color-primary-light);
+  border-radius: 4px;
+  padding: 3px 8px;
+  white-space: nowrap;
+  margin-top: 2px;
+}
+
+.rule-note-list__row dd {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.7;
+}
+
+.rule-note-list__row dd a {
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+/* ===== NISAとSPUの2区分比較（修正3-C） ===== */
+.nisa-compare-grid {
+  align-items: stretch;
+}
+
+.nisa-compare-card {
+  border-radius: 12px;
+  padding: 16px 18px;
+  border: 2px solid;
+  height: 100%;
+}
+
+.nisa-compare-card--yes {
+  background: #fff;
+  border-color: var(--color-primary);
+}
+
+.nisa-compare-card--no {
+  background: #f7f7f7;
+  border-color: #ddd;
+}
+
+.nisa-compare-card__label {
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.nisa-compare-card--yes .nisa-compare-card__label {
+  color: var(--color-primary-dark);
+}
+
+.nisa-compare-card--no .nisa-compare-card__label {
+  color: #555;
+}
+
+.nisa-compare-card__text {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* ===== マネーブリッジ×楽天銀行カードのミニ比較（修正3-E） ===== */
+.mini-compare-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 20px 0;
+}
+
+.mini-compare-list__row {
+  background: #f7f7f7;
+  border-radius: 10px;
+  padding: 14px 18px;
+}
+
+.mini-compare-list__label {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--color-primary-dark);
+  margin-bottom: 6px;
+}
+
+.mini-compare-list__text {
+  font-size: 13px;
+  color: #444;
+  line-height: 1.7;
+}
+
+.mini-compare-list__text a {
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+/* ===== 達成状況・付与のタイムライン（修正3-D） ===== */
+.status-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.status-timeline__step {
+  background: #f7f7f7;
+  border-radius: 10px;
+  padding: 14px 10px;
+  text-align: center;
+}
+
+.status-timeline__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  margin: 0 auto 8px;
+}
+
+.status-timeline__label {
+  font-size: 12px;
+  font-weight: 800;
+  color: #1a1a1a;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.status-timeline__note {
+  font-size: 11px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ===== 中段・末尾CTAの中央配置（修正1） =====
+   共有CSS（articles/spu-4x/article.css）の .cta-paths { text-align: left; } は
+   このファイルが読み込まれるページ（securities-spuのみ）に限り上書きする。
+   共有CSSファイル自体は変更しない。 */
+.cta-paths {
+  text-align: center;
+}
+
+.cta-path {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  /* グリッドアイテムの既定 min-width:auto によるコンテンツ最小幅の
+     はみ出し（カードごとに文章量が異なると1frトラック幅がずれる）を防ぐ */
+  min-width: 0;
+}
+
+.cta-path__label,
+.cta-path__note {
+  text-align: center;
+}
+
+.cta-path__badge {
+  display: inline-block;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  padding: 3px 12px;
+  border-radius: 999px;
+  margin-bottom: 8px;
+}
+
+.cta-benefit {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin: 2px 0 14px;
+}
+
+.cta-benefit__item {
+  background: var(--color-primary-light);
+  color: var(--color-primary-dark);
+  font-size: 13px;
+  font-weight: 800;
+  padding: 6px 12px;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.cta-benefit__item strong {
+  font-size: 15px;
+}
+
+.cta-benefit__condition {
+  flex-basis: 100%;
+  text-align: center;
+  font-size: 11px;
+  color: #696969;
+  font-weight: 700;
+  margin-top: 2px;
+}
+
+/* ===== 楽天銀行×楽天カードの倍率内訳（追加修正3） ===== */
+.bank-rate-facts {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 10px 0;
+}
+
+.bank-rate-facts__row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  background: #fff;
+  border-radius: 6px;
+  padding: 7px 10px;
+}
+
+.bank-rate-facts__row dt {
+  font-size: 12px;
+  color: #555;
+  font-weight: 700;
+}
+
+.bank-rate-facts__row dd {
+  font-size: 13px;
+  color: var(--color-primary-dark);
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.bank-rate-facts__row--total {
+  border: 1px solid var(--color-primary-light);
+}
+
+.bank-rate-facts__row--total dd {
+  font-size: 14px;
+}
+
+/* 主要アクション（ボタン／診断リンク）をカード下端に揃える */
+.cta-path > .btn-primary,
+.cta-path > .btn-secondary {
+  margin-top: auto;
+}
+
+/* 適性診断リンクを44px以上のタップ領域を持つボタン状に */
+.cta-path .btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 10px 26px;
+  border: 1.5px solid var(--color-primary-light);
+  border-radius: 10px;
+  background: #fff;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.cta-path .btn-secondary:hover {
+  opacity: 1;
+  background: var(--color-primary-bg);
+  border-color: var(--color-primary);
+}
+
 /* スマホ対応 */
 @media (max-width: 600px) {
   .spu-compare-card {
@@ -72,5 +397,43 @@
 
   .spu-compare-card__facts {
     gap: 8px;
+  }
+
+  .status-timeline {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .nisa-compare-card {
+    height: auto;
+  }
+
+  /* 中段・末尾CTAのボタンをカード幅いっぱいにし、1文字だけの折り返しを避ける */
+  .cta-path .btn-primary,
+  .cta-path .btn-secondary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    word-break: keep-all;
+    overflow-wrap: break-word;
+  }
+
+  .cta-path .btn-primary {
+    padding: 15px 16px;
+    font-size: 16px;
+  }
+
+  /* 375px前後でも特典バッジ2枚が横並びのまま収まるよう縮小 */
+  .cta-benefit {
+    gap: 6px;
+  }
+
+  .cta-benefit__item {
+    padding: 5px 9px;
+    font-size: 12px;
+  }
+
+  .cta-benefit__item strong {
+    font-size: 14px;
   }
 }

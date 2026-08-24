@@ -1,0 +1,85 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "improve/securities-spu-cta-visual-density",
+  "source_sha": "e50da661e9296c050c322fb33a716f4f40a33e2a",
+  "source_sha_history": [
+    { "sha": "76ba4f13931bdcb85fdf80ba6c8c90b317f1e93f", "summary": "CTA文言・条件あり中央行・グリッド幅バグ修正・マネーブリッジ内訳化（表示に影響）" },
+    { "sha": "e50da661e9296c050c322fb33a716f4f40a33e2a", "summary": "dateModified・sitemap lastmodを2026-08-25へ更新（表示には影響なし）" }
+  ],
+  "target_page": "/articles/securities-spu/",
+  "captured_at_jst": "2026-08-25T06:54:00+09:00",
+  "viewports": ["375x812", "768x1024", "1200x900"],
+  "images": [
+    { "file": "full_375x812.png", "viewport": "375x812", "target": "ページ全体" },
+    { "file": "full_768x1024.png", "viewport": "768x1024", "target": "ページ全体" },
+    { "file": "full_1200x900.png", "viewport": "1200x900", "target": "ページ全体" },
+    { "file": "mid-cta_375x812.png", "viewport": "375x812", "target": "中段CTA拡大（中央配置・特典バッジ左右対称・条件ありの独立中央行を確認）" },
+    { "file": "bottom-cta_375x812.png", "viewport": "375x812", "target": "末尾CTA拡大（中央配置・特典バッジ左右対称・条件ありの独立中央行を確認）" },
+    { "file": "mid-cta_1200x900.png", "viewport": "1200x900", "target": "中段CTA拡大（2カード同一高さ・主要アクションの位置揃えを確認）" },
+    { "file": "bottom-cta_1200x900.png", "viewport": "1200x900", "target": "末尾CTA拡大（2カード同一高さ・主要アクションの位置揃えを確認）" },
+    { "file": "common-conditions_375x812.png", "viewport": "375x812", "target": "共通条件（番号ステップ）とポイント投資の例外（原則／例外／最終確認）※今回未変更、撮影のみ更新" },
+    { "file": "nisa-compare_375x812.png", "viewport": "375x812", "target": "NISAとSPUの2区分比較（SPU対象になる／それだけでは未達成）※今回未変更、撮影のみ更新" },
+    { "file": "bridge-bank-compare_375x812.png", "viewport": "375x812", "target": "マネーブリッジと楽天銀行×楽天カードの比較（楽天銀行×楽天カードを4行の内訳表示へ再構成）" },
+    { "file": "status-timeline_375x812.png", "viewport": "375x812", "target": "達成状況・付与確認の4ステップタイムライン※今回未変更、撮影のみ更新" }
+  ],
+  "fix_1_cta_note_wording": {
+    "before": "紹介リンク経由で申し込むと、特典の対象になります。",
+    "after": "紹介リンク経由で申し込み、条件を満たすと特典の対象になります。",
+    "scope": "中段CTAのみ（末尾CTAは元々別文言のため対象外）",
+    "result": "PASS"
+  },
+  "fix_2_condition_line": {
+    "requirement": "「条件あり」を特典バッジと別の中央行にし、375pxで「新規11,000pt」の横に残らないこと。特典バッジは左右対称。バッジ・ボタンはカード外にはみ出さない",
+    "implementation": ".cta-benefit__condition に flex-basis:100%; text-align:center; を追加し、色を#888から#696969へ変更。あわせて .cta-path に min-width:0 を追加し、CSS Gridの既定min-width:autoにより中段カードの1frトラックが末尾カードよりコンテンツ分だけ広がっていた不整合を修正（修正前は同じ375pxでも中段291px→325.5px、末尾291pxとカード幅がずれ、375pxで特典バッジ2枚が縦積みになっていた）。375px向けにバッジのpaddingとfont-sizeも縮小し、2枚が横並びのまま収まるようにした",
+    "verification": "Playwrightで.cta-benefit__item 2枚のbounding_box().yが同一（同じ行）であること、.cta-benefit__conditionのyが別行であること、.cta-benefitの右端がカード右端をはみ出していない（負のoverflow値）ことを375/768/1200pxすべてで計測",
+    "result": "PASS（375px: 2枚とも同一y、条件ありは別行かつ中央／768px・1200px: 同様に確認）"
+  },
+  "fix_3_bank_rate_density": {
+    "before": "「楽天銀行×楽天カード（別のSPU）」が1つの長い段落",
+    "after": "引き落とし+0.3倍／追加条件達成+0.2倍／合計最大+0.5倍／月間上限1,000ptの4行内訳（.bank-rate-facts）＋追加条件の説明文＋楽天銀行公式サイト・関連記事へのリンク",
+    "hidden_in_accordion": false,
+    "result": "PASS"
+  },
+  "fix_4_manifest_wording": {
+    "before": "content_density_sections の説明文が「4箇所」",
+    "after": "「5箇所」に修正（共通条件・ポイント投資の例外・NISA比較・マネーブリッジ比較・達成状況確認）",
+    "result": "PASS"
+  },
+  "cta_attribute_diff_check": {
+    "method": "diffコマンドで前コミット(1940f7d)のr10.to/h5zkrvリンク行・fit-checkリンク行・campaign-guideノートリンク行を現在のファイルと比較",
+    "result": "PASS（3種類すべて差分ゼロ、完全一致）"
+  },
+  "faq_and_jsonld_check": {
+    "method": "JSON-LD 3ブロック（Article/BreadcrumbList/FAQPage）をPythonでparseし、表示FAQ6問の質問文・回答文をFAQPage JSON-LDと1件ずつ文字列比較",
+    "result": "PASS（6問すべて完全一致、変更なし）"
+  },
+  "dom_order_check": {
+    "expected": "FAQ → 最終申込CTA（data-cta-type=\"bottom\"） → LINE CTA（.line-cta）",
+    "result": "PASS"
+  },
+  "duplicate_id_check": {
+    "result": "PASS（重複IDなし）"
+  },
+  "keyboard_check_faq1": {
+    "initial_aria_expanded": "false",
+    "after_enter": "true",
+    "after_second_enter_close": "false",
+    "after_space": "true",
+    "result": "PASS"
+  },
+  "layout_checks": {
+    "horizontal_scroll": "375/768/1200pxいずれもscrollWidth = clientWidthを自動計測し、横スクロールなしを確認",
+    "console_errors": "0件（375/768/1200pxすべて）",
+    "cta_card_centering": "中段・末尾CTAともラベル・説明・特典バッジ・ボタンが中央揃えで表示されることを確認",
+    "cta_card_equal_height_desktop": "1200pxで同一CTA内の2枚の.cta-pathの高さが一致（中段=308.5px/308.5px、末尾=257.6px/257.6px）",
+    "tap_target_height": "紹介ボタン・適性診断リンクの高さが44px以上であることを確認",
+    "content_density_sections": "共通条件・ポイント投資の例外・NISA比較・マネーブリッジ比較・達成状況確認の5箇所で崩れ・重なりがないことを確認"
+  },
+  "date_and_sitemap_update": {
+    "changed_files": ["articles/securities-spu/index.html (Article.dateModified)", "sitemap.xml (lastmod)"],
+    "before": "2026-08-24",
+    "after": "2026-08-25",
+    "reason": "作業日が2026-08-24から2026-08-25へ変わり、かつ本修正でマネーブリッジ×楽天銀行カードの説明とCTAの特典説明文（表示本文）を短文化・再構成したため、以前このプロジェクトで確立した運用ルール（作業日が変わり表示本文を短文化した場合はdateModifiedとsitemap.xmlのlastmodだけを同じ日付へ更新する）に従って更新した。title/description/canonical/OGP/記事一覧カード/datePublishedは変更していない。"
+  },
+  "notes": "本修正の変更対象はarticles/securities-spu/index.html、articles/securities-spu/article-securities.css、sitemap.xml（lastmodのみ）。共有CSS・共有JS・title/description/canonical/OGP・FAQ本文・JSON-LDのAuthor等は変更していない。旧SHA（c0eef4b）時点の画像は本フォルダから全削除し、新SHA（76ba4f1）時点のものだけに統一した。"
+}

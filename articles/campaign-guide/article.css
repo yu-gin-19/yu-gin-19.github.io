@@ -407,7 +407,7 @@
   line-height: 1.7;
 }
 
-.step-content__body a {
+.step-content__body a:not(.btn-primary) {
   color: var(--color-primary);
   text-decoration: underline;
 }
@@ -734,6 +734,14 @@
 
   .step-item:not(:last-child)::after {
     left: 19px;
+  }
+
+  .checklist li {
+    padding-left: 32px;
+  }
+
+  .checklist li::before {
+    left: 0;
   }
 }
 

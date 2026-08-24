@@ -1,0 +1,60 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "improve/securities-spu",
+  "source_sha": "65438ec09da2714757f9603e6941c3f5b6e88549",
+  "target_page": "/articles/securities-spu/",
+  "captured_at_jst": "2026-08-24T22:29:00+09:00",
+  "viewports": ["375x812", "768x1024", "1200x900"],
+  "images": [
+    {
+      "file": "full_375x812.png",
+      "viewport": "375x812",
+      "target": "ページ全体"
+    },
+    {
+      "file": "full_768x1024.png",
+      "viewport": "768x1024",
+      "target": "ページ全体"
+    },
+    {
+      "file": "full_1200x900.png",
+      "viewport": "1200x900",
+      "target": "ページ全体"
+    },
+    {
+      "file": "conclusion-box_375x812.png",
+      "viewport": "375x812",
+      "target": "冒頭・結論ボックス拡大"
+    },
+    {
+      "file": "compare-cards_375x812.png",
+      "viewport": "375x812",
+      "target": "投資信託・米国株式の2商品比較カード拡大（縦積み）"
+    },
+    {
+      "file": "compare-cards_1200x900.png",
+      "viewport": "1200x900",
+      "target": "投資信託・米国株式の2商品比較カード拡大（横並び）"
+    },
+    {
+      "file": "mid-cta_375x812.png",
+      "viewport": "375x812",
+      "target": "中段CTA（紹介リンク／適性診断の2経路＋キャンペーン解説リンク）拡大"
+    },
+    {
+      "file": "faq-open_375x812.png",
+      "viewport": "375x812",
+      "target": "FAQ開状態拡大（1問目をクリックして開いた状態）"
+    }
+  ],
+  "confirmed_items": [
+    "375/768/1200pxでページ全体の横スクロールがないこと（scrollWidth = clientWidth を自動計測で確認）",
+    "Playwrightでのページ読み込み時にconsoleエラー・pageerrorが発生していないこと",
+    "投資信託・米国株式の比較カードが375pxで縦積み、1200pxで横並びになること",
+    "FAQをクリックするとaria-expandedがfalseからtrueに切り替わり、回答が展開すること",
+    "TOCの全リンク（#section-1〜#section-8, #faq）が対応する見出しIDと一致すること",
+    "FAQPage JSON-LDのQ&Aと表示FAQの文言・件数（6問）が一致すること",
+    "ページ内にid重複がないこと"
+  ],
+  "notes": "マウス・タップでのFAQ開閉動作、Enter/Spaceキー操作によるアクセシビリティ確認はfaq.js側の既存共通実装（他記事と同一）を再利用しているため、本ページ固有の自動確認はクリック操作のみで実施した。"
+}

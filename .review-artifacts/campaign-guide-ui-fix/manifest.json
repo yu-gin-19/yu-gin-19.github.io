@@ -1,0 +1,27 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "fix/campaign-guide-cta-checklist-ui",
+  "source_sha": "a5630e48c191fb9eb759115088a6948629def394",
+  "target_page": "https://yu-gin-19.github.io/articles/campaign-guide/",
+  "viewport_sizes": ["375x812", "768x1024", "1200x900"],
+  "images": [
+    "campaign-guide_375x812_full.png",
+    "campaign-guide_375x812_step2-cta.png",
+    "campaign-guide_375x812_checklist1.png",
+    "campaign-guide_375x812_checklist2.png",
+    "campaign-guide_768x1024_full.png",
+    "campaign-guide_768x1024_step2-cta.png",
+    "campaign-guide_1200x900_full.png",
+    "campaign-guide_1200x900_step2-cta.png"
+  ],
+  "captured_at": "2026-08-24T00:00:00+09:00",
+  "verified_items": [
+    "ステップ2のCTAボタンが白文字・下線なしで表示される (background: rgb(255,0,140), color: rgb(255,255,255), text-decoration-line: none)",
+    "step-content__body内の通常テキストリンクはピンク文字・下線のまま (color: rgb(255,0,140), text-decoration-line: underline)",
+    "375px幅でチェックリスト2箇所（こんな方が対象です／申込み前チェック）のチェックマークと本文の余白が縮小され不自然な折り返しがない",
+    "375px/768px/1200pxのいずれも横スクロールなし (scrollWidth === clientWidth)",
+    "375px/768px/1200pxいずれもブラウザコンソールエラーなし",
+    "CTAのhref(https://r10.to/h5zkrv)・onclick計測イベント・target・rel・aria-labelは変更していない（article.cssのみ編集）"
+  ],
+  "notes": "375pxでステップ2のCTAボタン文字は2行に自然改行されるが、欠け・不自然な折り返しはないため修正3（btn-primaryのdisplay:block化）は適用していない。"
+}

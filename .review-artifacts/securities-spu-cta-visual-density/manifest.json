@@ -1,0 +1,58 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "improve/securities-spu-cta-visual-density",
+  "source_sha": "c0eef4b4cc9ab59e2b3f911f410b356ce49a804f",
+  "target_page": "/articles/securities-spu/",
+  "captured_at_jst": "2026-08-24T23:37:00+09:00",
+  "viewports": ["375x812", "768x1024", "1200x900"],
+  "images": [
+    { "file": "full_375x812.png", "viewport": "375x812", "target": "ページ全体" },
+    { "file": "full_768x1024.png", "viewport": "768x1024", "target": "ページ全体" },
+    { "file": "full_1200x900.png", "viewport": "1200x900", "target": "ページ全体" },
+    { "file": "mid-cta_375x812.png", "viewport": "375x812", "target": "中段CTA拡大（中央配置・特典バッジ・44px以上のタップ領域を確認）" },
+    { "file": "bottom-cta_375x812.png", "viewport": "375x812", "target": "末尾CTA拡大（中央配置・特典バッジ・44px以上のタップ領域を確認）" },
+    { "file": "mid-cta_1200x900.png", "viewport": "1200x900", "target": "中段CTA拡大（2カード同一高さ・主要アクションの位置揃えを確認）" },
+    { "file": "bottom-cta_1200x900.png", "viewport": "1200x900", "target": "末尾CTA拡大（2カード同一高さ・主要アクションの位置揃えを確認）" },
+    { "file": "common-conditions_375x812.png", "viewport": "375x812", "target": "共通条件（番号ステップ）とポイント投資の例外（原則／例外／最終確認）" },
+    { "file": "nisa-compare_375x812.png", "viewport": "375x812", "target": "NISAとSPUの2区分比較（SPU対象になる／それだけでは未達成）" },
+    { "file": "bridge-bank-compare_375x812.png", "viewport": "375x812", "target": "マネーブリッジと楽天銀行×楽天カードのミニ比較" },
+    { "file": "status-timeline_375x812.png", "viewport": "375x812", "target": "達成状況・付与確認の4ステップタイムライン" }
+  ],
+  "cta_attribute_diff_check": {
+    "method": "git diff HEAD~1 -- articles/securities-spu/index.html で trackCta呼び出し行・href・target・rel・aria-labelを比較し、前コミット（26b88bb系のmerge後main = f3c0bbc）と文字列単位で完全一致することを確認",
+    "checked": [
+      "referral link href=https://r10.to/h5zkrv（中段・末尾とも）",
+      "referral link target=_blank rel=sponsored noopener noreferrer",
+      "referral link aria-label=楽天モバイル従業員紹介キャンペーンへ（新しいタブで開きます）",
+      "trackCta('referral_cta_click', {page_type:securities-spu, cta_position:mid-referral/bottom-referral, offer_type:employee_referral, reader_stage:apply})",
+      "fit-check link href=/articles/fit-check/",
+      "trackCta('journey_click', {page_type:securities-spu, cta_position:mid-fit/bottom-fit, reader_stage:consider, destination:fit-check})",
+      "campaign-guide note link href=/articles/campaign-guide/ と trackCta('journey_click', {..., cta_position:mid-campaign-note/bottom-campaign-note, destination:campaign-guide})"
+    ],
+    "result": "PASS（すべて前コミットと文字列完全一致、変更なし）"
+  },
+  "faq_and_jsonld_check": {
+    "method": "JSON-LD 3ブロック（Article/BreadcrumbList/FAQPage）をPythonでparseし、表示FAQ6問の質問文・回答文をFAQPage JSON-LDと1件ずつ文字列比較",
+    "result": "PASS（6問すべて完全一致、変更なし）"
+  },
+  "dom_order_check": {
+    "expected": "FAQ → 最終申込CTA（data-cta-type=\"bottom\"） → LINE CTA（.line-cta）",
+    "result": "PASS"
+  },
+  "keyboard_check_faq1": {
+    "initial_aria_expanded": "false",
+    "after_enter": "true",
+    "after_second_enter_close": "false",
+    "after_space": "true",
+    "result": "PASS"
+  },
+  "layout_checks": {
+    "horizontal_scroll": "375/768/1200pxいずれもscrollWidth = clientWidthを自動計測し、横スクロールなしを確認",
+    "console_errors": "0件（375/768/1200pxすべて）",
+    "cta_card_centering": "中段・末尾CTAともラベル・説明・特典バッジ・ボタンが中央揃えで表示されることを目視確認",
+    "cta_card_equal_height_desktop": "768px・1200pxで同一CTA内の2枚の.cta-pathの高さが一致することをbounding_box計測で確認（例：1200px中段=306.5px/306.5px、末尾=255.6px/255.6px）",
+    "tap_target_height": "中段・末尾とも紹介ボタン・適性診断リンクの高さが44px以上であることを375/768/1200pxで計測（最小45.8px）",
+    "content_density_sections": "共通条件・ポイント投資の例外・NISA比較・マネーブリッジ比較・達成状況タイムラインの4箇所で崩れ・重なりがないことを目視確認"
+  },
+  "notes": "本修正の変更対象はarticles/securities-spu/index.htmlとarticles/securities-spu/article-securities.cssのみ。共有CSS（articles/spu-4x/article.css, style.css）・共有JS（components/cta-tracking.js, components/faq.js）・title/description/canonical/OGP・FAQ本文・JSON-LDは変更していない。作業日が2026-08-24のままのため、dateModified・sitemap.xml・OGP・記事一覧カードは今回変更していない。"
+}

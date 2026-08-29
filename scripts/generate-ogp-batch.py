@@ -1,7 +1,7 @@
 """
 OGP画像 一括生成／再生成スクリプト（共通版・ChatGPT提供の文字なし背景＋3D素材版）
 
-背景2点（scripts/ogp_assets/backgrounds/）と記事別3D素材23点
+背景2点（scripts/ogp_assets/backgrounds/）と記事別3D素材24点
 （scripts/ogp_assets/objects/）はChatGPT側で作成済みのものをそのまま使用する。
 このスクリプトが担当するのは、ネイティブ解像度での文字配置・3D素材の
 contain合成・1200×630pxへの最終リサイズのみで、背景や3D素材、アイコンを
@@ -15,10 +15,10 @@ Pillowで新たに描き直すことはしない。
 - E案：黒〜チャコール背景＋巨大数字（本体=白／単位=マゼンタ）
 - A案：濃紺背景＋大見出し＋右側3D素材1点
 - ブランド表記は「楽天社員の損しない選び方」に統一
-- 「個人運営・非公式」表示は全23枚に維持
+- 「個人運営・非公式」表示は全24枚に維持
 - フォントは Windows / macOS / Linux の日本語フォント候補を順に探索し、
   見つからない場合は例外を送出して停止する（豆腐文字を出力しない）
-- 素材が23件揃っていない・RGBAでない・出力先が重複している場合は、
+- 素材が24件揃っていない・RGBAでない・出力先が重複している場合は、
   生成前に例外で停止する
 
 使い方:
@@ -363,6 +363,15 @@ CONFIGS = [
         "asset": "how-to-switch-two-phones-arrow-sim-rgba.png",
     },
     {
+        "key": "switch-data-transfer",
+        "out": "articles/switch-data-transfer/ogp.png",
+        "template": "A",
+        "mid": "楽天モバイルに乗り換えると",
+        "main": [("何が変わる", "white"), ("？", "magenta")],
+        "band": "電話番号・LINE・写真を解説",
+        "asset": "switch-data-transfer.png",
+    },
+    {
         "key": "savings-calc",
         "out": "articles/savings-calc/OGP_savings-calc.png",
         "template": "A",
@@ -379,8 +388,8 @@ CONFIGS = [
 def validate_configs():
     errors = []
 
-    if len(CONFIGS) != 23:
-        errors.append(f"CONFIGSが23件ではありません（{len(CONFIGS)}件）")
+    if len(CONFIGS) != 24:
+        errors.append(f"CONFIGSが24件ではありません（{len(CONFIGS)}件）")
 
     outs = [c["out"] for c in CONFIGS]
     dup_outs = {o for o in outs if outs.count(o) > 1}

@@ -1,12 +1,11 @@
 {
   "repository": "yu-gin-19/yu-gin-19.github.io",
   "branch": "feature/switch-data-transfer",
-  "source_sha": "a8f7d0beb0f43258a01d170362837676ecb23cb1",
+  "pull_request": "https://github.com/yu-gin-19/yu-gin-19.github.io/pull/10",
+  "source_sha": "318f185c59174813aaff2bf7bc09ae265e6cd304",
   "target_pages": [
-    "/articles/switch-data-transfer/ (new)",
-    "/articles/ (article added to list)",
-    "/articles/how-to-switch/ (my 楽天モバイル app references fixed, timing claim replaced per review feedback, new internal link added)",
-    "scripts/generate-ogp-batch.py (official OGP entry added, CONFIGS 23→24)"
+    "/articles/switch-data-transfer/ (device-residual table row, carrier-payment wording, LINE section rewrite, LINE checklist item, Article.headline)",
+    "/articles/how-to-switch/ (HowTo totalTime removed, 所要時間 column removed, absolute ease/speed phrases neutralized)"
   ],
   "viewport_sizes": ["375x812", "768x1024", "1200x900"],
   "images": [
@@ -14,104 +13,111 @@
       "file": "article_full_375x812.png",
       "page": "/articles/switch-data-transfer/",
       "size": "375x812",
-      "description": "新規記事の全体（スマホ表示）"
+      "description": "新規記事の全体（スマホ表示）。今回のレビュー指摘反映後の再撮影"
     },
     {
       "file": "article_full_768x1024.png",
       "page": "/articles/switch-data-transfer/",
       "size": "768x1024",
-      "description": "新規記事の全体（タブレット表示）"
+      "description": "新規記事の全体（タブレット表示）。今回のレビュー指摘反映後の再撮影"
     },
     {
       "file": "article_full_1200x900.png",
       "page": "/articles/switch-data-transfer/",
       "size": "1200x900",
-      "description": "新規記事の全体（PC表示）"
+      "description": "新規記事の全体（PC表示）。今回のレビュー指摘反映後の再撮影"
     },
     {
       "file": "section1_zoom_375.png",
       "page": "/articles/switch-data-transfer/",
       "size": "375x812（部分）",
-      "description": "ケースA/B分岐カードと比較表の拡大（スマホ表示）"
+      "description": "ケースA/B分岐カードと比較表の拡大（スマホ表示）。端末代金の残債行・LINEアカウント行・キャリア決済行の修正を確認できる"
+    },
+    {
+      "file": "line_section_zoom_375.png",
+      "page": "/articles/switch-data-transfer/",
+      "size": "375x812（部分）",
+      "description": "LINEセクションの拡大（スマホ表示）。QRコード引き継ぎ中心の記述、同じOS/異なるOSでの14日間ルール、あんぜん引き継ぎガイドへの導線を確認できる"
     },
     {
       "file": "checklist_zoom_375.png",
       "page": "/articles/switch-data-transfer/",
       "size": "375x812（部分）",
-      "description": "乗り換え前チェックリスト（実チェックボックス）の拡大（スマホ表示）"
+      "description": "乗り換え前チェックリストの拡大（スマホ表示）。LINEチェック項目のQRコード引き継ぎへの文言修正を確認できる"
     },
     {
       "file": "faq_open_1200x900.png",
       "page": "/articles/switch-data-transfer/",
       "size": "1200x900",
-      "description": "FAQをEnterキーで開いた状態、およびチェックボックスをチェックした状態（PC表示）"
-    },
-    {
-      "file": "mail_table_zoom_375.png",
-      "page": "/articles/switch-data-transfer/",
-      "size": "375x812（部分）",
-      "description": "キャリアメール持ち運びサービスの比較表の拡大（スマホ表示）"
-    },
-    {
-      "file": "next_cards_zoom_375.png",
-      "page": "/articles/switch-data-transfer/",
-      "size": "375x812（部分）",
-      "description": "次に読みたい記事4択カード（内部導線3つ＋紹介リンク1つ）の拡大（スマホ表示）"
-    },
-    {
-      "file": "articles_index_1200x900.png",
-      "page": "/articles/",
-      "size": "1200x900",
-      "description": "記事一覧ページ。「乗り換えを検討中の方へ」カテゴリに新規記事カードが追加されていることを確認（PC表示）"
+      "description": "FAQをクリックで開いた状態（PC表示）。LINE関連Q1回答文の修正を確認できる"
     },
     {
       "file": "how_to_switch_375x812.png",
       "page": "/articles/how-to-switch/",
       "size": "375x812",
-      "description": "修正後のhow-to-switch記事全体（スマホ表示）。レビュー指摘反映後の再撮影"
+      "description": "修正後のhow-to-switch記事全体（スマホ表示）。今回のレビュー指摘反映後の再撮影"
     },
     {
       "file": "how_to_switch_768x1024.png",
       "page": "/articles/how-to-switch/",
       "size": "768x1024",
-      "description": "修正後のhow-to-switch記事全体（タブレット表示）。レビュー指摘反映後の再撮影"
+      "description": "修正後のhow-to-switch記事全体（タブレット表示）。今回のレビュー指摘反映後の再撮影"
     },
     {
       "file": "how_to_switch_1200x900.png",
       "page": "/articles/how-to-switch/",
       "size": "1200x900",
-      "description": "修正後のhow-to-switch記事全体（PC表示）。レビュー指摘反映後の再撮影"
+      "description": "修正後のhow-to-switch記事全体（PC表示）。今回のレビュー指摘反映後の再撮影"
     },
     {
       "file": "htw_summary_zoom.png",
       "page": "/articles/how-to-switch/",
       "size": "1200x900（部分）",
-      "description": "「まとめ」セクションの拡大。所要時間の断定表現を削除し、レビューで指定された中立的な文言に置き換えたことを確認できる"
+      "description": "「まとめ」セクションの拡大。所要時間列を削除した2列表と、中立的な文言への置き換えを確認できる"
+    },
+    {
+      "file": "mail_table_zoom_375.png",
+      "page": "/articles/switch-data-transfer/",
+      "size": "375x812（部分）",
+      "description": "キャリアメール持ち運びサービスの比較表（変更なし・前回分を維持）"
+    },
+    {
+      "file": "next_cards_zoom_375.png",
+      "page": "/articles/switch-data-transfer/",
+      "size": "375x812（部分）",
+      "description": "次に読みたい記事4択カード（変更なし・前回分を維持）"
+    },
+    {
+      "file": "articles_index_1200x900.png",
+      "page": "/articles/",
+      "size": "1200x900",
+      "description": "記事一覧ページ（変更なし・前回分を維持）"
     },
     {
       "file": "ogp_switch-data-transfer.png",
       "page": "/articles/switch-data-transfer/ogp.png",
       "size": "1200x630",
-      "description": "scripts/generate-ogp-batch.py で正式生成したOGP画像（A案テンプレート、既存の3D素材アセットを使用）。暫定版から差し替え済み"
+      "description": "OGP画像（今回変更なし・前回生成分を維持）"
     }
   ],
-  "captured_at": "2026-08-29T09:50:00+09:00",
+  "captured_at": "2026-08-29T10:20:00+09:00",
   "verified_items": [
-    "git diff --check（問題なし）",
-    "node scripts/validate-content.mjs（エラー0件、既存INFO 22件のみ、変更内容に起因するものなし）",
-    "switch-data-transfer / how-to-switch / index.html / articles/index.html のJSON-LD構文をPythonで再パースし全件パース成功を確認",
+    "git diff --check（問題なし。前回commitで混入したCRLF行末をLFへ正規化する修正を含む）",
+    "node scripts/validate-content.mjs（エラー0件、既存INFO 22件のみ）",
+    "switch-data-transfer / how-to-switch のJSON-LDをPythonで再パースし成功を確認",
+    "HowTo JSON-LDにtotalTime（PT30M）が残っていないことを確認",
+    "根拠のない「約5分」「約10〜15分」「30分前後」がhow-to-switchに残っていないことを確認（grep 0件）",
+    "Facebook連携・LINE IDを引き継ぎ手段として案内している箇所が無いことを確認（grep 0件）",
     "表示FAQ（6問）とFAQPage JSON-LDの文言が一字一句一致することをスクリプトで再突合",
-    "375px/768px/1200pxのいずれの幅でも、switch-data-transfer記事・how-to-switch記事ともに横スクロールが発生しないことを検証",
-    "switch-data-transfer記事・how-to-switch記事ともに3幅すべてでブラウザコンソールエラー・pageerrorが0件であることを確認",
+    "Article.headlineと表示H1のテキストが完全一致することをスクリプトで確認",
+    "端末代金の残債の確認先が「旧キャリア・端末購入元のマイページ」になっていることを確認（比較表・本文とも）",
+    "375px/768px/1200pxいずれの幅でも、switch-data-transfer記事・how-to-switch記事ともに横スクロールが発生しないことを確認",
+    "両記事とも3幅すべてでブラウザコンソールエラー・pageerrorが0件であることを確認",
     "FAQをクリック・Enterキー・Spaceキーのいずれでも開閉できることを確認（aria-expandedの切り替わりを検証）",
-    "チェックリストの実チェックボックスがクリックで操作可能であることを確認",
-    "canonical・og:url・og:image・sitemap.xmlのURLが一致することを確認",
-    "scripts/generate-ogp-batch.py --only switch-data-transfer でOGPを正式生成し1200x630で出力されることを確認",
-    "scripts/generate-ogp-batch.py の検証ロジック（validate_configs）がCONFIGS全24件に対して例外なく通ることを確認（既存23件の生成ロジックに影響がないことを含む）",
-    "生成されたogp.pngを目視確認し、記事内容（電話番号・LINE・写真・アプリ・メール・データ移行）を表す3D素材と見出し文言が既存A案テンプレートと同じ様式で表示されることを確認"
+    "canonical・og:url・og:image・sitemap.xmlのURLに変更がないことを確認（OGP関連ファイルは今回変更していない）"
   ],
   "notes": [
-    "OGP用3D素材（scripts/ogp_assets/objects/switch-data-transfer.png）は、GitHub上の asset/switch-data-transfer-3d ブランチから当該1ファイルのみをこの作業ブランチへ取り込んで使用しました。",
-    "この取り込みにより scripts/generate-ogp-batch.py のCONFIGSを23件から24件に変更し、検証コメント・エラーメッセージ中の件数表記もあわせて24に更新しています。"
+    "OGP画像・OGP生成スクリプト（scripts/generate-ogp-batch.py）・3D素材（scripts/ogp_assets/objects/switch-data-transfer.png）は今回変更していません（前回commit時点のまま）。",
+    "articles/switch-data-transfer/index.html は、前回commit時にPythonのテキストモード書き込みでCRLF（Windows改行）が混入していたことが今回判明したため、リポジトリの規約通りLF改行へ正規化しました。このコミットのdiffが両ファイルとも行数の変動が大きく見えるのはこの正規化によるもので、実際の文言変更は本manifestに記載の範囲のみです。"
   ]
 }

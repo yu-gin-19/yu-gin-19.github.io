@@ -22,7 +22,7 @@
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "楽天モバイルに乗り換えると何が変わる？電話番号・LINE・写真・データ移行を解説",
+    "headline": "楽天モバイルに乗り換えると何が変わる？電話番号・LINE・写真・アプリ・キャリアメールを解説",
     "description": "楽天モバイルへの乗り換えで電話番号・LINE・写真・連絡先・キャリアメールはどうなるか解説。今のスマホをそのまま使う場合と機種変更する場合を分けて、事前準備とチェックリストを紹介します。",
     "datePublished": "2026-08-29",
     "dateModified": "2026-08-29",
@@ -64,7 +64,7 @@
         "name": "楽天モバイルへ乗り換えるとLINEは消えますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "正しく引き継ぎ手続きを行えば、LINEアカウントは消えません。ただし、電話番号が変わる場合や機種変更を伴う場合は、事前にアカウント引き継ぎ設定とトーク履歴のバックアップが必要です。手続きをしないまま初期化すると、トーク履歴などのデータが復元できなくなる場合があります。"
+          "text": "正しく引き継ぎ手続きを行えば、LINEアカウントは消えません。ただし、電話番号が変わる場合や機種変更を伴う場合は、事前にQRコードでの引き継ぎ準備とトーク履歴のバックアップが必要です。手続きをしないまま初期化すると、トーク履歴などのデータが復元できなくなる場合があります。"
         }
       },
       {
@@ -225,15 +225,15 @@
                 </tr>
                 <tr>
                   <th scope="row">LINEアカウント</th>
-                  <td>回線変更だけなら基本的に影響なし</td>
-                  <td>引き継ぎ設定が必要</td>
-                  <td>アカウント引き継ぎ設定をオンにする</td>
+                  <td>電話番号が同じなら操作不要（番号が変わる場合は要変更）</td>
+                  <td>QRコードでかんたん引き継ぎ</td>
+                  <td>旧端末を用意し、電話番号が変わる場合は登録番号の変更も確認</td>
                 </tr>
                 <tr>
                   <th scope="row">LINEトーク履歴</th>
                   <td>本体はそのままのため保持</td>
-                  <td>バックアップ・復元が必要</td>
-                  <td>iCloud／Googleドライブへバックアップ、必要ならPIN設定</td>
+                  <td>同じOSはバックアップ全体、異なるOSは直近14日間のみ復元</td>
+                  <td>同じOSならiCloud／Googleドライブへバックアップ、異なるOSはバックアップ用PINを準備</td>
                 </tr>
                 <tr>
                   <th scope="row">写真・動画</th>
@@ -267,8 +267,8 @@
                 </tr>
                 <tr>
                   <th scope="row">キャリア決済</th>
-                  <td>継続不可（支払方法の変更が必要）</td>
-                  <td>継続不可（支払方法の変更が必要）</td>
+                  <td>旧回線のキャリア決済は原則利用できなくなる</td>
+                  <td>旧回線のキャリア決済は原則利用できなくなる</td>
                   <td>利用中のサービスを事前に洗い出す</td>
                 </tr>
                 <tr>
@@ -279,9 +279,9 @@
                 </tr>
                 <tr>
                   <th scope="row">端末代金の残債</th>
-                  <td>該当なし（端末を変えないため）</td>
-                  <td>回線解約と自動的に清算されるとは限らない</td>
-                  <td>分割払い状況をクレジットカード会社等で確認</td>
+                  <td>分割払い中なら、乗り換え後も支払いが続く</td>
+                  <td>旧端末の残債や端末購入プログラムの条件を確認</td>
+                  <td>旧キャリア・端末購入元のマイページで残額と支払条件を確認</td>
                 </tr>
               </tbody>
             </table>
@@ -323,31 +323,33 @@
           <p class="article-text">LINEについては、「回線だけ変える」か「端末も変える」かで必要な準備が変わります。<strong>LINEアカウントの引き継ぎと、トーク履歴のバックアップは別のものです。</strong>この2つを混同すると、トーク履歴だけ消えてしまうことがあります。</p>
 
           <h3 id="case-a">ケースA：同じ端末で回線だけ変更する場合</h3>
-          <p class="article-text">端末そのものは変わらないため、LINEアプリ内のデータは基本的にそのまま残ります。ただし、電話番号が変わる場合（新規契約を選んだ場合など）は、LINEの設定から電話番号の変更手続きが必要です。SMS認証が使えないケースでは、Facebook連携などの代替認証方法を確認しておくと安心です。</p>
+          <p class="article-text">端末が同じで、かつ電話番号も変わらない場合（MNPで乗り換える場合など）は、通常LINEアカウントの引き継ぎ操作は必要ありません。回線（通信会社）を変えることと、LINEに登録した電話番号を変えることは別の話なので、混同しないようにしてください。新規契約を選ぶなどで電話番号が変わる場合は、LINEアプリの設定から登録電話番号を変更する手続きが必要です。</p>
 
           <h3 id="case-b">ケースB：新しい端末へ変更する場合</h3>
-          <p class="article-text">新しい端末でLINEを使うには、旧端末で「アカウント引き継ぎ設定」をオンにしたうえで、一定時間内に新端末で引き継ぎ操作を行います。トーク履歴は自動的には移らないため、事前にバックアップが必要です。iPhoneはiCloud、AndroidはGoogleドライブにバックアップする仕組みです。</p>
+          <p class="article-text">新しい端末へLINEを引き継ぐ基本の方法は、旧端末に表示される「かんたん引き継ぎQRコード」を新端末のカメラで読み取る方法です。旧端末が手元にあり操作できる状態であれば、パスワードの入力なしで引き継げます。</p>
+          <p class="article-text">トーク履歴が復元できる範囲はOSの組み合わせで変わります。<strong>同じOS同士</strong>（iPhone→iPhone、Android→Android）の機種変更で、事前にトーク履歴をバックアップ（iPhoneはiCloud、AndroidはGoogleドライブ）していれば、バックアップした内容を復元できます。<strong>iPhoneとAndroidをまたぐ機種変更の場合や、バックアップをしていなかった場合は、QRコードでの引き継ぎ、またはバックアップ用PIN（6桁）を使うことで、直近14日間のトーク履歴のみ復元できます。</strong></p>
 
           <div class="cover-box">
             <div class="cover-box__title">事前に確認しておきたいこと</div>
             <ul>
-              <li>LINEに登録しているパスワードとメールアドレス（またはID）</li>
-              <li>トーク履歴のバックアップ（iCloud／Googleドライブ）を直近で取っているか</li>
-              <li>バックアップ用PINコード（6桁）を設定しているか</li>
+              <li>旧端末を手元に用意し、電源が入って操作できる状態か</li>
+              <li>同じOS同士の機種変更なら、トーク履歴のバックアップ（iCloud／Googleドライブ）を直近で取っているか</li>
+              <li>異なるOS間の機種変更や、バックアップをしていない場合は、バックアップ用PINコード（6桁）を設定しているか</li>
               <li>iPhoneとAndroidを行き来する機種変更かどうか</li>
             </ul>
           </div>
 
           <div class="caution-box">
-            <div class="caution-box__title">OSをまたぐ機種変更の注意点</div>
+            <div class="caution-box__title">OSをまたぐ機種変更・旧端末が使えない場合の注意点</div>
             <ul>
-              <li>iPhone⇔Android間の機種変更では、通常のバックアップ機能だけではトーク履歴を復元できません</li>
-              <li>事前にバックアップ用PIN（6桁）を設定しておくと、直近のトーク履歴をOSをまたいでも引き継げます</li>
-              <li>PINコードを設定していない場合、トーク履歴が復元できないことがあります</li>
+              <li>iPhone⇔Android間、またはバックアップをしていない機種変更では、QRコードでの引き継ぎ、またはバックアップ用PINにより復元できるのは直近14日間のトーク履歴のみです</li>
+              <li>同じOS同士でバックアップ済みの場合は、バックアップした内容を復元できます</li>
+              <li>旧端末が故障・紛失などで操作できない場合は、通常のQRコード引き継ぎが使えません。LINE公式の「あんぜん引き継ぎガイド」で状況に応じた対処法を確認してください</li>
+              <li>引き継ぎの仕様は変更される場合があるため、実際の手順は操作時の画面表示とLINE公式ガイドを確認してください</li>
             </ul>
           </div>
 
-          <p class="article-text">「LINEは絶対に消えません」とは言い切れません。引き継ぎ設定とバックアップを事前に済ませたうえで機種変更することが、トーク履歴を失わないための基本です。詳しい手順は<a href="https://guide.line.me/ja/signup-and-migration/account-transfer.html" target="_blank" rel="noopener noreferrer">LINEアカウント引き継ぎガイド</a>と<a href="https://guide.line.me/ja/signup-and-migration/talk-backup.html" target="_blank" rel="noopener noreferrer">トーク履歴バックアップガイド</a>（いずれもLINE公式）で確認できます。</p>
+          <p class="article-text">「LINEは絶対に消えません」とは言い切れません。引き継ぎ操作の有無、バックアップの有無、OSの組み合わせによって復元できる範囲が変わります。詳しい手順は<a href="https://guide.line.me/ja/account-and-settings/account-transfer.html" target="_blank" rel="noopener noreferrer">LINEアカウント引き継ぎガイド</a>、<a href="https://guide.line.me/ja/account-and-settings/talk-backup.html" target="_blank" rel="noopener noreferrer">トーク履歴バックアップガイド</a>、<a href="https://help.line.me/line/?contentId=200002096&lang=ja" target="_blank" rel="noopener noreferrer">あんぜん引き継ぎガイド</a>（いずれもLINE公式）で確認できます。</p>
         </section>
 
         <!-- 写真・動画・連絡先 -->
@@ -496,8 +498,8 @@
           <div class="caution-box">
             <div class="caution-box__title">端末残債は解約と同時に消えるわけではない</div>
             <ul>
-              <li>端末代金を分割払い中の場合、回線を解約しても支払い方法は変わらず分割請求が続きます</li>
-              <li>残っている金額の確認は、契約しているクレジットカード会社などへの確認が必要です</li>
+              <li>端末代金を分割払い中の場合、回線を解約しても分割請求は続きます。支払い方法（口座振替・クレジットカード・払込用紙など）が変わる場合があります</li>
+              <li>残額や支払回数は、旧キャリアまたは端末購入元のマイページ・契約書で確認してください。クレジットカードの利用明細だけでは、残りの支払回数や端末購入プログラムの条件を確認できない場合があります</li>
               <li>端末購入プログラムを利用している場合は、製品返却の要否・条件が異なることがあるため、契約中の各社公式サイトで確認してください</li>
             </ul>
           </div>
@@ -539,7 +541,7 @@
           <p class="check-list__group-title">ケースB（機種変更も同時にする場合）に追加で必要</p>
           <ul class="check-list">
             <li><label class="check-item"><input type="checkbox" /> 写真・連絡先のバックアップ（クラウド同期）を確認した</label></li>
-            <li><label class="check-item"><input type="checkbox" /> LINEのアカウント引き継ぎ設定とトーク履歴バックアップを済ませた</label></li>
+            <li><label class="check-item"><input type="checkbox" /> LINEの旧端末を用意し（QRコードで引き継ぎ）、トーク履歴バックアップの準備も済ませた</label></li>
             <li><label class="check-item"><input type="checkbox" /> 各アプリ（銀行・証券・認証アプリなど）のログイン情報を確認した</label></li>
             <li><label class="check-item"><input type="checkbox" /> 電子マネー・QRコード決済の機種変更手続き方法を確認した</label></li>
           </ul>
@@ -591,7 +593,7 @@
               </button>
               <div class="faq-answer" role="region" id="faq-panel-1" aria-labelledby="faq-btn-1">
                 <div class="faq-answer__inner">
-                  <div class="faq-answer__body">正しく引き継ぎ手続きを行えば、LINEアカウントは消えません。ただし、電話番号が変わる場合や機種変更を伴う場合は、事前にアカウント引き継ぎ設定とトーク履歴のバックアップが必要です。手続きをしないまま初期化すると、トーク履歴などのデータが復元できなくなる場合があります。</div>
+                  <div class="faq-answer__body">正しく引き継ぎ手続きを行えば、LINEアカウントは消えません。ただし、電話番号が変わる場合や機種変更を伴う場合は、事前にQRコードでの引き継ぎ準備とトーク履歴のバックアップが必要です。手続きをしないまま初期化すると、トーク履歴などのデータが復元できなくなる場合があります。</div>
                 </div>
               </div>
             </div>

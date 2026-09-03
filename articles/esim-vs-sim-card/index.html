@@ -80,7 +80,7 @@
         "name": "申し込み後にSIMタイプを変更できますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "できます。my 楽天モバイルからSIM再発行を申請すればSIMタイプを変更できます。ただしSIMカードの再発行には手数料がかかり、eSIMの再発行は無料です。手数料は変更される場合があるため公式サイトで確認してください。"
+          "text": "できます。my 楽天モバイル（Web版、またはRakuten Linkアプリ内）からSIM再発行を申請すればSIMタイプを変更できます。ただしSIMカードの再発行には手数料がかかり、eSIMの再発行は無料です。手数料は変更される場合があるため公式サイトで確認してください。"
         }
       },
       {
@@ -88,7 +88,7 @@
         "name": "eSIMのまま機種変更できますか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "できます。新しい端末でもeSIMを使う場合は、SIM再発行の申請とプロファイルの再ダウンロードが必要です。対応するiPhone同士の機種変更ではeSIMクイック転送が使える場合もあります。条件は端末・OSにより異なるため、公式サポートで確認してください。"
+          "text": "eSIMからeSIMへの機種変更は、原則としてSIM再発行と開通手続きが必要です。ただし、対応するiPhone同士でeSIMクイック転送を利用する場合は、SIM再発行が不要になることがあります。条件は端末・OSにより異なるため、公式サポートで確認してください。"
         }
       },
       {
@@ -96,7 +96,7 @@
         "name": "どちらを選べばよいか最後まで迷った場合はどうすればよいですか？",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "端末が両方のSIMタイプに対応している場合は、配送を待たずに使いたいならeSIM、カードを差し替える方が分かりやすいならSIMカードを目安にすれば大きく間違えることはありません。迷う場合は楽天モバイル公式サイトやサポートに事前に相談することもできます。"
+          "text": "端末が両方のSIMタイプに対応している場合は、スマホでかんたん本人確認で配送を待たずに使いたいならeSIM、カードを差し替える方が分かりやすいならSIMカードを目安にしてください。迷う場合は楽天モバイル公式サイトやサポートに事前に相談することもできます。"
         }
       }
     ]
@@ -190,7 +190,7 @@
             <li class="decision-flow__step">
               <div class="decision-flow__q">
                 <span class="decision-flow__num">Q2</span>
-                <span class="decision-flow__text">配送を待たずに利用したいですか？</span>
+                <span class="decision-flow__text">「スマホでかんたん本人確認」を使い、配送を待たずに開通したいですか？</span>
               </div>
               <div class="decision-flow__branches">
                 <span class="decision-flow__branch decision-flow__branch--esim">待ちたくない → eSIMが有力</span>
@@ -210,6 +210,11 @@
             </li>
           </ol>
 
+          <div class="point-box">
+            <span class="point-label">POINT</span>
+            本人確認方法によっては、eSIMでもスタートガイド等の到着待ちが発生します。
+          </div>
+
           <div class="honest-box">
             <div class="honest-box__title">補足</div>
             <p>デュアルSIMを使いたい場合は、端末の対応状況を確認したうえでeSIMを有力候補にしてください。「初心者なら必ずSIMカード」「eSIMなら誰でも簡単」とは言い切れず、最終的には端末の対応状況とご自身の使い方次第です。</p>
@@ -226,7 +231,10 @@
               <div class="sim-diagram__visual" aria-hidden="true">
                 <span class="sim-diagram__phone">📱</span>
                 <span class="sim-diagram__arrow">←</span>
-                <span class="sim-diagram__chip">🪪</span>
+                <svg class="sim-diagram__simicon" viewBox="0 0 28 34" width="26" height="32" aria-hidden="true" focusable="false">
+                  <path d="M8 1H27V33H1V8L8 1Z" fill="#fff" stroke="var(--color-primary-dark)" stroke-width="2" stroke-linejoin="round" />
+                  <rect x="6" y="11" width="14" height="11" rx="2" fill="var(--color-primary-light)" stroke="var(--color-primary)" stroke-width="1" />
+                </svg>
               </div>
               <p class="sim-diagram__title">SIMカード</p>
               <p class="sim-diagram__text">小さなカードを端末へ差し込んで使うタイプです。</p>
@@ -271,7 +279,7 @@
                 <tr>
                   <th scope="row">配送の有無</th>
                   <td>あり（到着を待つ必要がある）</td>
-                  <td>なし（オンラインで登録）</td>
+                  <td>SIMカードの配送はなし。ただし本人確認方法によってはスタートガイド等の受け取りが必要</td>
                 </tr>
                 <tr>
                   <th scope="row">利用開始までの流れ</th>
@@ -281,12 +289,12 @@
                 <tr>
                   <th scope="row">初期設定</th>
                   <td>端末にカードを挿入して設定</td>
-                  <td>「my 楽天モバイル」やRakuten Linkアプリから自分で設定</td>
+                  <td>my 楽天モバイル（Web版、またはRakuten Linkアプリ内）から自分で設定</td>
                 </tr>
                 <tr>
                   <th scope="row">機種変更</th>
                   <td>新端末にカードを差し替えれば使える場合が多い</td>
-                  <td>SIM再発行の申請とプロファイルの再ダウンロードが必要</td>
+                  <td>原則SIM再発行が必要（対応iPhone同士のeSIMクイック転送なら不要な場合あり）</td>
                 </tr>
                 <tr>
                   <th scope="row">デュアルSIM</th>
@@ -319,7 +327,7 @@
               <div class="reco-card__icon" aria-hidden="true">📶</div>
               <p class="reco-card__title">eSIMがおすすめな人</p>
               <ul>
-                <li>到着を待たずにすぐ使いたい人</li>
+                <li>スマホでかんたん本人確認で、到着を待たずすぐ使いたい人</li>
                 <li>Wi-Fi環境でのオンライン設定に抵抗がない人</li>
                 <li>対応端末でデュアルSIMを使いたい人</li>
                 <li>カードの紛失・破損が心配な人</li>
@@ -357,7 +365,7 @@
             <div class="case-card">
               <div class="case-card__icon" aria-hidden="true">📡</div>
               <p class="case-card__title">eSIM専用端末を使う</p>
-              <p class="case-card__text">iPhone 17シリーズやiPhone Airなど、一部の端末はeSIMのみに対応しSIMカードは使えません。対象端末かどうかは申し込み前に公式サイトで確認してください。</p>
+              <p class="case-card__text">iPhone 17シリーズやiPhone Airなど、一部の端末はeSIMのみに対応しSIMカードは使えません。対象端末かどうかは<a href="https://network.mobile.rakuten.co.jp/faq/detail/10000852/" target="_blank" rel="noopener noreferrer">公式FAQ</a>で確認してください。</p>
             </div>
             <div class="case-card">
               <div class="case-card__icon" aria-hidden="true">🔀</div>
@@ -388,14 +396,14 @@
           <div class="cover-box">
             <div class="cover-box__title">SIMタイプは後から変更できます</div>
             <ul>
-              <li>「my 楽天モバイル」からSIM再発行を申請すれば、後からSIMタイプを変更できます</li>
+              <li>my 楽天モバイル（Web版、またはRakuten Linkアプリ内）からSIM再発行を申請すれば、後からSIMタイプを変更できます</li>
               <li>変更には交換・再発行の手続きが必要です</li>
               <li>手数料はSIMタイプで異なります（SIMカード3,300円・eSIM無料。金額は変更される場合があります）</li>
               <li>機種変更時の手続きは端末・OSによって異なります</li>
             </ul>
           </div>
 
-          <p class="article-text">具体的な操作方法は、この記事では再現せず楽天モバイル公式サポートへ誘導します。詳しくは<a href="https://network.mobile.rakuten.co.jp/faq/detail/10000852/" target="_blank" rel="noopener noreferrer">SIM再発行に関する公式FAQ</a>、<a href="https://network.mobile.rakuten.co.jp/guide/product/device-upgrade/" target="_blank" rel="noopener noreferrer">機種変更時の手続き案内</a>、iPhoneでのeSIM移行については<a href="https://network.mobile.rakuten.co.jp/guide/iphone/setting/esim-upgrade/" target="_blank" rel="noopener noreferrer">eSIMクイック転送の案内</a>（いずれも楽天モバイル公式）で確認してください。</p>
+          <p class="article-text">具体的な操作方法は、この記事では再現せず楽天モバイル公式サポートへ誘導します。詳しくは<a href="https://network.mobile.rakuten.co.jp/faq/detail/00001406/" target="_blank" rel="noopener noreferrer">SIM再発行に関する公式FAQ</a>、<a href="https://network.mobile.rakuten.co.jp/guide/product/device-upgrade/" target="_blank" rel="noopener noreferrer">機種変更時の手続き案内</a>、iPhoneでのeSIM移行については<a href="https://network.mobile.rakuten.co.jp/guide/iphone/setting/esim-upgrade/" target="_blank" rel="noopener noreferrer">eSIMクイック転送の案内</a>（いずれも楽天モバイル公式）で確認してください。</p>
         </section>
 
         <!-- 次に読む記事・CTA -->
@@ -470,7 +478,7 @@
               </button>
               <div class="faq-answer" role="region" id="faq-panel-3" aria-labelledby="faq-btn-3">
                 <div class="faq-answer__inner">
-                  <div class="faq-answer__body">できます。my 楽天モバイルからSIM再発行を申請すればSIMタイプを変更できます。ただしSIMカードの再発行には手数料がかかり、eSIMの再発行は無料です。手数料は変更される場合があるため公式サイトで確認してください。</div>
+                  <div class="faq-answer__body">できます。my 楽天モバイル（Web版、またはRakuten Linkアプリ内）からSIM再発行を申請すればSIMタイプを変更できます。ただしSIMカードの再発行には手数料がかかり、eSIMの再発行は無料です。手数料は変更される場合があるため公式サイトで確認してください。</div>
                 </div>
               </div>
             </div>
@@ -483,7 +491,7 @@
               </button>
               <div class="faq-answer" role="region" id="faq-panel-4" aria-labelledby="faq-btn-4">
                 <div class="faq-answer__inner">
-                  <div class="faq-answer__body">できます。新しい端末でもeSIMを使う場合は、SIM再発行の申請とプロファイルの再ダウンロードが必要です。対応するiPhone同士の機種変更ではeSIMクイック転送が使える場合もあります。条件は端末・OSにより異なるため、公式サポートで確認してください。</div>
+                  <div class="faq-answer__body">eSIMからeSIMへの機種変更は、原則としてSIM再発行と開通手続きが必要です。ただし、対応するiPhone同士でeSIMクイック転送を利用する場合は、SIM再発行が不要になることがあります。条件は端末・OSにより異なるため、公式サポートで確認してください。</div>
                 </div>
               </div>
             </div>
@@ -496,7 +504,7 @@
               </button>
               <div class="faq-answer" role="region" id="faq-panel-5" aria-labelledby="faq-btn-5">
                 <div class="faq-answer__inner">
-                  <div class="faq-answer__body">端末が両方のSIMタイプに対応している場合は、配送を待たずに使いたいならeSIM、カードを差し替える方が分かりやすいならSIMカードを目安にすれば大きく間違えることはありません。迷う場合は楽天モバイル公式サイトやサポートに事前に相談することもできます。</div>
+                  <div class="faq-answer__body">端末が両方のSIMタイプに対応している場合は、スマホでかんたん本人確認で配送を待たずに使いたいならeSIM、カードを差し替える方が分かりやすいならSIMカードを目安にしてください。迷う場合は楽天モバイル公式サイトやサポートに事前に相談することもできます。</div>
                 </div>
               </div>
             </div>

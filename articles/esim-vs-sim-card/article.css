@@ -243,8 +243,9 @@
   color: var(--color-primary);
 }
 
-.sim-diagram__chip {
-  font-size: 22px;
+.sim-diagram__simicon {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .sim-diagram__badge {
@@ -573,6 +574,7 @@
 .article-cta__sub strong {
   color: var(--color-primary);
   font-size: 18px;
+  white-space: nowrap;
 }
 
 .article-cta__note {

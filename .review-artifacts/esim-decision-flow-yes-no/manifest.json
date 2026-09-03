@@ -1,0 +1,35 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "fix/esim-decision-flow-yes-no",
+  "pullRequest": "#12",
+  "sourceSha": "8ad7d38a0bee3e8748b0d591ff02f9c6999e0c4b",
+  "targetPage": "/articles/esim-vs-sim-card/",
+  "viewports": ["375x812", "768x1024", "1200x900"],
+  "images": [
+    { "path": "01_full_375x812.png", "desc": "記事全体（375px）" },
+    { "path": "02_full_768x1024.png", "desc": "記事全体（768px）" },
+    { "path": "03_full_1200x900.png", "desc": "記事全体（1200px）" },
+    { "path": "04_flow_375x812.png", "desc": "3問の判断フロー全体（375px）。Q2の修正後の確認案内・ボタン・NO分岐を含む" },
+    { "path": "05_flow_768x1024.png", "desc": "3問の判断フロー全体（768px）" },
+    { "path": "06_flow_1200x900.png", "desc": "3問の判断フロー全体（1200px）" },
+    { "path": "07_flow_q2_hover_1200x900.png", "desc": "Q2確認ボタンのhover状態（1200px）。文字色var(--color-primary-dark)が通常時・hover時とも維持されていることを確認" }
+  ],
+  "capturedAt": "2026-09-03T00:00:00+09:00",
+  "confirmedItems": [
+    "git diff --check：問題なし",
+    "node scripts/validate-content.mjs：エラー0件",
+    "新しいリンク https://network.mobile.rakuten.co.jp/product/byod/ がHTTP 200で到達可能であることをcurlで確認",
+    "旧リンク https://network.mobile.rakuten.co.jp/product/sim/esim/ が記事内から完全に削除されたことをgrepで確認",
+    "375px/768px/1200pxで横スクロールがないことをPlaywrightで確認",
+    "コンソールエラー・pageerrorが0件であることをPlaywrightで確認",
+    ".decision-flow__check-btnの文字色がgetComputedStyleで通常時rgb(204, 0, 111)、hover時も同じrgb(204, 0, 111)であることを確認（#cc006f = var(--color-primary-dark)）",
+    "コントラスト比を計算で再検証：#cc006f/白背景 = 約5.53:1、#cc006f/#ffe0f3(hover背景) = 約4.53:1。いずれもWCAG AA基準（4.5:1）を満たす",
+    "YES/NOの全分岐が正しいことを確認：Q1 YES→Q2／NO→対応端末を用意する（終端）、Q2 YES→Q3／NO→表示された対応SIMタイプを選ぶ（終端、eSIM専用・SIMカード専用端末のどちらにも非対応のSIMタイプを勧めない中立表現を維持）、Q3 YES→eSIMがおすすめ／NO→SIMカードがおすすめ",
+    "title・H1・Article.headlineが完全一致することをスクリプトで検証（無変更）",
+    "画面表示のFAQ本文とFAQPage構造化データの5問すべてが文字列として完全一致することをスクリプトで検証（無変更）",
+    "id重複なし、aria-controls/aria-labelledby参照先の存在、href=#アンカー先の存在をスクリプトで検証"
+  ],
+  "notes": [
+    "Q1・Q3の質問・分岐、title・H1・Article.headline、FAQ・JSON-LD、meta description・dateModified・sitemap、OGP、比較表・CTA・特典金額、他記事・共通コンポーネントは変更していません。"
+  ]
+}

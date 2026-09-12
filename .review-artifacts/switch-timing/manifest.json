@@ -1,0 +1,53 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "feature/switch-timing",
+  "source_sha": "2d392c5187e5c215197215615423ff7d438778b3",
+  "target_page": "/articles/switch-timing/",
+  "viewports": ["375x812", "768x1024", "1200x900"],
+  "images": [
+    {
+      "file": "375x812.png",
+      "viewport": "375x812",
+      "description": "記事ページ全体（フルページ）"
+    },
+    {
+      "file": "768x1024.png",
+      "viewport": "768x1024",
+      "description": "記事ページ全体（フルページ）"
+    },
+    {
+      "file": "1200x900.png",
+      "viewport": "1200x900",
+      "description": "記事ページ全体（フルページ）"
+    },
+    {
+      "file": "375x812-faq-open-zoom.png",
+      "viewport": "375x812",
+      "description": "FAQアコーディオンを1問開いた状態（動作確認）"
+    },
+    {
+      "file": "375-section2-table-zoom.png",
+      "viewport": "375x900",
+      "description": "セクション2「同じ月に2社から請求される理由」の比較表・横スクロール表示の拡大"
+    },
+    {
+      "file": "375-section3-situationcards-zoom.png",
+      "viewport": "375x900",
+      "description": "セクション3「自分の切り替え予定を決める」の状況別カードの拡大"
+    }
+  ],
+  "captured_at": "2026-09-12T10:49:00+09:00",
+  "checked_items": [
+    "375/768/1200pxで横スクロールが発生しないこと（document.documentElement.scrollWidth <= clientWidth）",
+    "FAQアコーディオンがクリックでaria-expanded=trueに切り替わること",
+    "チェックリストのチェックボックスが操作できること",
+    "コンソールエラー・ページエラーが発生しないこと",
+    "node scripts/validate-content.mjs がエラー0件で完了すること（banned phrase・近接判定・料金表記の家族割文脈・JSON-LD構文・id重複・目次アンカー・aria参照・内部リンク切れを含む）",
+    "git diff --check で空白関連の問題がないこと"
+  ],
+  "notes": [
+    "OGP画像は共通スクリプトscripts/generate-ogp-batch.pyの対象外（同スクリプトはCONFIGSが厳密に25件かつ記事ごとのChatGPT作成3D素材が必須のため、本記事用の素材がない状態では実行できない）。そのため本記事専用の scripts/generate-ogp-switch-timing.py を新設し、既存のA案背景とフォント探索ロジックのみを再利用して3D素材なしで1200x630pxのOGP画像を生成した。",
+    "紹介URL(https://r10.to/h5zkrv)・特典額（乗り換え14,000pt/新規11,000pt）は既存記事の表記をそのまま踏襲し、新しい数値は作成していない。",
+    "本記事内の料金例（元回線3,000円・楽天968円=最強家族割適用時）は、計算の仕組みを示すための仮の例であることを明記しており、実在の特定キャリアの料金として断定していない。"
+  ]
+}

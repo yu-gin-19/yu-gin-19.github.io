@@ -194,46 +194,80 @@
 }
 
 /* ============================================
-   まとめ比較テーブル
+   2社の料金比較（fee-compare）
+   375pxでも横スクロールなしで読めるよう、
+   狭い画面では1カラム、560px以上で2カラムにする
    ============================================ */
-.summary-table-wrap {
-  overflow-x: auto;
-  margin: 24px 0;
+.fee-compare {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin: 20px 0;
 }
 
-.summary-table-wrap table {
-  min-width: 560px;
-  width: 100%;
-  border-collapse: collapse;
+.fee-compare__col {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  padding: 18px 18px;
+}
+
+.fee-compare__col--rakuten {
+  border-color: var(--color-primary-light);
+  background: var(--color-primary-bg);
+}
+
+.fee-compare__label {
   font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 10px;
 }
 
-.summary-table-wrap thead tr {
-  background: #1a1a1a;
-  color: #fff;
+.fee-compare__rows {
+  margin: 0;
 }
 
-.summary-table-wrap thead th {
-  background: #1a1a1a;
-  color: #fff;
+.fee-compare__row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-.summary-table-wrap th,
-.summary-table-wrap td {
-  padding: 10px 14px;
-  border: 1px solid #e0e0e0;
-  text-align: left;
-  line-height: 1.6;
+.fee-compare__row:last-child {
+  border-bottom: none;
 }
 
-.summary-table-wrap th[scope="row"] {
-  background: #f7f7f7;
+.fee-compare__row dt {
+  font-size: 12px;
+  color: #767676;
   font-weight: 700;
-  white-space: nowrap;
 }
 
-.summary-table-wrap tbody tr:nth-child(even) {
-  background: #f9f9f9;
+.fee-compare__row dd {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.fee-compare__row dd a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.fee-compare__total {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 800;
+  margin: 16px 0 4px;
+}
+
+@media (min-width: 560px) {
+  .fee-compare {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 /* ============================================

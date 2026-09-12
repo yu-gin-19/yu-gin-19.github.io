@@ -1,0 +1,569 @@
+/* 記事共通レイアウト */
+.article-wrap {
+  padding: 32px 0 80px;
+}
+
+.breadcrumb {
+  font-size: 12px;
+  color: #696969;
+  margin-bottom: 32px;
+}
+
+.breadcrumb a {
+  color: #696969;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  color: var(--color-primary);
+}
+
+/* 記事ヘッダー */
+.article-header {
+  margin-bottom: 48px;
+}
+
+.article-label {
+  display: inline-block;
+  background: var(--color-primary-bg);
+  color: var(--color-primary);
+  font-size: 12px;
+  font-weight: 700;
+  padding: 4px 12px;
+  border-radius: 4px;
+  margin-bottom: 16px;
+  border: 1px solid var(--color-primary-light);
+}
+
+.article-title {
+  font-size: clamp(24px, 4vw, 36px);
+  font-weight: 900;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.article-lead {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.8;
+  background: #f7f7f7;
+  border-left: 4px solid var(--color-primary);
+  padding: 16px 20px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 16px;
+}
+
+.article-meta {
+  font-size: 13px;
+  color: #696969;
+}
+
+/* セクション */
+.article-section {
+  margin-bottom: 56px;
+  padding-bottom: 56px;
+  border-bottom: 1px solid #eee;
+}
+
+.article-section:last-of-type {
+  border-bottom: none;
+}
+
+.article-section h2 {
+  font-size: clamp(18px, 3vw, 24px);
+  font-weight: 800;
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+.article-section h3 {
+  font-size: 16px;
+  font-weight: 800;
+  margin: 20px 0 10px;
+  line-height: 1.5;
+}
+
+.article-text {
+  font-size: 16px;
+  line-height: 1.9;
+  color: #333;
+  margin-bottom: 16px;
+}
+
+/* ============================================
+   結論／補足ボックス
+   ============================================ */
+.honest-box {
+  background: #f0f4ff;
+  border: 1px solid #c5d0f0;
+  border-radius: 12px;
+  padding: 18px 22px;
+  margin: 20px 0;
+}
+
+.honest-box__title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #3a4a8a;
+  margin-bottom: 8px;
+}
+
+.honest-box p {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #444;
+  margin: 0;
+}
+
+.honest-box ol,
+.honest-box ul {
+  margin: 8px 0 0;
+  padding-left: 20px;
+}
+
+.honest-box li {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #444;
+}
+
+/* ============================================
+   申し込み〜開通の流れ（process-flow）
+   ============================================ */
+.process-flow {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+  list-style: none;
+  margin: 24px 0;
+  padding: 0;
+  max-width: 640px;
+}
+
+.process-flow__step {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  padding: 18px 20px;
+  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
+}
+
+.process-flow__head {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.process-flow__num {
+  flex-shrink: 0;
+  width: 30px;
+  height: 30px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.process-flow__title {
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.6;
+  padding-top: 4px;
+}
+
+.process-flow__text {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.7;
+  margin: 0;
+  padding-left: 42px;
+}
+
+.process-flow__arrow {
+  align-self: center;
+  color: #ccc;
+  font-size: 20px;
+  line-height: 1;
+  padding: 6px 0;
+}
+
+/* ============================================
+   2社の料金比較（fee-compare）
+   375pxでも横スクロールなしで読めるよう、
+   狭い画面では1カラム、560px以上で2カラムにする
+   ============================================ */
+.fee-compare {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.fee-compare__col {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  padding: 18px 18px;
+}
+
+.fee-compare__col--rakuten {
+  border-color: var(--color-primary-light);
+  background: var(--color-primary-bg);
+}
+
+.fee-compare__label {
+  font-size: 14px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+.fee-compare__rows {
+  margin: 0;
+}
+
+.fee-compare__row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.fee-compare__row:last-child {
+  border-bottom: none;
+}
+
+.fee-compare__row dt {
+  font-size: 12px;
+  color: #767676;
+  font-weight: 700;
+}
+
+.fee-compare__row dd {
+  font-size: 14px;
+  color: #333;
+  line-height: 1.7;
+  margin: 0;
+}
+
+.fee-compare__row dd a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.fee-compare__total {
+  text-align: center;
+  font-size: 15px;
+  font-weight: 800;
+  margin: 16px 0 4px;
+}
+
+@media (min-width: 560px) {
+  .fee-compare {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ============================================
+   POINT / 注意ボックス
+   ============================================ */
+.point-box {
+  background: var(--color-primary-bg);
+  border: 1px solid var(--color-primary-light);
+  border-radius: 8px;
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #333;
+  margin: 20px 0;
+  display: block;
+  line-height: 1.7;
+}
+
+.point-label {
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+  padding: 3px 10px;
+  border-radius: 4px;
+  letter-spacing: 0.05em;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+/* ============================================
+   状況別カード（自分の切り替え予定を決める）
+   ============================================ */
+.situation-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 20px 0;
+}
+
+.situation-card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.situation-card__title {
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.situation-card__title::before {
+  content: "";
+  flex-shrink: 0;
+  width: 8px;
+  height: 8px;
+  margin-top: 7px;
+  border-radius: 50%;
+  background: var(--color-primary);
+}
+
+.situation-card__body {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.8;
+  margin: 0 0 0 16px;
+}
+
+.situation-card__body strong {
+  color: #1a1a1a;
+}
+
+/* ============================================
+   チェック可能なチェックリスト（実チェックボックス）
+   ============================================ */
+.check-list {
+  list-style: none;
+  max-width: 620px;
+  margin: 16px 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 4px;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #333;
+}
+
+.check-item:last-child {
+  border-bottom: none;
+}
+
+.check-item input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  accent-color: var(--color-primary);
+  cursor: pointer;
+}
+
+/* ============================================
+   記事CTA
+   ============================================ */
+.article-cta {
+  background: var(--color-primary-bg);
+  border: 2px solid var(--color-primary-light);
+  border-radius: 16px;
+  padding: 40px 32px;
+  text-align: center;
+  margin-top: 48px;
+}
+
+.article-cta__title {
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.article-cta__sub {
+  font-size: 15px;
+  color: #555;
+  margin-bottom: 24px;
+  line-height: 1.8;
+}
+
+.article-cta__sub strong {
+  color: var(--color-primary);
+  font-size: 18px;
+  white-space: nowrap;
+}
+
+.article-cta__note {
+  margin-top: 16px;
+  font-size: 14px;
+  color: #696969;
+}
+
+.article-cta__note a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* ============================================
+   FAQ アコーディオン
+   ============================================ */
+.faq-list {
+  margin: 24px 0;
+}
+
+.faq-item {
+  border: 1px solid #eee;
+  border-radius: 8px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.faq-question {
+  width: 100%;
+  background: #f7f7f7;
+  border: none;
+  cursor: pointer;
+  padding: 14px 20px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #1a1a1a;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  text-align: left;
+  transition: background 0.2s;
+}
+
+.faq-question:hover {
+  background: #eee;
+}
+
+.faq-question[aria-expanded="true"] {
+  background: #ffe6f2;
+}
+
+.faq-question__q {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: var(--color-primary);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 900;
+  border-radius: 4px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+.faq-question__text {
+  flex: 1;
+  line-height: 1.5;
+}
+
+.faq-question__icon {
+  font-size: 20px;
+  font-weight: 300;
+  color: #696969;
+  flex-shrink: 0;
+  transition: transform 0.25s;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+.faq-question[aria-expanded="true"] .faq-question__icon {
+  transform: rotate(45deg);
+}
+
+.faq-answer {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease;
+}
+
+.faq-answer[aria-hidden="false"],
+.faq-item.is-open .faq-answer {
+  grid-template-rows: 1fr;
+}
+
+.faq-answer__inner {
+  overflow: hidden;
+}
+
+.faq-answer__body {
+  padding: 14px 20px 14px 52px;
+  font-size: 14px;
+  line-height: 1.8;
+  color: #555;
+}
+
+.faq-answer__body a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+/* ============================================
+   LINE CTA
+   ============================================ */
+.line-cta {
+  background: #f0fff4;
+  border: 1px solid #a3d9b1;
+  border-radius: 12px;
+  padding: 24px;
+  text-align: center;
+}
+
+.line-cta__text {
+  font-size: 14px;
+  color: #444;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+/* ============================================
+   スマホ対応
+   ============================================ */
+@media (max-width: 680px) {
+  .article-cta {
+    padding: 28px 20px;
+  }
+
+  .honest-box {
+    padding: 14px 16px;
+  }
+
+  .faq-answer__body {
+    padding-left: 20px;
+  }
+
+  .process-flow__text {
+    padding-left: 0;
+    margin-top: 6px;
+  }
+
+  .situation-card__body {
+    margin-left: 0;
+  }
+}

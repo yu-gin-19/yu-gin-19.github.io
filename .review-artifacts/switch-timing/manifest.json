@@ -1,0 +1,65 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "feature/switch-timing",
+  "source_sha": "7db0bb4a0dbf65677144ab8c723326c9a85ea528",
+  "previous_reviews": [
+    {
+      "source_sha": "2d392c5187e5c215197215615423ff7d438778b3",
+      "note": "初回レビュー。要修正4件（初月/解約月の混同、MNP自動切り替え時期、月末をまたぐ判断、スマホの比較表示）。"
+    },
+    {
+      "source_sha": "b5796bdeebfb9c8ede9babd4ed8d48e93c32c33e",
+      "note": "初回レビューの4件を修正した版。ただしこのSHA自体にレビュー画像7ファイルが含まれていたため、SOURCE_SHAとして不適切と指摘され、本SHA(7db0bb4)で.review-artifacts/switch-timing/を除去し、あわせてセクション3の締め日/日割り混同も修正した。"
+    }
+  ],
+  "target_page": "/articles/switch-timing/",
+  "viewports": ["375x812", "768x1024", "1200x900"],
+  "images": [
+    {
+      "file": "375x812.png",
+      "viewport": "375x812",
+      "description": "記事ページ全体（フルページ）"
+    },
+    {
+      "file": "768x1024.png",
+      "viewport": "768x1024",
+      "description": "記事ページ全体（フルページ）"
+    },
+    {
+      "file": "1200x900.png",
+      "viewport": "1200x900",
+      "description": "記事ページ全体（フルページ）"
+    },
+    {
+      "file": "375-faq-open-zoom.png",
+      "viewport": "375x900",
+      "description": "FAQを1問開いた状態のビューポート単位の拡大（full_pageではなく通常スクリーンショット。ヘッダーの重なりを避けるため）"
+    },
+    {
+      "file": "375-fee-compare-zoom.png",
+      "viewport": "375x900",
+      "description": "セクション2の元回線／楽天モバイル比較（fee-compare、1カラム表示）の拡大"
+    },
+    {
+      "file": "375-section3-zoom.png",
+      "viewport": "375x900",
+      "description": "セクション3の見出しと、日割りの有無を主軸にした新しい判定カード2枚の拡大"
+    }
+  ],
+  "captured_at": "2026-09-12T15:18:00+09:00",
+  "checked_items": [
+    "375/768/1200pxで横スクロールが発生しないこと（document.documentElement.scrollWidth <= clientWidth）",
+    "FAQアコーディオンがクリックでaria-expanded=trueに切り替わること",
+    "チェックリストのチェックボックスが操作できること",
+    "コンソールエラー・ページエラーが発生しないこと",
+    "node scripts/validate-content.mjs がエラー0件で完了すること",
+    "git diff --check で空白関連の問題がないこと",
+    "git diff --name-only 2d392c5187e5c215197215615423ff7d438778b3 7db0bb4a0dbf65677144ab8c723326c9a85ea528 が articles/switch-timing/index.html と article.css のみであること",
+    "git ls-tree -r --name-only 7db0bb4a0dbf65677144ab8c723326c9a85ea528 -- .review-artifacts/switch-timing/ が空であること（SOURCE_SHAにレビュー画像を含まない）"
+  ],
+  "notes": [
+    "本ラウンドでは新しい公式情報の追加調査は行っていない。sources.md記載の既存確認事実の範囲内で、セクション3の判定ロジック（日割りの有無と締め日=月末を同一視していた誤り）のみを修正した。",
+    "SOURCE_SHA(7db0bb4)はコード修正と.review-artifacts/switch-timing/の削除を1コミットにまとめたもので、このディレクトリを含まない。今後レビューが通って画像を削除する際は、削除コミットと本SOURCE_SHAのgit diff --exit-codeが一致する構成になっている。",
+    "紹介URL(https://r10.to/h5zkrv)・特典額（乗り換え14,000pt/新規11,000pt）は既存記事の表記をそのまま踏襲。"
+  ]
+}

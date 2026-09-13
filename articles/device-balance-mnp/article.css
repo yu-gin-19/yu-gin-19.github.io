@@ -199,52 +199,115 @@
 }
 
 /* ============================================
-   表（支払い比較・会社別比較）
+   支払いの流れ（乗り換え前→後を矢印で提示。全幅で横スクロール不要）
    ============================================ */
-.scroll-hint {
-  font-size: 12px;
-  color: #999;
-  margin: 0 0 6px;
+.payment-flow {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 20px 0;
 }
 
-.summary-table-wrap {
-  overflow-x: auto;
-  margin: 12px 0 8px;
+.payment-flow__item {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  padding: 16px 18px;
 }
 
-.summary-table-wrap table {
-  min-width: 560px;
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
+.payment-flow__label {
+  font-size: 13px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-.summary-table-wrap thead tr {
-  background: #1a1a1a;
-  color: #fff;
-}
-
-.summary-table-wrap thead th {
-  background: #1a1a1a;
-  color: #fff;
-}
-
-.summary-table-wrap th,
-.summary-table-wrap td {
+.payment-flow__box {
+  background: #f7f7f7;
+  border-radius: 10px;
   padding: 10px 14px;
-  border: 1px solid #e0e0e0;
-  text-align: left;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.payment-flow__arrow {
+  text-align: center;
+  font-size: 18px;
+  color: var(--color-primary);
+  font-weight: 900;
+  margin: 6px 0;
+}
+
+.payment-flow__box--new {
+  background: var(--color-primary-bg);
+  border: 1px solid var(--color-primary-light);
+  font-weight: 700;
+  color: var(--color-primary-dark);
+}
+
+.payment-flow__box--same {
+  background: #eef7ee;
+  border: 1px solid #bfe3bf;
+  font-weight: 700;
+  color: #2a6b2a;
+}
+
+/* ============================================
+   購入元ごとの確認先カード（ドコモ／au／ソフトバンク）
+   ============================================ */
+.carrier-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.carrier-card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  padding: 18px 20px;
+}
+
+.carrier-card__name {
+  font-size: 15px;
+  font-weight: 900;
+  margin-bottom: 6px;
+  color: #1a1a1a;
+}
+
+.carrier-card__program {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  margin-bottom: 10px;
   line-height: 1.6;
 }
 
-.summary-table-wrap th[scope="row"] {
-  background: #f7f7f7;
-  font-weight: 700;
-  white-space: nowrap;
+.carrier-card__detail {
+  font-size: 14px;
+  line-height: 1.8;
+  color: #333;
+  margin-bottom: 14px;
 }
 
-.summary-table-wrap tbody tr:nth-child(even) {
-  background: #f9f9f9;
+.carrier-card__detail a {
+  color: var(--color-primary);
+  text-decoration: underline;
+}
+
+.carrier-card__links {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.carrier-card__links a {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--color-primary-dark);
+  text-decoration: underline;
 }
 
 /* ============================================

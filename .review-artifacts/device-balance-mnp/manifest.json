@@ -1,0 +1,59 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "feature/device-balance-mnp",
+  "source_sha": "f3725aa54be720244f011630860e2a4a6b95d2b8",
+  "target_page": "/articles/device-balance-mnp/",
+  "viewports": ["375x812", "768x1024", "1200x900"],
+  "images": [
+    {
+      "file": "full_375x812.jpg",
+      "description": "375x812 全体像（軽量JPEGプレビュー。元のフルページPNGはリポジトリ外の review-output に保存）"
+    },
+    {
+      "file": "full_768x1024.jpg",
+      "description": "768x1024 全体像（軽量JPEGプレビュー）"
+    },
+    {
+      "file": "full_1200x900.jpg",
+      "description": "1200x900 全体像（軽量JPEGプレビュー）"
+    },
+    {
+      "file": "closeup_375_lead.png",
+      "description": "375px 冒頭（タイトル・リード文・3点要約・結論ボックス）の拡大"
+    },
+    {
+      "file": "closeup_375_paytable.png",
+      "description": "375px 支払い比較表（乗り換え前後の支払い先）の拡大。横スクロール表示を確認"
+    },
+    {
+      "file": "closeup_375_returnplan.png",
+      "description": "375px 会社別の返却プラン比較表の拡大。横スクロール表示を確認"
+    },
+    {
+      "file": "closeup_375_checklist_cta.png",
+      "description": "375px チェックリスト後半と申し込み導線（確認が済んだ方へ／まだ確認中の方へ）の拡大"
+    },
+    {
+      "file": "closeup_375_faq_open.png",
+      "description": "375px よくある質問のアコーディオン開閉動作の確認（1問目を開いた状態）"
+    }
+  ],
+  "captured_at": "2026-09-13",
+  "checked_items": [
+    "375px/768px/1200pxでの横はみ出しがないこと（document.documentElement.scrollWidth = window.innerWidth を確認）",
+    "支払い比較表・会社別比較表がスマホ幅で横スクロールし、スクロール案内が表示されること",
+    "チェックリストのチェックボックスに左余白があり、タップ領域が確保されていること",
+    "申し込みCTAボタンの文字色・コントラストに問題がないこと",
+    "目次アンカー（#section-1〜#section-6）のスクロール移動が機能すること",
+    "FAQアコーディオンの開閉が正しく動作すること",
+    "node scripts/validate-content.mjs でエラー0件（禁止語句・料金表記の家族割文脈・JSON-LD構文・id重複・内部リンク切れなし）",
+    "git diff --check で空白関連の問題なし",
+    "JSON-LD（Article/BreadcrumbList/FAQPage）がJSON.parseで正常にパースできること",
+    "コンソールエラー・pageerrorが発生しないこと"
+  ],
+  "notes": [
+    "ソフトバンクの「回線解約後も特典利用は可能」という記載は、公式トップページではなく公式FAQ（https://www.softbank.jp/support/faq/view/53148）でのみ確認できたため、本文・表ではこのFAQを出典として明記している。",
+    "各社の返却プランの正式名称・条件は2026-09-13時点で確認できた範囲であり、全プラン・全機種を網羅したものではない。申し込み前に必ず購入元の最新情報を確認するよう本文に明記している。",
+    "候補として提示されていた /articles/switch-timing/ は実在を確認済みで、内部リンクとして使用している。"
+  ]
+}

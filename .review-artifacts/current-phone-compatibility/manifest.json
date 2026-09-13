@@ -1,46 +1,37 @@
 {
   "repository": "yu-gin-19/yu-gin-19.github.io",
   "branch": "feature/current-phone-compatibility",
-  "source_sha": "e26f57b11f413cd78eb71be880261bfa9de4bf49",
+  "source_sha": "bd75eb419c62a884b31c1bdf4bb83e0ac1cd2a58",
   "target_page": "/articles/current-phone-compatibility/",
-  "also_changed": [
-    "articles/index.html（新記事カード追加、記事数を実数27→26本の誤りを修正のうえ26本に統一）",
-    "sitemap.xml（新URLを追加）",
-    "articles/device-balance-mnp/index.html（対応機種の確認リンクを本記事へ変更）",
-    "articles/esim-vs-sim-card/index.html（Q1に機種名の調べ方・確認結果の見方への補助リンクを追加）"
-  ],
+  "fix_round": 1,
+  "based_on_review": "初回レビュー指摘（2026-09-13）に対する修正",
   "viewports": ["375x812", "768x1024", "1200x900"],
   "images": [
     { "file": "full_375x812.jpg", "description": "375x812 全体像（軽量JPEGプレビュー）" },
     { "file": "full_768x1024.jpg", "description": "768x1024 全体像（軽量JPEGプレビュー）" },
     { "file": "full_1200x900.jpg", "description": "1200x900 全体像（軽量JPEGプレビュー）" },
-    { "file": "closeup_375_lead.png", "description": "375px 冒頭（タイトル・リード・3点要約・公式確認ボタン・電波状況は別という注記）の拡大" },
-    { "file": "closeup_375_device_id.png", "description": "375px セクション①機種名・型番の確認（iPhone/Android別カード）の拡大" },
-    { "file": "closeup_375_official_check.png", "description": "375px セクション②楽天公式の対応状況確認（3ステップ・結果で見る項目・公式注意書き）の拡大" },
-    { "file": "closeup_375_simlock.png", "description": "375px セクション③SIMロック確認（iPhone/Android、ドコモ・au・ソフトバンクの確認先カード）の拡大" },
-    { "file": "closeup_375_next_action.png", "description": "375px セクション「確認結果に合わせて次にすることを選ぶ」の4カードと、両方のCTA（条件確認済み／まだ確認中）の拡大" },
-    { "file": "closeup_375_faq_open.png", "description": "375px よくある質問のアコーディオン開閉確認（Q3を開いた状態）" },
-    { "file": "anchor_check_section1.png", "description": "375px 目次から#section-1へのアンカー移動が、sticky headerに隠れずに表示されることの確認" },
-    { "file": "esim_q1_link_added.png", "description": "375px esim-vs-sim-card記事Q1に追加した、新記事への補助リンクの表示確認" }
+    { "file": "closeup_375_conclusion.png", "description": "修正2：結論を『対応を確認できた場合』に限定し、後半セクションへのリンクを追加した箇所の拡大" },
+    { "file": "closeup_375_android_example_fixed.png", "description": "文章整理：Galaxy S26系の型番列挙を削除し、短い注意書きへ整理したAndroidカードの拡大" },
+    { "file": "closeup_375_section2_full.png", "description": "修正1・2：購入元不一致時の案内修正、結果表示の読み方（利用可/利用不可/未確認・APN補足）、公式問い合わせ窓口リンクを含むセクション②全体の拡大" },
+    { "file": "closeup_375_docomo_card.png", "description": "文章整理：ドコモカードから『公式ページに記載がなかったため』という制作側の自己言及を除去した箇所の拡大" },
+    { "file": "closeup_375_au_card.png", "description": "修正3：au解除登録後も表示が変わらない場合の案内、Android項目名の機種差の注記を追加したカードの拡大" },
+    { "file": "closeup_375_case3.png", "description": "修正2：『機種が一覧にない』カードに公式問い合わせ窓口リンクと動作保証に関する注記を追加した箇所の拡大" },
+    { "file": "closeup_375_route_cta.png", "description": "修正2：『まだ確認中の方へ』に、機種が分かっている人向けの公式対応状況確認への直接リンクを追加したCTAの拡大" },
+    { "file": "closeup_375_faq2_open.png", "description": "FAQ2（公式の一覧に自分の機種がない場合は？）の開閉状態。修正2の問い合わせ窓口リンクを反映" },
+    { "file": "closeup_375_device_balance_mnp_link.png", "description": "既存記事 device-balance-mnp の対応機種リンクが本記事へ差し替わっていることの確認（初回提出になかった画像）" }
   ],
   "captured_at": "2026-09-13",
   "checked_items": [
-    "375px/768px/1200pxでdocument.documentElement.scrollWidth === window.innerWidthを確認（横はみ出しなし、表を使わずカード化したため横スクロール自体が不要）",
-    "#section-1へのアンカー移動がsticky headerに隠れないことを確認（header下端88px、ターゲット上端95.7px）",
-    "追加した公式リンク10件（楽天2件・Apple2件・Samsung1件・ドコモ1件・au2件・ソフトバンク2件）がすべてHTTP 200で応答することをcurlで確認",
-    "楽天モバイル公式の対応状況確認ページ（byod）を実際に操作し、iPhone（iPhone 15・購入元ドコモ）とAndroid（Galaxy M23 5G・その他＝SIMフリー）の結果画面を1件ずつ確認したうえで、結果画面の項目名（4G/5Gデータ通信・通話・SMS・APN自動設定・ETWS・110/119の位置情報測位・SIMタイプ・確認済みOS/SWバージョン）を本文に反映した",
-    "同じ確認フローで、Galaxy S26・S26+・S26 Ultraが異なる型番（SM-S942Q・SM-S947Q・SM-S948Q）として分かれて表示されることを実際に確認し、本文の『似た名前の別機種で代用しない』の具体例として使用した",
-    "FAQの表示テキストとFAQPage JSON-LDのtextが4問とも完全一致することをNode.jsで確認",
+    "375px/768px/1200pxでdocument.documentElement.scrollWidth === window.innerWidthを確認（横はみ出しなし）",
+    "追加したリンク（楽天モバイル公式問い合わせ窓口）がHTTP 200で応答することをcurlで確認",
+    "FAQ4問すべてで表示テキストとFAQPage JSON-LDのtextが完全一致することをNode.jsで確認（FAQ2を修正後に再確認）",
     "node scripts/validate-content.mjs でエラー0件",
     "git diff --check で空白関連の問題なし",
-    "JSON-LD（Article/BreadcrumbList/FAQPage）がJSON.parseで正常にパースできること",
     "コンソールエラー・pageerrorが発生しないこと",
-    "articles/index.htmlの記事総数表記は、実際のディレクトリ数（28）から未掲載の2ページ（supersale-ai-concierge-2026、supersale-presale-2026）を除いた26本であることを diff で機械的に検証したうえで統一した"
+    "device-balance-mnp記事の対応機種リンクが本記事へ正しく向いていることを実際にレンダリングして確認"
   ],
-  "unresolved_or_limited": [
-    "ドコモのSIMロック解除ページには『解除済みかどうかの確認方法』の具体的な画面表示が記載されておらず、本文でも確認方法を断定していない（手続き・問い合わせ窓口の案内にとどめている）。",
-    "楽天モバイル公式の対応状況確認ページは、選択する購入元・機種によって表示される購入元の選択肢や結果画面の項目（例：SIMタイプの行の有無）が変わりうる。今回はiPhone・Android各1機種のみ実際に確認しており、全機種・全パターンを網羅した検証ではない。",
-    "ソフトバンクの『新トクするサポート』新旧制度の承継関係など、本体代に関する論点は前回記事（device-balance-mnp）の範囲のため、本記事では扱っていない。",
-    "Y!mobile（ワイモバイル）のSIMロック確認方法は今回調査対象に含めていない（購入元選択肢に表示される場合があるが、本文はドコモ・au・ソフトバンクの3社に限定）。"
+  "not_reverified_this_round": [
+    "ローカルブラウザでの複数機種でのbyod確認フローの再実行は今回行っていない（前回提出時にiPhone1機種・Android1機種で確認済み、今回は文章修正のみ）。",
+    "楽天モバイル公式問い合わせ窓口（inquiry）ページとau公式FAQは、今回の修正作業時に改めてWebFetchで内容を再確認したうえで本文に反映した（『ご利用開始前の方』向けチャット・電話窓口の存在、au FAQのアクティベーション・ご利用設定・機種による項目名称の違いは、いずれも今回のレビュー時点で取得した内容）。"
   ]
 }

@@ -36,7 +36,7 @@
       "field_checked": "eSIM対応端末一覧、および国・通信事業者による対応差の注記"
     }
   ],
-  "correction_found_during_this_round": "前回のWebFetch要約では、このSamsungページの対応キャリアに『楽天モバイル』が含まれると記載されていたが、Playwrightで実際にページ本文をレンダリングして確認したところ、本文中に『楽天モバイル』という語は一切含まれていなかった（お問い合わせ先セクションに記載されているのはNTTドコモ・KDDI・UQ mobile・J:COM・ソフトバンク・ahamo・povoのみ）。編集前にこの誤りに気づき、本文には実際に確認できた内容（eSIM対応機種一覧と、国・通信事業者による対応差の注記）のみを反映し、キャリア名の列挙は行っていない。",
+  "correction_found_during_this_round": "前回のmanifestで『このSamsungページに楽天モバイルの記載は一切ない』と断定したのは誤りだったため訂正する。このページのHTMLソースには『eSIMを利用できる通信事業者』という見出しの区分（国・地域別のキャリア一覧）が存在し、日本の欄に英語表記の『Rakuten Mobile』を含む『NTT docomo, KDDI, Rakuten Mobile, SoftBank』が記載されていることを、ページのHTMLソースを直接取得して確認した。前回はdocument.body.innerText（実際に画面へ描画されている文字列）のみを日本語表記『楽天モバイル』で検索しており、英語表記『Rakuten Mobile』では検索していなかった。また、この『eSIMを利用できる通信事業者』の区分は、修理受付キャリアを案内する別区分『各事業者へのお問い合わせ』（NTTドコモ・KDDI・UQ mobile・J:COM・ソフトバンク・ahamo・povoを掲載、Rakuten Mobileの記載なし）とは異なるセクションであり、両者を混同していた。なお、この『eSIMを利用できる通信事業者』の区分はCSSでvisibility:hiddenが指定されており、2026-09-13時点でこのURLを開いた実際の訪問者の画面には表示されない（スクリーンショットで目視確認済み。画面に表示されるのは『eSIM対応端末』の機種一覧と注意書きのみ）。したがって、本文がSamsung公式ページのeSIM対応機種一覧を案内している点、および楽天モバイルという特定のキャリア名を本文中で列挙していない点は、いずれも修正不要である。",
   "checked_items": [
     "node scripts/validate-content.mjs でエラー0件",
     "git diff --check で空白関連の問題なし",

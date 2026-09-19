@@ -151,7 +151,7 @@ CONFIGS = [
         "line2": "他社から乗り換えなら",
         "number": "14,000",
         "unit": "pt",
-        "note": "新規契約でも11,000pt",
+        "note": "乗り換え以外でも13,000pt",
         "asset": "top-page-points-phone-bars-rgba.png",
     },
     {
@@ -162,7 +162,7 @@ CONFIGS = [
         "line2": "他社から乗り換えで",
         "number": "14,000",
         "unit": "pt",
-        "note": "新規契約でも11,000pt",
+        "note": "乗り換え以外でも13,000pt",
         "asset": "campaign-guide-gift-points-rgba.png",
     },
     {

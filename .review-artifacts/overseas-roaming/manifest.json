@@ -1,10 +1,12 @@
 {
   "repository": "yu-gin-19/yu-gin-19.github.io",
   "branch": "feature/overseas-roaming",
-  "source_sha": "6ab3f5cc866a88ce83f94efcbf7cd79ef6e93d56",
+  "source_sha": "5de4821afab8072e3dfc42cd32c0254fc007fdcc",
+  "previous_source_sha": "6ab3f5cc866a88ce83f94efcbf7cd79ef6e93d56",
+  "image_count": 11,
   "target_pages": [
-    "/articles/overseas-roaming/ (新規)",
-    "/articles/ (記事一覧、カード追加)"
+    "/articles/overseas-roaming/",
+    "/articles/ （カード表示のみ確認。このラウンドでコード変更なし）"
   ],
   "viewport_sizes": ["375x812", "768x1024", "1200x900"],
   "images": [
@@ -12,7 +14,7 @@
       "path": ".review-artifacts/overseas-roaming/overseas-roaming_375x812.jpg",
       "page": "/articles/overseas-roaming/",
       "size": "375x812",
-      "note": "フルページ。ページが長いためJPEG圧縮（品質45）で1MB未満に抑制。細部は他の部分拡大画像を参照"
+      "note": "フルページ。JPEG圧縮で1MB未満に抑制"
     },
     {
       "path": ".review-artifacts/overseas-roaming/overseas-roaming_768x1024.jpg",
@@ -27,88 +29,83 @@
       "note": "フルページ"
     },
     {
-      "path": ".review-artifacts/overseas-roaming/header-lead-toc_375_crop.png",
+      "path": ".review-artifacts/overseas-roaming/section1-fee-and-faq1_375_crop.png",
       "page": "/articles/overseas-roaming/",
       "size": "375px幅（部分拡大）",
-      "note": "冒頭リード・契約済み/検討中の分岐リンク・対象範囲の注記・目次を確認。見出しだけで全体の手順が分かるかの確認用"
+      "note": "再レビュー対応：①料金説明セクション全体。速度制限（128kbps）と月額料金計算を分けて説明していることを確認"
     },
     {
-      "path": ".review-artifacts/overseas-roaming/fee-table_375_crop.png",
+      "path": ".review-artifacts/overseas-roaming/faq1-expanded_375_crop.png",
       "page": "/articles/overseas-roaming/",
-      "size": "375px幅（部分拡大）",
-      "note": "「毎月2GB」「電話は別」の料金表。セル内の文字欠けがないことを確認"
+      "size": "375px幅（部分拡大・展開状態）",
+      "note": "再レビュー対応：FAQ第1問を展開した状態。「速度制限は海外の高速データ利用量のみで判定」「月額料金の計算では国内と海外を合計」と明確に区別した修正後の文言を確認"
     },
     {
-      "path": ".review-artifacts/overseas-roaming/setup-steps_375_crop.png",
+      "path": ".review-artifacts/overseas-roaming/section4-setup-incl-rcs_375_crop.png",
       "page": "/articles/overseas-roaming/",
       "size": "375px幅（部分拡大）",
-      "note": "「出発前：my 楽天モバイル側」「現地到着後：スマホ本体側」の見出し分離と、iPhone/Android別の設定手順を確認。「設定は2か所」が見落とされないかの確認用"
+      "note": "再レビュー対応：出発前設定セクション。RCSチャットOFFの案内が「海外でもRakuten LinkでSMSを受信したい方」に対象を限定し、「すべてのAndroid利用者に必須の設定ではありません」と明記されていることを確認"
     },
     {
-      "path": ".review-artifacts/overseas-roaming/method-cards_375_crop.png",
+      "path": ".review-artifacts/overseas-roaming/call-cards_375_crop.png",
       "page": "/articles/overseas-roaming/",
       "size": "375px幅（部分拡大）",
-      "note": "iPhone/Androidの設定手順カード単体の拡大"
+      "note": "再レビュー対応：電話料金を3列テーブルからケース別カードに変更した後の表示。Rakuten Linkで海外→日本番号への発信が「相手未使用でも原則無料」という正しい条件に修正されていることを確認。色だけでなくテキストラベル（無料（原則）／相手による／有料（国・地域別）／有料（着信料））でも区別"
     },
     {
-      "path": ".review-artifacts/overseas-roaming/call-table_375_crop.png",
+      "path": ".review-artifacts/overseas-roaming/call-cards_1200_crop.png",
       "page": "/articles/overseas-roaming/",
-      "size": "375px幅（部分拡大）",
-      "note": "電話料金表（使うアプリ／相手／料金条件の3列）。行ごとに条件が明示され、誤読しにくいかの確認用"
+      "size": "1200px幅（部分拡大）",
+      "note": "call-cardsの1200px表示。375pxと同じ内容がレイアウト崩れなく表示されることを確認"
     },
     {
-      "path": ".review-artifacts/overseas-roaming/check-list_375_crop.png",
+      "path": ".review-artifacts/overseas-roaming/sms-cards_375_crop.png",
       "page": "/articles/overseas-roaming/",
       "size": "375px幅（部分拡大）",
-      "note": "出発前チェックリスト（実チェックボックス）。クリック操作でチェック状態が変わることをPlaywrightで確認済み"
+      "note": "再レビュー対応：SMSの説明をiPhone/Androidの案内カードに分割した後の表示。iPhoneで相手がRakuten Link未使用の場合は標準メッセージアプリを使う点、AndroidのRCSチャット条件を確認"
     },
     {
-      "path": ".review-artifacts/overseas-roaming/route-cta_375_crop.png",
+      "path": ".review-artifacts/overseas-roaming/section5-datacharge_375_crop.png",
       "page": "/articles/overseas-roaming/",
       "size": "375px幅（部分拡大）",
-      "note": "記事末尾の唯一のCTAブロック（契約済み／検討中で案内先を分岐）。申込リンク（r10.to）は記事内に設置していない"
-    },
-    {
-      "path": ".review-artifacts/overseas-roaming/faq-summary_375_crop.png",
-      "page": "/articles/overseas-roaming/",
-      "size": "375px幅（部分拡大）",
-      "note": "FAQ後半・まとめ・CTA・フッターを確認"
+      "note": "再レビュー対応：セクション名を「⑤ 残量の確認と追加データ（チャージ）」から「⑤ 追加データ（チャージ）」に変更し、未確認の残量確認案内を削除した後の表示"
     },
     {
       "path": ".review-artifacts/overseas-roaming/articles-index-card_1200_crop.png",
       "page": "/articles/",
       "size": "1200px幅（部分拡大）",
-      "note": "記事一覧ページに追加したカードの表示を確認"
+      "note": "記事一覧ページのカード表示。このラウンドでarticles/index.htmlのコード変更はないが、プロジェクトのレビュー運用ルール（コード修正時は古い画像を再利用しない）に従い、現在のSOURCE_SHAの状態で再撮影した"
     }
   ],
-  "captured_at": "2026-09-19T20:38:00+09:00",
+  "captured_at": "2026-09-19T22:59:00+09:00",
   "confirmed_items": [
+    "必須修正1：FAQ第1問（JSON-LD・画面表示）を「速度制限は海外の高速データ利用量のみで判定」「月額料金の計算では国内と海外を合計」と区別する文言に修正したことを確認。記事全体・構造化データ・description・OGP文言・sources.mdを再検索し、他に「国内と海外の合計が2GBを超えると速度制限される」等の誤解を招く表現がないことを確認",
+    "必須修正2：電話料金を3列テーブルからケース別カード（.call-cards）に変更し、Rakuten Linkで海外から日本の番号への発信が「相手未使用でも原則無料」という正しい条件になっていることを確認。表直下に「Rakuten Linkの無料条件は…条件で変わります。電話をかける前に公式料金表をご確認ください」の注意文を追加。色だけでなくテキストラベルでも無料/有料を区別",
+    "必須修正3：RCSチャットOFFの案内を「海外でもRakuten LinkでSMSを受信したい方」に対象を限定し、「すべてのAndroid利用者に必須の設定ではありません」を明記したことを確認。チェックリストにRCS項目は追加していない（対象限定の徹底のため見送り）",
+    "必須修正4：SMSの説明をiPhone/Android別の案内カードに分割し、iPhoneで相手がRakuten Link未使用の場合は送受信ともiPhone標準のメッセージアプリを使う旨、AndroidはRCSチャット設定で受信アプリが変わる場合がある旨を明記したことを確認",
+    "必須修正5：海外ローミングの高速データ残量を確認する具体的な画面名は、公式ページ（international-roaming、guide/international-roaming、data-charge）を追加調査したが特定できなかった。断定的な案内を公開本文から削除し、セクション名を「⑤ 追加データ（チャージ）」に変更したことを確認。「毎日残量を確認」の記載も「動画や大きなデータ通信を控えながら使う」という実行可能な表現に変更",
+    "FAQPage構造化データと画面上のFAQが、修正後の文言で一致していることを確認（FAQ第1問のtext完全一致を含む）",
     "JSON-LD（Article/BreadcrumbList/FAQPage）が有効なJSONとしてパース可能なことを確認",
-    "node scripts/validate-content.mjs でエラー0件（PRICE_AUDITの情報ログは既存の料金表記の検出で、エラーではない）",
-    "git diff --check で空白関連の警告なし",
-    "記事内の全#アンカーリンク（26箇所）が実在するid（25個）に対応していることをスクリプトで確認",
-    "内部リンク先（/articles/savings-calc/、/articles/campaign-guide/、/articles/index.html内カード）の実ファイル存在を確認",
-    "375/768/1200pxでフルページ表示を確認。料金表・電話料金表・設定手順カード・チェックリストで文字欠け・重なりなし",
-    "出発前チェックリストの実チェックボックスがクリックで操作できることをPlaywrightで確認（ラベルクリックでtoggle、キーボード操作はネイティブcheckbox要素のため対応）",
-    "OGP画像（1200x630）を生成し、文字が枠内に収まっていることを目視確認",
-    "計測は既存のtrackCta関数・page_type/cta_position/reader_stage/destinationのスキーマを踏襲し、新しい計測・外部送信は追加していない",
-    "広告・PR表記、個人運営・非公式の記載を既存記事と同じ文言で維持"
+    "node scripts/validate-content.mjs でエラー0件",
+    "git diff --check で空白警告なし",
+    "記事内の全#アンカーリンクが実在するidに対応していることをスクリプトで確認（section-5関連のリンクも含め、リネーム後も正常）",
+    "375/768/1200pxでフルページ表示を確認。call-cards・SMSカードは375pxで文字欠け・不自然な1語改行がなく、色だけに依存しない表示になっていることを確認",
+    "このラウンドの差分は articles/overseas-roaming/ 配下の3ファイル（article.css, index.html, sources.md）のみで、他ページへの意図しない変更がないことをgit statusで確認"
   ],
   "self_check_answers": {
-    "1_2GBは1日分か月の枠か": "本文①と第1FAQで回答: 月の枠",
-    "2_2GB以内でも月額料金は同じか": "本文①と第2FAQで回答: 契約プランの月額料金は別途必要",
-    "3_設定サービスと通話アプリの違い": "本文④冒頭の表と第3FAQで回答",
-    "4_日本にいる間と現地でそれぞれ何をするか": "本文④を「出発前」「現地到着後」「帰国後」の見出しで分離して回答",
-    "5_海外用データの残量確認先": "本文⑤で回答するが、具体的な画面名は未確認（下記「未対応事項」参照）",
-    "6_2GB使い切り後の状態と追加方法": "本文①⑤と第5FAQで回答",
-    "7_iPhoneで着信しても料金がかかるか": "本文⑥と第4FAQで回答",
-    "8_通信できないとき最初に確認すること": "本文⑦と第6FAQで回答"
+    "1_海外高速データ2GBは何の枠か": "回答済み: 本文①・FAQ第1問。毎月の海外ローミング用の基本枠",
+    "2_何を2GB使うと最大128kbpsになるか": "回答済み: 本文①・FAQ第1問。海外の高速データ基本枠2GB（国内利用分は含まない）",
+    "3_国内と海外の合計は何の計算か": "回答済み: 本文①・FAQ第1問・第2問。Rakuten最強プランの月額料金の段階判定",
+    "4_Rakuten Linkで日本番号へ発信時、相手未使用でも無料か": "回答済み: 本文⑥call-cards 1枚目。原則無料（一部対象外番号・地域を除く）",
+    "5_RCSチャットOFFが必要なのはどの利用者か": "回答済み: 本文④・⑥SMSカード。海外でもRakuten LinkでSMSを受信したいAndroid利用者に限定",
+    "6_iPhoneでLink未使用の相手と国際SMSをやり取りする場合のアプリ": "回答済み: 本文⑥SMSカード（iPhone）。iPhone標準のメッセージアプリ",
+    "7_海外高速データの残量確認手順は公式根拠付きで説明できるか": "未完了。公式ページ（international-roaming、guide/international-roaming、data-charge）を確認したが具体的な画面名を特定できず、公開本文への案内は行っていない。sources.mdに未確認事項として明記"
   },
   "notes": [
-    "手順5（海外用データ残量の具体的な確認画面）は、指示書の情報源URL（data-charge、guide/international-roaming）を確認した範囲では画面名・ボタン名を特定できなかった。本文・sources.mdの両方に未確認事項として明記し、断定的な案内はしていない。",
-    "情報確認日はすべて2026年9月19日（WebFetchによる公式ページ取得に基づく）。articles/overseas-roaming/sources.mdに主張・URL・確認日・注意点の対応表を記録した。",
-    "元原稿にあった「主回線」「オフライン」「国・地域別従量課金」等の用語は、指示書I節にもとづき平易な言い換えに修正した。「この記事には未確認のアプリ画面を掲載していません」の一文は削除し、公式の設定ガイドへのリンクのみ残した。",
-    "紹介ポイント額（14,000pt/13,000pt等）は本記事に固定記載していない。申込導線は記事末尾の料金試算・紹介特典条件ページへのリンクのみで、r10.to等の直接申込リンクは設置していない。",
-    "内部リンクは、元原稿が言及していたsavings-calc・campaign-guideへのリンクのみとし、他記事からのoverseas-roamingへの新規バックリンクは追加していない（記事一覧ページへの掲載とsitemapでの発見性を優先し、既存記事の改変を最小限にするため）。"
+    "自己チェック7（旧5）は未完了です。「8問すべて回答可能」とは報告しません。残量確認の案内は公開本文から意図的に削除しています。",
+    "画像は11枚です（フルページ3枚＋部分拡大7枚＋記事一覧カード1枚）。前回の完了報告にあった「11枚」という記載は、実際のcommit差分（12ファイル＝画像11枚＋manifest.json）と枚数表現がずれていたため、今回は「画像11枚＋manifest.json」の形で正確に記載します。",
+    "articles/index.htmlはこのラウンドで変更していませんが、記事一覧カードの画像はプロジェクトのレビュー運用ルールに従い現在のSOURCE_SHAの状態で再撮影しました。",
+    "SOURCE_SHAからHEAD_SHAの差分は.review-artifacts/のみです（次のcommitで確認）。",
+    ".review-artifacts/securities-spu-cta-visual-density/ 等、他案件の過去レビュー記録は本manifestの対象外です。"
   ]
 }

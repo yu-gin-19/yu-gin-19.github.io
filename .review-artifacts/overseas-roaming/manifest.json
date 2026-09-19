@@ -1,0 +1,114 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "feature/overseas-roaming",
+  "source_sha": "6ab3f5cc866a88ce83f94efcbf7cd79ef6e93d56",
+  "target_pages": [
+    "/articles/overseas-roaming/ (新規)",
+    "/articles/ (記事一覧、カード追加)"
+  ],
+  "viewport_sizes": ["375x812", "768x1024", "1200x900"],
+  "images": [
+    {
+      "path": ".review-artifacts/overseas-roaming/overseas-roaming_375x812.jpg",
+      "page": "/articles/overseas-roaming/",
+      "size": "375x812",
+      "note": "フルページ。ページが長いためJPEG圧縮（品質45）で1MB未満に抑制。細部は他の部分拡大画像を参照"
+    },
+    {
+      "path": ".review-artifacts/overseas-roaming/overseas-roaming_768x1024.jpg",
+      "page": "/articles/overseas-roaming/",
+      "size": "768x1024",
+      "note": "フルページ"
+    },
+    {
+      "path": ".review-artifacts/overseas-roaming/overseas-roaming_1200x900.jpg",
+      "page": "/articles/overseas-roaming/",
+      "size": "1200x900",
+      "note": "フルページ"
+    },
+    {
+      "path": ".review-artifacts/overseas-roaming/header-lead-toc_375_crop.png",
+      "page": "/articles/overseas-roaming/",
+      "size": "375px幅（部分拡大）",
+      "note": "冒頭リード・契約済み/検討中の分岐リンク・対象範囲の注記・目次を確認。見出しだけで全体の手順が分かるかの確認用"
+    },
+    {
+      "path": ".review-artifacts/overseas-roaming/fee-table_375_crop.png",
+      "page": "/articles/overseas-roaming/",
+      "size": "375px幅（部分拡大）",
+      "note": "「毎月2GB」「電話は別」の料金表。セル内の文字欠けがないことを確認"
+    },
+    {
+      "path": ".review-artifacts/overseas-roaming/setup-steps_375_crop.png",
+      "page": "/articles/overseas-roaming/",
+      "size": "375px幅（部分拡大）",
+      "note": "「出発前：my 楽天モバイル側」「現地到着後：スマホ本体側」の見出し分離と、iPhone/Android別の設定手順を確認。「設定は2か所」が見落とされないかの確認用"
+    },
+    {
+      "path": ".review-artifacts/overseas-roaming/method-cards_375_crop.png",
+      "page": "/articles/overseas-roaming/",
+      "size": "375px幅（部分拡大）",
+      "note": "iPhone/Androidの設定手順カード単体の拡大"
+    },
+    {
+      "path": ".review-artifacts/overseas-roaming/call-table_375_crop.png",
+      "page": "/articles/overseas-roaming/",
+      "size": "375px幅（部分拡大）",
+      "note": "電話料金表（使うアプリ／相手／料金条件の3列）。行ごとに条件が明示され、誤読しにくいかの確認用"
+    },
+    {
+      "path": ".review-artifacts/overseas-roaming/check-list_375_crop.png",
+      "page": "/articles/overseas-roaming/",
+      "size": "375px幅（部分拡大）",
+      "note": "出発前チェックリスト（実チェックボックス）。クリック操作でチェック状態が変わることをPlaywrightで確認済み"
+    },
+    {
+      "path": ".review-artifacts/overseas-roaming/route-cta_375_crop.png",
+      "page": "/articles/overseas-roaming/",
+      "size": "375px幅（部分拡大）",
+      "note": "記事末尾の唯一のCTAブロック（契約済み／検討中で案内先を分岐）。申込リンク（r10.to）は記事内に設置していない"
+    },
+    {
+      "path": ".review-artifacts/overseas-roaming/faq-summary_375_crop.png",
+      "page": "/articles/overseas-roaming/",
+      "size": "375px幅（部分拡大）",
+      "note": "FAQ後半・まとめ・CTA・フッターを確認"
+    },
+    {
+      "path": ".review-artifacts/overseas-roaming/articles-index-card_1200_crop.png",
+      "page": "/articles/",
+      "size": "1200px幅（部分拡大）",
+      "note": "記事一覧ページに追加したカードの表示を確認"
+    }
+  ],
+  "captured_at": "2026-09-19T20:38:00+09:00",
+  "confirmed_items": [
+    "JSON-LD（Article/BreadcrumbList/FAQPage）が有効なJSONとしてパース可能なことを確認",
+    "node scripts/validate-content.mjs でエラー0件（PRICE_AUDITの情報ログは既存の料金表記の検出で、エラーではない）",
+    "git diff --check で空白関連の警告なし",
+    "記事内の全#アンカーリンク（26箇所）が実在するid（25個）に対応していることをスクリプトで確認",
+    "内部リンク先（/articles/savings-calc/、/articles/campaign-guide/、/articles/index.html内カード）の実ファイル存在を確認",
+    "375/768/1200pxでフルページ表示を確認。料金表・電話料金表・設定手順カード・チェックリストで文字欠け・重なりなし",
+    "出発前チェックリストの実チェックボックスがクリックで操作できることをPlaywrightで確認（ラベルクリックでtoggle、キーボード操作はネイティブcheckbox要素のため対応）",
+    "OGP画像（1200x630）を生成し、文字が枠内に収まっていることを目視確認",
+    "計測は既存のtrackCta関数・page_type/cta_position/reader_stage/destinationのスキーマを踏襲し、新しい計測・外部送信は追加していない",
+    "広告・PR表記、個人運営・非公式の記載を既存記事と同じ文言で維持"
+  ],
+  "self_check_answers": {
+    "1_2GBは1日分か月の枠か": "本文①と第1FAQで回答: 月の枠",
+    "2_2GB以内でも月額料金は同じか": "本文①と第2FAQで回答: 契約プランの月額料金は別途必要",
+    "3_設定サービスと通話アプリの違い": "本文④冒頭の表と第3FAQで回答",
+    "4_日本にいる間と現地でそれぞれ何をするか": "本文④を「出発前」「現地到着後」「帰国後」の見出しで分離して回答",
+    "5_海外用データの残量確認先": "本文⑤で回答するが、具体的な画面名は未確認（下記「未対応事項」参照）",
+    "6_2GB使い切り後の状態と追加方法": "本文①⑤と第5FAQで回答",
+    "7_iPhoneで着信しても料金がかかるか": "本文⑥と第4FAQで回答",
+    "8_通信できないとき最初に確認すること": "本文⑦と第6FAQで回答"
+  },
+  "notes": [
+    "手順5（海外用データ残量の具体的な確認画面）は、指示書の情報源URL（data-charge、guide/international-roaming）を確認した範囲では画面名・ボタン名を特定できなかった。本文・sources.mdの両方に未確認事項として明記し、断定的な案内はしていない。",
+    "情報確認日はすべて2026年9月19日（WebFetchによる公式ページ取得に基づく）。articles/overseas-roaming/sources.mdに主張・URL・確認日・注意点の対応表を記録した。",
+    "元原稿にあった「主回線」「オフライン」「国・地域別従量課金」等の用語は、指示書I節にもとづき平易な言い換えに修正した。「この記事には未確認のアプリ画面を掲載していません」の一文は削除し、公式の設定ガイドへのリンクのみ残した。",
+    "紹介ポイント額（14,000pt/13,000pt等）は本記事に固定記載していない。申込導線は記事末尾の料金試算・紹介特典条件ページへのリンクのみで、r10.to等の直接申込リンクは設置していない。",
+    "内部リンクは、元原稿が言及していたsavings-calc・campaign-guideへのリンクのみとし、他記事からのoverseas-roamingへの新規バックリンクは追加していない（記事一覧ページへの掲載とsitemapでの発見性を優先し、既存記事の改変を最小限にするため）。"
+  ]
+}

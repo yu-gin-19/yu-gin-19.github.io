@@ -1,0 +1,37 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "feature/second-line-guide",
+  "source_sha": "c24b313cb206737db9556c47554634d169a29d24",
+  "target_page": "/articles/second-line/",
+  "viewport_sizes": ["375x812", "768x1024", "1200x900"],
+  "images": [
+    { "path": "second-line_375x812_full.jpg", "description": "フルページ（375x812）" },
+    { "path": "second-line_768x1024_full.jpg", "description": "フルページ（768x1024）" },
+    { "path": "second-line_1200x900_full.jpg", "description": "フルページ（1200x900）" },
+    { "path": "second-line_375_merit-list.png", "description": "①5つのメリット一覧（375幅、拡大）" },
+    { "path": "second-line_375_usecase-compare.png", "description": "②活用例カード（375幅、拡大）" },
+    { "path": "second-line_375_fee-table.png", "description": "③追加でかかる月額料金の表（375幅、拡大）" },
+    { "path": "second-line_375_dual-line-diagram.png", "description": "④1台/2台の違いの図解（375幅、拡大）" },
+    { "path": "second-line_375_existing-user.png", "description": "⑤既存楽天ユーザー向け「増える価値／自動的には増えないもの」注記（375幅、拡大）" },
+    { "path": "second-line_375_cta.png", "description": "末尾CTA（従業員紹介導線、375幅、拡大）" },
+    { "path": "second-line_375_faq-open.png", "description": "⑦FAQアコーディオン開閉状態（375幅、拡大）" },
+    { "path": "second-line_ogp.png", "description": "OGP画像（1200x630）" }
+  ],
+  "captured_at": "2026-09-21T22:37:00+09:00",
+  "verified_items": [
+    "node scripts/validate-content.mjs でエラー0件（PRICE_AUDITはINFOのみ、家族割文脈ありで正常判定）",
+    "git diff --check で問題なし",
+    "375px/768px/1200pxのビューポート単位スクリーンショットで横はみ出しなしを確認",
+    "FAQアコーディオンの開閉動作を確認（1問目を開いた状態のスクリーンショットを取得済み）",
+    "ブラウザコンソールエラーなし（Playwrightのconsole/pageerrorイベントで確認、0件）",
+    "OGP画像（1200x630）で文字切れなし、価格・ポイント数字を含まない設計を確認",
+    "公式サイトへの独自WebFetch確認により、契約事務手数料の同一名義累計4回線目まで無料・5回線目以降3,850円、および1楽天IDあたり最大10回線という記事内の新規記載事項を裏取り済み",
+    "articles/index.html・sitemap.xmlの差分が新カテゴリ追加・新規URL追加のみであることを確認"
+  ],
+  "notes": [
+    "SPU複数契約時の倍率・上限、家族割の同一名義複数回線への適用可否、テザリング利用条件の3点は公式サイトに記載が見当たらず、本文・FAQとも「確認できませんでした」という慎重な表現にとどめている。将来公式情報が更新された場合は本文・FAQ・sources.mdの更新が必要。",
+    "従業員紹介特典（14,000pt/13,000pt）の2回線目・追加契約への適用可否は、campaign-guide記事が既に「未確認」としている立場を継承し、本記事でも新たな適用前提のCTAは書いていない。",
+    "Playwrightのlocator.screenshot()でビューポートより縦長の要素を撮影すると、position: stickyのヘッダーが合成画像中に繰り返し映り込む撮影ツール側のアーティファクトを確認した（実際のブラウザ表示では発生しない）。このため拡大画像はビューポート単位（スクロール位置固定・単一フレーム）で撮影し直している。",
+    "フルページ画像はPNGだと1.2〜1.3MB程度になりChatGPT側のGitHub連携での取得に失敗する場合があるため、JPEG（quality=78）に変換したものをこのフォルダに格納している（元のPNGはreview-output配下にのみ保存）。"
+  ]
+}

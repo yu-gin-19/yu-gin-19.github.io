@@ -1,0 +1,35 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "feature/kids-smartphone-guide",
+  "sourceSha": "bad0fbe0fea86003dd9896ceda82922af6681e62",
+  "targetPage": "/articles/kids-smartphone/",
+  "viewports": ["375x812", "768x1024", "1200x900"],
+  "images": [
+    { "path": ".review-artifacts/kids-smartphone/375x812_full-preview.jpg", "desc": "375x812 フルページ（JPEG軽量プレビュー、品質60）" },
+    { "path": ".review-artifacts/kids-smartphone/768x1024_full-preview.jpg", "desc": "768x1024 フルページ（JPEG軽量プレビュー、品質60）" },
+    { "path": ".review-artifacts/kids-smartphone/1200x900_full-preview.jpg", "desc": "1200x900 フルページ（JPEG軽量プレビュー、品質60）" },
+    { "path": ".review-artifacts/kids-smartphone/375_keypoints.png", "desc": "375px：結論ボックスと「最初に理解してほしい3点」の拡大" },
+    { "path": ".review-artifacts/kids-smartphone/375_fitgrid.png", "desc": "375px：向いている家庭／向いていない家庭（2カラム→1カラム）の拡大" },
+    { "path": ".review-artifacts/kids-smartphone/375_fee-table.png", "desc": "375px：年齢別の料金表の拡大" },
+    { "path": ".review-artifacts/kids-smartphone/375_contract-diagram.png", "desc": "375px：契約者（子ども）と支払う人（親でもOK）の関係図の拡大" },
+    { "path": ".review-artifacts/kids-smartphone/375_watch-features.png", "desc": "375px：あんしんコントロールでできることのカード一覧の拡大" },
+    { "path": ".review-artifacts/kids-smartphone/375_apply-cta.png", "desc": "375px：末尾の従業員紹介CTAの拡大" },
+    { "path": ".review-artifacts/kids-smartphone/375_faq-open.png", "desc": "375px：FAQアコーディオンを1件開いた状態" },
+    { "path": ".review-artifacts/kids-smartphone/1200_contract-diagram.png", "desc": "1200px：契約者／支払う人の関係図（横並びレイアウト）の拡大" },
+    { "path": ".review-artifacts/kids-smartphone/1200_fitgrid.png", "desc": "1200px：向いている／向いていない家庭（横並びレイアウト）の拡大" },
+    { "path": ".review-artifacts/kids-smartphone/1200_fee-breakdown.png", "desc": "1200px：料金の内訳カード（3カラムレイアウト）の拡大" }
+  ],
+  "capturedAt": "2026-09-21T00:00:00+09:00",
+  "checkedItems": [
+    "375px/768px/1200pxのいずれでも横スクロールが発生しないこと（document.scrollWidth === clientWidth をPlaywrightで確認）",
+    "FAQアコーディオンがクリックで開閉し、aria-expandedが切り替わること",
+    "コンソールエラー・ページエラーが発生していないこと",
+    "node scripts/validate-content.mjs がエラー0件（JSON-LD構文・id重複・目次アンカー・aria参照・内部リンク切れ・禁止語句・料金表記の家族割文脈チェックを含む）",
+    "git diff --check で空白文字エラーがないこと",
+    "料金の内訳（528円単体ではなく、あんしんコントロール550円を含めた実質月額）を必ず併記していること"
+  ],
+  "notes": [
+    "フルページのオリジナルPNG（約1.2〜1.3MB/枚）は review-output/kids-smartphone/（Git管理外）に別途保存済み。本フォルダにはChatGPT側のGitHub連携での取得失敗を避けるため、JPEG軽量プレビュー（quality=60、単純な再圧縮のみで文字・配色の加工はなし）と、個別セクションの拡大画像を格納している。",
+    "個人情報・認証情報・アクセストークンが写った画像は含まれていない。"
+  ]
+}

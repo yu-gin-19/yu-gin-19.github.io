@@ -143,14 +143,19 @@ def render():
     draw_segments(draw, x, y, brand_segments, f_brand)
 
     # 中見出し
-    mid = "子どものスマホに"
+    mid = "見守り込みで"
     f_mid = fit_font(draw, mid, A_TEXT_MAX_WIDTH, 52, 26)
     draw.text((72, 300), mid, font=f_mid, fill=COLOR_WHITE)
 
     # 大見出し
-    main = [("実質1,078円", "white"), ("〜", "magenta")]
+    main = [("月1,078円", "white"), ("〜", "magenta")]
     f_big = fit_font_segments(draw, main, A_TEXT_MAX_WIDTH, 92, 36)
     draw_segments(draw, 66, 430, main, f_big)
+
+    # 適用条件（小さめの注記）
+    condition = "家族割・年齢別割引適用時"
+    f_condition = fit_font(draw, condition, A_TEXT_MAX_WIDTH, 30, 20)
+    draw.text((72, 580), condition, font=f_condition, fill=COLOR_NOTE)
 
     # 黄色帯に濃紺文字
     band = "料金・名義・見守り機能を解説"

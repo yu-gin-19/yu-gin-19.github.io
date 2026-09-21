@@ -1,6 +1,6 @@
 # sources: articles/kids-smartphone/
 
-この記事（子どものスマホに楽天モバイルはあり？）の執筆で使用した公式情報の一覧。確認日はすべて2026年9月21日。
+この記事（子どものスマホに楽天モバイルはあり？）の執筆で使用した公式情報の一覧。確認日は2026年9月21日（初版）。レビュー対応（PR #19、修正1〜7）での追加確認分も同日に実施。
 
 | 使用箇所 | 根拠に使った内容 | 確認したページ |
 |---|---|---|
@@ -8,11 +8,14 @@
 | 最強こども割（12歳以下、13歳の誕生月前月まで、3GB以下440円引き・3GB超110円引き、子ども名義・楽天ID必須、おひとり様1度のみ） | 対象年齢・割引額・適用条件 | https://network.mobile.rakuten.co.jp/fee/kids/ 、https://network.mobile.rakuten.co.jp/faq/detail/10000958/ |
 | 12歳以下で最強こども割適用済みの場合、13歳から追加手続きなしで最強青春割へ移行する仕様 | 13歳時点の移行の扱い | 楽天モバイル公式プレスリリース（2024年5月2日）およびhttps://network.mobile.rakuten.co.jp/fee/kids/ の記載を根拠とした |
 | 最強青春割（13歳〜23歳の誕生月前月まで＝実質13〜22歳、110円引き、本人名義必須） | 対象年齢・割引額・親名義では対象外である点 | https://network.mobile.rakuten.co.jp/fee/youth/ 、https://network.mobile.rakuten.co.jp/faq/detail/10000936/ |
+| 3GB超〜20GB＝1,958円、20GB超＝3,058円（最強家族割110円引き＋最強こども割／最強青春割110円引きを両方反映した金額。見守り込みはこれに550円を加算） | 3GB超の料金修正（PR #19レビュー対応・修正1） | 上記の https://network.mobile.rakuten.co.jp/fee/saikyo-plan/ （基準額2,178円・3,278円）、https://network.mobile.rakuten.co.jp/fee/kids/ 、https://network.mobile.rakuten.co.jp/fee/youth/ （3GB超も定額110円引きが続く旨の記載）から算出 |
+| 最強こども割・最強青春割は、契約後にRakuten Linkアプリ内の「my 楽天モバイル」で「適用する」をタップする操作が必要（自動適用ではない）。保護者が操作する場合も子ども本人の楽天IDでのログインが必要 | 割引の適用操作の説明（PR #19レビュー対応・修正2） | https://network.mobile.rakuten.co.jp/faq/detail/10000932/ （最強青春割の割引がされない理由）、https://network.mobile.rakuten.co.jp/faq/detail/10000959/ （最強こども割の割引がされない理由）、https://network.mobile.rakuten.co.jp/fee/kids/ 、https://network.mobile.rakuten.co.jp/fee/youth/ |
+| 最強家族割は、代表者がmy 楽天モバイル（Rakuten Linkアプリ内）でグループを作成し、招待された家族が参加する手続きが必要（自動適用ではない） | 最強家族割の参加手続きの説明（PR #19レビュー対応・修正2） | https://network.mobile.rakuten.co.jp/guide/family/ 、https://network.mobile.rakuten.co.jp/faq/detail/10000922/ （最強家族割でグループに参加できません） |
 | あんしんコントロール（月550円税込、18歳未満は原則契約必須・18歳以上は申込不可、フィルタリング・利用時間制限・位置情報確認・SNS見守り等の機能） | 料金・必須要件・機能内容 | https://network.mobile.rakuten.co.jp/service/anshin-control/ |
-| 未成年の申し込み方法（Web・店舗いずれも可、必要書類：子ども側は本人確認書類・楽天ID、保護者側は法定代理人同意書 兼 支払名義人同意書、店舗は保護者同伴必須） | 申し込みフロー・必要書類 | https://network.mobile.rakuten.co.jp/flow/for-minors/ 、https://network.mobile.rakuten.co.jp/faq/detail/00001493/ 、https://network.mobile.rakuten.co.jp/guide/kidsjunior/ |
+| 未成年の申し込み方法（Web・店舗いずれも可、必要書類：子ども側は本人確認書類・楽天ID、保護者側は法定代理人同意書 兼 支払名義人同意書、店舗は保護者同伴必須） | 申し込みフロー・必要書類。セクション4の中間CTA（「未成年の申し込み条件を公式で確認する」）の遷移先としても使用（PR #19レビュー対応・修正3） | https://network.mobile.rakuten.co.jp/flow/for-minors/ 、https://network.mobile.rakuten.co.jp/faq/detail/00001493/ 、https://network.mobile.rakuten.co.jp/guide/kidsjunior/ |
 | 親が契約して子どもを「利用者」として登録する利用者登録サービスは提供されていない | 契約者＝利用者が原則である点の根拠 | https://network.mobile.rakuten.co.jp/faq/detail/00001493/ |
 | 契約者と利用者の名義が異なる場合、最強家族割・最強青春割・最強こども割は利用できない | 名義相違時の割引不可の根拠 | https://network.mobile.rakuten.co.jp/faq/detail/10001142/ 、https://network.mobile.rakuten.co.jp/faq/detail/10001139/ |
-| 従業員紹介特典（乗り換え14,000pt／乗り換え以外13,000pt、条件あり） | 記事末尾CTAの数値 | 作業開始時点の site/articles/campaign-guide/index.html の記載を転記（このリポジトリ内の既存記事。独自の数値は追加していない） |
+| 従業員紹介特典（乗り換え14,000pt／乗り換え以外13,000pt、条件あり） | 記事末尾CTAの数値。PR #17（2026-09-19マージ）でサイト全体が13,000ptへ更新されており、本記事は変更しない | 作業開始時点の site/articles/campaign-guide/index.html の記載を転記（このリポジトリ内の既存記事。独自の数値は追加していない） |
 
 ## 確認できなかった／記事内で断定を避けた項目
 

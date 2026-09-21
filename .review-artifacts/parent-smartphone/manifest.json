@@ -1,0 +1,51 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "feature/parent-smartphone-guide",
+  "startSha": "c62f3b2f95b673d17bf3b512276200446887b784",
+  "sourceSha": "6baad532de28bd31a9be6570ab025e24d64ac090",
+  "targetPage": "/articles/parent-smartphone/",
+  "viewports": ["375x812", "768x1024", "1200x900"],
+  "images": [
+    { "path": ".review-artifacts/parent-smartphone/375x812_full-preview.jpg", "desc": "375x812 フルページ（JPEG軽量プレビュー、品質60）" },
+    { "path": ".review-artifacts/parent-smartphone/768x1024_full-preview.jpg", "desc": "768x1024 フルページ（JPEG軽量プレビュー、品質60）" },
+    { "path": ".review-artifacts/parent-smartphone/1200x900_full-preview.jpg", "desc": "1200x900 フルページ（JPEG軽量プレビュー、品質60）" },
+    { "path": ".review-artifacts/parent-smartphone/375_keypoints.png", "desc": "375px：冒頭の結論ボックスと「最初に確認する3点」の拡大" },
+    { "path": ".review-artifacts/parent-smartphone/375_fitgrid.png", "desc": "375px：向いている親／慎重に考えたい親（2カラム→1カラム）の拡大" },
+    { "path": ".review-artifacts/parent-smartphone/375_fee-table.png", "desc": "375px：料金表（請求される金額とポイントを考慮した実質額を別列で表示）の拡大" },
+    { "path": ".review-artifacts/parent-smartphone/375_fee-breakdown.png", "desc": "375px：3オプション内訳表と、プランのみ／3オプション加入時の実質額計算カードの拡大" },
+    { "path": ".review-artifacts/parent-smartphone/375_call-compare.png", "desc": "375px：通話アプリ3択比較（Rakuten Link／標準電話アプリ／15分かけ放題）の拡大" },
+    { "path": ".review-artifacts/parent-smartphone/375_shop-support.png", "desc": "375px：あんしん操作サポートの対応内容カード一覧の拡大" },
+    { "path": ".review-artifacts/parent-smartphone/375_contract-diagram.png", "desc": "375px：契約者（親本人）と家族の役割の関係図の拡大" },
+    { "path": ".review-artifacts/parent-smartphone/375_channel-compare.png", "desc": "375px：Web・店舗・電話の申し込み方法3択比較の拡大" },
+    { "path": ".review-artifacts/parent-smartphone/375_steps.png", "desc": "375px：申し込みから利用開始までの9ステップの拡大" },
+    { "path": ".review-artifacts/parent-smartphone/375_checklist.png", "desc": "375px：申し込み前チェックリスト（label付きチェックボックス）の拡大" },
+    { "path": ".review-artifacts/parent-smartphone/375_faq-open.png", "desc": "375px：FAQを1件開いた状態" },
+    { "path": ".review-artifacts/parent-smartphone/375_apply-cta.png", "desc": "375px：末尾の従業員紹介CTA（14,000pt/13,000pt）の拡大" },
+    { "path": ".review-artifacts/parent-smartphone/1200_call-compare.png", "desc": "1200px：通話アプリ3択比較（3カラムレイアウト）の拡大" },
+    { "path": ".review-artifacts/parent-smartphone/1200_fitgrid.png", "desc": "1200px：向いている／慎重に考えたい親（横並びレイアウト）の拡大" },
+    { "path": ".review-artifacts/parent-smartphone/1200_fee-breakdown.png", "desc": "1200px：実質額計算カード（2カラムレイアウト）の拡大" },
+    { "path": ".review-artifacts/parent-smartphone/1200_contract-diagram.png", "desc": "1200px：契約者／家族の関係図（横並びレイアウト）の拡大" },
+    { "path": ".review-artifacts/parent-smartphone/ogp.png", "desc": "OGP画像そのもの（1200x630、「実質額だけで決めない」の見出しと条件表記）" }
+  ],
+  "capturedAt": "2026-09-21T00:00:00+09:00",
+  "checkedItems": [
+    "node scripts/validate-content.mjs がエラー0件",
+    "git diff --check で空白文字エラーがないこと",
+    "JSON-LDをnode -e でパースして確認（Article/BreadcrumbList/FAQPageの3項目、FAQは8件）",
+    "FAQ本文とFAQPage JSON-LDが8件すべて完全一致することをスクリプトで突合確認",
+    "内部リンク・外部リンク切れなし（validate-content.mjsのBROKEN_INTERNAL_LINKチェックを含む）",
+    "店舗検索への外部リンクが target=_blank rel=noopener noreferrer で新しいタブで開くことを確認",
+    "チェックリストのinput type=checkboxがlabelで文章と関連付けられ、文章クリックでチェック状態が切り替わることをPlaywrightで確認",
+    "375px/768px/1200pxのいずれでもページ全体の横スクロールが発生しないこと（document.scrollWidth === clientWidth）",
+    "料金表がtable-wrap内にあり、横スクロール可能な構造になっていること（この記事の列幅では375pxでも収まったが、構造上は横スクロール対応）",
+    "FAQアコーディオンの開閉、aria-expandedの切り替え",
+    "コンソールエラー・ページエラーが発生していないこと",
+    "OGP画像が1200x630pxで、文字切れがないこと",
+    "料金表・オプション内訳・実質額カードの数値が一致すること（968-110=858、2068-110=1958、3168-110=3058、1980-880=1100）",
+    "「858円」「1,100円」が単独では強調されず、必ず請求額・計算式・注記とセットで表示されていること"
+  ],
+  "notes": [
+    "フルページのオリジナルPNG（約1.3〜1.5MB/枚）は review-output/parent-smartphone/（Git管理外）に別途保存済み。本フォルダにはJPEG軽量プレビュー（quality=60、単純な再圧縮のみ）と個別セクションの拡大画像を格納している。",
+    "個人情報・認証情報・アクセストークンが写った画像は含まれていない。"
+  ]
+}

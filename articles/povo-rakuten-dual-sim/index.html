@@ -1,0 +1,776 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>楽天モバイル×povoのデュアルSIM運用｜メリット・料金・回線設定と切り替え方</title>
+  <meta name="description" content="楽天モバイルとpovo2.0を1台で併用するときの役割分担を解説。データ通信・発信番号・予備回線の割り当て、3つの運用パターン、合計月額の計算例、iPhone・Androidの設定手順、つながりにくいときの切り替えとpovoの維持条件をまとめました。" />
+  <meta name="keywords" content="楽天モバイル povo デュアルSIM, 楽天モバイル povo 併用, povo 楽天モバイル 設定, 楽天モバイル povo 料金, デュアルSIM 使い分け" />
+  <link rel="canonical" href="https://yu-gin-19.github.io/articles/povo-rakuten-dual-sim/" />
+  <meta property="og:title" content="楽天モバイル×povoのデュアルSIM運用｜メリット・料金・回線設定と切り替え方" />
+  <meta property="og:description" content="楽天モバイルとpovo2.0を1台で併用するときの役割分担・合計月額・iPhone/Androidの設定手順・切り替え方を解説します。" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://yu-gin-19.github.io/articles/povo-rakuten-dual-sim/" />
+  <meta property="og:image" content="https://yu-gin-19.github.io/articles/povo-rakuten-dual-sim/ogp.png?v=20260922" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="https://yu-gin-19.github.io/articles/povo-rakuten-dual-sim/ogp.png?v=20260922" />
+  <!-- 構造化データ: Article + BreadcrumbList + FAQPage -->
+  <script type="application/ld+json">
+  [
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "楽天モバイル×povoのデュアルSIM運用｜メリット・料金・回線設定と切り替え方",
+    "description": "楽天モバイルとpovo2.0を1台で併用するときの役割分担を解説。データ通信・発信番号・予備回線の割り当て、3つの運用パターン、合計月額の計算例、iPhone・Androidの設定手順、つながりにくいときの切り替えとpovoの維持条件をまとめました。",
+    "datePublished": "2026-09-22",
+    "dateModified": "2026-09-22",
+    "author": {
+      "@type": "Person",
+      "name": "楽天社員の損しない選び方"
+    }
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "ホーム",
+        "item": "https://yu-gin-19.github.io/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "記事一覧",
+        "item": "https://yu-gin-19.github.io/articles/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "楽天モバイル×povoのデュアルSIM運用",
+        "item": "https://yu-gin-19.github.io/articles/povo-rakuten-dual-sim/"
+      }
+    ]
+  },
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "povoの番号でRakuten Linkの無料通話はできますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "できません。Rakuten Linkは、Rakuten最強プランに契約した電話番号と契約時に登録した楽天IDを用いて認証するアプリです。Rakuten Linkから発信したときの発信元は、楽天モバイル側の番号になります。povoの番号で発信するときは標準の電話アプリを使い、povoの国内通話料（30秒あたり22円、税込）がかかります。povo側で通話料を抑えたい場合は、5分以内通話かけ放題（月額550円、税込）などの通話トッピングを購入する方法があります。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "楽天モバイルが圏外になったら、自動でpovoに切り替わりますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "必ず自動で切り替わるとは限りません。楽天モバイルの公式FAQには、iPhoneの「モバイルデータ通信の切替を許可」をオンにすると、電波状況や回線利用状況に応じて主回線・副回線のモバイルデータ通信を利用できるという説明があります。一方で、Rakuten Linkの不具合時の確認項目としては、同じ設定が「オフ」になっているかを確認するよう案内されています。設定の目的が場面によって異なるため、常に安定して自動で切り替わることを前提にせず、手動で切り替える運用を基本にしてください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "povoは0円のまま長期間持ち続けられますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "条件があります。povo2.0の提供条件書によると、SIMを有効化した日以降の各日から遡って180日間に有料トッピングの購入がない場合、順次利用停止となり、利用停止後30日間も引き続き購入等がない場合は契約が解除されます。180日の起算は、SIM有効化日から180日、または最後に購入したトッピングの有効期限翌日から180日です。公式FAQでは、期間内の通話料とSMS送信料の合計が660円（税込）を超えている場合や、プリペイドコード・PINコード・トレードコードを利用した場合は対象から除外されるとされていますが、それらのコードの有効期限翌日から180日購入がない場合は再び停止対象になります。「半年に一度どんな無料コードでも使えば維持できる」と単純化せず、公式の条件をご確認ください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "自分のスマホがデュアルSIMに対応しているか、どう確認すればいいですか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "eSIMに対応していることと、2回線を同時に有効化できることは別の条件です。楽天モバイルの公式FAQでは、iPhone XS以降のiPhoneでデュアルSIMを利用できるとされています。Pixelの場合、Googleの公式ヘルプでは物理SIMとeSIMの組み合わせのほか、Pixel 7・Pixel 7 Pro以降で2つのeSIMプロファイルを同時に使用できるとされています。eSIMを何枚保存できるかと、同時に何回線を有効化できるかは別の項目なので、端末メーカーの公式ページと、楽天モバイル・povoそれぞれの対応製品ページの両方で確認してください。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "povoのデータ通信を使っている間、Rakuten Linkは保証されますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "動作保証の対象外です。楽天モバイル公式サイトには、デュアルSIM対応端末で、モバイルデータ通信や通話／音声回線に利用するSIMを楽天モバイル以外のSIMに設定した状態で行った操作・通話については動作保証対象外である、という趣旨の記載があります。これは「必ず使えない」という意味ではありませんが、保証の範囲からは外れます。Rakuten Linkを確実に使いたい場面では、モバイルデータ通信と通話の回線を楽天モバイル側に戻してから使うことをおすすめします。"
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "2つの番号あてに同時に着信できますか？",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "端末の対応によります。povo公式の解説では、デュアルSIMの動作は組み合わせごとに分かれており、DSDSは自動切り替えができるものの同時通話は不可、DSDVは通話中も別回線の着信が可能、と説明されています。どの方式に対応するかは機種ごとに異なり、対応する周波数帯も機種によって変わります。「2回線を入れれば必ず両方の番号で同時に待ち受けできる」とは限らないため、端末メーカーの公式情報で対応状況を確認してください。"
+        }
+      }
+    ]
+  }
+  ]
+  </script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-W82F5QSC9N"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-W82F5QSC9N');
+  </script>
+  <script src="../../components/cta-tracking.js"></script>
+  <link rel="stylesheet" href="../../style.css" />
+  <link rel="stylesheet" href="article.css" />
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">メインコンテンツへスキップ</a>
+
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="/" class="site-logo">🏮 楽天社員の損しない選び方</a>
+      <nav class="site-nav" aria-label="グローバルナビゲーション">
+        <a href="#section-2">運用パターン</a>
+        <a href="/articles/campaign-guide/">申し込み条件</a>
+        <a href="/articles/">記事一覧</a>
+      </nav>
+    </div>
+  </header>
+
+  <aside class="disclosure-banner" aria-label="広告・運営者情報">
+    <div class="container"><strong>広告・PR</strong>｜楽天グループ社員が個人で運営する非公式サイトです。紹介リンクの利用により、読者と運営者の双方に特典が発生します。内容は個人の見解であり、楽天グループ各社の公式見解ではありません。</div>
+  </aside>
+
+  <main id="main-content" class="article-wrap">
+    <div class="container">
+
+      <!-- パンくず -->
+      <nav class="breadcrumb" aria-label="パンくずリスト">
+        <a href="/">ホーム</a> &rsaquo;
+        <a href="/articles/">記事一覧</a> &rsaquo;
+        <span aria-current="page">楽天モバイル×povoのデュアルSIM運用</span>
+      </nav>
+
+      <article>
+        <!-- 記事ヘッダー -->
+        <header class="article-header">
+          <div class="article-label">複数回線・組み合わせガイド</div>
+          <p class="info-date">情報確認日：2026年9月22日</p>
+          <h1 class="article-title">楽天モバイル×povoのデュアルSIM運用<br>役割分担・料金・設定と切り替え方</h1>
+
+          <p class="article-lead">この記事のおすすめは、<strong>楽天モバイルを普段のデータ回線、povo2.0を必要なときだけ使う補助回線にする</strong>使い分けです。楽天モバイルはデータ量に応じた段階制で、使うほど上限まで料金が上がる代わりに上限が決まっています。povo2.0は基本料0円で、必要な月だけトッピングを買い足せます。この組み合わせなら、普段のデータ通信は楽天モバイルに任せ、出張・イベント・障害時など必要な場面でだけpovoに切り替えられます。どちらの番号を残すかは、この役割分担とは別に決める話です。</p>
+
+          <ul class="lead-summary">
+            <li><a href="#section-2">3つの運用パターンと回線の割り当てを見る</a></li>
+            <li><a href="#section-3">合計いくらかかるかを見る</a></li>
+            <li><a href="#section-5">iPhoneの設定手順を見る</a></li>
+            <li><a href="#section-6">Androidの設定手順を見る</a></li>
+            <li><a href="#section-7">つながりにくいときの切り替え手順を見る</a></li>
+          </ul>
+
+          <div class="honest-box">
+            <div class="honest-box__title">この記事の対象</div>
+            <p>国内での利用を前提に、<strong>電話番号・通話がついたRakuten最強プラン</strong>と、<strong>povo2.0の「通話＋データ」</strong>を1台のスマホで併用する場合を対象にしています。povo2.0には電話番号のない「データ専用」もありますが、条件が異なるため<a href="#section-4">④の章</a>で違いだけを補足します。携帯会社やSIMの基礎知識がある方向けの記事です。SIMの種類そのものの選び方は<a href="/articles/esim-vs-sim-card/">eSIMとSIMカードの選び方</a>、2回線目を持つこと自体のメリットは<a href="/articles/second-line/">楽天モバイルを2回線目にする記事</a>で解説しています。</p>
+          </div>
+
+          <nav class="toc" aria-label="目次">
+            <p class="toc__title">この記事の目次</p>
+            <ol class="toc__list">
+              <li><a href="#section-1">① 楽天×povoで得られるメリット</a></li>
+              <li><a href="#section-2">② 3つの運用パターンと回線の割り当て</a></li>
+              <li><a href="#section-3">③ 合計いくらかかるか</a></li>
+              <li><a href="#section-4">④ 契約前に決めることと申し込み順</a></li>
+              <li><a href="#section-5">⑤ iPhoneの設定手順</a></li>
+              <li><a href="#section-6">⑥ Androidの設定手順</a></li>
+              <li><a href="#section-7">⑦ 切り替え手順と、povoの維持管理</a></li>
+              <li><a href="#section-8">⑧ 運用上の制約・よくある失敗</a></li>
+              <li><a href="#section-9">⑨ よくある質問</a></li>
+            </ol>
+          </nav>
+
+          <div class="article-meta">
+            <span>👤 楽天社員の損しない選び方｜元楽天モバイル事業・現楽天市場担当</span>
+          </div>
+        </header>
+
+        <!-- 1. メリット -->
+        <section class="article-section" id="section-1">
+          <h2>① 楽天モバイル×povoで得られるメリット</h2>
+          <p class="article-text">この組み合わせで実際に得られるものを、「できること」「成立する条件」「運用例」の順に整理します。条件を満たさないと成立しないものもあるため、期待だけで判断しないでください。</p>
+
+          <ol class="merit-list">
+            <li class="merit-list__item">
+              <div class="merit-list__head">
+                <span class="merit-list__num">1</span>
+                <h3 class="merit-list__title">普段は楽天モバイル、必要な月だけpovoのトッピングを買う運用ができる</h3>
+              </div>
+              <p class="merit-list__text"><strong>できること：</strong>普段のデータ通信を楽天モバイルに任せ、povo2.0は基本料0円のまま保有しておき、必要な場面でだけトッピングを購入して使えます。</p>
+              <p class="merit-list__text"><strong>成立する条件：</strong>povo2.0の基本料は0円ですが、トッピングを購入していない0GBの状態では送受信最大128kbpsに制限されます。つまり「持っているだけ」の状態では、通常のデータ通信用としては使えません。また、長期間トッピングを購入しないと利用停止・契約解除の対象になります（<a href="#section-7">⑦の章</a>で条件を説明します）。楽天モバイル側は0GBの月でも基本料金が発生します。</p>
+              <p class="merit-list__text"><strong>運用例：</strong>普段は楽天モバイルだけを使い、長距離移動や出張で通信量が増える日だけ、povoの「データ使い放題（24時間）」（330円・税込）を購入してpovo側に切り替える、といった使い方です。</p>
+            </li>
+
+            <li class="merit-list__item">
+              <div class="merit-list__head">
+                <span class="merit-list__num">2</span>
+                <h3 class="merit-list__title">楽天回線とau網のpovoを、電波状況に応じて選び直せる</h3>
+              </div>
+              <p class="merit-list__text"><strong>できること：</strong>楽天モバイルの回線と、au網を利用するpovo2.0の回線を1台に入れておけば、片方がつながりにくい場所で、もう片方に手動で切り替えて使える場合があります。</p>
+              <p class="merit-list__text"><strong>成立する条件：</strong>これは「完全に独立した設備をもつ冗長化」ではありません。楽天モバイルは自社回線が届かない場所でパートナー回線を利用する場合があり、2回線が同じ設備に依存する場面もあり得ます。さらに、端末の故障・電池切れ・紛失といった共通の原因では、2回線とも同時に使えなくなります。切り替えるには、povo側に有効なデータ容量が残っている必要もあります。</p>
+              <p class="merit-list__text"><strong>運用例：</strong>旅行先や地下施設などで楽天モバイルがつながりにくいときに、データ通信をpovoへ手動で切り替える。エリアの考え方そのものは<a href="/articles/coverage-area/" onclick="trackCta('journey_click', {'page_type': 'povo-rakuten-dual-sim', 'cta_position': 'merit2-link', 'reader_stage': 'consider', 'destination': 'coverage-area'})">通信エリアの記事</a>で解説しています。</p>
+            </li>
+
+            <li class="merit-list__item">
+              <div class="merit-list__head">
+                <span class="merit-list__num">3</span>
+                <h3 class="merit-list__title">使い慣れた番号をpovoに残したまま、楽天モバイルのデータ通信を追加できる</h3>
+              </div>
+              <p class="merit-list__text"><strong>できること：</strong>今の番号をpovo2.0で維持したまま、楽天モバイルを追加してデータ通信を担当させられます。番号を変えずにデータ回線だけ入れ替える形です。</p>
+              <p class="merit-list__text"><strong>成立する条件：</strong>この場合、今までの番号からの発信は標準の電話アプリでpovo回線を選んで行うことになり、povoの国内通話料（30秒あたり22円、税込）がかかります。Rakuten Linkの無料通話は、Rakuten最強プランで契約した楽天モバイル側の番号からの発信に対するものです。<strong>povoの番号がRakuten Linkで無料になるわけではありません。</strong></p>
+              <p class="merit-list__text"><strong>運用例：</strong>仕事の連絡先として長く使っている番号をpovoに残し、楽天モバイル側の番号はRakuten Linkでの発信用・データ通信用として使う、という分け方です。Rakuten Linkの対象範囲は<a href="/articles/rakuten-link-guide/" onclick="trackCta('journey_click', {'page_type': 'povo-rakuten-dual-sim', 'cta_position': 'merit3-link', 'reader_stage': 'consider', 'destination': 'rakuten-link-guide'})">Rakuten Linkの解説記事</a>で確認できます。</p>
+            </li>
+
+            <li class="merit-list__item">
+              <div class="merit-list__head">
+                <span class="merit-list__num">4</span>
+                <h3 class="merit-list__title">1台で運用でき、端末をもう1台持たなくてよい</h3>
+              </div>
+              <p class="merit-list__text"><strong>できること：</strong>対応端末であれば、物理SIMとeSIM、または2つのeSIMを組み合わせて、1台のスマホに2回線をまとめられます。持ち歩く端末を増やさずに済みます。</p>
+              <p class="merit-list__text"><strong>成立する条件：</strong>2回線を1台にまとめても、<strong>両方の回線で同時に通信したり、速度や容量が合算されたりするわけではありません。</strong>データ通信に使える回線は基本的に1つで、どちらを使うかを設定で選びます。同時待受や通話中の動作は端末の対応方式によって変わります（<a href="#section-4">④の章</a>で確認方法を説明します）。</p>
+              <p class="merit-list__text"><strong>運用例：</strong>1台のiPhoneに楽天モバイル（eSIM）とpovo（eSIM）を入れ、データ通信の回線だけを場面に応じて切り替える運用です。</p>
+            </li>
+          </ol>
+
+          <div class="honest-box">
+            <div class="honest-box__title">SPU（楽天市場のポイント倍率）について</div>
+            <p>楽天モバイルの対象プランを契約し、SPUへエントリーすると、楽天市場でのポイント倍率の条件を満たせます。ただしこれはpovoとの併用で増えるものではなく、楽天モバイルを契約すること自体による特典です。条件・上限は<a href="/articles/spu-4x/" onclick="trackCta('journey_click', {'page_type': 'povo-rakuten-dual-sim', 'cta_position': 'section1-spu', 'reader_stage': 'consider', 'destination': 'spu-4x'})">SPU+4倍の記事</a>で確認してください。</p>
+          </div>
+        </section>
+
+        <!-- 2. 運用パターン -->
+        <section class="article-section" id="section-2">
+          <h2>② 3つの運用パターンと回線の割り当て</h2>
+          <p class="article-text">「主回線・副回線」というラベルだけでは、実際に何をどう設定すればよいかが決まりません。ここでは<strong>普段のデータ通信・標準電話で選ぶ回線・Rakuten Linkで発信する番号・切り替え時の操作</strong>の4つを、パターンごとに具体的に示します。自分に近いものを選んでください。</p>
+
+          <div class="pattern-cards">
+
+            <div class="pattern-card pattern-card--main">
+              <div class="pattern-card__head">
+                <span class="pattern-card__badge">A</span>
+                <div>
+                  <p class="pattern-card__title">楽天モバイルを主に使い、povoを補助にする</p>
+                  <p class="pattern-card__tag">この記事の主軸</p>
+                </div>
+              </div>
+              <dl class="pattern-card__rows">
+                <div class="pattern-card__row">
+                  <dt>普段のデータ通信</dt>
+                  <dd>楽天モバイル</dd>
+                </div>
+                <div class="pattern-card__row">
+                  <dt>標準電話で選ぶ回線</dt>
+                  <dd>楽天モバイル（普段使う番号が楽天モバイル側のため）</dd>
+                </div>
+                <div class="pattern-card__row">
+                  <dt>Rakuten Linkで発信する番号</dt>
+                  <dd>楽天モバイルの番号</dd>
+                </div>
+                <div class="pattern-card__row">
+                  <dt>切り替え時の操作</dt>
+                  <dd>通常は楽天モバイル。必要なときだけ、データ通信に使う回線を手動でpovoへ変更する</dd>
+                </div>
+              </dl>
+              <p class="pattern-card__note">povo側は別番号になります。楽天モバイルを新規契約し、povoも新しく契約する（または今のpovoを残す）形です。</p>
+            </div>
+
+            <div class="pattern-card">
+              <div class="pattern-card__head">
+                <span class="pattern-card__badge">B</span>
+                <div>
+                  <p class="pattern-card__title">povoの番号を残して、楽天モバイルを追加する</p>
+                  <p class="pattern-card__tag">番号を変えたくない人向け</p>
+                </div>
+              </div>
+              <dl class="pattern-card__rows">
+                <div class="pattern-card__row">
+                  <dt>普段のデータ通信</dt>
+                  <dd>楽天モバイル</dd>
+                </div>
+                <div class="pattern-card__row">
+                  <dt>標準電話で選ぶ回線</dt>
+                  <dd>povo（今までの番号で発信・着信するため）。国内通話料は30秒あたり22円（税込）</dd>
+                </div>
+                <div class="pattern-card__row">
+                  <dt>Rakuten Linkで発信する番号</dt>
+                  <dd>楽天モバイルの番号（povoの番号では発信できません）</dd>
+                </div>
+                <div class="pattern-card__row">
+                  <dt>切り替え時の操作</dt>
+                  <dd>Aと同じ。データ通信に使う回線だけを手動で変更する</dd>
+                </div>
+              </dl>
+              <p class="pattern-card__note">今までの番号を維持できる一方、その番号からの通話は無料になりません。通話が多い場合は、povoの5分以内通話かけ放題（月額550円、税込）などの通話トッピングとの比較が必要です。</p>
+            </div>
+
+            <div class="pattern-card">
+              <div class="pattern-card__head">
+                <span class="pattern-card__badge">C</span>
+                <div>
+                  <p class="pattern-card__title">povoを普段のデータ通信に使う</p>
+                  <p class="pattern-card__tag">比較対象として</p>
+                </div>
+              </div>
+              <dl class="pattern-card__rows">
+                <div class="pattern-card__row">
+                  <dt>普段のデータ通信</dt>
+                  <dd>povo（購入したトッピングの容量・有効期間の範囲内）</dd>
+                </div>
+                <div class="pattern-card__row">
+                  <dt>標準電話で選ぶ回線</dt>
+                  <dd>利用目的に合わせて選ぶ（相手に伝えている番号のほう）</dd>
+                </div>
+                <div class="pattern-card__row">
+                  <dt>Rakuten Linkで発信する番号</dt>
+                  <dd>楽天モバイルの番号。ただし下の注意を必ずお読みください</dd>
+                </div>
+                <div class="pattern-card__row">
+                  <dt>切り替え時の操作</dt>
+                  <dd>トッピングの容量・有効期間が切れたら、楽天モバイル側へ戻す</dd>
+                </div>
+              </dl>
+              <div class="honest-box">
+                <div class="honest-box__title">Cを「最強の構成」として勧めない理由</div>
+                <p>楽天モバイル公式サイトには、デュアルSIM対応端末で、モバイルデータ通信や通話／音声回線に利用するSIMを楽天モバイル以外のSIMに設定した状態で行った操作・通話については<strong>動作保証対象外</strong>である、という趣旨の記載があります。Cはこの条件に当てはまります。「使えない」と断定されているわけではありませんが、保証の範囲からは外れます。また、povoをデータ通信に使っても楽天モバイルの<strong>最低月額（3GBまでで1,078円・税込）は発生する</strong>ため、常に割安になるとは限りません。</p>
+              </div>
+            </div>
+
+          </div>
+
+          <p class="table-note">※パターンA・Bのどちらでも、楽天モバイル側を普段のデータ通信に使う点は同じです。違うのは「どの番号を残し、標準電話でどちらの回線を選ぶか」だけです。番号をどちらに残すかは、<a href="#section-4">④の章</a>で先に決めてください。</p>
+        </section>
+
+        <!-- 3. 費用 -->
+        <section class="article-section" id="section-3">
+          <h2>③ 合計いくらかかるか</h2>
+          <p class="article-text">合計額の考え方は次の算式です。楽天モバイルは月額、povoは購入したトッピングの代金という、性質の違う2つを足すことになります。</p>
+
+          <div class="formula-box">
+            <p class="formula-box__text">楽天モバイルの月額 ＋ povoで購入するトッピング代 ＋ 対象外の通話料・SMS送信料・オプション料</p>
+          </div>
+
+          <div class="honest-box">
+            <div class="honest-box__title">計算の前提</div>
+            <ul>
+              <li>楽天モバイルは<strong>0GBの月でも基本料金が発生します</strong>。使わない月も最低月額（3GBまでで1,078円・税込）はかかります。</li>
+              <li>povo2.0の基本料は0円ですが、トッピングを購入しない0GBの状態では送受信最大128kbpsに制限されます。</li>
+              <li>金額はすべて税込です。端末代金、povoの国内通話料（30秒あたり22円）・SMS送信料（70文字まで1通3.3円）、各種オプション料は含みません。</li>
+              <li>従業員紹介特典やSPUのポイント還元を差し引いた「実質◯円」は、ここでは主価格として扱いません。</li>
+            </ul>
+          </div>
+
+          <h3 class="cost-heading">例1：楽天モバイルを月20GB超使い、povoはその月に短期間だけ使う</h3>
+          <div class="cost-card">
+            <ul class="cost-card__lines">
+              <li><span>楽天モバイル（20GB超）</span><strong>3,278円</strong></li>
+              <li><span>povo データ使い放題（24時間）</span><strong>330円</strong></li>
+            </ul>
+            <p class="cost-card__total">合計 <strong>3,608円</strong>（その月のみ）</p>
+            <p class="cost-card__family">最強家族割を適用する場合：3,168円 ＋ 330円 ＝ <strong>3,498円</strong></p>
+          </div>
+          <p class="table-note">povoを使わない月は、楽天モバイルの料金だけになります。</p>
+
+          <h3 class="cost-heading">例2：楽天モバイルは3GB以内に収め、povoに一定の容量を買い足す</h3>
+          <div class="cost-card">
+            <ul class="cost-card__lines">
+              <li><span>楽天モバイル（3GBまで）</span><strong>1,078円</strong></li>
+              <li><span>povo データ追加5GB（30日間）</span><strong>1,380円</strong></li>
+            </ul>
+            <p class="cost-card__total">合計 <strong>2,458円</strong>（毎月買う場合）</p>
+            <p class="cost-card__family">最強家族割を適用する場合：968円 ＋ 1,380円 ＝ <strong>2,348円</strong></p>
+          </div>
+          <p class="table-note">楽天モバイルだけで3GB超〜20GBまで使うと2,178円（最強家族割適用時2,068円）です。この例のように分けると割高になる場合があるため、実際の使い方で比較してください。</p>
+
+          <h3 class="cost-heading">例3：povoの長期有効トッピングを備えとして持っておく</h3>
+          <div class="cost-card">
+            <ul class="cost-card__lines">
+              <li><span>楽天モバイル（3GBまで）</span><strong>1,078円／月</strong></li>
+              <li><span>povo データ追加60GB（365日間）</span><strong>13,200円（一括払い）</strong></li>
+            </ul>
+            <p class="cost-card__total">初月 <strong>14,278円</strong>（楽天モバイル1,078円 ＋ povo一括13,200円）</p>
+            <p class="cost-card__family">最強家族割を適用する場合：968円 ＋ 13,200円 ＝ <strong>14,168円</strong></p>
+            <p class="cost-card__note">月換算の参考値：13,200円 ÷ 12 ＝ 1,100円／月。ただし<strong>実際の支払いは購入時の一括13,200円</strong>で、換算期間は365日です。分割払いではありません。</p>
+          </div>
+          <p class="table-note">出典：<a href="https://network.mobile.rakuten.co.jp/fee/saikyo-plan/" target="_blank" rel="noopener noreferrer">Rakuten最強プランの料金（楽天モバイル公式サイト）</a>、<a href="https://povo.jp/topping-simulator/" target="_blank" rel="noopener noreferrer">販売中のトッピング一覧（povo2.0公式サイト）</a>、いずれも2026年9月22日確認。povoのトッピングは入れ替わりがあり、期間限定商品も販売されています。ここでは確認時点で期間限定表記のない商品のみを使っています。申し込み前に最新の価格・有効期間をご確認ください。</p>
+
+          <div class="lead-cta">
+            <a href="/articles/campaign-guide/" class="btn-secondary-outline" onclick="trackCta('journey_click', {'page_type': 'povo-rakuten-dual-sim', 'cta_position': 'section3-campaign', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">楽天モバイルの申し込み条件を確認する →</a>
+          </div>
+        </section>
+
+        <!-- 4. 契約前に決めること -->
+        <section class="article-section" id="section-4">
+          <h2>④ 契約前に決めることと申し込み順</h2>
+          <p class="article-text">設定の前に、決める順番があります。番号の扱いを先に決めないと、契約の種類（新規か乗り換えか）が決まりません。</p>
+
+          <ol class="step-list">
+            <li><strong>どの番号を残すか決める。</strong>今の番号を残すなら、その番号を持っている会社との関係（維持するのか、楽天モバイルへ移すのか）を先に決めます。<strong>同じ番号を2社で同時に持つことはできません。</strong></li>
+            <li><strong>端末が両社に対応しているか、SIMの構成が成り立つかを確認する。</strong>確認する項目は下のボックスにまとめました。</li>
+            <li><strong>キャンペーン・紹介の条件を確認する。</strong>楽天モバイル側の申し込み条件は<a href="/articles/campaign-guide/" onclick="trackCta('journey_click', {'page_type': 'povo-rakuten-dual-sim', 'cta_position': 'section4-campaign', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">キャンペーン解説の記事</a>で確認できます。</li>
+            <li><strong>足りない回線を契約する。</strong>新しい番号を増やすなら新規契約、今の番号を移すならMNP（電話番号を引き継ぐ乗り換え）です。楽天モバイル・povoはどちらもMNPワンストップに対応しており、対応事業者間ではMNP予約番号を事前に取得しなくても手続きできる場合があります。手順は<a href="/articles/how-to-switch/" onclick="trackCta('journey_click', {'page_type': 'povo-rakuten-dual-sim', 'cta_position': 'section4-switch', 'reader_stage': 'consider', 'destination': 'how-to-switch'})">乗り換え手順の記事</a>で解説しています。</li>
+            <li><strong>開通させる。</strong>各社の案内に沿って開通手続きを行います。他社回線の開通手順については、楽天モバイル公式FAQでも「各社へご確認ください」と案内されています。</li>
+            <li><strong>端末を設定する。</strong>iPhoneは<a href="#section-5">⑤の章</a>、Androidは<a href="#section-6">⑥の章</a>へ進んでください。</li>
+          </ol>
+
+          <div class="honest-box">
+            <div class="honest-box__title">端末側で確認する項目（混同しやすい点を分けています）</div>
+            <ul>
+              <li><strong>eSIM対応と「デュアルeSIM」対応は別</strong>：eSIMを使えることと、2つのeSIMを<strong>同時に有効化</strong>できることは異なる条件です。また、eSIMを何枚<strong>保存</strong>できるかと、同時に何回線を<strong>有効化</strong>できるかも別の項目です。</li>
+              <li><strong>SIMの組み合わせ</strong>：物理SIM＋eSIM、eSIM×2など、どの組み合わせが使えるかは機種によります。povo2.0の「データ専用」はeSIMのみで、物理SIMは利用できません。</li>
+              <li><strong>対応周波数帯・両社での動作確認</strong>：楽天モバイル・povo（au網）それぞれの対応製品ページで、その機種が確認済みかを見てください。楽天モバイルの公式FAQでは、iPhone XS以降のiPhoneでデュアルSIMを利用できるとされています。</li>
+              <li><strong>SIMロック・国内外モデルの違い・OSバージョン</strong>：海外で購入した端末や古いOSでは、対応が異なる場合があります。</li>
+              <li><strong>MVNO回線を使っていた端末</strong>：楽天モバイルの公式FAQでは、MVNO回線を利用中の場合、APN構成プロファイルの削除が必要とされています。</li>
+            </ul>
+            <p>今の端末が使えるかどうかの調べ方全般は、<a href="/articles/current-phone-compatibility/" onclick="trackCta('journey_click', {'page_type': 'povo-rakuten-dual-sim', 'cta_position': 'section4-compat', 'reader_stage': 'consider', 'destination': 'current-phone-compatibility'})">対応機種の確認方法の記事</a>で解説しています。</p>
+          </div>
+
+          <div class="honest-box">
+            <div class="honest-box__title">povo2.0の「通話＋データ」と「データ専用」の違い</div>
+            <p>この記事が対象にしているのは<strong>「通話＋データ」</strong>です。povo2.0の提供条件書によると、「データ専用」は<strong>eSIMのみ</strong>の提供で物理SIMは利用できず、<strong>契約時に初回トッピングの購入が必要</strong>とされています。データ専用には音声通話用の電話番号が付かないため、<strong>今の番号を移して維持する用途には使えません</strong>。「データ専用」の初回購入条件を「通話＋データ」の説明に当てはめないよう、公式の提供条件書でご確認ください。</p>
+          </div>
+
+          <div class="honest-box">
+            <div class="honest-box__title">初期費用について（確認できた範囲）</div>
+            <p>povo2.0の提供条件書には、契約事務手数料として「同一名義で5回線ご契約の場合、累計6回線目以降、税込3,850円／回線」との記載があります。楽天モバイルの契約事務手数料は、同一名義で累計4回線目までは無料、5回線目以降は1回線につき3,850円（税込、2025年11月19日から）です。いずれも回線数によって条件が変わるため、自分の契約状況に当てはめて確認してください。端末購入代金・SIM再発行手数料など、これ以外の費用が発生する条件については、本記事では網羅的に確認できていません。</p>
+          </div>
+        </section>
+
+        <!-- 5. iPhone -->
+        <section class="article-section" id="section-5">
+          <h2>⑤ iPhoneの設定手順</h2>
+          <p class="article-text">Appleの公式サポートページ（2026年9月22日確認）の案内に沿った手順です。iOSのバージョンによって表示名が変わることがあるため、画面と異なる場合は<a href="https://support.apple.com/ja-jp/109317" target="_blank" rel="noopener noreferrer">Apple公式サポート「デュアルSIM」</a>の最新の案内を優先してください。</p>
+
+          <ol class="step-list">
+            <li><strong>2回線の開通を確認し、回線に名前を付ける。</strong>「設定」→「モバイル通信」→ 対象の番号 →「モバイル通信プランの名称」で、それぞれ<strong>「楽天」「povo」</strong>など分かる名前にします。以降の設定で取り違えにくくなります。</li>
+            <li><strong>モバイルデータ通信に使う回線を選ぶ。</strong>「設定」→「モバイル通信」→「モバイルデータ通信」で選びます。パターンA・Bでは<strong>楽天モバイル</strong>を選びます。</li>
+            <li><strong>デフォルトの音声回線を選ぶ。</strong>標準の電話アプリで発信するときの回線です。パターンBで今までの番号（povo）から発信する必要がある場合はpovoを選びます。その場合、その番号からの通話には<strong>povoの国内通話料（30秒あたり22円、税込）</strong>がかかります。</li>
+            <li><strong>SMS・iMessage・FaceTimeで使う番号を確認する。</strong>Appleの案内では、メッセージを送る前に表示されている電話番号をタップして、送信に使う番号を選べるとされています。相手に伝えている番号と一致しているか確認してください。</li>
+            <li><strong>Rakuten Linkを楽天モバイルの番号で認証する。</strong>Rakuten Linkは、Rakuten最強プランに契約した電話番号と契約時に登録した楽天IDで認証します。<strong>標準の電話アプリとは別のアプリ</strong>であり、発信元の番号も通話料の扱いも異なります。</li>
+            <li><strong>Wi-Fiを切って動作を確認する。</strong>データ通信ができるか、発信時の番号が想定どおりか、<strong>両方の番号あてに着信できるか</strong>、SMSを受信できるかを確認します。<strong>緊急通報番号へのテスト発信はしないでください。</strong></li>
+          </ol>
+
+          <div class="honest-box">
+            <div class="honest-box__title">「モバイルデータ通信の切替を許可」を一律オンにしない</div>
+            <p>この設定については、楽天モバイルの案内が場面によって異なります。</p>
+            <ul>
+              <li>楽天モバイルの公式FAQ（他社回線の追加について）では、この設定を<strong>オンにすると</strong>、電波状況や回線利用状況に応じて主回線・副回線のモバイルデータ通信を利用できる、と説明されています。</li>
+              <li>一方、Rakuten Linkで通話やSMSがうまくいかない場合の確認項目としては、この設定が<strong>オフになっているかを確認する</strong>よう案内されています（オンだと、ネットワーク環境が悪いときに利用するSIMが自動的に切り替わるため）。</li>
+              <li>Appleの案内では、この設定をオンにすると、音声通話中にその回線が音声とデータの両方を使うように切り替わるとされています。オフの場合、通話中にもう一方の回線での受信ができず、留守番電話に接続される動作が説明されています。</li>
+            </ul>
+            <p>つまり、<strong>この設定は「常に安定した自動切り替え」を保証するものではありません</strong>。Rakuten Linkを安定して使いたい場合はオフ、通話中のデータ通信を優先したい場合はオン、というように、自分がどちらを重視するかで決めてください。迷う場合は、まずオフで運用し、必要な場面だけ手動で切り替えることをおすすめします。</p>
+          </div>
+
+          <p class="table-note">※本記事に実機のスクリーンショットは掲載していません。手順は公式サポートページの記載に沿って文章で説明しています。実際の画面はOSバージョンや機種によって異なります。</p>
+        </section>
+
+        <!-- 6. Android -->
+        <section class="article-section" id="section-6">
+          <h2>⑥ Androidの設定手順</h2>
+          <p class="article-text">Androidはメーカー・機種によってメニュー名も動作も異なります。ここでは、公式ヘルプで手順が明示されている<strong>Google Pixel</strong>を例にします（<a href="https://support.google.com/pixelphone/answer/9449293?hl=ja" target="_blank" rel="noopener noreferrer">Google Pixel ヘルプ「Google Pixel でデュアル SIM を使用する方法」</a>、2026年9月22日確認）。<strong>すべてのAndroidに同じメニュー名・同じ動作が当てはまるわけではありません。</strong></p>
+
+          <ol class="step-list">
+            <li><strong>2回線を有効にする。</strong>「設定」→「ネットワークとインターネット」→「SIM」→「SIM を追加」の順に進みます。Googleのヘルプでは、この手順の一部はAndroid 11以降でのみ動作すると案内されています。</li>
+            <li><strong>モバイルデータ通信に使うSIMを選ぶ。</strong>「SIM」→「プライマリ SIM」の「データ通信」で選びます。データ通信のデフォルトにできるSIMは1つだけです。</li>
+            <li><strong>通話・SMSの優先SIMを選ぶ。</strong>同じ「プライマリ SIM」の中で、「通話」と「テキスト メッセージ」をそれぞれ設定します。毎回確認する設定にもできます。</li>
+            <li><strong>必要な場合のみAPNを設定する。</strong>自動で設定されない場合に限り、各社の案内に沿って設定します。不要な変更はしないでください。</li>
+            <li><strong>Rakuten Linkを楽天モバイルの番号で認証する。</strong>iPhoneと同様、標準の電話アプリとは別のアプリです。</li>
+            <li><strong>Wi-Fiを切って動作を確認する。</strong>データ通信・発信番号・両方の番号への着信・SMS受信を確認します。緊急通報番号へのテスト発信はしないでください。</li>
+          </ol>
+
+          <div class="honest-box">
+            <div class="honest-box__title">Pixel以外のAndroidを使っている場合</div>
+            <p>AQUOS・Galaxy・Xperiaなどは、メニュー名や階層がPixelと異なります。「SIMカード設定」「デュアルSIM」「SIM管理」といった名称になっている場合があります。機種ごとの正確な手順は、端末メーカーの公式サポートページでご確認ください。Googleのヘルプでは、Pixel 7・Pixel 7 Pro以降で2つのeSIMプロファイルを同時に使用できるとされていますが、<strong>この対応状況を他メーカーの機種にそのまま当てはめることはできません。</strong></p>
+          </div>
+        </section>
+
+        <!-- 7. 切り替えと維持管理 -->
+        <section class="article-section" id="section-7">
+          <h2>⑦ つながりにくいときの切り替えと、povoの維持管理</h2>
+          <p class="article-text">切り替えは、その場で慌てて操作するとうまくいきません。<strong>普段のうちに一度切り替えを試しておく</strong>ことが、いちばん確実な準備です。</p>
+
+          <div class="ops-flow">
+            <div class="ops-flow__step">
+              <p class="ops-flow__label">切り替える前に確認</p>
+              <ul>
+                <li>povo回線が有効になっているか（利用停止になっていないか）</li>
+                <li>povoのデータ残量と、その有効期限</li>
+                <li>楽天モバイル側が本当につながらないのか（Wi-Fiや端末側の問題ではないか）</li>
+              </ul>
+            </div>
+            <div class="ops-flow__step">
+              <p class="ops-flow__label">切り替える</p>
+              <ul>
+                <li>データ通信に使う回線をpovoへ変更する（iPhoneは「設定」→「モバイル通信」→「モバイルデータ通信」、Pixelは「SIM」→「プライマリ SIM」）</li>
+                <li>Wi-Fiを切って、実際に通信できるか確認する</li>
+                <li>データ残量が足りなければ、有料トッピングを購入する</li>
+              </ul>
+            </div>
+            <div class="ops-flow__step">
+              <p class="ops-flow__label">復帰する</p>
+              <ul>
+                <li>データ通信に使う回線を楽天モバイルへ戻す</li>
+                <li>povoの残量・有効期限・購入履歴を確認しておく</li>
+                <li>Rakuten Linkを使う場面では、通話・データとも楽天モバイル側に戻っているか確認する</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="honest-box">
+            <div class="honest-box__title">「障害が起きてから買えばいい」とは考えない</div>
+            <p>トッピングの購入にも通信が必要です。楽天モバイルがつながらない状況では、購入手続き自体ができない可能性があります。<strong>障害発生後のトッピング購入が必ず成功するとは限りません。</strong>普段のうちに切り替え操作を試し、必要に応じて有効期間の長いデータ容量を用意しておくか、Wi-Fiなど購入手続きができる経路を確保しておいてください。</p>
+          </div>
+
+          <h3 class="sub-heading">povoを使わない期間の扱い（2つの条件を分けて理解する）</h3>
+          <p class="article-text">povo2.0には、性質の異なる2つの条件があります。混同しないでください。</p>
+
+          <div class="compare-two">
+            <div class="compare-two__box">
+              <p class="compare-two__title">1. 0GB時の速度制限</p>
+              <p class="compare-two__text">トッピングを購入していない状態では、<strong>送受信最大128kbps</strong>になります。契約は続いていますが、通常のデータ通信用としては実用的ではありません。</p>
+            </div>
+            <div class="compare-two__box">
+              <p class="compare-two__title">2. 長期間の未購入による利用停止</p>
+              <p class="compare-two__text">提供条件書では、SIMを有効化した日以降の各日から遡って<strong>180日間に有料トッピングの購入がない場合、順次利用停止</strong>となり、<strong>利用停止後30日間</strong>も購入等がない場合は契約が解除される、とされています。</p>
+            </div>
+          </div>
+
+          <div class="honest-box">
+            <div class="honest-box__title">180日の起算と除外条件（公式FAQの記載）</div>
+            <ul>
+              <li><strong>起算</strong>：SIM有効化日から180日、または<strong>最後に購入したトッピングの有効期限翌日</strong>から180日。購入した日からではありません。</li>
+              <li><strong>除外される場合</strong>：期間内の通話料とSMS送信料の合計が<strong>660円（税込）を超えている</strong>場合。また、プリペイドコード・PINコード・トレードコードを利用した場合。ただし、<strong>それらのコードの有効期限翌日から180日</strong>購入がない場合は、再び停止対象になります。</li>
+              <li><strong>通知</strong>：「長期間トッピング未購入による利用停止予告」という件名のメールで案内されるとされています。購入期限などの詳細はメールの内容を確認してください。</li>
+            </ul>
+            <p><strong>「半年に一度、どんな無料コードでも使えば維持できる」といった単純化はできません。</strong>対象となるコードの種類や有効期限の扱いが条件に含まれるため、<a href="https://povo.jp/spec/detail/" target="_blank" rel="noopener noreferrer">povo2.0の提供条件書</a>と<a href="https://faq.povo.jp/faq/show/858?site_domain=default" target="_blank" rel="noopener noreferrer">公式FAQ</a>で最新の条件をご確認ください。</p>
+          </div>
+        </section>
+
+        <!-- 8. 制約・よくある失敗 -->
+        <section class="article-section" id="section-8">
+          <h2>⑧ 運用上の制約・よくある失敗</h2>
+          <p class="article-text">実際に起きやすい症状と、確認する順番をまとめました。<strong>回線の削除やeSIMの再発行を最初の対処にしないでください。</strong>設定の確認で解決することがほとんどです。</p>
+
+          <div class="trouble-list">
+
+            <div class="trouble-item">
+              <p class="trouble-item__symptom">povoの番号で無料通話したつもりが、通話料が請求された</p>
+              <dl class="trouble-item__rows">
+                <div class="trouble-item__row"><dt>確認する項目</dt><dd>標準の電話アプリとRakuten Linkのどちらで発信したか。標準の電話アプリで選ばれている回線はどちらか。</dd></div>
+                <div class="trouble-item__row"><dt>対処</dt><dd>Rakuten Linkの無料通話は楽天モバイル側の番号からの発信が対象です。povoの番号からの国内通話は30秒あたり22円（税込）かかります。povo側の通話が多いなら、通話トッピングとの比較を検討してください。</dd></div>
+              </dl>
+            </div>
+
+            <div class="trouble-item">
+              <p class="trouble-item__symptom">povoに切り替えたのに通信が遅い</p>
+              <dl class="trouble-item__rows">
+                <div class="trouble-item__row"><dt>確認する項目</dt><dd>povoのデータ残量と有効期限。トッピングが切れていないか。利用停止になっていないか。その場所の電波状況。</dd></div>
+                <div class="trouble-item__row"><dt>対処</dt><dd>0GBの状態では送受信最大128kbpsです。残量・有効期限を確認し、必要なら有料トッピングを購入してください。</dd></div>
+              </dl>
+            </div>
+
+            <div class="trouble-item">
+              <p class="trouble-item__symptom">通話中に、もう片方の回線が使えない・着信できない</p>
+              <dl class="trouble-item__rows">
+                <div class="trouble-item__row"><dt>確認する項目</dt><dd>端末が対応しているデュアルSIMの方式。iPhoneの「モバイルデータ通信の切替を許可」の状態。</dd></div>
+                <div class="trouble-item__row"><dt>対処</dt><dd>同時待受（2つの番号で着信を待てること）と、同時通話（通話中にもう一方も使えること）は別の条件です。povo公式の解説では、DSDSは同時通話不可、DSDVは通話中も別回線の着信が可能と区分されています。端末の対応方式を確認してください。</dd></div>
+              </dl>
+            </div>
+
+            <div class="trouble-item">
+              <p class="trouble-item__symptom">SMSが届かない</p>
+              <dl class="trouble-item__rows">
+                <div class="trouble-item__row"><dt>確認する項目</dt><dd>相手が送っている宛先の番号。その番号のSIMが有効になっているか。SMSの送受信に使う回線の設定。</dd></div>
+                <div class="trouble-item__row"><dt>対処</dt><dd>iOSではRakuten LinkでのSMS送受信には対応しておらず、iOS標準のメッセージアプリでの送受信になります。AndroidとiOSで扱いが異なる点に注意してください。認証コードなどを受け取る番号を、サービスごとに確認しておくと安全です。</dd></div>
+              </dl>
+            </div>
+
+            <div class="trouble-item">
+              <p class="trouble-item__symptom">データ用のSIMと音声用のSIMを取り違えている</p>
+              <dl class="trouble-item__rows">
+                <div class="trouble-item__row"><dt>確認する項目</dt><dd>「モバイルデータ通信」に選んだ回線と、「デフォルトの音声回線」に選んだ回線。回線に付けた名前が実際の契約と合っているか。</dd></div>
+                <div class="trouble-item__row"><dt>対処</dt><dd>回線の名前を「楽天」「povo」など分かりやすいものに変更し、設定画面で1つずつ確認してください。名前が間違っていると、以降の設定もすべてずれます。</dd></div>
+              </dl>
+            </div>
+
+            <div class="trouble-item">
+              <p class="trouble-item__symptom">端末が故障した・電池が切れた</p>
+              <dl class="trouble-item__rows">
+                <div class="trouble-item__row"><dt>確認する項目</dt><dd>―</dd></div>
+                <div class="trouble-item__row"><dt>対処</dt><dd>1台に2回線をまとめている場合、<strong>端末そのものが使えなくなると2回線とも使えません。</strong>これはデュアルSIMでは解決できない制約です。どうしても通信手段を絶やしたくない場合は、2台に分ける運用も検討してください。</dd></div>
+              </dl>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- 次に読みたい記事 -->
+        <section class="article-section" id="section-8-nav">
+          <h2>次に読みたい記事</h2>
+          <p class="article-text">設定や契約を進める前に、あわせて確認しておきたい記事です。</p>
+
+          <div class="next-cards">
+            <a class="next-card" href="/articles/second-line/" onclick="trackCta('journey_click', {'page_type': 'povo-rakuten-dual-sim', 'cta_position': 'next-cards', 'reader_stage': 'consider', 'destination': 'second-line'})">
+              <span class="next-card__label">2回線目そのものを知りたい</span>
+              <span class="next-card__title">楽天モバイルを2回線目にする</span>
+              <span class="next-card__text">メリット・追加料金・注意点を解説。</span>
+              <span class="next-card__arrow">詳しく見る →</span>
+            </a>
+            <a class="next-card" href="/articles/esim-vs-sim-card/" onclick="trackCta('journey_click', {'page_type': 'povo-rakuten-dual-sim', 'cta_position': 'next-cards', 'reader_stage': 'consider', 'destination': 'esim-vs-sim-card'})">
+              <span class="next-card__label">SIMタイプを選びたい</span>
+              <span class="next-card__title">eSIMとSIMカードの選び方</span>
+              <span class="next-card__text">1台に2回線を入れる場合のSIM選び。</span>
+              <span class="next-card__arrow">選び方を見る →</span>
+            </a>
+            <a class="next-card" href="/articles/current-phone-compatibility/" onclick="trackCta('journey_click', {'page_type': 'povo-rakuten-dual-sim', 'cta_position': 'next-cards', 'reader_stage': 'consider', 'destination': 'current-phone-compatibility'})">
+              <span class="next-card__label">今のスマホが使えるか確認したい</span>
+              <span class="next-card__title">対応機種の確認方法</span>
+              <span class="next-card__text">対応バンド・SIMロックの調べ方。</span>
+              <span class="next-card__arrow">確認方法を見る →</span>
+            </a>
+            <a class="next-card" href="/articles/rakuten-link-guide/" onclick="trackCta('journey_click', {'page_type': 'povo-rakuten-dual-sim', 'cta_position': 'next-cards', 'reader_stage': 'consider', 'destination': 'rakuten-link-guide'})">
+              <span class="next-card__label">通話の条件を詳しく知りたい</span>
+              <span class="next-card__title">Rakuten Linkの音質・通話条件</span>
+              <span class="next-card__text">対象外番号やSMSの扱いも解説。</span>
+              <span class="next-card__arrow">詳しく見る →</span>
+            </a>
+          </div>
+        </section>
+
+        <!-- 9. FAQ -->
+        <section class="article-section" id="section-9">
+          <h2>⑨ よくある質問</h2>
+          <div class="faq-list">
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-1" aria-controls="faq-panel-1">
+                <span class="faq-question__q">Q</span>
+                <span class="faq-question__text">povoの番号でRakuten Linkの無料通話はできますか？</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" role="region" id="faq-panel-1" aria-labelledby="faq-btn-1">
+                <div class="faq-answer__inner">
+                  <div class="faq-answer__body">できません。Rakuten Linkは、Rakuten最強プランに契約した電話番号と契約時に登録した楽天IDを用いて認証するアプリです。Rakuten Linkから発信したときの発信元は、楽天モバイル側の番号になります。povoの番号で発信するときは標準の電話アプリを使い、povoの国内通話料（30秒あたり22円、税込）がかかります。povo側で通話料を抑えたい場合は、5分以内通話かけ放題（月額550円、税込）などの通話トッピングを購入する方法があります。詳しくは<a href="#section-2">②の章</a>をご覧ください。</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-2" aria-controls="faq-panel-2">
+                <span class="faq-question__q">Q</span>
+                <span class="faq-question__text">楽天モバイルが圏外になったら、自動でpovoに切り替わりますか？</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" role="region" id="faq-panel-2" aria-labelledby="faq-btn-2">
+                <div class="faq-answer__inner">
+                  <div class="faq-answer__body">必ず自動で切り替わるとは限りません。楽天モバイルの公式FAQには、iPhoneの「モバイルデータ通信の切替を許可」をオンにすると、電波状況や回線利用状況に応じて主回線・副回線のモバイルデータ通信を利用できるという説明があります。一方で、Rakuten Linkの不具合時の確認項目としては、同じ設定が「オフ」になっているかを確認するよう案内されています。設定の目的が場面によって異なるため、常に安定して自動で切り替わることを前提にせず、手動で切り替える運用を基本にしてください（<a href="#section-5">⑤の章</a>で詳しく説明しています）。</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-3" aria-controls="faq-panel-3">
+                <span class="faq-question__q">Q</span>
+                <span class="faq-question__text">povoは0円のまま長期間持ち続けられますか？</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" role="region" id="faq-panel-3" aria-labelledby="faq-btn-3">
+                <div class="faq-answer__inner">
+                  <div class="faq-answer__body">条件があります。povo2.0の提供条件書によると、SIMを有効化した日以降の各日から遡って180日間に有料トッピングの購入がない場合、順次利用停止となり、利用停止後30日間も引き続き購入等がない場合は契約が解除されます。180日の起算は、SIM有効化日から180日、または最後に購入したトッピングの有効期限翌日から180日です。公式FAQでは、期間内の通話料とSMS送信料の合計が660円（税込）を超えている場合や、プリペイドコード・PINコード・トレードコードを利用した場合は対象から除外されるとされていますが、それらのコードの有効期限翌日から180日購入がない場合は再び停止対象になります。「半年に一度どんな無料コードでも使えば維持できる」と単純化せず、公式の条件をご確認ください。</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-4" aria-controls="faq-panel-4">
+                <span class="faq-question__q">Q</span>
+                <span class="faq-question__text">自分のスマホがデュアルSIMに対応しているか、どう確認すればいいですか？</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" role="region" id="faq-panel-4" aria-labelledby="faq-btn-4">
+                <div class="faq-answer__inner">
+                  <div class="faq-answer__body">eSIMに対応していることと、2回線を同時に有効化できることは別の条件です。楽天モバイルの公式FAQでは、iPhone XS以降のiPhoneでデュアルSIMを利用できるとされています。Pixelの場合、Googleの公式ヘルプでは物理SIMとeSIMの組み合わせのほか、Pixel 7・Pixel 7 Pro以降で2つのeSIMプロファイルを同時に使用できるとされています。eSIMを何枚保存できるかと、同時に何回線を有効化できるかは別の項目なので、端末メーカーの公式ページと、楽天モバイル・povoそれぞれの対応製品ページの両方で確認してください。</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-5" aria-controls="faq-panel-5">
+                <span class="faq-question__q">Q</span>
+                <span class="faq-question__text">povoのデータ通信を使っている間、Rakuten Linkは保証されますか？</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" role="region" id="faq-panel-5" aria-labelledby="faq-btn-5">
+                <div class="faq-answer__inner">
+                  <div class="faq-answer__body">動作保証の対象外です。楽天モバイル公式サイトには、デュアルSIM対応端末で、モバイルデータ通信や通話／音声回線に利用するSIMを楽天モバイル以外のSIMに設定した状態で行った操作・通話については動作保証対象外である、という趣旨の記載があります。これは「必ず使えない」という意味ではありませんが、保証の範囲からは外れます。Rakuten Linkを確実に使いたい場面では、モバイルデータ通信と通話の回線を楽天モバイル側に戻してから使うことをおすすめします。</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="faq-item">
+              <button class="faq-question" aria-expanded="false" id="faq-btn-6" aria-controls="faq-panel-6">
+                <span class="faq-question__q">Q</span>
+                <span class="faq-question__text">2つの番号あてに同時に着信できますか？</span>
+                <span class="faq-question__icon" aria-hidden="true">+</span>
+              </button>
+              <div class="faq-answer" role="region" id="faq-panel-6" aria-labelledby="faq-btn-6">
+                <div class="faq-answer__inner">
+                  <div class="faq-answer__body">端末の対応によります。povo公式の解説では、デュアルSIMの動作は組み合わせごとに分かれており、DSDSは自動切り替えができるものの同時通話は不可、DSDVは通話中も別回線の着信が可能、と説明されています。どの方式に対応するかは機種ごとに異なり、対応する周波数帯も機種によって変わります。「2回線を入れれば必ず両方の番号で同時に待ち受けできる」とは限らないため、端末メーカーの公式情報で対応状況を確認してください。</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- まとめ -->
+        <section class="article-section" style="border-bottom:none;">
+          <h2>まとめ：役割分担を先に決めれば、設定も費用も決まる</h2>
+          <p class="article-text">楽天モバイルとpovo2.0の併用は、「どちらが上位か」ではなく<strong>どの回線に何を担当させるか</strong>で決まります。普段のデータ通信は楽天モバイル、必要なときだけpovoという役割分担を基本にし、番号をどちらに残すかを別に決めれば、契約の種類も端末の設定も自然に決まります。</p>
+          <p class="article-text">一方で、2回線を持てば必ずつながる、自動で切り替わる、常に安くなる、といったことはありません。povoは0GB時に速度制限があり、長期間トッピングを買わなければ利用停止の対象になります。楽天モバイルは使わない月でも最低月額がかかります。Rakuten Linkは、通信・通話に他社SIMを設定した状態では動作保証の対象外です。これらを理解したうえで、自分の使い方に合うかを判断してください。</p>
+
+          <div class="article-cta" id="apply-cta">
+            <p class="article-cta__title">端末が対応し、運用を決めた方へ</p>
+            <p class="article-cta__sub">楽天モバイルをこれから契約する方は、申し込み条件とキャンペーンの内容を先に確認してください。従業員紹介特典は他社から乗り換え<strong>14,000pt</strong>、乗り換え以外（新規契約等）<strong>13,000pt</strong>です（条件あり）。適用条件は変更される場合があるため、申し込み前に紹介ページの最新条件を必ずご確認ください。</p>
+            <a href="/articles/campaign-guide/" class="btn-primary" onclick="trackCta('journey_click', {'page_type': 'povo-rakuten-dual-sim', 'cta_position': 'bottom', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">
+              楽天モバイルの申し込み条件を確認する
+            </a>
+            <p class="article-cta__note">条件を確認済みの方は <a href="https://r10.to/h5zkrv" target="_blank" rel="noopener noreferrer" onclick="trackCta('referral_cta_click', {'page_type': 'povo-rakuten-dual-sim', 'cta_position': 'bottom-sub', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})">紹介リンクから申し込む →</a></p>
+          </div>
+
+          <div class="secondary-cta">
+            <p class="secondary-cta__title">すでに楽天モバイルを契約していて、povoを足したい方へ</p>
+            <p class="secondary-cta__text">楽天モバイルを追加で契約する必要はありません。povo2.0の申し込み条件・トッピングの内容は、povo公式サイトでご確認ください。</p>
+            <a href="https://povo.jp/" class="btn-secondary-outline" target="_blank" rel="noopener noreferrer" onclick="trackCta('journey_click', {'page_type': 'povo-rakuten-dual-sim', 'cta_position': 'bottom-povo', 'reader_stage': 'consider', 'destination': 'povo-official'})">povo2.0公式サイトを見る →</a>
+          </div>
+        </section>
+
+        <!-- LINE誘導 -->
+        <div class="line-cta" style="margin:40px 0 0;">
+          <p class="line-cta__text">新記事・キャンペーン情報をいち早くお届けします。<br>LINE公式アカウントの友だち追加はこちら。</p>
+          <a href="https://line.me/R/ti/p/@758johit" aria-label="LINE友だち追加（新しいタブで開きます）" class="btn-line" target="_blank" rel="noopener noreferrer">LINE友だち追加</a>
+        </div>
+
+      </article>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>【広告・PR】楽天グループ社員が個人で運営する非公式サイトです。紹介により双方に特典が発生します。</p>
+      <p>掲載の料金・特典は変更になる場合があります。最新情報は<a href="https://network.mobile.rakuten.co.jp/" aria-label="楽天モバイル公式サイト（新しいタブで開きます）" target="_blank" rel="noopener noreferrer">楽天モバイル公式サイト</a>および<a href="https://povo.jp/" aria-label="povo2.0公式サイト（新しいタブで開きます）" target="_blank" rel="noopener noreferrer">povo2.0公式サイト</a>をご確認ください。</p>
+    </div>
+  </footer>
+
+  <script src="../../components/sns-links.js" defer></script>
+  <script src="../../components/faq.js" defer></script>
+</body>
+</html>

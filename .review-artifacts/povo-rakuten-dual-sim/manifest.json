@@ -1,0 +1,72 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "feature/povo-rakuten-dual-sim",
+  "pull_request": "https://github.com/yu-gin-19/yu-gin-19.github.io/pull/22",
+  "review_round": 2,
+  "source_sha": "d2714218e7b9c42e719b9735e8016271c31221e2",
+  "previous_source_sha": "045ba82af15962dad45a046f67ca83e31e56a4ac",
+  "task_slug": "povo-rakuten-dual-sim",
+  "captured_at": "2026-09-22T22:52+09:00",
+  "capture_environment": {
+    "tool": "Playwright (Chromium)",
+    "serving": "python -m http.server（site/ をローカル配信）",
+    "url": "http://127.0.0.1:8777/articles/povo-rakuten-dual-sim/",
+    "device_scale_factor": 1,
+    "sticky_header_handling": "前回のレビュー指摘（拡大画像にstickyヘッダーが文章に重なる）に対応し、要素撮影の直前だけ page.add_style_tag() で .site-header / .disclosure-banner / .skip-link を display:none にしてから撮影している。本番CSSは変更していない（リポジトリのstyle.css・article.cssに撮影用の記述は一切入れていない）。フルページ画像と、横スクロール・アンカー位置の検証は、ヘッダーを表示したままの本番と同じ状態で実施している。",
+    "full_page_handling": "フルページ画像は縦に長いため、判読性を保ったまま1ファイル900KB未満に収める目的で、原寸のまま上下2分割して保存している。縮小はしていない。"
+  },
+  "target_pages": [
+    {
+      "url": "/articles/povo-rakuten-dual-sim/",
+      "type": "今回の修正対象ページ（レビュー指摘 必須1〜5 を反映）"
+    }
+  ],
+  "unchanged_since_previous_round": [
+    "articles/index.html（記事カード1件の追加のみ。今回の修正なし）",
+    "articles/second-line/index.html（本文中の内部リンク1件の追加のみ。今回の修正なし）",
+    "sitemap.xml（1件追加のみ。今回の修正なし）",
+    "articles/povo-rakuten-dual-sim/article.css（今回の修正なし）",
+    "articles/povo-rakuten-dual-sim/ogp.png（今回の修正なし）",
+    "scripts/generate-ogp-povo-rakuten-dual-sim.py（今回の修正なし）"
+  ],
+  "viewports": ["375x812", "768x1024", "1200x900"],
+  "images": [
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/full-375x812-part1.png", "viewport": "375x812", "content": "ページ全体（上半分：ヘッダー〜④契約前に決めること付近）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/full-375x812-part2.png", "viewport": "375x812", "content": "ページ全体（下半分：⑤以降〜フッター）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/full-768x1024-part1.png", "viewport": "768x1024", "content": "ページ全体（上半分）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/full-768x1024-part2.png", "viewport": "768x1024", "content": "ページ全体（下半分）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/full-1200x900-part1.png", "viewport": "1200x900", "content": "ページ全体（上半分）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/full-1200x900-part2.png", "viewport": "1200x900", "content": "ページ全体（下半分）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/pattern-375x812.png", "viewport": "375x812", "content": "②運用パターン（必須1：パターンBの保証対象外ボックス・着信の行・パターンAの注記・パターンCの記述を確認できる）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/pattern-1200x900.png", "viewport": "1200x900", "content": "②運用パターン（同上）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/cost-375x812.png", "viewport": "375x812", "content": "③合計いくらかかるか（必須5：例2の計算条件の注記、例3の一括購入の限定と月換算の位置づけを確認できる）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/cost-1200x900.png", "viewport": "1200x900", "content": "③合計いくらかかるか（同上）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/iphone-375x812.png", "viewport": "375x812", "content": "⑤iPhoneの設定手順（必須1：発信番号の記憶動作と確認方法、必須2：切替を許可の説明を通話中のデータ通信に絞った記述を確認できる）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/iphone-1200x900.png", "viewport": "1200x900", "content": "⑤iPhoneの設定手順（同上）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/android-375x812.png", "viewport": "375x812", "content": "⑥Androidの設定手順（優先SIMが発信用の設定であること、Link利用時の案内）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/switch-375x812.png", "viewport": "375x812", "content": "⑦切り替えとpovoの維持管理（必須4：180日の起算を「ご利用中のトッピングの有効期限翌日」に修正した箇所を確認できる）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/switch-1200x900.png", "viewport": "1200x900", "content": "⑦切り替えとpovoの維持管理（同上）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/trouble-375x812.png", "viewport": "375x812", "content": "⑧運用上の制約・よくある失敗（必須2：①②③の分離とPixelの機種別条件を確認できる）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/trouble-1200x900.png", "viewport": "1200x900", "content": "⑧運用上の制約・よくある失敗（同上）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/faq-open-375x812.png", "viewport": "375x812", "content": "⑨よくある質問（FAQ 1問目を開いた状態）" },
+    { "path": ".review-artifacts/povo-rakuten-dual-sim/cta-375x812.png", "viewport": "375x812", "content": "末尾CTA（従業員紹介額は14,000pt／13,000ptのまま変更なし）" }
+  ],
+  "verified": [
+    "node scripts/validate-content.mjs：エラー0件（INFOのPRICE_AUDIT 62件はすべて家族割文脈あり）",
+    "git diff --check：指摘なし",
+    "375x812 / 768x1024 / 1200x900 の全サイズで document.scrollWidth <= window.innerWidth + 1 を確認（意図しない横スクロールなし）。ヘッダーを表示したままの本番と同じ状態で検証",
+    "全サイズでコンソールの error / warning・pageerror が発生しないことを確認",
+    "全サイズでFAQアコーディオンの開閉が動作し、操作したボタンの aria-expanded が true に、未操作のボタンが false のままであることを確認",
+    "全サイズで目次アンカー（#section-2 / #section-3 / #section-5 / #section-6 / #section-7 / #section-9）について、スクロールが発生することに加えて、遷移先の見出しの上端が sticky ヘッダーの下端より下にあり、かつ画面内に収まっていることを確認",
+    "料金計算の照合：例1 3,278+330=3,608（家族割 3,168+330=3,498）、例2 1,078+1,380=2,458（家族割 968+1,380=2,348）、例3 1,078+13,200=14,278（家族割 968+13,200=14,168）、月換算 13,200÷12=1,100",
+    "内部リンク・アンカー・FAQ JSON-LDの構文は validate-content.mjs の BROKEN_INTERNAL_LINK / BROKEN_ANCHOR / BROKEN_ARIA_REFERENCE / JSON_LD_PARSE_ERROR チェックで検証済み",
+    "FAQ本文とFAQ JSON-LDの回答内容が一致していること（誘導文のリンク部分を除く）を、修正した FAQ2・FAQ3・FAQ5・FAQ6 について確認"
+  ],
+  "notes": [
+    "本記事に実機のスクリーンショットは掲載していない。設定手順はApple・Google・楽天モバイル・povoの公式サポートページの記載に沿った文章説明であり、通信契約を伴う実機での動作検証は行っていない（本文およびsources.mdにも明記）。上記の検証はブラウザ上の表示・挙動の確認であり、実機検証とは別のものとして扱っている。",
+    "必須2の対応で、端末メーカーの機種別公式情報（Google Pixel ヘルプ）を、事業者の一般解説より優先した。その理由はsources.mdの出典#9に記録している。",
+    "従業員紹介額は今回変更していない（他社から乗り換え14,000pt／乗り換え以外13,000pt）。新たな適用保証も追加していない。",
+    "未確認事項は articles/povo-rakuten-dual-sim/sources.md の「未確認・今後の確認が必要な事項」に6件記載している（前回5件＋ペイディの適用条件1件）。",
+    "個人情報・認証情報・アクセストークンが写った画像は含まれていない。"
+  ]
+}

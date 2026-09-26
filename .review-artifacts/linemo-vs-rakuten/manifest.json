@@ -1,0 +1,183 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "feature/linemo-vs-rakuten",
+  "source_sha": "3baa354cb4a2392fc140d6f0e9892a24ac4c17b4",
+  "target_url": "/articles/linemo-vs-rakuten/",
+  "captured_via": "python -m http.server (site/ served locally) + Playwright (Chromium headless)",
+  "capture_datetime_utc": "2026-09-26T11:00:36Z",
+  "capture_datetime_jst": "2026-09-26T20:00:36+09:00",
+  "note_on_datetime": "システムのタイムゾーンデータベースが利用できなかったため、UTC時刻（date -u で取得）に+9時間を手計算してJSTを併記した。UTC側の値が実測の一次情報。",
+  "browser": "Chromium (Playwright sync API, headless=True)",
+  "viewports": [
+    { "width": 375, "height": 812, "label": "375x812" },
+    { "width": 768, "height": 1024, "label": "768x1024" },
+    { "width": 1200, "height": 900, "label": "1200x900" }
+  ],
+  "images": [
+    {
+      "file": "full_375x812_part1of5.jpg",
+      "viewport": "375x812",
+      "type": "full_page_segment",
+      "segment": "1 of 5 (上から)",
+      "header_state": "通常表示（sticky header含む）",
+      "description": "記事冒頭〜①今のプランと不足の原因を確認する"
+    },
+    {
+      "file": "full_375x812_part2of5.jpg",
+      "viewport": "375x812",
+      "type": "full_page_segment",
+      "segment": "2 of 5",
+      "header_state": "通常表示（sticky header含む）",
+      "description": "②今月/毎月足りない対処〜③基本料金表・検算ケース1〜3"
+    },
+    {
+      "file": "full_375x812_part3of5.jpg",
+      "viewport": "375x812",
+      "type": "full_page_segment",
+      "segment": "3 of 5",
+      "header_state": "通常表示（sticky header含む）",
+      "description": "③検算ケース4・5、境界確認表〜④LINEギガフリー"
+    },
+    {
+      "file": "full_375x812_part4of5.jpg",
+      "viewport": "375x812",
+      "type": "full_page_segment",
+      "segment": "4 of 5",
+      "header_state": "通常表示（sticky header含む）",
+      "description": "④通話方式の違い〜⑤判断カード"
+    },
+    {
+      "file": "full_375x812_part5of5.jpg",
+      "viewport": "375x812",
+      "type": "full_page_segment",
+      "segment": "5 of 5",
+      "header_state": "通常表示（sticky header含む）",
+      "description": "⑥乗り換え前確認・紹介CTA〜FAQ〜フッター"
+    },
+    {
+      "file": "full_768x1024_part1of4.jpg",
+      "viewport": "768x1024",
+      "type": "full_page_segment",
+      "segment": "1 of 4",
+      "header_state": "通常表示（sticky header含む）",
+      "description": "記事冒頭〜①②の途中"
+    },
+    {
+      "file": "full_768x1024_part2of4.jpg",
+      "viewport": "768x1024",
+      "type": "full_page_segment",
+      "segment": "2 of 4",
+      "header_state": "通常表示（sticky header含む）",
+      "description": "②続き〜③検算ケース"
+    },
+    {
+      "file": "full_768x1024_part3of4.jpg",
+      "viewport": "768x1024",
+      "type": "full_page_segment",
+      "segment": "3 of 4",
+      "header_state": "通常表示（sticky header含む）",
+      "description": "④LINEと通話〜⑤判断カード〜⑥途中"
+    },
+    {
+      "file": "full_768x1024_part4of4.jpg",
+      "viewport": "768x1024",
+      "type": "full_page_segment",
+      "segment": "4 of 4",
+      "header_state": "通常表示（sticky header含む）",
+      "description": "⑥紹介CTA〜FAQ〜フッター"
+    },
+    {
+      "file": "full_1200x900_part1of4.jpg",
+      "viewport": "1200x900",
+      "type": "full_page_segment",
+      "segment": "1 of 4",
+      "header_state": "通常表示（sticky header含む）",
+      "description": "記事冒頭〜①②の途中"
+    },
+    {
+      "file": "full_1200x900_part2of4.jpg",
+      "viewport": "1200x900",
+      "type": "full_page_segment",
+      "segment": "2 of 4",
+      "header_state": "通常表示（sticky header含む）",
+      "description": "②続き〜③検算ケース"
+    },
+    {
+      "file": "full_1200x900_part3of4.jpg",
+      "viewport": "1200x900",
+      "type": "full_page_segment",
+      "segment": "3 of 4",
+      "header_state": "通常表示（sticky header含む）",
+      "description": "④LINEと通話〜⑤判断カード（3カラム）〜⑥途中"
+    },
+    {
+      "file": "full_1200x900_part4of4.jpg",
+      "viewport": "1200x900",
+      "type": "full_page_segment",
+      "segment": "4 of 4",
+      "header_state": "通常表示（sticky header含む）",
+      "description": "⑥紹介CTA〜FAQ〜フッター"
+    },
+    {
+      "file": "table_price_compare.png",
+      "viewport": "375 (要素切り出し)",
+      "type": "element_closeup",
+      "header_state": "sticky header を撮影用に一時非表示（本番CSSは未変更）",
+      "description": "③基本料金表（LINEMOベスト/V vs 楽天モバイル通常料金）"
+    },
+    {
+      "file": "calc_case2_12gb.png",
+      "viewport": "375 (要素切り出し)",
+      "type": "element_closeup",
+      "header_state": "sticky header を撮影用に一時非表示（本番CSSは未変更）",
+      "description": "③検算ケース2（月12GB・毎月不足）"
+    },
+    {
+      "file": "calc_case4_35gb.png",
+      "viewport": "375 (要素切り出し)",
+      "type": "element_closeup",
+      "header_state": "sticky header を撮影用に一時非表示（本番CSSは未変更）",
+      "description": "③検算ケース4（月35GB・通常速度維持）"
+    },
+    {
+      "file": "calc_case5_call.png",
+      "viewport": "375 (要素切り出し)",
+      "type": "element_closeup",
+      "header_state": "sticky header を撮影用に一時非表示（本番CSSは未変更）",
+      "description": "③検算ケース5（月25GB・対象番号へ5分以内の通話）"
+    },
+    {
+      "file": "line_gigafree_note.png",
+      "viewport": "375 (要素切り出し)",
+      "type": "element_closeup",
+      "header_state": "sticky header を撮影用に一時非表示（本番CSSは未変更）",
+      "description": "④「楽天モバイルに変えるとLINEギガフリーはどうなるか」の注意ボックス"
+    },
+    {
+      "file": "judge_grid.png",
+      "viewport": "375 (要素切り出し)",
+      "type": "element_closeup",
+      "header_state": "sticky header を撮影用に一時非表示（本番CSSは未変更）",
+      "description": "⑤残る／プラン変更／楽天へ乗り換えの判断カード（3種）"
+    },
+    {
+      "file": "article_cta.png",
+      "viewport": "375 (要素切り出し)",
+      "type": "element_closeup",
+      "header_state": "sticky header を撮影用に一時非表示（本番CSSは未変更）",
+      "description": "⑥紹介特典CTA（「条件を確認して申し込む」ボタン）"
+    }
+  ],
+  "confirmed_items": [
+    "375x812 / 768x1024 / 1200x900 の3サイズで横方向のはみ出し（横スクロール）が発生していないことを目視確認した",
+    "1200x900（デスクトップ幅）で判断カード（judge-grid）が3カラムグリッドで表示されることを確認した",
+    "375x812（モバイル幅）で基本料金表・検算ケースの比較ボックス（compare-two）が縦積みで表示されることを確認した",
+    "sticky headerと本文アンカー見出し（scroll-margin-top指定済み）の重なりは、通常表示の全体像スクリーンショットでは確認できなかった（要素切り出し画像はheader非表示のため対象外）",
+    "紹介CTAボタン・料金比較テーブル・判断カードの文字がPNG/JPEG上で判読可能なサイズで表示されている"
+  ],
+  "notes": [
+    "要素切り出し画像（table_price_compare.png以降）は、Playwrightのlocator.screenshot()実行時にsticky headerが要素の一部と重なるのを避けるため、CSS（header.site-header{display:none}）で一時的にheaderを非表示にして撮影した。本番のstyle.css/article.cssは変更していない。",
+    "全体像（full_*）は通常表示（sticky header・ヘッダーナビゲーションを含む状態）で撮影しており、ヘッダー非表示にはしていない。",
+    "全体像スクリーンショットはページが長く（375幅で約17,800px）、1枚の巨大PNGでは1MB前後でChatGPT側のGitHub連携が取得に失敗することがあるため、高さ3,600px単位で分割し、JPEG（quality 82）に変換して各ファイルを1MB未満に収めた。"
+  ]
+}

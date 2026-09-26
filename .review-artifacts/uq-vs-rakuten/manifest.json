@@ -1,9 +1,9 @@
 {
   "repository": "yu-gin-19/yu-gin-19.github.io",
   "branch": "feature/uq-vs-rakuten",
-  "source_sha": "e5d41195b3b6d2d71071606a34c03fa418ece213",
+  "source_sha": "55dcaa7ae83f8d41a52f506071c43cec5531efb8",
   "target_page": "/articles/uq-vs-rakuten/",
-  "captured_at": "2026-09-26T18:28:00+09:00",
+  "captured_at": "2026-09-27T04:04:00+09:00",
   "browser": "Chromium (Playwright) headless",
   "viewports": [
     { "label": "375x812", "width": 375, "height": 812 },
@@ -51,9 +51,10 @@
   "confirmed_items": [
     "375px幅で本文・表・CTA・注記の重なり/横はみ出しがないことを目視確認",
     "比較テーブル（tier-card）がHTMLテキストとして表示され、画像化されていないことを確認",
-    "TOC・lead-summary・tier-jumpチップのアンカーリンク遷移で、sticky headerが見出しを隠さないことをPlaywrightで実測確認（header高さ88px、遷移後の見出しtop座標195px/213pxで非重複）",
+    "TOC・lead-summary・tier-jumpチップのアンカーリンク遷移で、sticky headerが見出しを隠さないことをPlaywrightで実測確認（header高さ88px、遷移後の見出しtop座標196px/213pxで非重複）",
     "winner-badgeが色だけでなく▼/▲/●の記号と日本語ラベルを併記していることを確認",
-    "コンソールエラー0件（Playwright page.on('console'/'pageerror')で確認）"
+    "コンソールエラー0件（Playwright page.on('console'/'pageerror')で確認）",
+    "【2026-09-27再撮影】3GB/5GB帯の「割引なし」「カード払い割のみ」がUQ 2,948円／2,728円に、検算ケース1がUQ2,948円・楽天1,078円・月差1,870円に修正されていることをdetail_section2_375.png・detail_calc_case1_375.pngで確認"
   ],
-  "notes": "detail_section3_375.png と detail_calc_case1_375.png 等の要素スクリーンショットは、撮影スクリプト内でsticky header（.site-header）を一時的にdisplay:noneにしてから撮影した（本番CSS・article.cssは変更していない。要素スクリーンショットにヘッダーが重なって写り込むのを避けるための撮影時のみの措置）。"
+  "notes": "detail_section3_375.png と detail_calc_case1_375.png 等の要素スクリーンショットは、撮影スクリプト内でsticky header（.site-header）を一時的にdisplay:noneにしてから撮影した（本番CSS・article.cssは変更していない。要素スクリーンショットにヘッダーが重なって写り込むのを避けるための撮影時のみの措置）。2026-09-27のレビュー指摘（UQトクトクプラン2の5GB以下自動割引の適用条件の誤り）を受け、articles/uq-vs-rakuten/index.html・sources.mdを修正し、全画像をSOURCE_SHA=55dcaa7時点のコードから撮り直した。detail_section6_cta_375.pngは価格修正の影響を受けない箇所のため画像内容は前回撮影と同一（撮影自体はやり直し済み）。"
 }

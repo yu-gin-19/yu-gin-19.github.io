@@ -1,0 +1,59 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "feature/uq-vs-rakuten",
+  "source_sha": "e5d41195b3b6d2d71071606a34c03fa418ece213",
+  "target_page": "/articles/uq-vs-rakuten/",
+  "captured_at": "2026-09-26T18:28:00+09:00",
+  "browser": "Chromium (Playwright) headless",
+  "viewports": [
+    { "label": "375x812", "width": 375, "height": 812 },
+    { "label": "768x1024", "width": 768, "height": 1024 },
+    { "label": "1200x900", "width": 1200, "height": 900 }
+  ],
+  "images": [
+    {
+      "file": "full_375x812-preview.jpg",
+      "description": "375x812 フルページ（JPEG圧縮プレビュー、GitHub連携での取得失敗を避けるため元PNGから再圧縮。文字・配色の加工はなし）",
+      "viewport": "375x812"
+    },
+    {
+      "file": "full_768x1024-preview.jpg",
+      "description": "768x1024 フルページ（JPEG圧縮プレビュー、同上）",
+      "viewport": "768x1024"
+    },
+    {
+      "file": "full_1200x900-preview.jpg",
+      "description": "1200x900 フルページ（JPEG圧縮プレビュー、同上）",
+      "viewport": "1200x900"
+    },
+    {
+      "file": "detail_section2_375.png",
+      "description": "375px幅：②自宅セット割の有無で月額はいくら変わるか（3/5/20/25GB tier-cardと検算4ケース）の拡大",
+      "viewport": "375x812"
+    },
+    {
+      "file": "detail_section3_375.png",
+      "description": "375px幅：③使い方別に「残る／プラン変更／乗り換え」を判断する（judge-grid 3カード）の拡大",
+      "viewport": "375x812"
+    },
+    {
+      "file": "detail_calc_case1_375.png",
+      "description": "375px幅：検算ケース1（月3GB・割引なし）カードの拡大",
+      "viewport": "375x812"
+    },
+    {
+      "file": "detail_section6_cta_375.png",
+      "description": "375px幅：⑥申込前チェックと紹介案内・CTAボタンの拡大",
+      "viewport": "375x812"
+    }
+  ],
+  "full_page_split": "none（フルページは1枚の縦長画像。分割なし。JPEGプレビューで軽量化）",
+  "confirmed_items": [
+    "375px幅で本文・表・CTA・注記の重なり/横はみ出しがないことを目視確認",
+    "比較テーブル（tier-card）がHTMLテキストとして表示され、画像化されていないことを確認",
+    "TOC・lead-summary・tier-jumpチップのアンカーリンク遷移で、sticky headerが見出しを隠さないことをPlaywrightで実測確認（header高さ88px、遷移後の見出しtop座標195px/213pxで非重複）",
+    "winner-badgeが色だけでなく▼/▲/●の記号と日本語ラベルを併記していることを確認",
+    "コンソールエラー0件（Playwright page.on('console'/'pageerror')で確認）"
+  ],
+  "notes": "detail_section3_375.png と detail_calc_case1_375.png 等の要素スクリーンショットは、撮影スクリプト内でsticky header（.site-header）を一時的にdisplay:noneにしてから撮影した（本番CSS・article.cssは変更していない。要素スクリーンショットにヘッダーが重なって写り込むのを避けるための撮影時のみの措置）。"
+}

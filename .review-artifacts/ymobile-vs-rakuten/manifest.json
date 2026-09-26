@@ -1,0 +1,53 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "feature/ymobile-vs-rakuten",
+  "source_sha": "c30f39e33dc20f61185a82b1fb2b33fda093a5a6",
+  "target_page": "/articles/ymobile-vs-rakuten/",
+  "captured_at_utc": "2026-09-26T14:56:00Z",
+  "captured_at_jst": "2026-09-26T23:56:00+09:00",
+  "capture_method": "Playwright (chromium, headless) via local static server (python -m http.server) on the SOURCE_SHA working tree",
+  "header_state_during_capture": "sticky .site-header was hidden via an injected <style> tag (page.add_style_tag) for screenshot purposes only; no production CSS/HTML was modified",
+  "screen_sizes": [
+    { "label": "sp", "width": 375, "height": 812 },
+    { "label": "tablet", "width": 768, "height": 1024 },
+    { "label": "pc", "width": 1200, "height": 900 }
+  ],
+  "images": [
+    { "path": "sp_full_1of6.png", "description": "SP 375x812 全体像 1/6（ヘッダー〜①今の契約と家族の割引を確認する）" },
+    { "path": "sp_full_2of6.png", "description": "SP 375x812 全体像 2/6（②1人分の比較〜通話込み比較）" },
+    { "path": "sp_full_3of6.png", "description": "SP 375x812 全体像 3/6（③自分だけ移る〜ケース4補足）" },
+    { "path": "sp_full_4of6.png", "description": "SP 375x812 全体像 4/6（④全員が移る〜⑤料金以外の違い）" },
+    { "path": "sp_full_5of6.png", "description": "SP 375x812 全体像 5/6（⑤続き〜⑥乗り換え前の確認）" },
+    { "path": "sp_full_6of6.png", "description": "SP 375x812 全体像 6/6（申込CTA〜FAQ〜フッター）" },
+    { "path": "tablet_full_1of4.png", "description": "タブレット 768x1024 全体像 1/4" },
+    { "path": "tablet_full_2of4.png", "description": "タブレット 768x1024 全体像 2/4" },
+    { "path": "tablet_full_3of4.png", "description": "タブレット 768x1024 全体像 3/4" },
+    { "path": "tablet_full_4of4.png", "description": "タブレット 768x1024 全体像 4/4" },
+    { "path": "pc_full_1of4.png", "description": "PC 1200x900 全体像 1/4" },
+    { "path": "pc_full_2of4.png", "description": "PC 1200x900 全体像 2/4" },
+    { "path": "pc_full_3of4.png", "description": "PC 1200x900 全体像 3/4" },
+    { "path": "pc_full_4of4.png", "description": "PC 1200x900 全体像 4/4" },
+    { "path": "sp_section2_individual_compare.png", "description": "拡大：②個人料金比較（3GB/5GB境界確認テーブル）" },
+    { "path": "sp_calc_case4_main_line.png", "description": "拡大：③主回線移行例（ケース4、主回線が抜けると世帯総額が変わらない検算）" },
+    { "path": "sp_calc_case5_reconfigured.png", "description": "拡大：③主回線移行例の補足（ケース4補足、家族割引の組み直し後）" },
+    { "path": "sp_calc_case6_family_all.png", "description": "拡大：④家族全員移行例（ケース5、最強家族割適用）" },
+    { "path": "sp_calc_case7_family_home.png", "description": "拡大：④家族全員移行例（ケース6、おうち割+カード+自宅ネット維持）" },
+    { "path": "sp_net_cost_honestbox.png", "description": "拡大：④自宅ネットを変更する場合の注意（ネット費の説明）" },
+    { "path": "sp_judge_grid.png", "description": "拡大：⑤判断カード（残る/見直す/乗り換えるの3カード）" },
+    { "path": "sp_article_cta.png", "description": "拡大：⑥申込CTA（紹介特典ボタン）" },
+    { "path": "sp_faq_list_with_opened.png", "description": "拡大：よくある質問（1問目を開いた状態、他は閉じたまま）" }
+  ],
+  "verified_items": [
+    "375x812 / 768x1024 / 1200x900 の3サイズで横スクロール発生なし（document.documentElement.scrollWidth === clientWidth）",
+    "3サイズすべてでconsole/pageerrorのエラーなし",
+    "FAQアコーディオンが正しく開閉する（1問目を開いても他の項目・後続セクションのレイアウトが崩れない）",
+    "固定ヘッダーと目次アンカーのクリック確認は撮影対象外（本マニフェストはスクリーンショットによる表示崩れ確認のみ）",
+    "node scripts/validate-content.mjs：エラー0件（新規記事のPRICE_AUDIT INFOのみ、家族割文脈ありで正常）",
+    "git diff --check：問題なし"
+  ],
+  "notes": [
+    "スクリーンショット撮影のみを目的として.site-headerを非表示にするCSSをブラウザ実行時に注入した。site/配下の本番CSS・HTMLファイルは変更していない。",
+    "フルページ画像は1枚あたりが大きくなりChatGPT側のGitHub連携取得に失敗する可能性があるため、各サイズを高さ方向に分割して保存した。",
+    "個人情報・認証情報・アクセストークンが写っている画像はない。"
+  ]
+}

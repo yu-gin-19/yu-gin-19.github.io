@@ -2,20 +2,20 @@
   "repository": "yu-gin-19/yu-gin-19.github.io",
   "branch": "feature/linemo-vs-rakuten",
   "pr": "#24 (Draft)",
-  "revision_of": "2026-09-26レビュー指摘（必須修正5点）への対応",
-  "source_sha": "516fd13de91080c69c8a5717935d6388d93d76f5",
+  "revision_of": "2026-09-26レビュー指摘（2回目：FAQ2境界表現・FAQ4のRakuten Link表現・sources.mdの日付誤り）への対応",
+  "source_sha": "cc461ab2f027e1a275cee2b761a74af33157f241",
   "target_url": "/articles/linemo-vs-rakuten/",
   "captured_via": "python -m http.server (site/ served locally) + Playwright (Chromium headless)",
-  "capture_datetime_utc": "2026-09-26T11:30:35Z",
-  "capture_datetime_jst": "2026-09-26T20:30:35+09:00",
-  "note_on_datetime": "システムのタイムゾーンデータベースが利用できなかったため、UTC時刻（date -u で取得）に+9時間を手計算してJSTを併記した。UTC側の値が実測の一次情報。",
+  "capture_datetime_utc": "2026-09-26T12:02:33Z",
+  "capture_datetime_jst": "2026-09-26T21:02:33+09:00",
+  "note_on_datetime": "システムのタイムゾーンデータベースが利用できなかったため、UTC時刻（date -u で取得）に+9時間を手計算してJSTを併記した。UTC側の値が実測の一次情報。前回のmanifest.jsonで作業日を誤って「2026-09-27」と記載していたレビュー指摘を受け、本ファイルの日時はすべてこの撮影時点のUTC/JST実測値のみを使用し、推測での日付変更は行っていない。",
   "browser": "Chromium (Playwright sync API, headless=True)",
   "viewports": [
     { "width": 375, "height": 812, "label": "375x812" },
     { "width": 768, "height": 1024, "label": "768x1024" },
     { "width": 1200, "height": 900, "label": "1200x900" }
   ],
-  "previous_manifest_note": "前回（SOURCE_SHA 3baa354）のレビュー画像・manifest.jsonは、rules/01-git-workflowの『コードを追加修正した場合は古いレビュー画像を削除し全サイズを再撮影する』に従い、本コミットで全て置き換えた（旧画像は使い回していない）。",
+  "previous_manifest_note": "前回（SOURCE_SHA 516fd13）のレビュー画像・manifest.jsonは、rules/01-git-workflowの『コードを追加修正した場合は古いレビュー画像を削除し全サイズを再撮影する』に従い、本コミットで全て置き換えた（旧画像は使い回していない）。",
   "images": [
     {
       "file": "full_375x812_part1of6.jpg",
@@ -31,7 +31,7 @@
       "type": "full_page_segment",
       "segment": "2 of 6",
       "header_state": "通常表示（sticky header含む）",
-      "description": "②今月/毎月足りない対処（修正後のプラン変更適用タイミング説明含む）〜③基本料金表（修正後の注記含む）"
+      "description": "②今月/毎月足りない対処〜③基本料金表"
     },
     {
       "file": "full_375x812_part3of6.jpg",
@@ -47,7 +47,7 @@
       "type": "full_page_segment",
       "segment": "4 of 6",
       "header_state": "通常表示（sticky header含む）",
-      "description": "③検算ケース5（修正後の任意加入注記含む）〜④LINEギガフリー・通話方式"
+      "description": "③検算ケース5〜④LINEギガフリー・通話方式"
     },
     {
       "file": "full_375x812_part5of6.jpg",
@@ -55,7 +55,7 @@
       "type": "full_page_segment",
       "segment": "5 of 6",
       "header_state": "通常表示（sticky header含む）",
-      "description": "⑤判断カード〜⑥乗り換え前確認（修正後の解約金説明含む）"
+      "description": "⑤判断カード〜⑥乗り換え前確認"
     },
     {
       "file": "full_375x812_part6of6.jpg",
@@ -87,7 +87,7 @@
       "type": "full_page_segment",
       "segment": "3 of 4",
       "header_state": "通常表示（sticky header含む）",
-      "description": "④LINEと通話〜⑤判断カード〜⑥途中（修正後の解約金説明含む）"
+      "description": "④LINEと通話〜⑤判断カード〜⑥途中"
     },
     {
       "file": "full_768x1024_part4of4.jpg",
@@ -119,7 +119,7 @@
       "type": "full_page_segment",
       "segment": "3 of 4",
       "header_state": "通常表示（sticky header含む）",
-      "description": "④LINEと通話〜⑤判断カード（3カラム）〜⑥途中（修正後の解約金説明含む）"
+      "description": "④LINEと通話〜⑤判断カード（3カラム）〜⑥途中"
     },
     {
       "file": "full_1200x900_part4of4.jpg",
@@ -134,79 +134,77 @@
       "viewport": "375 (要素切り出し)",
       "type": "element_closeup",
       "header_state": "sticky header を撮影用に一時非表示（本番CSSは未変更）",
-      "description": "③基本料金表（LINEMOベスト/V vs 楽天モバイル通常料金、注記を任意購入の表現に修正済み）"
+      "description": "③基本料金表（LINEMOベスト/V vs 楽天モバイル通常料金）。今回のラウンドでは変更なし"
     },
     {
       "file": "calc_case2_12gb.png",
       "viewport": "375 (要素切り出し)",
       "type": "element_closeup",
       "header_state": "sticky header を撮影用に一時非表示（本番CSSは未変更）",
-      "description": "③検算ケース2（月12GB・毎月不足）"
+      "description": "③検算ケース2（月12GB・毎月不足）。今回のラウンドでは変更なし"
     },
     {
       "file": "calc_case4_35gb.png",
       "viewport": "375 (要素切り出し)",
       "type": "element_closeup",
       "header_state": "sticky header を撮影用に一時非表示（本番CSSは未変更）",
-      "description": "③検算ケース4（月35GB・通常速度維持）"
+      "description": "③検算ケース4（月35GB・通常速度維持）。今回のラウンドでは変更なし"
     },
     {
       "file": "calc_case5_call.png",
       "viewport": "375 (要素切り出し)",
       "type": "element_closeup",
       "header_state": "sticky header を撮影用に一時非表示（本番CSSは未変更）",
-      "description": "③検算ケース5（月25GB・対象番号へ5分以内の通話。15分オプションが任意加入である旨の注記を追加）"
+      "description": "③検算ケース5（月25GB・対象番号へ5分以内の通話）。今回のラウンドでは変更なし"
     },
     {
       "file": "line_gigafree_note.png",
       "viewport": "375 (要素切り出し)",
       "type": "element_closeup",
       "header_state": "sticky header を撮影用に一時非表示（本番CSSは未変更）",
-      "description": "④「楽天モバイルに変えるとLINEギガフリーはどうなるか」の注意ボックス"
+      "description": "④「楽天モバイルに変えるとLINEギガフリーはどうなるか」の注意ボックス。今回のラウンドでは変更なし"
     },
     {
       "file": "judge_grid.png",
       "viewport": "375 (要素切り出し)",
       "type": "element_closeup",
       "header_state": "sticky header を撮影用に一時非表示（本番CSSは未変更）",
-      "description": "⑤残る／プラン変更／楽天へ乗り換えの判断カード（3種）"
+      "description": "⑤残る／プラン変更／楽天へ乗り換えの判断カード（3種）。今回のラウンドでは変更なし"
     },
     {
       "file": "section6_steps.png",
       "viewport": "375 (要素切り出し)",
       "type": "element_closeup",
       "header_state": "sticky header を撮影用に一時非表示（本番CSSは未変更）",
-      "description": "⑥乗り換え前の確認手順（ステップ4に2026年7月改定後の契約解除料の説明を反映）"
+      "description": "⑥乗り換え前の確認手順。今回のラウンドでは変更なし"
     },
     {
       "file": "article_cta.png",
       "viewport": "375 (要素切り出し)",
       "type": "element_closeup",
       "header_state": "sticky header を撮影用に一時非表示（本番CSSは未変更）",
-      "description": "⑥紹介特典CTA（「条件を確認して申し込む」ボタン）"
+      "description": "⑥紹介特典CTA（「条件を確認して申し込む」ボタン）。今回のラウンドでは変更なし"
     },
     {
       "file": "faq_list.png",
       "viewport": "375 (要素切り出し)",
       "type": "element_closeup",
       "header_state": "sticky header を撮影用に一時非表示（本番CSSは未変更）",
-      "description": "よくある質問（6問、折りたたみ表示）。FAQ2・FAQ4は修正後の本文をJSON-LDと一致させ済み"
+      "description": "よくある質問（6問、折りたたみ表示）。FAQ2（境界の差額を明記）・FAQ4（Rakuten Linkの対象範囲表現）の本文を修正済み（質問文の見た目は変更なし、回答本文はスクリーンショットでは開いていないため表示されない）"
     }
   ],
   "confirmed_items": [
     "375x812 / 768x1024 / 1200x900 の3サイズで横方向のはみ出し（横スクロール）が発生していないことを目視確認した",
     "1200x900（デスクトップ幅）で判断カード（judge-grid）が3カラムグリッドで表示されることを確認した",
     "375x812（モバイル幅）で基本料金表・検算ケースの比較ボックス（compare-two）が縦積みで表示されることを確認した",
-    "⑥のステップ4（解約金・解約月の請求確認）が、2026年7月改定に沿った文言で崩れなく表示されることを確認した",
-    "検算ケース5の注記（15分オプションの任意加入）が読みやすく表示されることを確認した",
     "FAQリスト6問の折りたたみ表示に崩れがないことを確認した",
     "node scripts/validate-content.mjs でエラー0件、git diff --check でエラーなしを確認した",
-    "JSON-LD（FAQPage）と表示FAQの本文が完全一致することをスクリプトで確認した"
+    "JSON-LD（FAQPage）と表示FAQの本文が完全一致することをスクリプトで確認した（FAQ2・FAQ4の修正後テキストで再確認）"
   ],
   "notes": [
     "要素切り出し画像（table_price_compare.png以降）は、Playwrightのlocator.screenshot()実行時にsticky headerが要素の一部と重なるのを避けるため、CSS（header.site-header{display:none}）で一時的にheaderを非表示にして撮影した。本番のstyle.css/article.cssは変更していない。",
     "全体像（full_*）は通常表示（sticky header・ヘッダーナビゲーションを含む状態）で撮影しており、ヘッダー非表示にはしていない。",
     "全体像スクリーンショットはページが長く、1枚の巨大PNGでは1MB前後でChatGPT側のGitHub連携が取得に失敗することがあるため、高さ3,600px単位で分割し、JPEG（quality 82）に変換して各ファイルを1MB未満に収めた。",
-    "本ラウンドの修正でセクション②③⑥の文章量がわずかに変わったため、375幅の全体像は前回の5分割から6分割になった（最後の6枚目は短い残部のみ）。"
+    "今回のレビュー対応（FAQ2・FAQ4の本文修正、sources.mdの日付訂正）はいずれも折りたたみ済みのFAQ回答本文・出典ファイル内の文言のみの変更で、レイアウト・見た目には影響しないため、要素切り出し画像の構図は前回と同一だが、rules/01-git-workflowの規定に従いコード変更後は全サイズを再撮影し、旧画像を使い回していない。"
   ]
 }

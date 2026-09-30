@@ -471,6 +471,7 @@
   border-radius: 50px;
   line-height: 1.4;
   margin-top: 4px;
+  white-space: nowrap;
 }
 
 .winner-badge--rakuten {
@@ -768,7 +769,11 @@
   }
   .comparison-table-wrap thead th,
   .comparison-table-wrap tbody td {
-    padding: 10px 12px;
+    padding: 10px 8px;
+  }
+  .winner-badge {
+    font-size: 12px;
+    padding: 3px 8px;
   }
 
   .lead-summary {

@@ -1,0 +1,102 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "feature/rakuten-recontract",
+  "source_sha": "b8fc51e93bd0f8f197107c29c51d5e6ddd15621e",
+  "target_page": {
+    "url_path": "/articles/rakuten-recontract/",
+    "local_url": "http://localhost:8931/articles/rakuten-recontract/"
+  },
+  "captured_at": "2026-09-30T23:47:29+09:00",
+  "capture_method": "Playwright (Chromium headless) via python -m http.server serving site/ as web root. Fixed/sticky header (.site-header, position:sticky) was NOT hidden by CSS during capture, matching production. For each viewport size, the page was scrolled in increments equal to the viewport height and a clipped screenshot was taken at each scroll position, so segments cover the full page height with no gaps and no overlap.",
+  "screen_sizes": [
+    {
+      "label": "375x812",
+      "width": 375,
+      "height": 812,
+      "total_page_height_px": 14847,
+      "segment_count": 19,
+      "segments_dir": "375x812/",
+      "segments": [
+        { "file": "375x812/segment_01_375x812.png", "y_start": 0, "y_end": 812 },
+        { "file": "375x812/segment_02_375x812.png", "y_start": 812, "y_end": 1624 },
+        { "file": "375x812/segment_03_375x812.png", "y_start": 1624, "y_end": 2436 },
+        { "file": "375x812/segment_04_375x812.png", "y_start": 2436, "y_end": 3248 },
+        { "file": "375x812/segment_05_375x812.png", "y_start": 3248, "y_end": 4060 },
+        { "file": "375x812/segment_06_375x812.png", "y_start": 4060, "y_end": 4872 },
+        { "file": "375x812/segment_07_375x812.png", "y_start": 4872, "y_end": 5684 },
+        { "file": "375x812/segment_08_375x812.png", "y_start": 5684, "y_end": 6496 },
+        { "file": "375x812/segment_09_375x812.png", "y_start": 6496, "y_end": 7308 },
+        { "file": "375x812/segment_10_375x812.png", "y_start": 7308, "y_end": 8120 },
+        { "file": "375x812/segment_11_375x812.png", "y_start": 8120, "y_end": 8932 },
+        { "file": "375x812/segment_12_375x812.png", "y_start": 8932, "y_end": 9744 },
+        { "file": "375x812/segment_13_375x812.png", "y_start": 9744, "y_end": 10556 },
+        { "file": "375x812/segment_14_375x812.png", "y_start": 10556, "y_end": 11368 },
+        { "file": "375x812/segment_15_375x812.png", "y_start": 11368, "y_end": 12180 },
+        { "file": "375x812/segment_16_375x812.png", "y_start": 12180, "y_end": 12992 },
+        { "file": "375x812/segment_17_375x812.png", "y_start": 12992, "y_end": 13804 },
+        { "file": "375x812/segment_18_375x812.png", "y_start": 13804, "y_end": 14616 },
+        { "file": "375x812/segment_19_375x812.png", "y_start": 14616, "y_end": 14847 }
+      ]
+    },
+    {
+      "label": "768x1024",
+      "width": 768,
+      "height": 1024,
+      "total_page_height_px": 10163,
+      "segment_count": 10,
+      "segments_dir": "768x1024/",
+      "segments": [
+        { "file": "768x1024/segment_01_768x1024.png", "y_start": 0, "y_end": 1024 },
+        { "file": "768x1024/segment_02_768x1024.png", "y_start": 1024, "y_end": 2048 },
+        { "file": "768x1024/segment_03_768x1024.png", "y_start": 2048, "y_end": 3072 },
+        { "file": "768x1024/segment_04_768x1024.png", "y_start": 3072, "y_end": 4096 },
+        { "file": "768x1024/segment_05_768x1024.png", "y_start": 4096, "y_end": 5120 },
+        { "file": "768x1024/segment_06_768x1024.png", "y_start": 5120, "y_end": 6144 },
+        { "file": "768x1024/segment_07_768x1024.png", "y_start": 6144, "y_end": 7168 },
+        { "file": "768x1024/segment_08_768x1024.png", "y_start": 7168, "y_end": 8192 },
+        { "file": "768x1024/segment_09_768x1024.png", "y_start": 8192, "y_end": 9216 },
+        { "file": "768x1024/segment_10_768x1024.png", "y_start": 9216, "y_end": 10163 }
+      ]
+    },
+    {
+      "label": "1200x900",
+      "width": 1200,
+      "height": 900,
+      "total_page_height_px": 9559,
+      "segment_count": 11,
+      "segments_dir": "1200x900/",
+      "segments": [
+        { "file": "1200x900/segment_01_1200x900.png", "y_start": 0, "y_end": 900 },
+        { "file": "1200x900/segment_02_1200x900.png", "y_start": 900, "y_end": 1800 },
+        { "file": "1200x900/segment_03_1200x900.png", "y_start": 1800, "y_end": 2700 },
+        { "file": "1200x900/segment_04_1200x900.png", "y_start": 2700, "y_end": 3600 },
+        { "file": "1200x900/segment_05_1200x900.png", "y_start": 3600, "y_end": 4500 },
+        { "file": "1200x900/segment_06_1200x900.png", "y_start": 4500, "y_end": 5400 },
+        { "file": "1200x900/segment_07_1200x900.png", "y_start": 5400, "y_end": 6300 },
+        { "file": "1200x900/segment_08_1200x900.png", "y_start": 6300, "y_end": 7200 },
+        { "file": "1200x900/segment_09_1200x900.png", "y_start": 7200, "y_end": 8100 },
+        { "file": "1200x900/segment_10_1200x900.png", "y_start": 8100, "y_end": 9000 },
+        { "file": "1200x900/segment_11_1200x900.png", "y_start": 9000, "y_end": 9559 }
+      ]
+    }
+  ],
+  "detail_crops": [
+    { "file": "details/history-judge-cards.png", "target": "#section-1 .judge-grid — MNP出戻り／新番号／追加契約／旧プラン移行の3区分カード" },
+    { "file": "details/benefit-comparison-table.png", "target": "#section-3 .comparison-table-wrap — 従業員紹介とただいまキャンペーンの比較表（金額不一致の要確認バッジ含む）" },
+    { "file": "details/fee-calc-table.png", "target": "#section-5 .comparison-table-wrap — 契約事務手数料の累計4回線目／5回線目境界の検算例" },
+    { "file": "details/final-cta.png", "target": ".article-cta — 最終CTA（紹介条件を確認して申し込む）" },
+    { "file": "details/faq-expanded-referral-mismatch.png", "target": "#faq-btn-4 展開状態 — 従業員紹介の再契約時ポイント不一致に関するFAQ" },
+    { "file": "details/anchor-nav-section3-with-header.png", "target": "サイトヘッダーを非表示にせず、#section-3 へのアンカー遷移直後の実際の表示（見出しが固定ヘッダーに隠れていないことを確認）" }
+  ],
+  "confirmed_items": [
+    "3サイズ（375x812 / 768x1024 / 1200x900）でページ全体を最上部からフッターまで欠落なく撮影し、各セグメントのy_start/y_endを記録した（実ファイル数と一致）",
+    "固定ヘッダー（sticky）をCSSで隠さずに撮影し、#section-3へのアンカー遷移後も見出しがヘッダーに隠れていないことを確認した",
+    "履歴の判断カード・特典比較表・手数料検算表・最終CTA・FAQ展開状態を拡大撮影した",
+    "3サイズとも横スクロール・文字切れ・カードの崩れは確認されなかった",
+    "各画像はいずれも600KB未満（最大約212KB）"
+  ],
+  "notes": [
+    "同一撮影・同一ブラウザセッションで取得したfull_page単体画像（1.7MB前後）は、過去のレビューでGitHub連携の取得に失敗する事例があったため、review-artifactsには含めず、分割済みセグメントのみを採用した（Git管理外のreview-output/rakuten-recontract/には保管済み）。",
+    "このコミットは .review-artifacts/rakuten-recontract/ のみを追加するものであり、source_shaのコード内容は変更していない。"
+  ]
+}

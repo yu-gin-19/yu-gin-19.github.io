@@ -1,0 +1,396 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "feature/softbank-vs-rakuten",
+  "source_sha": "9c8792dd1ce2c3fa697939d9c8804834dd3fad1c",
+  "page": "/articles/softbank-vs-rakuten/",
+  "captured_at": "2026-10-05T17:23:23",
+  "viewports": [
+    {
+      "viewport": "375x812",
+      "full_page": {
+        "full_height_px": 22333,
+        "pieces": [
+          {
+            "file": "375x812/split_375x812_01.png",
+            "y_start": 0,
+            "y_end": 812
+          },
+          {
+            "file": "375x812/split_375x812_02.png",
+            "y_start": 812,
+            "y_end": 1624
+          },
+          {
+            "file": "375x812/split_375x812_03.png",
+            "y_start": 1624,
+            "y_end": 2436
+          },
+          {
+            "file": "375x812/split_375x812_04.png",
+            "y_start": 2436,
+            "y_end": 3248
+          },
+          {
+            "file": "375x812/split_375x812_05.png",
+            "y_start": 3248,
+            "y_end": 4060
+          },
+          {
+            "file": "375x812/split_375x812_06.png",
+            "y_start": 4060,
+            "y_end": 4872
+          },
+          {
+            "file": "375x812/split_375x812_07.png",
+            "y_start": 4872,
+            "y_end": 5684
+          },
+          {
+            "file": "375x812/split_375x812_08.png",
+            "y_start": 5684,
+            "y_end": 6496
+          },
+          {
+            "file": "375x812/split_375x812_09.png",
+            "y_start": 6496,
+            "y_end": 7308
+          },
+          {
+            "file": "375x812/split_375x812_10.png",
+            "y_start": 7308,
+            "y_end": 8120
+          },
+          {
+            "file": "375x812/split_375x812_11.png",
+            "y_start": 8120,
+            "y_end": 8932
+          },
+          {
+            "file": "375x812/split_375x812_12.png",
+            "y_start": 8932,
+            "y_end": 9744
+          },
+          {
+            "file": "375x812/split_375x812_13.png",
+            "y_start": 9744,
+            "y_end": 10556
+          },
+          {
+            "file": "375x812/split_375x812_14.png",
+            "y_start": 10556,
+            "y_end": 11368
+          },
+          {
+            "file": "375x812/split_375x812_15.png",
+            "y_start": 11368,
+            "y_end": 12180
+          },
+          {
+            "file": "375x812/split_375x812_16.png",
+            "y_start": 12180,
+            "y_end": 12992
+          },
+          {
+            "file": "375x812/split_375x812_17.png",
+            "y_start": 12992,
+            "y_end": 13804
+          },
+          {
+            "file": "375x812/split_375x812_18.png",
+            "y_start": 13804,
+            "y_end": 14616
+          },
+          {
+            "file": "375x812/split_375x812_19.png",
+            "y_start": 14616,
+            "y_end": 15428
+          },
+          {
+            "file": "375x812/split_375x812_20.png",
+            "y_start": 15428,
+            "y_end": 16240
+          },
+          {
+            "file": "375x812/split_375x812_21.png",
+            "y_start": 16240,
+            "y_end": 17052
+          },
+          {
+            "file": "375x812/split_375x812_22.png",
+            "y_start": 17052,
+            "y_end": 17864
+          },
+          {
+            "file": "375x812/split_375x812_23.png",
+            "y_start": 17864,
+            "y_end": 18676
+          },
+          {
+            "file": "375x812/split_375x812_24.png",
+            "y_start": 18676,
+            "y_end": 19488
+          },
+          {
+            "file": "375x812/split_375x812_25.png",
+            "y_start": 19488,
+            "y_end": 20300
+          },
+          {
+            "file": "375x812/split_375x812_26.png",
+            "y_start": 20300,
+            "y_end": 21112
+          },
+          {
+            "file": "375x812/split_375x812_27.png",
+            "y_start": 21112,
+            "y_end": 21924
+          },
+          {
+            "file": "375x812/split_375x812_28.png",
+            "y_start": 21924,
+            "y_end": 22333
+          }
+        ]
+      },
+      "detail": [
+        "375x812/detail/pricing_table.png",
+        "375x812/detail/case3.png",
+        "375x812/detail/case4.png",
+        "375x812/detail/case5.png",
+        "375x812/detail/case6.png",
+        "375x812/detail/net_cost_box.png",
+        "375x812/detail/judge_grid.png",
+        "375x812/detail/final_cta.png",
+        "375x812/detail/faq_open.png",
+        "375x812/detail/table_scroll_left.png",
+        "375x812/detail/table_scroll_right.png"
+      ],
+      "anchor": [
+        {
+          "file": "375x812/anchor/anchor_section-3.png",
+          "anchor": "section-3",
+          "header_bottom_px": 88.1,
+          "target_top_px": 196.4,
+          "clipped_by_header": false
+        },
+        {
+          "file": "375x812/anchor/anchor_section-6.png",
+          "anchor": "section-6",
+          "header_bottom_px": 88.1,
+          "target_top_px": 196.2,
+          "clipped_by_header": false
+        }
+      ]
+    },
+    {
+      "viewport": "768x1024",
+      "full_page": {
+        "full_height_px": 14659,
+        "pieces": [
+          {
+            "file": "768x1024/split_768x1024_01.png",
+            "y_start": 0,
+            "y_end": 1024
+          },
+          {
+            "file": "768x1024/split_768x1024_02.png",
+            "y_start": 1024,
+            "y_end": 2048
+          },
+          {
+            "file": "768x1024/split_768x1024_03.png",
+            "y_start": 2048,
+            "y_end": 3072
+          },
+          {
+            "file": "768x1024/split_768x1024_04.png",
+            "y_start": 3072,
+            "y_end": 4096
+          },
+          {
+            "file": "768x1024/split_768x1024_05.png",
+            "y_start": 4096,
+            "y_end": 5120
+          },
+          {
+            "file": "768x1024/split_768x1024_06.png",
+            "y_start": 5120,
+            "y_end": 6144
+          },
+          {
+            "file": "768x1024/split_768x1024_07.png",
+            "y_start": 6144,
+            "y_end": 7168
+          },
+          {
+            "file": "768x1024/split_768x1024_08.png",
+            "y_start": 7168,
+            "y_end": 8192
+          },
+          {
+            "file": "768x1024/split_768x1024_09.png",
+            "y_start": 8192,
+            "y_end": 9216
+          },
+          {
+            "file": "768x1024/split_768x1024_10.png",
+            "y_start": 9216,
+            "y_end": 10240
+          },
+          {
+            "file": "768x1024/split_768x1024_11.png",
+            "y_start": 10240,
+            "y_end": 11264
+          },
+          {
+            "file": "768x1024/split_768x1024_12.png",
+            "y_start": 11264,
+            "y_end": 12288
+          },
+          {
+            "file": "768x1024/split_768x1024_13.png",
+            "y_start": 12288,
+            "y_end": 13312
+          },
+          {
+            "file": "768x1024/split_768x1024_14.png",
+            "y_start": 13312,
+            "y_end": 14336
+          },
+          {
+            "file": "768x1024/split_768x1024_15.png",
+            "y_start": 14336,
+            "y_end": 14659
+          }
+        ]
+      },
+      "detail": [],
+      "anchor": []
+    },
+    {
+      "viewport": "1200x900",
+      "full_page": {
+        "full_height_px": 14337,
+        "pieces": [
+          {
+            "file": "1200x900/split_1200x900_01.png",
+            "y_start": 0,
+            "y_end": 900
+          },
+          {
+            "file": "1200x900/split_1200x900_02.png",
+            "y_start": 900,
+            "y_end": 1800
+          },
+          {
+            "file": "1200x900/split_1200x900_03.png",
+            "y_start": 1800,
+            "y_end": 2700
+          },
+          {
+            "file": "1200x900/split_1200x900_04.png",
+            "y_start": 2700,
+            "y_end": 3600
+          },
+          {
+            "file": "1200x900/split_1200x900_05.png",
+            "y_start": 3600,
+            "y_end": 4500
+          },
+          {
+            "file": "1200x900/split_1200x900_06.png",
+            "y_start": 4500,
+            "y_end": 5400
+          },
+          {
+            "file": "1200x900/split_1200x900_07.png",
+            "y_start": 5400,
+            "y_end": 6300
+          },
+          {
+            "file": "1200x900/split_1200x900_08.png",
+            "y_start": 6300,
+            "y_end": 7200
+          },
+          {
+            "file": "1200x900/split_1200x900_09.png",
+            "y_start": 7200,
+            "y_end": 8100
+          },
+          {
+            "file": "1200x900/split_1200x900_10.png",
+            "y_start": 8100,
+            "y_end": 9000
+          },
+          {
+            "file": "1200x900/split_1200x900_11.png",
+            "y_start": 9000,
+            "y_end": 9900
+          },
+          {
+            "file": "1200x900/split_1200x900_12.png",
+            "y_start": 9900,
+            "y_end": 10800
+          },
+          {
+            "file": "1200x900/split_1200x900_13.png",
+            "y_start": 10800,
+            "y_end": 11700
+          },
+          {
+            "file": "1200x900/split_1200x900_14.png",
+            "y_start": 11700,
+            "y_end": 12600
+          },
+          {
+            "file": "1200x900/split_1200x900_15.png",
+            "y_start": 12600,
+            "y_end": 13500
+          },
+          {
+            "file": "1200x900/split_1200x900_16.png",
+            "y_start": 13500,
+            "y_end": 14337
+          }
+        ]
+      },
+      "detail": [
+        "1200x900/detail/case5.png",
+        "1200x900/detail/case6.png",
+        "1200x900/detail/net_cost_box.png",
+        "1200x900/detail/judge_grid.png",
+        "1200x900/detail/final_cta.png"
+      ],
+      "anchor": [
+        {
+          "file": "1200x900/anchor/anchor_section-3.png",
+          "anchor": "section-3",
+          "header_bottom_px": 54.5,
+          "target_top_px": 170.5,
+          "clipped_by_header": false
+        },
+        {
+          "file": "1200x900/anchor/anchor_section-6.png",
+          "anchor": "section-6",
+          "header_bottom_px": 54.5,
+          "target_top_px": 170.3,
+          "clipped_by_header": false
+        }
+      ]
+    }
+  ],
+  "verified_items": [
+    "375x812 / 768x1024 / 1200x900 の3サイズでページ全体を撮影し、隙間なく分割（y座標の連続性をスクリプトで機械チェック済み、全サイズでcontinuous=True）",
+    "3サイズいずれも document.documentElement.scrollWidth が clientWidth を超えておらず、意図しない横スクロールなし",
+    "console error / pageerror はいずれのサイズでも検出なし",
+    "FAQ開閉（faq-btn-1）が aria-expanded=true に切り替わることを確認",
+    "TOCアンカー（#section-3, #section-6）クリック後、実ヘッダー表示状態で見出し上端がヘッダー下端より下にあることを座標で確認（例: 375pxで header_bottom=88.1px, target_top=196.4px）",
+    "料金比較表・ケース3〜6・自宅ネット説明・判断カード・最終CTA・開いたFAQの拡大画像を保存",
+    "375px幅の料金比較表（#section-2 .comparison-table-wrap）はscrollLeft=0と最大値で同一画像となり、この表自体は375px幅に収まり横スクロールが発生しないことを確認（横スクロールが必要な表ではない）"
+  ],
+  "notes": [
+    "要素スクリーンショット（detail/配下）のみ、一時的にsite-headerをvisibility:hiddenにした状態で撮影している（本番article.css/style.cssは変更していない。ページ内への一時<style>注入のみで、撮影後は除去）。",
+    "anchor/配下の画像は実際のsticky headerを表示した状態で撮影している。",
+    "detail配下のcase5はソフトバンク側の内訳ボックスと楽天モバイル側の内訳表の両方を含む。"
+  ]
+}

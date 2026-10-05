@@ -409,6 +409,24 @@
   font-size: 14px;
 }
 
+/* 列数が多く見出しが長い表（ケース6等）は、文字が1文字ずつ折り返さないよう
+   最小幅を確保し、.comparison-table-wrap側のoverflow-x:autoで横スクロールさせる */
+.comparison-table-wrap table.wide-table {
+  min-width: 640px;
+}
+
+.comparison-table-wrap table.wide-table th,
+.comparison-table-wrap table.wide-table td {
+  white-space: nowrap;
+}
+
+.scroll-hint {
+  display: none;
+  font-size: 12px;
+  color: #767676;
+  margin: -12px 0 16px;
+}
+
 .comparison-table-wrap thead th {
   background: #f0f0f0;
   font-weight: 700;
@@ -788,5 +806,9 @@
 
   .lead-summary {
     padding: 14px 16px;
+  }
+
+  .scroll-hint {
+    display: block;
   }
 }

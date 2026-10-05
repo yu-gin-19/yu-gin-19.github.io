@@ -1,14 +1,14 @@
 {
   "repository": "yu-gin-19/yu-gin-19.github.io",
   "branch": "feature/softbank-vs-rakuten",
-  "source_sha": "734fcf31124f9bfb51a7b9d83811d18eded7b587",
+  "source_sha": "b92a193aa6064826fa75f47bddd59e688c0a5a84",
   "page": "/articles/softbank-vs-rakuten/",
-  "captured_at": "2026-10-05T18:11:26",
+  "captured_at": "2026-10-05T18:48:48",
   "viewports": [
     {
       "viewport": "375x812",
       "full_page": {
-        "full_height_px": 24395,
+        "full_height_px": 25476,
         "pieces": [
           {
             "file": "375x812/split_375x812_01.png",
@@ -163,7 +163,12 @@
           {
             "file": "375x812/split_375x812_31.png",
             "y_start": 24360,
-            "y_end": 24395
+            "y_end": 25172
+          },
+          {
+            "file": "375x812/split_375x812_32.png",
+            "y_start": 25172,
+            "y_end": 25476
           }
         ]
       },
@@ -187,14 +192,14 @@
           "file": "375x812/anchor/anchor_section-3.png",
           "anchor": "section-3",
           "header_bottom_px": 88.1,
-          "target_top_px": 195.7,
+          "target_top_px": 196.4,
           "clipped_by_header": false
         },
         {
           "file": "375x812/anchor/anchor_section-6.png",
           "anchor": "section-6",
           "header_bottom_px": 88.1,
-          "target_top_px": 195.6,
+          "target_top_px": 196.1,
           "clipped_by_header": false
         }
       ]
@@ -202,7 +207,7 @@
     {
       "viewport": "768x1024",
       "full_page": {
-        "full_height_px": 15681,
+        "full_height_px": 16097,
         "pieces": [
           {
             "file": "768x1024/split_768x1024_01.png",
@@ -282,7 +287,7 @@
           {
             "file": "768x1024/split_768x1024_16.png",
             "y_start": 15360,
-            "y_end": 15681
+            "y_end": 16097
           }
         ]
       },
@@ -292,7 +297,7 @@
     {
       "viewport": "1200x900",
       "full_page": {
-        "full_height_px": 15258,
+        "full_height_px": 15724,
         "pieces": [
           {
             "file": "1200x900/split_1200x900_01.png",
@@ -377,7 +382,12 @@
           {
             "file": "1200x900/split_1200x900_17.png",
             "y_start": 14400,
-            "y_end": 15258
+            "y_end": 15300
+          },
+          {
+            "file": "1200x900/split_1200x900_18.png",
+            "y_start": 15300,
+            "y_end": 15724
           }
         ]
       },
@@ -393,14 +403,14 @@
           "file": "1200x900/anchor/anchor_section-3.png",
           "anchor": "section-3",
           "header_bottom_px": 54.5,
-          "target_top_px": 170.3,
+          "target_top_px": 169.7,
           "clipped_by_header": false
         },
         {
           "file": "1200x900/anchor/anchor_section-6.png",
           "anchor": "section-6",
           "header_bottom_px": 54.5,
-          "target_top_px": 170.1,
+          "target_top_px": 169.7,
           "clipped_by_header": false
         }
       ]
@@ -414,12 +424,12 @@
     "TOCアンカー（#section-3, #section-6）クリック後、実ヘッダー表示状態で見出し上端がヘッダー下端より下にあることを座標で確認（例: 375pxで header_bottom=88.1px, target_top=195.7px）",
     "料金比較表・ケース3〜6・自宅ネット説明・判断カード・最終CTA・開いたFAQの拡大画像を保存",
     "375px幅の料金比較表（#section-2 .comparison-table-wrap）はscrollLeft=0と最大値で同一画像となり、この表自体は375px幅に収まり横スクロールが発生しないことを確認（横スクロールが必要な表ではない）",
-    "【今回のレビュー対応で追加】ケース6の比較表（.wide-table、min-width:640px）は375pxでscrollWidth=888px/clientWidth=299pxとなり、表領域だけが横スクロールすることを確認。scrollLeft=0と最大値で見出し・金額が1文字ずつ折れずに表示されることを画像で確認（case6_table_scroll_left/right.png）"
+    "ケース6の比較表（.wide-table、min-width:640px）は375pxでscrollWidth=888px/clientWidth=299pxとなり、表領域だけが横スクロールすることを確認。scrollLeft=0と最大値で見出し・金額が1文字ずつ折れずに表示されることを画像で確認（case6_table_scroll_left/right.png）"
   ],
   "notes": [
     "要素スクリーンショット（detail/配下）のみ、一時的にsite-headerをvisibility:hiddenにした状態で撮影している（本番article.css/style.cssは変更していない。ページ内への一時<style>注入のみで、撮影後は除去）。",
     "anchor/配下の画像は実際のsticky headerを表示した状態で撮影している。",
-    "detail配下のcase5はソフトバンク側の内訳ボックスと楽天モバイル側の内訳表の両方を含み、H前=H後の仮定を前提の矛盾なく再構成した本文を反映している。",
-    "本ラウンドはChatGPTレビュー（PR #27）の指摘7件（ミニフィット2価格・新みんな家族割の一般化・ケース5の矛盾・ケース6のポイント計算・通話料金の説明・375px表の折り返し・sources.md未確認事項）への対応。"
+    "detail配下のcase5は、H前=H後の流用条件をケース5自身の前提に限定し、前提が変わる参考例（スマホ分世帯差13,200円）とワイモバイル残存回線の制度の違いを反映した本文（2回目レビュー対応）になっている。",
+    "本ラウンド（2回目レビュー対応）はChatGPTレビュー（PR #27）の追加指摘3件（ケース5のH前=H後の流用条件、残存回線への新みんな家族割の誤った適用、『同一プランに限り全員同額』という行き過ぎた限定の訂正）への対応。"
   ]
 }

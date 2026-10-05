@@ -1,14 +1,14 @@
 {
   "repository": "yu-gin-19/yu-gin-19.github.io",
   "branch": "feature/softbank-vs-rakuten",
-  "source_sha": "9c8792dd1ce2c3fa697939d9c8804834dd3fad1c",
+  "source_sha": "734fcf31124f9bfb51a7b9d83811d18eded7b587",
   "page": "/articles/softbank-vs-rakuten/",
-  "captured_at": "2026-10-05T17:23:23",
+  "captured_at": "2026-10-05T18:11:26",
   "viewports": [
     {
       "viewport": "375x812",
       "full_page": {
-        "full_height_px": 22333,
+        "full_height_px": 24395,
         "pieces": [
           {
             "file": "375x812/split_375x812_01.png",
@@ -148,7 +148,22 @@
           {
             "file": "375x812/split_375x812_28.png",
             "y_start": 21924,
-            "y_end": 22333
+            "y_end": 22736
+          },
+          {
+            "file": "375x812/split_375x812_29.png",
+            "y_start": 22736,
+            "y_end": 23548
+          },
+          {
+            "file": "375x812/split_375x812_30.png",
+            "y_start": 23548,
+            "y_end": 24360
+          },
+          {
+            "file": "375x812/split_375x812_31.png",
+            "y_start": 24360,
+            "y_end": 24395
           }
         ]
       },
@@ -163,21 +178,23 @@
         "375x812/detail/final_cta.png",
         "375x812/detail/faq_open.png",
         "375x812/detail/table_scroll_left.png",
-        "375x812/detail/table_scroll_right.png"
+        "375x812/detail/table_scroll_right.png",
+        "375x812/detail/case6_table_scroll_left.png",
+        "375x812/detail/case6_table_scroll_right.png"
       ],
       "anchor": [
         {
           "file": "375x812/anchor/anchor_section-3.png",
           "anchor": "section-3",
           "header_bottom_px": 88.1,
-          "target_top_px": 196.4,
+          "target_top_px": 195.7,
           "clipped_by_header": false
         },
         {
           "file": "375x812/anchor/anchor_section-6.png",
           "anchor": "section-6",
           "header_bottom_px": 88.1,
-          "target_top_px": 196.2,
+          "target_top_px": 195.6,
           "clipped_by_header": false
         }
       ]
@@ -185,7 +202,7 @@
     {
       "viewport": "768x1024",
       "full_page": {
-        "full_height_px": 14659,
+        "full_height_px": 15681,
         "pieces": [
           {
             "file": "768x1024/split_768x1024_01.png",
@@ -260,7 +277,12 @@
           {
             "file": "768x1024/split_768x1024_15.png",
             "y_start": 14336,
-            "y_end": 14659
+            "y_end": 15360
+          },
+          {
+            "file": "768x1024/split_768x1024_16.png",
+            "y_start": 15360,
+            "y_end": 15681
           }
         ]
       },
@@ -270,7 +292,7 @@
     {
       "viewport": "1200x900",
       "full_page": {
-        "full_height_px": 14337,
+        "full_height_px": 15258,
         "pieces": [
           {
             "file": "1200x900/split_1200x900_01.png",
@@ -350,7 +372,12 @@
           {
             "file": "1200x900/split_1200x900_16.png",
             "y_start": 13500,
-            "y_end": 14337
+            "y_end": 14400
+          },
+          {
+            "file": "1200x900/split_1200x900_17.png",
+            "y_start": 14400,
+            "y_end": 15258
           }
         ]
       },
@@ -366,14 +393,14 @@
           "file": "1200x900/anchor/anchor_section-3.png",
           "anchor": "section-3",
           "header_bottom_px": 54.5,
-          "target_top_px": 170.5,
+          "target_top_px": 170.3,
           "clipped_by_header": false
         },
         {
           "file": "1200x900/anchor/anchor_section-6.png",
           "anchor": "section-6",
           "header_bottom_px": 54.5,
-          "target_top_px": 170.3,
+          "target_top_px": 170.1,
           "clipped_by_header": false
         }
       ]
@@ -381,16 +408,18 @@
   ],
   "verified_items": [
     "375x812 / 768x1024 / 1200x900 の3サイズでページ全体を撮影し、隙間なく分割（y座標の連続性をスクリプトで機械チェック済み、全サイズでcontinuous=True）",
-    "3サイズいずれも document.documentElement.scrollWidth が clientWidth を超えておらず、意図しない横スクロールなし",
+    "3サイズいずれも document.documentElement.scrollWidth が clientWidth を超えておらず、ページ全体としての意図しない横スクロールなし",
     "console error / pageerror はいずれのサイズでも検出なし",
     "FAQ開閉（faq-btn-1）が aria-expanded=true に切り替わることを確認",
-    "TOCアンカー（#section-3, #section-6）クリック後、実ヘッダー表示状態で見出し上端がヘッダー下端より下にあることを座標で確認（例: 375pxで header_bottom=88.1px, target_top=196.4px）",
+    "TOCアンカー（#section-3, #section-6）クリック後、実ヘッダー表示状態で見出し上端がヘッダー下端より下にあることを座標で確認（例: 375pxで header_bottom=88.1px, target_top=195.7px）",
     "料金比較表・ケース3〜6・自宅ネット説明・判断カード・最終CTA・開いたFAQの拡大画像を保存",
-    "375px幅の料金比較表（#section-2 .comparison-table-wrap）はscrollLeft=0と最大値で同一画像となり、この表自体は375px幅に収まり横スクロールが発生しないことを確認（横スクロールが必要な表ではない）"
+    "375px幅の料金比較表（#section-2 .comparison-table-wrap）はscrollLeft=0と最大値で同一画像となり、この表自体は375px幅に収まり横スクロールが発生しないことを確認（横スクロールが必要な表ではない）",
+    "【今回のレビュー対応で追加】ケース6の比較表（.wide-table、min-width:640px）は375pxでscrollWidth=888px/clientWidth=299pxとなり、表領域だけが横スクロールすることを確認。scrollLeft=0と最大値で見出し・金額が1文字ずつ折れずに表示されることを画像で確認（case6_table_scroll_left/right.png）"
   ],
   "notes": [
     "要素スクリーンショット（detail/配下）のみ、一時的にsite-headerをvisibility:hiddenにした状態で撮影している（本番article.css/style.cssは変更していない。ページ内への一時<style>注入のみで、撮影後は除去）。",
     "anchor/配下の画像は実際のsticky headerを表示した状態で撮影している。",
-    "detail配下のcase5はソフトバンク側の内訳ボックスと楽天モバイル側の内訳表の両方を含む。"
+    "detail配下のcase5はソフトバンク側の内訳ボックスと楽天モバイル側の内訳表の両方を含み、H前=H後の仮定を前提の矛盾なく再構成した本文を反映している。",
+    "本ラウンドはChatGPTレビュー（PR #27）の指摘7件（ミニフィット2価格・新みんな家族割の一般化・ケース5の矛盾・ケース6のポイント計算・通話料金の説明・375px表の折り返し・sources.md未確認事項）への対応。"
   ]
 }

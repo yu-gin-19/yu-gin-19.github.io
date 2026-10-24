@@ -1,0 +1,139 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "improve/measurement-coverage-fit-check",
+  "work_start_main_sha": "9943e46060a743252d5301c045288fb8eff895bf",
+  "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a",
+  "target_pages": [
+    "articles/coverage-area/index.html",
+    "articles/fit-check/index.html",
+    "articles/campaign-guide/index.html",
+    "articles/linemo-vs-rakuten/index.html",
+    "articles/softbank-vs-rakuten/index.html",
+    "articles/uq-vs-rakuten/index.html",
+    "articles/ymobile-vs-rakuten/index.html",
+    "index.html",
+    "components/cta-tracking.js",
+    "components/fit-check-diagnosis.js"
+  ],
+  "viewports_captured": ["375x812", "768x1024", "1200x900"],
+  "note_on_file_format": "フルページ画像はPillowでJPEG(quality=60)に再圧縮したプレビュー（*-preview.jpg、文字・配色の加工はなし、単純な再圧縮のみ）。拡大・クロップ画像はPNGのまま。元のフルページPNG（1.2〜1.5MB程度）は追跡対象に含めず、ローカルのreview-output配下にのみ保存。",
+  "screenshots": [
+    {
+      "page": "coverage-area",
+      "viewport": "375x812",
+      "state": "通常表示（全体）",
+      "file": "coverage-area_375x812-preview.jpg",
+      "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a",
+      "test_result": "disclosure-banner表示・#area-check-next 3分岐表示・横はみ出しなしを確認（Playwright自動テストでも320/375/390/768/1200pxでscrollWidth<=clientWidthを確認）"
+    },
+    { "page": "coverage-area", "viewport": "768x1024", "state": "通常表示（全体）", "file": "coverage-area_768x1024-preview.jpg", "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a", "test_result": "横はみ出しなし" },
+    { "page": "coverage-area", "viewport": "1200x900", "state": "通常表示（全体）", "file": "coverage-area_1200x900-preview.jpg", "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a", "test_result": "横はみ出しなし" },
+    {
+      "page": "coverage-area",
+      "viewport": "375 / 1200（クロップ）",
+      "state": "#area-check-next 新規3分岐案内枠の拡大",
+      "file": "coverage-area-next-block-closeup_375.png / coverage-area-next-block-closeup_1200.png",
+      "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a",
+      "test_result": "分岐A（紹介ボタン＋条件あり表示＋条件リンク）／分岐B（fit-check誘導＋マップ再確認リンク）／分岐C（対処法リンク）がすべて表示され、ボタン文言の分断なしを確認"
+    },
+    { "page": "fit-check", "viewport": "375x812", "state": "初期状態（全未選択）", "file": "fit-check-initial_375x812-preview.jpg", "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a", "test_result": "結果CTA非表示・横はみ出しなしを確認" },
+    { "page": "fit-check", "viewport": "768x1024", "state": "初期状態（全未選択）", "file": "fit-check-initial_768x1024-preview.jpg", "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a", "test_result": "横はみ出しなし" },
+    { "page": "fit-check", "viewport": "1200x900", "state": "初期状態（全未選択）", "file": "fit-check-initial_1200x900-preview.jpg", "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a", "test_result": "横はみ出しなし" },
+    {
+      "page": "fit-check",
+      "viewport": "375x812",
+      "state": "結果=fit（入力条件: coverage-ok ON, 向いてる人1-3番目 ON, 向いてない人すべてOFF → fit=3段階判定でfit>=3&&unfit<=1）",
+      "file": "fit-check-result-fit_375x812-preview.jpg",
+      "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a",
+      "test_result": "result-cta-fitのみ表示、紹介ボタン・条件リンクが結果直後に隣接表示されることを確認。停止条件優先の確認: 同時にcoverage-stopをONにすると結果がunfitへ切り替わること（優先度確認）をPlaywrightで別途確認済み"
+    },
+    { "page": "fit-check", "viewport": "768x1024", "state": "結果=fit（同上の入力条件）", "file": "fit-check-result-fit_768x1024-preview.jpg", "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a", "test_result": "横はみ出しなし" },
+    { "page": "fit-check", "viewport": "1200x900", "state": "結果=fit（同上の入力条件）", "file": "fit-check-result-fit_1200x900-preview.jpg", "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a", "test_result": "横はみ出しなし" },
+    {
+      "page": "fit-check",
+      "viewport": "375x812",
+      "state": "結果=maybe（入力条件: coverage-ok ON, 向いてる人すべてOFF, 向いてない人2番目のみON → fit=0,unfit=1の「判断が分かれる」分岐）",
+      "file": "fit-check-result-maybe_375x812-preview.jpg",
+      "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a",
+      "test_result": "result-cta-maybeのみ表示。エリア確認方法へのリンク・条件確認リンクの計測漏れを修正済み（trackCta新規追加）であることをコード・Playwrightの両方で確認"
+    },
+    { "page": "fit-check", "viewport": "768x1024", "state": "結果=maybe（同上）", "file": "fit-check-result-maybe_768x1024-preview.jpg", "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a", "test_result": "横はみ出しなし" },
+    { "page": "fit-check", "viewport": "1200x900", "state": "結果=maybe（同上）", "file": "fit-check-result-maybe_1200x900-preview.jpg", "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a", "test_result": "横はみ出しなし" },
+    {
+      "page": "fit-check",
+      "viewport": "375x812",
+      "state": "結果=unfit（入力条件: coverage-ok ON, 向いてる人すべてOFF, 向いてない人1,2番目ON [coverage-stopは含まない通常のunfit分岐] → fit=0,unfit=2で「他社が合う可能性」分岐）",
+      "file": "fit-check-result-unfit_375x812-preview.jpg",
+      "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a",
+      "test_result": "result-cta-unfitのみ表示。「向いてない理由と対処法を見る」リンクの計測漏れを修正済みであることを確認"
+    },
+    { "page": "fit-check", "viewport": "768x1024", "state": "結果=unfit（同上）", "file": "fit-check-result-unfit_768x1024-preview.jpg", "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a", "test_result": "横はみ出しなし" },
+    { "page": "fit-check", "viewport": "1200x900", "state": "結果=unfit（同上）", "file": "fit-check-result-unfit_1200x900-preview.jpg", "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a", "test_result": "横はみ出しなし" },
+    {
+      "page": "fit-check",
+      "viewport": "375 / 1200（クロップ）",
+      "state": "結果ブロック拡大（結果=fit時、2つのチェックリスト直後に結果要約＋ボタンが隣接配置されていることの確認、注記文言も表示範囲に含む）",
+      "file": "fit-check-result-block-closeup_375.png / fit-check-result-block-closeup_1200.png",
+      "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a",
+      "test_result": "結果要約とボタンが1つのまとまりとして見えることを確認。判定表はこのブロックより後方に移動済み"
+    },
+    { "page": "campaign-guide", "viewport": "375x812", "state": "通常表示（全体、表記修正箇所含む）", "file": "campaign-guide_375x812-preview.jpg", "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a", "test_result": "横はみ出しなし" },
+    { "page": "campaign-guide", "viewport": "1200x900", "state": "通常表示（全体、表記修正箇所含む）", "file": "campaign-guide_1200x900-preview.jpg", "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a", "test_result": "横はみ出しなし" },
+    {
+      "page": "campaign-guide",
+      "viewport": "375 / 1200（クロップ）",
+      "state": "対象者チェックリストの拡大（「公式サイトに直接アクセスすると対象外」の誤解表現を修正した箇所）",
+      "file": "campaign-guide-checklist-closeup_375x812.png / campaign-guide-checklist-closeup_1200x900.png",
+      "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a",
+      "test_result": "修正後の文言「従業員紹介特典を利用するには、従業員からの紹介URLへのログインなど、対象条件を満たす必要がある」が正しく表示され、文字分断・はみ出しがないことを確認"
+    },
+    {
+      "page": "index (home)",
+      "viewport": "375（クロップ）",
+      "state": "既存紹介ボタンの拡大（本タスクでは計測属性のみ追加、文言は未変更）",
+      "file": "home-referral-btn-closeup_375.png",
+      "source_sha": "4b6de4e4124e9a1c62775c5e7c7e13391de2354a",
+      "test_result": "注意点として記載: 「社員紹介キャンペーンから申し込む」ボタンは375px幅で「申し込」「む」の間で改行され、見た目上やや不自然な分断になっている。ただしこれは本タスク以前から存在する既存の表記・レイアウトであり、今回の変更で新たに発生したものではない（本タスクはこのボタンの文言・CSSを変更していない）。トップページの文言変更は対象外のため、今回は現状維持とした。"
+    }
+  ],
+  "automated_tests": {
+    "unit_tests": {
+      "command": "node --test scripts/test-fit-check-diagnosis.mjs scripts/test-cta-visibility-gate.mjs",
+      "result": "18 tests / 18 pass / 0 fail",
+      "coverage": "fit-checkの全6分岐＋境界値＋初期状態（fit-check-diagnosis.mjs）、可視性タイマーの発火・取消・非アクティブタブ一時停止・独立性（cta-visibility-gate.mjs）"
+    },
+    "browser_functional_tests": {
+      "tool": "Playwright (Python, headless Chromium)",
+      "result": "47 checks / 47 pass / 0 fail",
+      "coverage": [
+        "320/375/390/768/1200pxでの横はみ出しなし（coverage-area/fit-check/campaign-guide/トップ）",
+        "labelクリックでのチェックボックストグル、Tab+Spaceでのキーボード操作",
+        "diagnosis_startが初回変更時のみ1回発火し2回目以降は発火しない（ページロード時には発火しない）",
+        "fit-check全6分岐＋矛盾した同時選択（coverage-ok+coverage-stop同時）でcoverage-stop優先、全解除で初期状態復帰",
+        "diagnosis_result_viewが結果表示から1秒以上後に1回だけ発火・重複しない",
+        "結果が非表示の間はcta_view/diagnosis_result_viewが発火しない",
+        "coverage-areaの紹介ボタンでcta_view（表示）とreferral_cta_click（クリック）が同一cta_idで整合",
+        "公式マップクリックはcoverage_map_clickでreferral_cta_clickと区別される",
+        "非アクティブタブ中はcta_viewの経過時間が加算されず、タブ復帰後は発火する",
+        "gtag未定義でもJSエラーが発生せず診断機能が正常動作する"
+      ]
+    },
+    "content_validator": {
+      "command": "node scripts/validate-content.mjs",
+      "result": "エラー0件（PRICE_AUDIT情報82件は既存ファイルのinfo扱いで今回の変更と無関係）"
+    },
+    "diff_check": {
+      "command": "git diff --check",
+      "result": "問題なし"
+    }
+  },
+  "ga4_admin_setup": {
+    "status": "手順作成済み／登録未実施",
+    "reason": "Claude CodeはGA4管理画面へのアクセス権限を持たないため、コード側の実装のみ完了。管理画面での設定手順は完了報告のGA4セクションに記載。"
+  },
+  "unresolved_notes": [
+    "紹介URL(https://r10.to/h5zkrv)のログイン後画面の内容は未確認（楽天IDログインが必須のため取得不能）。WebFetchでは楽天ID SSOログイン画面への301/302リダイレクトのみ確認。",
+    "13,000pt案内と公式FAQ(https://network.mobile.rakuten.co.jp/faq/detail/10000992/)の新規分内訳例(7,000pt)との不一致は、既存のcampaign-guide内の注記を維持したのみで、本タスクでは解消していない（指示書の範囲外）。",
+    "トップページの既存紹介ボタン「社員紹介キャンペーンから申し込む」は375px幅で文字が不自然に分断されるが、本タスク以前からの既存表記であり対象外のため現状維持。"
+  ]
+}

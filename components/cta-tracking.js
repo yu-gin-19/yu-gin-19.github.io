@@ -161,12 +161,24 @@
     return Date.now();
   }
 
+  /**
+   * 要素自身だけでなく祖先も含めて、hidden属性・display:none・visibility:hiddenが
+   * ないかを同期的に確認する。visibility:hiddenは継承されるため要素自身のcomputed styleの
+   * チェックだけでも拾えるが、display:noneは子孫の computed display 自体を変えないため、
+   * 祖先を辿って明示的に確認する必要がある（fit-checkの結果枠hiddenの子にあるボタン等）。
+   */
   function isElementActuallyVisible(el) {
-    if (!el || el.hidden) return false;
+    if (!el) return false;
     if (typeof el.isConnected === 'boolean' && !el.isConnected) return false;
-    var style = window.getComputedStyle(el);
-    if (!style) return true;
-    if (style.display === 'none' || style.visibility === 'hidden') return false;
+    var node = el;
+    var guard = 0;
+    while (node && guard < 128) {
+      guard++;
+      if (node.hidden) return false;
+      var style = window.getComputedStyle(node);
+      if (style && (style.display === 'none' || style.visibility === 'hidden')) return false;
+      node = node.parentElement;
+    }
     return true;
   }
 

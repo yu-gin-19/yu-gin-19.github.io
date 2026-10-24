@@ -425,3 +425,141 @@ test('data-cta-id自動結線（実際にfit-checkの結果CTA等が使う経路
   env.tick();
   assert.equal(env.gtagCalls.length, 1, '一度発火したcta_idは再発火しない');
 });
+
+// ------------------------------------------------------------------
+// 再レビューA: 祖先が非表示になった場合、IOのratio更新を待たずに同期的に取消する
+// ------------------------------------------------------------------
+// fit-checkの結果枠（#result-cta-fit等）はhiddenを親要素に付け、監視対象のボタンは
+// その子要素になる。親のhidden/display:noneは子自身のcomputed displayには現れないため、
+// 祖先を辿って明示的に確認する必要がある（2026-10-24再レビューの再現コードに基づく）。
+
+test('A再現: 親がhiddenになった瞬間、IOのratio更新が届く前でも同期的に取消される', () => {
+  const env = loadInFakeBrowser();
+  const parent = env.makeElement();
+  const button = env.makeElement();
+  button.parentElement = parent;
+  let fired = false;
+  env.core.createVisibilityWatch(button, { onFire: () => (fired = true) });
+
+  env.advanceTimeTo(0);
+  env.fireIntersection(button, 1, 0);
+  env.advanceTimeTo(600);
+  env.tick();
+  assert.equal(fired, false, '600ms時点ではまだ発火しない');
+
+  // 650msで親を非表示にする（MutationObserverはここで即時に呼ばれる）。
+  // IOのratio=0通知はまだ届いていない状態を模している。
+  env.advanceTimeTo(650);
+  env.setHidden(parent, true);
+
+  // IOの通知を待たず、1000ms時点のtick（同期的なisElementActuallyVisible評価）で
+  // 取消が反映されているべき
+  env.advanceTimeTo(1000);
+  env.tick();
+  assert.equal(fired, false, '親が非表示の間はIO通知を待たずに取消され、発火しない');
+
+  env.advanceTimeTo(2000);
+  env.tick();
+  assert.equal(fired, false, 'その後も親が非表示のままなら発火しない');
+});
+
+test('A再現-2: 親を再表示してから1秒未満では未発火、1秒経過後に1回だけ発火する', () => {
+  const env = loadInFakeBrowser();
+  const parent = env.makeElement();
+  const button = env.makeElement();
+  button.parentElement = parent;
+  const fireLog = [];
+  env.core.createVisibilityWatch(button, { onFire: () => fireLog.push('fire') });
+
+  env.advanceTimeTo(0);
+  env.fireIntersection(button, 1, 0);
+  env.advanceTimeTo(300);
+  env.tick();
+
+  env.advanceTimeTo(350);
+  env.setHidden(parent, true);
+  env.advanceTimeTo(2000);
+  env.tick();
+  assert.deepEqual(fireLog, [], '非表示の間は発火しない');
+
+  // 親を再表示
+  env.advanceTimeTo(2000);
+  env.setHidden(parent, false);
+  env.fireIntersection(button, 1, 2000); // IO側も遅れて再通知される想定
+
+  env.advanceTimeTo(2600); // 再表示から600ms
+  env.tick();
+  assert.deepEqual(fireLog, [], '再表示から600msでは未発火（取消前の時間は持ち越さない）');
+
+  env.advanceTimeTo(3000); // 再表示から1000ms
+  env.tick();
+  assert.deepEqual(fireLog, ['fire'], '再表示から1000ms経過後に1回だけ発火する');
+
+  env.advanceTimeTo(5000);
+  env.tick();
+  assert.deepEqual(fireLog, ['fire'], '発火後は再発火しない');
+});
+
+test('A再現-3: 親のdisplay:none切替（hidden属性ではなくCSS）でも即時に取消される', () => {
+  const env = loadInFakeBrowser();
+  const parent = env.makeElement();
+  const button = env.makeElement();
+  button.parentElement = parent;
+  let fired = false;
+  env.core.createVisibilityWatch(button, { onFire: () => (fired = true) });
+
+  env.advanceTimeTo(0);
+  env.fireIntersection(button, 1, 0);
+  env.advanceTimeTo(500);
+  env.tick();
+
+  env.advanceTimeTo(550);
+  parent.__style.display = 'none';
+  env.fireMutation(); // style/class変化相当の即時再評価を模す
+
+  env.advanceTimeTo(1600); // 元の可視開始から1600ms経過しても、550ms以降は非表示
+  env.tick();
+  assert.equal(fired, false, '祖先のdisplay:none化がCSS経由でも即時に取消される');
+});
+
+test('A再現-4: 監視対象そのものがDOMから取り外された場合も取消される', () => {
+  const env = loadInFakeBrowser();
+  const button = env.makeElement();
+  let fired = false;
+  env.core.createVisibilityWatch(button, { onFire: () => (fired = true) });
+
+  env.advanceTimeTo(0);
+  env.fireIntersection(button, 1, 0);
+  env.advanceTimeTo(500);
+  env.tick();
+
+  env.advanceTimeTo(550);
+  button.isConnected = false;
+  env.fireMutation();
+
+  env.advanceTimeTo(1600);
+  env.tick();
+  assert.equal(fired, false, 'DOMから取り外された要素は可視と判定されない');
+});
+
+test('A再現-5: 祖先hidden配下の孫要素（fit-checkの結果ボタン相当）でも同様に検出される', () => {
+  const env = loadInFakeBrowser();
+  const grandparent = env.makeElement(); // #result-cta-fit 相当
+  const parent = env.makeElement(); // 中間要素
+  const button = env.makeElement(); // data-cta-id付きボタン
+  parent.parentElement = grandparent;
+  button.parentElement = parent;
+  let fired = false;
+  env.core.createVisibilityWatch(button, { onFire: () => (fired = true) });
+
+  env.advanceTimeTo(0);
+  env.fireIntersection(button, 1, 0);
+  env.advanceTimeTo(400);
+  env.tick();
+
+  env.advanceTimeTo(450);
+  env.setHidden(grandparent, true); // 直接の親ではなく祖父要素を非表示にする
+  env.advanceTimeTo(1600);
+  env.tick();
+  assert.equal(fired, false, '2階層上の祖先が非表示でも検出され取消される');
+});

@@ -190,7 +190,9 @@
             <p class="referral-offer__target">対象：楽天モバイルへ乗り換え・新規契約・楽天モバイル（ドコモ回線・au回線）からの移行を検討している方</p>
             <p class="referral-offer__points">特典：乗り換え<strong>14,000pt</strong>／乗り換え以外<strong>13,000pt</strong></p>
             <p class="referral-offer__note">注意：適用には条件があります。下記の条件を確認してから申し込んでください</p>
-            <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="社員紹介キャンペーンから申し込む（新しいタブで開きます）" onclick="trackCta('referral_cta_click', {'page_type': 'campaign', 'cta_position': 'after_points', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">社員紹介キャンペーンから申し込む</a>
+            <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="従業員紹介ページへ進む（新しいタブで開きます）"
+               data-cta-id="campaign-guide-referral-after-points" data-cta-kind="referral" data-cta-page-type="campaign" data-cta-position="after_points" data-cta-destination="employee_referral"
+               onclick="trackCta('referral_cta_click', {'page_type': 'campaign', 'cta_position': 'after_points', 'offer_type': 'employee_referral', 'reader_stage': 'apply', cta_id:'campaign-guide-referral-after-points', cta_kind:'referral'})" target="_blank" rel="noopener noreferrer">従業員紹介ページへ進む</a>
             <p class="referral-offer__note" style="margin:8px 0 0;">※ボタンをタップすると楽天公式のログイン・申込み画面へ移動します</p>
           </div>
 
@@ -209,13 +211,18 @@
 
           <ul class="checklist">
             <li>楽天モバイルへの乗り換え・新規契約を具体的に検討している</li>
-            <li>まだ公式サイトに直接アクセスして申し込んでいない</li>
+            <li>従業員紹介特典を利用するには、従業員からの紹介URLへのログインなど、対象条件を満たす必要がある（まだの場合は下記の紹介リンクから進める）</li>
             <li>楽天モバイル最強プランへの加入を予定している</li>
             <li>「自分に向いているか」の判断はすでについている</li>
           </ul>
 
           <p class="table-note" style="text-align:center; margin-top:12px;">
-            まだ判断がついていない方は <a href="/articles/fit-check/" onclick="trackCta('journey_click', {'page_type': 'campaign', 'cta_position': 'target-check', 'reader_stage': 'consider', 'destination': 'fit-check'})">向き・不向き診断</a> で先に確認できます。
+            まだ判断がついていない方は <a href="/articles/fit-check/"
+               data-cta-id="campaign-guide-target-check-fit-check" data-cta-kind="link" data-cta-page-type="campaign" data-cta-position="target-check" data-cta-destination="fit-check"
+               onclick="trackCta('journey_click', {'page_type': 'campaign', 'cta_position': 'target-check', 'reader_stage': 'consider', 'destination': 'fit-check', cta_id:'campaign-guide-target-check-fit-check', cta_kind:'link'})">向き・不向き診断</a> で先に確認できます。
+          </p>
+          <p class="table-note" style="text-align:center; margin-top:8px;">
+            すでに公式サイトで申し込んでしまった方は、適用できるかどうかや期限を<a href="https://network.mobile.rakuten.co.jp/faq/detail/10000992/" target="_blank" rel="noopener noreferrer">楽天モバイル公式の従業員紹介特典FAQ</a>でご確認ください（適用を保証するものではありません）。
           </p>
         </section>
 
@@ -262,7 +269,7 @@
             </div>
             <div class="condition-card">
               <div class="condition-card__icon" aria-hidden="true">🔗</div>
-              <div class="condition-card__text"><strong>このページの紹介リンクから申し込む</strong><br><span class="condition-card__sub">公式サイトに直接アクセスすると対象外になります</span></div>
+              <div class="condition-card__text"><strong>このページの紹介リンクから申し込む</strong><br><span class="condition-card__sub">従業員紹介特典を利用するには、従業員からの紹介URLへのログインなど、対象条件を満たす必要があります</span></div>
             </div>
             <div class="condition-card condition-card--warn">
               <div class="condition-card__icon" aria-hidden="true">⚠️</div>
@@ -297,7 +304,7 @@
               <tbody>
                 <tr><td>対象者</td><td>楽天モバイル最強プランに加入し、このページの紹介リンクから申し込む方（新規契約・他社からの乗り換え・楽天モバイル（ドコモ回線・au回線）からのプラン変更を含む）</td></tr>
                 <tr><td>ポイント数の区分</td><td>他社からの乗り換え（MNP）：14,000pt／新しい電話番号での申し込み・楽天モバイル（ドコモ回線・au回線）からのプラン変更（移行）：13,000pt</td></tr>
-                <tr><td>対象外となるケース</td><td>最強プラン以外のプランで申し込んだ場合／公式サイトに直接アクセスして申し込んだ場合</td></tr>
+                <tr><td>対象外となるケース</td><td>最強プラン以外のプランで申し込んだ場合／従業員紹介特典を利用するための対象条件（紹介URLへのログインなど）を満たさずに申し込んだ場合</td></tr>
                 <tr><td>併用できる／できないキャンペーン</td><td>公式サイトでご確認ください（本記事執筆時点では確認できていません）</td></tr>
                 <tr><td>進呈される月とポイント内訳</td><td>紹介リンクでログインした月の4カ月後から分割して付与されます。具体的な月ごとの内訳は、申し込み前に紹介ページの最新条件でご確認ください</td></tr>
                 <tr><td>ポイントの有効期限</td><td>公式サイトでご確認ください（本記事執筆時点では確認できていません）</td></tr>
@@ -332,7 +339,9 @@
                 <div class="step-content__title">このページの紹介リンクをタップして申込み画面へ</div>
                 <div class="step-content__body">
                   下のボタンから紹介ページへ進み、楽天IDにログインしてから申し込みへ進みます。申し込みに使う楽天IDと、紹介ページでログインする楽天IDを同じにしてください。<br>
-                  <a href="https://r10.to/h5zkrv" class="btn-primary" style="margin-top:12px; display:inline-block;" aria-label="紹介リンクから申し込み画面へ進む（新しいタブで開きます）" onclick="trackCta('referral_cta_click', {'page_type': 'campaign', 'cta_position': 'step2', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">紹介リンクから申し込み画面へ進む</a><br>
+                  <a href="https://r10.to/h5zkrv" class="btn-primary" style="margin-top:12px; display:inline-block;" aria-label="紹介リンクから申し込み画面へ進む（新しいタブで開きます）"
+                     data-cta-id="campaign-guide-referral-step2" data-cta-kind="referral" data-cta-page-type="campaign" data-cta-position="step2" data-cta-destination="employee_referral"
+                     onclick="trackCta('referral_cta_click', {'page_type': 'campaign', 'cta_position': 'step2', 'offer_type': 'employee_referral', 'reader_stage': 'apply', cta_id:'campaign-guide-referral-step2', cta_kind:'referral'})" target="_blank" rel="noopener noreferrer">紹介リンクから申し込み画面へ進む</a><br>
                   <span style="font-size:14px;color:#696969;">※タップすると楽天公式のログイン・申込み画面へ移動します</span>
                 </div>
               </div>
@@ -460,7 +469,7 @@
 
           <ul class="checklist">
             <li>乗り換え（MNP）は<strong>14,000pt</strong>、乗り換え以外（新規・楽天モバイル（ドコモ回線・au回線）からの移行）は<strong>13,000pt</strong>（対象プラン・回線開通などの条件あり）</li>
-            <li>このページの<strong>紹介リンク経由</strong>で申し込む（公式サイトに直接アクセスすると対象外）</li>
+            <li>このページの<strong>紹介リンク経由</strong>で申し込む（従業員紹介特典を利用するには、従業員からの紹介URLへのログインなど、対象条件を満たす必要があります）</li>
             <li>キャンペーン条件は<strong>楽天モバイル公式サイトの最新情報</strong>で確認済み</li>
             <li>申し込みは<strong>楽天モバイル公式サイト</strong>（紹介リンク経由）で行う</li>
           </ul>
@@ -468,14 +477,16 @@
 
         <!-- 末尾CTA -->
         <div class="article-cta" id="apply-cta">
-          <p class="article-cta__title">従業員紹介特典で申し込む</p>
+          <p class="article-cta__title">対象条件を確認して、従業員紹介ページへ進む</p>
           <p class="article-cta__sub">
             乗り換えなら<strong>14,000ポイント</strong>、<br>
             乗り換え以外なら<strong>13,000ポイント</strong>。<br>
             条件を確認し、紹介ページで楽天IDにログインしてから申し込みます。
           </p>
-          <a href="https://r10.to/h5zkrv" aria-label="従業員紹介特典で申し込む（新しいタブで開きます）" class="btn-primary" onclick="trackCta('referral_cta_click', {'page_type': 'campaign', 'cta_position': 'bottom', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">
-            従業員紹介特典で申し込む
+          <a href="https://r10.to/h5zkrv" aria-label="従業員紹介ページへ進む（新しいタブで開きます）" class="btn-primary"
+             data-cta-id="campaign-guide-bottom-referral" data-cta-kind="referral" data-cta-page-type="campaign" data-cta-position="bottom" data-cta-destination="employee_referral"
+             onclick="trackCta('referral_cta_click', {'page_type': 'campaign', 'cta_position': 'bottom', 'offer_type': 'employee_referral', 'reader_stage': 'apply', cta_id:'campaign-guide-bottom-referral', cta_kind:'referral'})" target="_blank" rel="noopener noreferrer">
+            従業員紹介ページへ進む
           </a>
           <p class="article-cta__note">※ポイント付与には対象プランへの加入・回線開通などの条件があります。内容は予告なく変更される場合があります。必ずリンク先の最新条件をご確認ください。ボタンをタップすると楽天公式のログイン・申込み画面へ移動します。</p>
           <p class="article-cta__note">まだ迷っている方は <a href="/articles/fit-check/">向き・不向き診断</a>や<a href="/articles/savings-calc/">料金試算</a>で確認できます →</p>

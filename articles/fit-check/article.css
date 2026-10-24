@@ -157,15 +157,21 @@
 }
 
 .fit-list__item {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
+  display: block;
   padding: 16px 24px;
   border-bottom: 1px solid var(--color-primary-light);
 }
 
 .fit-list__item:last-child {
   border-bottom: none;
+}
+
+.fit-list__label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 48px;
+  cursor: pointer;
 }
 
 .fit-list__icon {
@@ -192,11 +198,11 @@
   line-height: 1.5;
 }
 
-.fit-list__body p {
+.fit-list__desc {
+  margin: 6px 0 0 36px;
   font-size: 13px;
   color: #555;
   line-height: 1.7;
-  margin: 0;
 }
 
 /* 向いてない人リスト */
@@ -208,15 +214,21 @@
 }
 
 .unfit-list__item {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
+  display: block;
   padding: 16px 24px;
   border-bottom: 1px solid #e8e8e8;
 }
 
 .unfit-list__item:last-child {
   border-bottom: none;
+}
+
+.unfit-list__label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-height: 48px;
+  cursor: pointer;
 }
 
 .unfit-list__icon {
@@ -243,20 +255,24 @@
   line-height: 1.5;
 }
 
-.unfit-list__body p {
+.unfit-list__desc {
+  margin: 6px 0 0 36px;
   font-size: 13px;
   color: #555;
   line-height: 1.7;
-  margin: 0;
 }
 
 .diagnosis-input {
   flex: 0 0 auto;
   width: 22px;
   height: 22px;
-  margin-top: 4px;
   accent-color: var(--color-primary-dark);
   cursor: pointer;
+}
+
+.fit-list__label .diagnosis-input,
+.unfit-list__label .diagnosis-input {
+  margin-top: 0;
 }
 
 .diagnosis-live {
@@ -326,6 +342,29 @@
   line-height: 1.8;
   color: #444;
   margin: 0;
+}
+
+/* ===== 結果ブロック直下の短い注記 ===== */
+.diagnosis-disclaimer {
+  margin: 10px 0 28px;
+  font-size: 13px;
+  color: #696969;
+  line-height: 1.7;
+  text-align: center;
+}
+
+.diagnosis-detail-heading {
+  margin-top: 8px;
+}
+
+/* 結果ブロック切替時のフェードイン（新しいアニメーション体系は増やさない） */
+.referral-offer--active {
+  animation: diagnosisResultFadeIn 0.25s ease;
+}
+
+@keyframes diagnosisResultFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }
 
 /* ===== 診断テーブル ===== */
@@ -668,7 +707,16 @@
   .fit-list__item,
   .unfit-list__item {
     padding: 14px 16px;
+  }
+
+  .fit-list__label,
+  .unfit-list__label {
     gap: 10px;
+  }
+
+  .fit-list__desc,
+  .unfit-list__desc {
+    margin-left: 32px;
   }
 
   .result-box {

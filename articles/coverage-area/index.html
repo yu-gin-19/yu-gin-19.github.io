@@ -114,11 +114,15 @@
     <div class="container header-inner">
       <a href="/" class="site-logo">🏮 楽天社員の損しない選び方</a>
       <nav class="site-nav" aria-label="グローバルナビゲーション">
-        <a href="/#apply">申し込む</a>
+        <a href="#area-check-next">申し込む</a>
         <a href="/articles/">記事一覧</a>
       </nav>
     </div>
   </header>
+
+  <aside class="disclosure-banner" aria-label="広告・運営者情報">
+    <div class="container"><strong>広告・PR</strong>｜楽天グループ社員が個人で運営する非公式サイトです。紹介リンクの利用により、読者と運営者の双方に特典が発生します。内容は個人の見解であり、楽天グループ各社の公式見解ではありません。</div>
+  </aside>
 
   <main id="main-content" class="article-wrap">
     <div class="container">
@@ -165,7 +169,11 @@
                 <span class="area-check-step__num">1</span>
                 <div class="area-check-step__content">
                   <strong>公式の楽天回線エリアマップとパートナー回線エリアマップの両方を確認する</strong>
-                  <p><a href="https://network.mobile.rakuten.co.jp/area/" target="_blank" rel="noopener noreferrer">楽天回線エリアマップ</a>と<a href="https://network.mobile.rakuten.co.jp/area/map_partner.html" target="_blank" rel="noopener noreferrer">パートナー回線エリアマップ</a>で、自宅・職場・通勤路を個別に確認します。</p>
+                  <p><a href="https://network.mobile.rakuten.co.jp/area/" target="_blank" rel="noopener noreferrer"
+                       data-cta-id="coverage-area-intro-rakuten-map" data-cta-kind="official_map" data-cta-page-type="coverage-area" data-cta-position="intro-step1" data-cta-destination="coverage_map"
+                       onclick="trackCta('coverage_map_click', {cta_id:'coverage-area-intro-rakuten-map', cta_kind:'official_map', page_type:'coverage-area', cta_position:'intro-step1', destination:'coverage_map'})">楽天回線エリアマップ</a>と<a href="https://network.mobile.rakuten.co.jp/area/map_partner.html" target="_blank" rel="noopener noreferrer"
+                       data-cta-id="coverage-area-intro-partner-map" data-cta-kind="official_map" data-cta-page-type="coverage-area" data-cta-position="intro-step1" data-cta-destination="coverage_map"
+                       onclick="trackCta('coverage_map_click', {cta_id:'coverage-area-intro-partner-map', cta_kind:'official_map', page_type:'coverage-area', cta_position:'intro-step1', destination:'coverage_map'})">パートナー回線エリアマップ</a>で、自宅・職場・通勤路を個別に確認します。</p>
                 </div>
               </li>
               <li>
@@ -241,7 +249,9 @@
               <li>
                 <span class="area-check-step__num">1</span>
                 <div class="area-check-step__content">
-                  <strong><a href="https://network.mobile.rakuten.co.jp/area/" target="_blank" rel="noopener noreferrer">公式エリアマップ</a>を開く</strong>
+                  <strong><a href="https://network.mobile.rakuten.co.jp/area/" target="_blank" rel="noopener noreferrer"
+                       data-cta-id="coverage-area-steps-official-map" data-cta-kind="official_map" data-cta-page-type="coverage-area" data-cta-position="steps-1" data-cta-destination="coverage_map"
+                       onclick="trackCta('coverage_map_click', {cta_id:'coverage-area-steps-official-map', cta_kind:'official_map', page_type:'coverage-area', cta_position:'steps-1', destination:'coverage_map'})">公式エリアマップ</a>を開く</strong>
                   <p>楽天モバイル公式サイトの「エリアマップ」ページにアクセスします。</p>
                 </div>
               </li>
@@ -249,7 +259,9 @@
                 <span class="area-check-step__num">2</span>
                 <div class="area-check-step__content">
                   <strong>凡例を確認する</strong>
-                  <p>メインのエリアマップは楽天自社回線（4G LTE／5G）専用で、凡例には「4G LTE」「5G Sub6」「5G ミリ波」の3段階が表示されます。<strong>パートナー回線（au）のエリアは別ページの<a href="https://network.mobile.rakuten.co.jp/area/map_partner.html" target="_blank" rel="noopener noreferrer">パートナー回線エリアマップ</a>で確認する仕組み</strong>になっているため、自宅・職場・通勤路は両方のマップで確認してください。</p>
+                  <p>メインのエリアマップは楽天自社回線（4G LTE／5G）専用で、凡例には「4G LTE」「5G Sub6」「5G ミリ波」の3段階が表示されます。<strong>パートナー回線（au）のエリアは別ページの<a href="https://network.mobile.rakuten.co.jp/area/map_partner.html" target="_blank" rel="noopener noreferrer"
+                       data-cta-id="coverage-area-steps-partner-map" data-cta-kind="official_map" data-cta-page-type="coverage-area" data-cta-position="steps-2" data-cta-destination="coverage_map"
+                       onclick="trackCta('coverage_map_click', {cta_id:'coverage-area-steps-partner-map', cta_kind:'official_map', page_type:'coverage-area', cta_position:'steps-2', destination:'coverage_map'})">パートナー回線エリアマップ</a>で確認する仕組み</strong>になっているため、自宅・職場・通勤路は両方のマップで確認してください。</p>
                 </div>
               </li>
               <li>
@@ -274,7 +286,56 @@
             生活動線（自宅→駅→職場）が自社回線エリアに入っていれば、日常利用で困る場面は少なくなります。
           </div>
 
-          <p class="article-text">エリアを確認できたら、次は<a href="/articles/fit-check/" onclick="trackCta('journey_click', {'page_type': 'coverage-area', 'cta_position': 'mid', 'reader_stage': 'explore', 'destination': 'fit-check'})">向き・不向き診断</a>で自分に合うか確認できます。</p>
+          <p class="article-text">エリアを確認できたら、次は<a href="/articles/fit-check/"
+             data-cta-id="coverage-area-mid-fit-check" data-cta-kind="internal" data-cta-page-type="coverage-area" data-cta-position="mid" data-cta-destination="fit-check"
+             onclick="trackCta('journey_click', {'page_type': 'coverage-area', 'cta_position': 'mid', 'reader_stage': 'explore', 'destination': 'fit-check', cta_id:'coverage-area-mid-fit-check', cta_kind:'internal'})">向き・不向き診断</a>で自分に合うか確認できます。</p>
+
+          <!-- 新設：エリア確認後の3分岐案内枠 -->
+          <div class="area-check-next" id="area-check-next">
+            <h3 class="area-check-next__heading">エリアを確認できたら、次はこちら</h3>
+            <p class="area-check-next__lead">公式エリアマップの確認と、従業員紹介特典の利用は別の手続きです。特典を利用する方は、申込前に紹介URLから楽天IDでログインしてください（マップを見ただけでは申込みになりません）。</p>
+
+            <!-- 分岐A：確認済み＋条件確認済みの人（主導線） -->
+            <div class="referral-offer">
+              <p class="referral-offer__title">楽天社員紹介キャンペーン</p>
+              <p class="referral-offer__points">特典：乗り換え<strong>14,000pt</strong>／乗り換え以外<strong>13,000pt</strong>（条件あり）</p>
+              <p class="referral-offer__note">注意：適用には条件があります。エリアマップと合わせて下記の対象条件も確認してから申し込んでください</p>
+              <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn"
+                 aria-label="従業員紹介ページへ進む（新しいタブで開きます）"
+                 target="_blank" rel="noopener noreferrer"
+                 data-cta-id="coverage-area-referral-a" data-cta-kind="referral" data-cta-page-type="coverage-area" data-cta-position="area-check-next-a" data-cta-destination="employee_referral"
+                 onclick="trackCta('referral_cta_click', {cta_id:'coverage-area-referral-a', cta_kind:'referral', page_type:'coverage-area', cta_position:'area-check-next-a', offer_type:'employee_referral', reader_stage:'apply', destination:'employee_referral'})">
+                従業員紹介ページへ進む
+              </a>
+              <a href="/articles/campaign-guide/" class="referral-offer__link"
+                 data-cta-id="coverage-area-condition-link" data-cta-kind="internal" data-cta-page-type="coverage-area" data-cta-position="area-check-next-a-sub" data-cta-destination="campaign-guide"
+                 onclick="trackCta('journey_click', {cta_id:'coverage-area-condition-link', cta_kind:'internal', page_type:'coverage-area', cta_position:'area-check-next-a-sub', destination:'campaign-guide'})">
+                対象条件・ポイントの受け取り時期を見る →
+              </a>
+            </div>
+
+            <!-- 分岐B／C：副導線（軽量・テキストベース） -->
+            <div class="area-check-next__secondary">
+              <p class="article-text">
+                <strong>まだ不安が残る方は</strong>、
+                <a href="/articles/fit-check/"
+                   data-cta-id="coverage-area-fit-check-link" data-cta-kind="internal" data-cta-page-type="coverage-area" data-cta-position="area-check-next-b" data-cta-destination="fit-check"
+                   onclick="trackCta('journey_click', {cta_id:'coverage-area-fit-check-link', cta_kind:'internal', page_type:'coverage-area', cta_position:'area-check-next-b', destination:'fit-check'})">向き・不向きを1分で確認する →</a>
+                　公式マップは
+                <a href="https://network.mobile.rakuten.co.jp/area/" target="_blank" rel="noopener noreferrer"
+                   data-cta-id="coverage-area-map-recheck" data-cta-kind="official_map" data-cta-page-type="coverage-area" data-cta-position="area-check-next-b-map" data-cta-destination="coverage_map"
+                   onclick="trackCta('coverage_map_click', {cta_id:'coverage-area-map-recheck', cta_kind:'official_map', page_type:'coverage-area', cta_position:'area-check-next-b-map', destination:'coverage_map'})">こちら</a>
+                で再確認できます。
+              </p>
+              <p class="article-text">
+                <strong>すでに契約していて今つながりにくい方は</strong>、
+                <a href="#solutions"
+                   data-cta-id="coverage-area-solutions-link" data-cta-kind="internal" data-cta-page-type="coverage-area" data-cta-position="area-check-next-c" data-cta-destination="solutions"
+                   onclick="trackCta('journey_click', {cta_id:'coverage-area-solutions-link', cta_kind:'internal', page_type:'coverage-area', cta_position:'area-check-next-c', destination:'solutions'})">対処法4選</a>
+                を確認してください。
+              </p>
+            </div>
+          </div>
         </section>
 
         <!-- 繋がらない時の対処法 -->
@@ -435,17 +496,22 @@
 
         <!-- CTA -->
         <div class="article-cta" data-cta-type="A">
-          <p class="article-cta__title">エリアを確認したら、次に自分に合うか確認する</p>
+          <p class="article-cta__title">読み終えたら、紹介特典の条件を確認する</p>
           <p class="article-cta__sub">
-            ここまでの内容が自分にどれくらい影響するかは、生活圏や使い方によって変わります。<br>
-            1分でできる診断で、向いているかどうかをまず確認してください。
+            エリアを確認できたら、次は従業員紹介特典の対象条件・付与時期を確認してから申し込めます。
           </p>
-          <a href="/articles/fit-check/" class="btn-primary"
-             onclick="trackCta('journey_click', {'page_type': 'coverage-area', 'cta_position': 'bottom', 'reader_stage': 'explore', 'destination': 'fit-check'})">
-            向き・不向きを1分で確認する
+          <a href="/articles/campaign-guide/" class="btn-primary"
+             data-cta-id="coverage-area-bottom-campaign-guide" data-cta-kind="internal" data-cta-page-type="coverage-area" data-cta-position="bottom" data-cta-destination="campaign-guide"
+             onclick="trackCta('journey_click', {'page_type': 'coverage-area', 'cta_position': 'bottom', 'reader_stage': 'consider', 'destination': 'campaign-guide', cta_id:'coverage-area-bottom-campaign-guide', cta_kind:'internal'})">
+            従業員紹介特典の条件を見る
           </a>
           <p class="article-cta__note">
-            料金の目安を先に知りたい方は <a href="/articles/savings-calc/" onclick="trackCta('journey_click', {'page_type': 'coverage-area', 'cta_position': 'bottom-note', 'reader_stage': 'explore', 'destination': 'savings-calc'})">料金試算</a> もあわせてご確認ください。
+            まだ向き不向きが気になる方は <a href="/articles/fit-check/"
+               data-cta-id="coverage-area-bottom-fit-check" data-cta-kind="internal" data-cta-page-type="coverage-area" data-cta-position="bottom-note" data-cta-destination="fit-check"
+               onclick="trackCta('journey_click', {'page_type': 'coverage-area', 'cta_position': 'bottom-note', 'reader_stage': 'explore', 'destination': 'fit-check', cta_id:'coverage-area-bottom-fit-check', cta_kind:'internal'})">向き・不向き診断</a>、
+            料金の目安を先に知りたい方は <a href="/articles/savings-calc/"
+               data-cta-id="coverage-area-bottom-savings-calc" data-cta-kind="internal" data-cta-page-type="coverage-area" data-cta-position="bottom-note" data-cta-destination="savings-calc"
+               onclick="trackCta('journey_click', {'page_type': 'coverage-area', 'cta_position': 'bottom-note', 'reader_stage': 'explore', 'destination': 'savings-calc', cta_id:'coverage-area-bottom-savings-calc', cta_kind:'internal'})">料金試算</a> もあわせてご確認ください。
           </p>
         </div>
 

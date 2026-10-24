@@ -123,6 +123,7 @@
     gtag('config', 'G-W82F5QSC9N');
   </script>
   <script src="../../components/cta-tracking.js"></script>
+  <script src="../../components/fit-check-diagnosis.js"></script>
 
   <link rel="stylesheet" href="../../style.css" />
   <link rel="stylesheet" href="article.css" />
@@ -136,7 +137,7 @@
       <a href="/" class="site-logo">🏮 楽天社員の損しない選び方</a>
       <nav class="site-nav" aria-label="グローバルナビゲーション">
         <a href="#section-fit">1分診断</a>
-        <a href="/articles/campaign-guide/" onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'nav', 'reader_stage': 'explore', 'destination': 'campaign-guide'})">紹介特典</a>
+        <a href="/articles/campaign-guide/" data-cta-id="fit-check-nav-campaign-guide" data-cta-kind="internal" onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'nav', 'reader_stage': 'explore', 'destination': 'campaign-guide', cta_id:'fit-check-nav-campaign-guide', cta_kind:'internal'})">紹介特典</a>
         <a href="/articles/">記事一覧</a>
       </nav>
     </div>
@@ -205,39 +206,49 @@
             <div class="checklist-card__header checklist-card__header--fit">向いてる人チェックリスト</div>
             <ul class="fit-list">
               <li class="fit-list__item">
-                <input class="diagnosis-input diagnosis-input--fit diagnosis-input--coverage-ok" type="checkbox" aria-label="主な利用場所が公式マップ上でサービスエリア内だと確認でき、マップは目安であることも理解している" />
-                <div class="fit-list__body">
-                  <strong>主な利用場所が公式マップ上でサービスエリア内だと確認でき、マップは目安であることも理解している</strong>
-                  <p>楽天モバイルの公式発表では、2024年10月末時点の4G「データ高速無制限エリア」の人口カバー率は99.9%（auローミングエリアを含む数値）です。公式エリアマップは計算上の判定に基づく目安であり、実際の通信品質を保証するものではありません。自宅・職場・通勤路など主な利用場所をマップで確認した上で、その前提を理解して使える方に向いています。</p>
-                </div>
+                <label class="fit-list__label" for="fit-check-1">
+                  <input id="fit-check-1" class="diagnosis-input diagnosis-input--fit diagnosis-input--coverage-ok" type="checkbox" aria-describedby="fit-check-1-desc" />
+                  <span class="fit-list__body">
+                    <strong>主な利用場所が公式マップ上でサービスエリア内だと確認でき、マップは目安であることも理解している</strong>
+                  </span>
+                </label>
+                <p class="fit-list__desc" id="fit-check-1-desc">楽天モバイルの公式発表では、2024年10月末時点の4G「データ高速無制限エリア」の人口カバー率は99.9%（auローミングエリアを含む数値）です。公式エリアマップは計算上の判定に基づく目安であり、実際の通信品質を保証するものではありません。自宅・職場・通勤路など主な利用場所をマップで確認した上で、その前提を理解して使える方に向いています。</p>
               </li>
               <li class="fit-list__item">
-                <input class="diagnosis-input diagnosis-input--fit" type="checkbox" aria-label="楽天市場・楽天カードをすでに使っている" />
-                <div class="fit-list__body">
-                  <strong>楽天市場・楽天カードをすでに使っている</strong>
-                  <p>対象プラン契約＋SPUエントリーで、楽天市場の対象購入に+4倍（自動付与ではなく、エントリーが必要）。楽天経済圏ユーザーは費用対効果が高い。</p>
-                </div>
+                <label class="fit-list__label" for="fit-check-2">
+                  <input id="fit-check-2" class="diagnosis-input diagnosis-input--fit" type="checkbox" aria-describedby="fit-check-2-desc" />
+                  <span class="fit-list__body">
+                    <strong>楽天市場・楽天カードをすでに使っている</strong>
+                  </span>
+                </label>
+                <p class="fit-list__desc" id="fit-check-2-desc">対象プラン契約＋SPUエントリーで、楽天市場の対象購入に+4倍（自動付与ではなく、エントリーが必要）。楽天経済圏ユーザーは費用対効果が高い。</p>
               </li>
               <li class="fit-list__item">
-                <input class="diagnosis-input diagnosis-input--fit" type="checkbox" aria-label="月のデータ通信量が多い" />
-                <div class="fit-list__body">
-                  <strong>月のデータ通信量が多い（動画・テザリング利用あり）</strong>
-                  <p>月3,278円でデータ無制限（国内）。大手キャリアの無制限プランと比較すると、毎月数千円の差が出る場合がある。</p>
-                </div>
+                <label class="fit-list__label" for="fit-check-3">
+                  <input id="fit-check-3" class="diagnosis-input diagnosis-input--fit" type="checkbox" aria-describedby="fit-check-3-desc" />
+                  <span class="fit-list__body">
+                    <strong>月のデータ通信量が多い（動画・テザリング利用あり）</strong>
+                  </span>
+                </label>
+                <p class="fit-list__desc" id="fit-check-3-desc">月3,278円でデータ無制限（国内）。大手キャリアの無制限プランと比較すると、毎月数千円の差が出る場合がある。</p>
               </li>
               <li class="fit-list__item">
-                <input class="diagnosis-input diagnosis-input--fit" type="checkbox" aria-label="オンライン手続きに抵抗がない" />
-                <div class="fit-list__body">
-                  <strong>オンライン手続きに抵抗がない</strong>
-                  <p>申し込みから開通まで、すべてスマホアプリで完結する。店舗に行く必要がないため、時間の節約にもなる。</p>
-                </div>
+                <label class="fit-list__label" for="fit-check-4">
+                  <input id="fit-check-4" class="diagnosis-input diagnosis-input--fit" type="checkbox" aria-describedby="fit-check-4-desc" />
+                  <span class="fit-list__body">
+                    <strong>オンライン手続きに抵抗がない</strong>
+                  </span>
+                </label>
+                <p class="fit-list__desc" id="fit-check-4-desc">申し込みから開通まで、すべてスマホアプリで完結する。店舗に行く必要がないため、時間の節約にもなる。</p>
               </li>
               <li class="fit-list__item">
-                <input class="diagnosis-input diagnosis-input--fit" type="checkbox" aria-label="月額料金を今より下げたい" />
-                <div class="fit-list__body">
-                  <strong>月額料金を今より下げたい</strong>
-                  <p>月3,278円は、大手キャリアの同等プランと比べて月2,000〜4,000円程度安いケースが多い。年間で計算すると大きな差になる。</p>
-                </div>
+                <label class="fit-list__label" for="fit-check-5">
+                  <input id="fit-check-5" class="diagnosis-input diagnosis-input--fit" type="checkbox" aria-describedby="fit-check-5-desc" />
+                  <span class="fit-list__body">
+                    <strong>月額料金を今より下げたい</strong>
+                  </span>
+                </label>
+                <p class="fit-list__desc" id="fit-check-5-desc">月3,278円は、大手キャリアの同等プランと比べて月2,000〜4,000円程度安いケースが多い。年間で計算すると大きな差になる。</p>
               </li>
             </ul>
           </div>
@@ -257,32 +268,40 @@
             <div class="checklist-card__header checklist-card__header--unfit">向いてない人チェックリスト</div>
             <ul class="unfit-list">
               <li class="unfit-list__item">
-                <input class="diagnosis-input diagnosis-input--unfit diagnosis-input--coverage-stop" type="checkbox" aria-label="主な利用場所がエリア外、または実際に通信不足を確認しており、予備回線を用意できない" />
-                <div class="unfit-list__body">
-                  <strong>主な利用場所がエリア外、または実際に通信不足を確認しており、予備回線を用意できない</strong>
-                  <p>公式エリアマップで自宅・職場・通勤路がサービスエリア外と表示される、または実際に使ってみて通信不足を確認したことがあり、かつデュアルSIMなどの予備回線を用意できない場合は、乗り換えに特に慎重な判断が必要です。</p>
-                </div>
+                <label class="unfit-list__label" for="unfit-check-1">
+                  <input id="unfit-check-1" class="diagnosis-input diagnosis-input--unfit diagnosis-input--coverage-stop" type="checkbox" aria-describedby="unfit-check-1-desc" />
+                  <span class="unfit-list__body">
+                    <strong>主な利用場所がエリア外、または実際に通信不足を確認しており、予備回線を用意できない</strong>
+                  </span>
+                </label>
+                <p class="unfit-list__desc" id="unfit-check-1-desc">公式エリアマップで自宅・職場・通勤路がサービスエリア外と表示される、または実際に使ってみて通信不足を確認したことがあり、かつデュアルSIMなどの予備回線を用意できない場合は、乗り換えに特に慎重な判断が必要です。</p>
               </li>
               <li class="unfit-list__item">
-                <input class="diagnosis-input diagnosis-input--unfit" type="checkbox" aria-label="店頭でのサポートを必要としている" />
-                <div class="unfit-list__body">
-                  <strong>店頭でのサポートを必要とするスマホ初心者</strong>
-                  <p>楽天モバイルはオンライン完結を前提に設計されており、店舗数は大手キャリアより少ない。アプリ操作に不安がある方は注意。</p>
-                </div>
+                <label class="unfit-list__label" for="unfit-check-2">
+                  <input id="unfit-check-2" class="diagnosis-input diagnosis-input--unfit" type="checkbox" aria-describedby="unfit-check-2-desc" />
+                  <span class="unfit-list__body">
+                    <strong>店頭でのサポートを必要とするスマホ初心者</strong>
+                  </span>
+                </label>
+                <p class="unfit-list__desc" id="unfit-check-2-desc">楽天モバイルはオンライン完結を前提に設計されており、店舗数は大手キャリアより少ない。アプリ操作に不安がある方は注意。</p>
               </li>
               <li class="unfit-list__item">
-                <input class="diagnosis-input diagnosis-input--unfit" type="checkbox" aria-label="0570・188など無料対象外の番号へ頻繁に電話する" />
-                <div class="unfit-list__body">
-                  <strong>0570（ナビダイヤル）や188など、Rakuten Linkの無料対象外番号に毎日のようにかける</strong>
-                  <p>0570や188などの一部番号は、Rakuten Link利用時も無料対象外で、OS標準の電話アプリに切り替わり有料になる。料金は番号・サービスごとに異なる。</p>
-                </div>
+                <label class="unfit-list__label" for="unfit-check-3">
+                  <input id="unfit-check-3" class="diagnosis-input diagnosis-input--unfit" type="checkbox" aria-describedby="unfit-check-3-desc" />
+                  <span class="unfit-list__body">
+                    <strong>0570（ナビダイヤル）や188など、Rakuten Linkの無料対象外番号に毎日のようにかける</strong>
+                  </span>
+                </label>
+                <p class="unfit-list__desc" id="unfit-check-3-desc">0570や188などの一部番号は、Rakuten Link利用時も無料対象外で、OS標準の電話アプリに切り替わり有料になる。料金は番号・サービスごとに異なる。</p>
               </li>
               <li class="unfit-list__item">
-                <input class="diagnosis-input diagnosis-input--unfit" type="checkbox" aria-label="地方への出張・旅行が多く通信品質を最優先する" />
-                <div class="unfit-list__body">
-                  <strong>地方への出張・旅行が毎週あり、通信品質を最優先にしている</strong>
-                  <p>パートナー回線を含む国内通信はデータ無制限。ただし、山間部や建物内など場所によってつながりにくい場合がある。</p>
-                </div>
+                <label class="unfit-list__label" for="unfit-check-4">
+                  <input id="unfit-check-4" class="diagnosis-input diagnosis-input--unfit" type="checkbox" aria-describedby="unfit-check-4-desc" />
+                  <span class="unfit-list__body">
+                    <strong>地方への出張・旅行が毎週あり、通信品質を最優先にしている</strong>
+                  </span>
+                </label>
+                <p class="unfit-list__desc" id="unfit-check-4-desc">パートナー回線を含む国内通信はデータ無制限。ただし、山間部や建物内など場所によってつながりにくい場合がある。</p>
               </li>
             </ul>
           </div>
@@ -303,6 +322,44 @@
         <section class="article-section" aria-labelledby="section-result">
           <h2 id="section-result">診断結果の見方と次のアクション</h2>
 
+          <!-- ① 結果ブロック：2つのチェックリスト直後に配置（中身・id・JSの取得コードは変更なし） -->
+          <div id="result-cta">
+            <div class="referral-offer referral-offer--fit" id="result-cta-fit" hidden>
+              <p class="referral-offer__result-label">診断結果：向いている可能性が高いです</p>
+              <p class="referral-offer__title">楽天社員紹介キャンペーン</p>
+              <p class="referral-offer__points">特典：乗り換え<strong>14,000pt</strong>／乗り換え以外<strong>13,000pt</strong></p>
+              <p class="referral-offer__note">注意：適用には条件があります。申込み前にキャンペーン解説を確認してください</p>
+              <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="従業員紹介ページへ進む（新しいタブで開きます）"
+                 data-cta-id="fit-check-result-fit-referral" data-cta-kind="referral" data-cta-page-type="fit-check" data-cta-position="result-fit" data-cta-destination="employee_referral" data-cta-result="fit"
+                 onclick="trackCta('referral_cta_click', {'page_type': 'fit-check', 'cta_position': 'result-fit', 'offer_type': 'employee_referral', 'reader_stage': 'apply', cta_id:'fit-check-result-fit-referral', cta_kind:'referral', destination:'employee_referral', diagnosis_result:'fit'})" target="_blank" rel="noopener noreferrer">従業員紹介ページへ進む</a><br>
+              <a href="/articles/campaign-guide/" class="referral-offer__link"
+                 data-cta-id="fit-check-result-fit-condition-link" data-cta-kind="internal" data-cta-page-type="fit-check" data-cta-position="result-fit-sub" data-cta-destination="campaign-guide" data-cta-result="fit"
+                 onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-fit-sub', 'reader_stage': 'apply', 'destination': 'campaign-guide', cta_id:'fit-check-result-fit-condition-link', cta_kind:'internal', diagnosis_result:'fit'})">適用条件を確認する →</a>
+            </div>
+            <div class="referral-offer referral-offer--maybe" id="result-cta-maybe" hidden>
+              <p class="referral-offer__result-label">診断結果：判断が分かれます</p>
+              <p class="referral-offer__note">エリアの確認が済んでいないか、注意条件が多めです。すぐに申し込まず、エリアと適用条件を確認してから判断してください。</p>
+              <a href="/articles/coverage-area/" class="btn-secondary"
+                 data-cta-id="fit-check-result-maybe-area-link" data-cta-kind="internal" data-cta-page-type="fit-check" data-cta-position="result-maybe" data-cta-destination="coverage-area" data-cta-result="maybe"
+                 onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-maybe', 'reader_stage': 'consider', 'destination': 'coverage-area', cta_id:'fit-check-result-maybe-area-link', cta_kind:'internal', diagnosis_result:'maybe'})">エリア確認方法を見る →</a><br>
+              <a href="/articles/campaign-guide/" class="referral-offer__link"
+                 data-cta-id="fit-check-result-maybe-condition-link" data-cta-kind="internal" data-cta-page-type="fit-check" data-cta-position="result-maybe-sub" data-cta-destination="campaign-guide" data-cta-result="maybe"
+                 onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-maybe-sub', 'reader_stage': 'consider', 'destination': 'campaign-guide', cta_id:'fit-check-result-maybe-condition-link', cta_kind:'internal', diagnosis_result:'maybe'})">適用条件を確認する →</a>
+            </div>
+            <div class="referral-offer referral-offer--maybe" id="result-cta-unfit" hidden>
+              <p class="referral-offer__result-label">診断結果：現時点では向いていない可能性があります</p>
+              <p class="referral-offer__note">申し込みを急がず、この先の「向いてない理由と対処法」を確認してから判断することをおすすめします。</p>
+              <a href="#section-detail-unfit" class="referral-offer__link"
+                 data-cta-id="fit-check-result-unfit-detail-link" data-cta-kind="internal" data-cta-page-type="fit-check" data-cta-position="result-unfit" data-cta-destination="fit-check-detail-unfit" data-cta-result="unfit"
+                 onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-unfit', 'reader_stage': 'consider', 'destination': 'fit-check-detail-unfit', cta_id:'fit-check-result-unfit-detail-link', cta_kind:'internal', diagnosis_result:'unfit'})">向いてない理由と対処法を見る →</a>
+            </div>
+          </div>
+
+          <!-- ② 結果ブロック直下の短い注記 -->
+          <p class="diagnosis-disclaimer">チェックした内容からの目安です。注意項目も確認して判断してください。特典の対象判定ではありません。</p>
+
+          <!-- ③ 判定表は詳細として後ろへ -->
+          <h3 id="section-result-detail" class="diagnosis-detail-heading">判定基準の詳しい表</h3>
           <p class="article-text">エリアの確認状況を最優先で判定し、その上で向いてる人・向いてない人チェックの数を見ます。</p>
 
           <div class="diagnosis-table-wrap">
@@ -349,29 +406,6 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-
-          <!-- 中盤CTA：診断結果に応じて表示を切り替える（初期状態は非表示） -->
-          <div id="result-cta">
-            <div class="referral-offer referral-offer--fit" id="result-cta-fit" hidden>
-              <p class="referral-offer__result-label">診断結果：向いている可能性が高いです</p>
-              <p class="referral-offer__title">楽天社員紹介キャンペーン</p>
-              <p class="referral-offer__points">特典：乗り換え<strong>14,000pt</strong>／乗り換え以外<strong>13,000pt</strong></p>
-              <p class="referral-offer__note">注意：適用には条件があります。申込み前にキャンペーン解説を確認してください</p>
-              <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="社員紹介キャンペーンから申し込む（新しいタブで開きます）" onclick="trackCta('referral_cta_click', {'page_type': 'fit-check', 'cta_position': 'result-fit', 'offer_type': 'employee_referral', 'reader_stage': 'apply'})" target="_blank" rel="noopener noreferrer">社員紹介キャンペーンから申し込む</a><br>
-              <a href="/articles/campaign-guide/" class="referral-offer__link" onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-fit-sub', 'reader_stage': 'apply', 'destination': 'campaign-guide'})">適用条件を確認する →</a>
-            </div>
-            <div class="referral-offer referral-offer--maybe" id="result-cta-maybe" hidden>
-              <p class="referral-offer__result-label">診断結果：判断が分かれます</p>
-              <p class="referral-offer__note">エリアの確認が済んでいないか、注意条件が多めです。すぐに申し込まず、エリアと適用条件を確認してから判断してください。</p>
-              <a href="/articles/coverage-area/" class="btn-secondary">エリア確認方法を見る →</a><br>
-              <a href="/articles/campaign-guide/" class="referral-offer__link" onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-maybe-sub', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">適用条件を確認する →</a>
-            </div>
-            <div class="referral-offer referral-offer--maybe" id="result-cta-unfit" hidden>
-              <p class="referral-offer__result-label">診断結果：現時点では向いていない可能性があります</p>
-              <p class="referral-offer__note">申し込みを急がず、この先の「向いてない理由と対処法」を確認してから判断することをおすすめします。</p>
-              <a href="#section-detail-unfit" class="referral-offer__link">向いてない理由と対処法を見る →</a>
-            </div>
           </div>
         </section>
 
@@ -653,7 +687,9 @@
         <div class="article-cta">
           <p class="article-cta__title">診断の次は、紹介特典の条件確認へ</p>
           <p class="article-cta__sub">対象条件・付与時期・申し込み手順を確認してから、従業員紹介ページへ進めます。</p>
-          <a href="/articles/campaign-guide/" class="btn-primary" onclick="trackCta('journey_click', {'page_type': 'comparison', 'cta_position': 'bottom', 'reader_stage': 'consider', 'destination': 'campaign-guide'})">従業員紹介特典の条件を見る</a>
+          <a href="/articles/campaign-guide/" class="btn-primary"
+             data-cta-id="fit-check-bottom-campaign-guide" data-cta-kind="internal" data-cta-page-type="fit-check" data-cta-position="bottom" data-cta-destination="campaign-guide"
+             onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'bottom', 'reader_stage': 'consider', 'destination': 'campaign-guide', cta_id:'fit-check-bottom-campaign-guide', cta_kind:'internal'})">従業員紹介特典の条件を見る</a>
           <p class="article-cta__note">まだ迷っている方は <a href="/articles/demerits/">デメリット記事でさらに詳しく確認する →</a></p>
         </div>
 
@@ -676,11 +712,46 @@
       var fitScore = document.getElementById('fit-score');
       var unfitScore = document.getElementById('unfit-score');
       var message = document.getElementById('diagnosis-message');
-      var resultFit = document.getElementById('result-cta-fit');
-      var resultMaybe = document.getElementById('result-cta-maybe');
-      var resultUnfit = document.getElementById('result-cta-unfit');
+      var diagnosisLiveEl = document.getElementById('diagnosis-live');
+      var resultEls = {
+        fit: document.getElementById('result-cta-fit'),
+        maybe: document.getElementById('result-cta-maybe'),
+        unfit: document.getElementById('result-cta-unfit')
+      };
+      var diagnosisStarted = false;
+      var lastResultKey = 'initial';
+
+      // diagnosis_result_view は「結果要約（#diagnosis-live）が、現在の診断結果区分のまま
+      // 50%以上・連続1秒以上見えた時」に区分ごと1回だけ送る。結果CTAブロックの表示/非表示とは
+      // 別の仕組みとして、現在の区分と一致する間だけ active になる監視を区分ごとに3つ用意する。
+      var resultViewWatches = null;
+      if (window.CtaTrackingCore && typeof window.CtaTrackingCore.createVisibilityWatch === 'function' && diagnosisLiveEl) {
+        resultViewWatches = {};
+        ['fit', 'maybe', 'unfit'].forEach(function (key) {
+          resultViewWatches[key] = window.CtaTrackingCore.createVisibilityWatch(diagnosisLiveEl, {
+            active: false,
+            onFire: function () {
+              if (typeof window.trackCta === 'function') {
+                window.trackCta('diagnosis_result_view', {
+                  page_type: 'fit-check',
+                  cta_id: 'fit-check-diagnosis-live-' + key,
+                  diagnosis_result: key
+                });
+              }
+            }
+          });
+        });
+      }
 
       function updateDiagnosis() {
+        // 1ページ表示で最初の実際のinput changeでのみ diagnosis_start を送信（初期化処理では呼ばれないため、ここで送って問題ない）
+        if (!diagnosisStarted) {
+          diagnosisStarted = true;
+          if (typeof window.trackCta === 'function') {
+            window.trackCta('diagnosis_start', { page_type: 'fit-check', cta_id: 'fit-check-diagnosis-start', cta_kind: 'internal' });
+          }
+        }
+
         var fit = document.querySelectorAll('.diagnosis-input--fit:checked').length;
         var unfit = document.querySelectorAll('.diagnosis-input--unfit:checked').length;
         var coverageOk = document.querySelector('.diagnosis-input--coverage-ok:checked') !== null;
@@ -688,43 +759,36 @@
         fitScore.textContent = String(fit);
         unfitScore.textContent = String(unfit);
 
-        resultFit.hidden = true;
-        resultMaybe.hidden = true;
-        resultUnfit.hidden = true;
+        // 判定ロジック本体（分岐・しきい値）は components/fit-check-diagnosis.js に切り出し済み。値・優先順位は変更していない。
+        var diagnosis = window.FitCheckDiagnosis.diagnoseFitCheck({
+          fit: fit,
+          unfit: unfit,
+          coverageOk: coverageOk,
+          coverageStop: coverageStop
+        });
 
-        // 優先順1: 何も選択されていない場合は初期案内のみ表示
-        if (fit === 0 && unfit === 0) {
-          message.textContent = '当てはまる項目にチェックを付けると、ここに目安が表示されます。';
-          return;
+        message.textContent = diagnosis.message;
+
+        // 結果区分が実際に変わった時だけCTAブロックの表示を切り替える。
+        // 同じ結果のまま別項目をチェックしただけで非表示→表示を繰り返すと、
+        // CTAボタンの表示計測タイマーが無駄にリセットされてしまうため。
+        if (diagnosis.resultKey !== lastResultKey) {
+          Object.keys(resultEls).forEach(function (key) {
+            resultEls[key].hidden = true;
+            resultEls[key].classList.remove('referral-offer--active');
+          });
+          if (diagnosis.resultKey !== 'initial') {
+            var activeEl = resultEls[diagnosis.resultKey];
+            activeEl.hidden = false;
+            activeEl.classList.add('referral-offer--active');
+          }
+          lastResultKey = diagnosis.resultKey;
         }
 
-        // 優先順2: 停止条件（エリア外・通信不足確認済みで予備回線なし）は他の点数より優先。coverage-okと同時選択でも停止条件を優先する
-        if (coverageStop) {
-          message.textContent = '現時点では向いていない可能性があります。主な利用場所がエリア外、または通信不足が確認されており予備回線もない状態のため、他の項目の点数に関わらず慎重な判断をおすすめします。';
-          resultUnfit.hidden = false;
-          return;
-        }
-
-        // 優先順3: エリア確認（サービスエリア内）が済んでいない場合は判断保留
-        if (!coverageOk) {
-          message.textContent = '生活圏を確認できるまでは判断を保留してください。公式エリアマップで主な利用場所を確認したうえで、あらためてチェックしてみてください。';
-          resultMaybe.hidden = false;
-          return;
-        }
-
-        // 優先順4以降: エリア確認済みの場合のみ、既存の点数基準で判定
-        if (fit >= 3 && unfit <= 1) {
-          message.textContent = '向いている可能性が高いです。紹介特典の条件へ進んでください。';
-          resultFit.hidden = false;
-        } else if (fit <= 2 && unfit >= 2) {
-          message.textContent = '現時点では他社の方が合っている可能性があります。下の対処法を確認してから判断してください。';
-          resultUnfit.hidden = false;
-        } else if (unfit >= 2) {
-          message.textContent = '注意条件が多めです。すぐに申し込まず、下の対処法を確認してください。';
-          resultMaybe.hidden = false;
-        } else {
-          message.textContent = '向き不向きが分かれる結果です。料金差と注意条件のどちらを重く見るかで判断してください。';
-          resultMaybe.hidden = false;
+        if (resultViewWatches) {
+          ['fit', 'maybe', 'unfit'].forEach(function (key) {
+            resultViewWatches[key].setActive(diagnosis.resultKey === key);
+          });
         }
       }
 

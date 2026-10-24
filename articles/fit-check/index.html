@@ -137,7 +137,7 @@
       <a href="/" class="site-logo">🏮 楽天社員の損しない選び方</a>
       <nav class="site-nav" aria-label="グローバルナビゲーション">
         <a href="#section-fit">1分診断</a>
-        <a href="/articles/campaign-guide/" data-cta-id="fit-check-nav-campaign-guide" data-cta-kind="link" onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'nav', 'reader_stage': 'explore', 'destination': 'campaign-guide', cta_id:'fit-check-nav-campaign-guide', cta_kind:'link'})">紹介特典</a>
+        <a href="/articles/campaign-guide/" data-cta-id="fit-check-nav-campaign-guide" data-cta-kind="internal" onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'nav', 'reader_stage': 'explore', 'destination': 'campaign-guide', cta_id:'fit-check-nav-campaign-guide', cta_kind:'internal'})">紹介特典</a>
         <a href="/articles/">記事一覧</a>
       </nav>
     </div>
@@ -324,37 +324,34 @@
 
           <!-- ① 結果ブロック：2つのチェックリスト直後に配置（中身・id・JSの取得コードは変更なし） -->
           <div id="result-cta">
-            <div class="referral-offer referral-offer--fit" id="result-cta-fit" hidden
-                 data-cta-id="fit-check-result-fit" data-cta-event="diagnosis_result_view" data-cta-result="fit" data-cta-page-type="fit-check">
+            <div class="referral-offer referral-offer--fit" id="result-cta-fit" hidden>
               <p class="referral-offer__result-label">診断結果：向いている可能性が高いです</p>
               <p class="referral-offer__title">楽天社員紹介キャンペーン</p>
               <p class="referral-offer__points">特典：乗り換え<strong>14,000pt</strong>／乗り換え以外<strong>13,000pt</strong></p>
               <p class="referral-offer__note">注意：適用には条件があります。申込み前にキャンペーン解説を確認してください</p>
-              <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="社員紹介キャンペーンから申し込む（新しいタブで開きます）"
-                 data-cta-id="fit-check-result-fit-referral" data-cta-kind="referral" data-cta-page-type="fit-check" data-cta-position="result-fit" data-cta-destination="employee_referral"
-                 onclick="trackCta('referral_cta_click', {'page_type': 'fit-check', 'cta_position': 'result-fit', 'offer_type': 'employee_referral', 'reader_stage': 'apply', cta_id:'fit-check-result-fit-referral', cta_kind:'referral', destination:'employee_referral'})" target="_blank" rel="noopener noreferrer">社員紹介キャンペーンから申し込む</a><br>
+              <a href="https://r10.to/h5zkrv" class="btn-primary referral-offer__btn" aria-label="従業員紹介ページへ進む（新しいタブで開きます）"
+                 data-cta-id="fit-check-result-fit-referral" data-cta-kind="referral" data-cta-page-type="fit-check" data-cta-position="result-fit" data-cta-destination="employee_referral" data-cta-result="fit"
+                 onclick="trackCta('referral_cta_click', {'page_type': 'fit-check', 'cta_position': 'result-fit', 'offer_type': 'employee_referral', 'reader_stage': 'apply', cta_id:'fit-check-result-fit-referral', cta_kind:'referral', destination:'employee_referral', diagnosis_result:'fit'})" target="_blank" rel="noopener noreferrer">従業員紹介ページへ進む</a><br>
               <a href="/articles/campaign-guide/" class="referral-offer__link"
-                 data-cta-id="fit-check-result-fit-condition-link" data-cta-kind="link" data-cta-page-type="fit-check" data-cta-position="result-fit-sub" data-cta-destination="campaign-guide"
-                 onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-fit-sub', 'reader_stage': 'apply', 'destination': 'campaign-guide', cta_id:'fit-check-result-fit-condition-link', cta_kind:'link'})">適用条件を確認する →</a>
+                 data-cta-id="fit-check-result-fit-condition-link" data-cta-kind="internal" data-cta-page-type="fit-check" data-cta-position="result-fit-sub" data-cta-destination="campaign-guide" data-cta-result="fit"
+                 onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-fit-sub', 'reader_stage': 'apply', 'destination': 'campaign-guide', cta_id:'fit-check-result-fit-condition-link', cta_kind:'internal', diagnosis_result:'fit'})">適用条件を確認する →</a>
             </div>
-            <div class="referral-offer referral-offer--maybe" id="result-cta-maybe" hidden
-                 data-cta-id="fit-check-result-maybe" data-cta-event="diagnosis_result_view" data-cta-result="maybe" data-cta-page-type="fit-check">
+            <div class="referral-offer referral-offer--maybe" id="result-cta-maybe" hidden>
               <p class="referral-offer__result-label">診断結果：判断が分かれます</p>
               <p class="referral-offer__note">エリアの確認が済んでいないか、注意条件が多めです。すぐに申し込まず、エリアと適用条件を確認してから判断してください。</p>
               <a href="/articles/coverage-area/" class="btn-secondary"
-                 data-cta-id="fit-check-result-maybe-area-link" data-cta-kind="link" data-cta-page-type="fit-check" data-cta-position="result-maybe" data-cta-destination="coverage-area"
-                 onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-maybe', 'reader_stage': 'consider', 'destination': 'coverage-area', cta_id:'fit-check-result-maybe-area-link', cta_kind:'link'})">エリア確認方法を見る →</a><br>
+                 data-cta-id="fit-check-result-maybe-area-link" data-cta-kind="internal" data-cta-page-type="fit-check" data-cta-position="result-maybe" data-cta-destination="coverage-area" data-cta-result="maybe"
+                 onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-maybe', 'reader_stage': 'consider', 'destination': 'coverage-area', cta_id:'fit-check-result-maybe-area-link', cta_kind:'internal', diagnosis_result:'maybe'})">エリア確認方法を見る →</a><br>
               <a href="/articles/campaign-guide/" class="referral-offer__link"
-                 data-cta-id="fit-check-result-maybe-condition-link" data-cta-kind="link" data-cta-page-type="fit-check" data-cta-position="result-maybe-sub" data-cta-destination="campaign-guide"
-                 onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-maybe-sub', 'reader_stage': 'consider', 'destination': 'campaign-guide', cta_id:'fit-check-result-maybe-condition-link', cta_kind:'link'})">適用条件を確認する →</a>
+                 data-cta-id="fit-check-result-maybe-condition-link" data-cta-kind="internal" data-cta-page-type="fit-check" data-cta-position="result-maybe-sub" data-cta-destination="campaign-guide" data-cta-result="maybe"
+                 onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-maybe-sub', 'reader_stage': 'consider', 'destination': 'campaign-guide', cta_id:'fit-check-result-maybe-condition-link', cta_kind:'internal', diagnosis_result:'maybe'})">適用条件を確認する →</a>
             </div>
-            <div class="referral-offer referral-offer--maybe" id="result-cta-unfit" hidden
-                 data-cta-id="fit-check-result-unfit" data-cta-event="diagnosis_result_view" data-cta-result="unfit" data-cta-page-type="fit-check">
+            <div class="referral-offer referral-offer--maybe" id="result-cta-unfit" hidden>
               <p class="referral-offer__result-label">診断結果：現時点では向いていない可能性があります</p>
               <p class="referral-offer__note">申し込みを急がず、この先の「向いてない理由と対処法」を確認してから判断することをおすすめします。</p>
               <a href="#section-detail-unfit" class="referral-offer__link"
-                 data-cta-id="fit-check-result-unfit-detail-link" data-cta-kind="link" data-cta-page-type="fit-check" data-cta-position="result-unfit" data-cta-destination="fit-check-detail-unfit"
-                 onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-unfit', 'reader_stage': 'consider', 'destination': 'fit-check-detail-unfit', cta_id:'fit-check-result-unfit-detail-link', cta_kind:'link'})">向いてない理由と対処法を見る →</a>
+                 data-cta-id="fit-check-result-unfit-detail-link" data-cta-kind="internal" data-cta-page-type="fit-check" data-cta-position="result-unfit" data-cta-destination="fit-check-detail-unfit" data-cta-result="unfit"
+                 onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'result-unfit', 'reader_stage': 'consider', 'destination': 'fit-check-detail-unfit', cta_id:'fit-check-result-unfit-detail-link', cta_kind:'internal', diagnosis_result:'unfit'})">向いてない理由と対処法を見る →</a>
             </div>
           </div>
 
@@ -691,8 +688,8 @@
           <p class="article-cta__title">診断の次は、紹介特典の条件確認へ</p>
           <p class="article-cta__sub">対象条件・付与時期・申し込み手順を確認してから、従業員紹介ページへ進めます。</p>
           <a href="/articles/campaign-guide/" class="btn-primary"
-             data-cta-id="fit-check-bottom-campaign-guide" data-cta-kind="primary" data-cta-page-type="fit-check" data-cta-position="bottom" data-cta-destination="campaign-guide"
-             onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'bottom', 'reader_stage': 'consider', 'destination': 'campaign-guide', cta_id:'fit-check-bottom-campaign-guide', cta_kind:'primary'})">従業員紹介特典の条件を見る</a>
+             data-cta-id="fit-check-bottom-campaign-guide" data-cta-kind="internal" data-cta-page-type="fit-check" data-cta-position="bottom" data-cta-destination="campaign-guide"
+             onclick="trackCta('journey_click', {'page_type': 'fit-check', 'cta_position': 'bottom', 'reader_stage': 'consider', 'destination': 'campaign-guide', cta_id:'fit-check-bottom-campaign-guide', cta_kind:'internal'})">従業員紹介特典の条件を見る</a>
           <p class="article-cta__note">まだ迷っている方は <a href="/articles/demerits/">デメリット記事でさらに詳しく確認する →</a></p>
         </div>
 
@@ -715,12 +712,36 @@
       var fitScore = document.getElementById('fit-score');
       var unfitScore = document.getElementById('unfit-score');
       var message = document.getElementById('diagnosis-message');
+      var diagnosisLiveEl = document.getElementById('diagnosis-live');
       var resultEls = {
         fit: document.getElementById('result-cta-fit'),
         maybe: document.getElementById('result-cta-maybe'),
         unfit: document.getElementById('result-cta-unfit')
       };
       var diagnosisStarted = false;
+      var lastResultKey = 'initial';
+
+      // diagnosis_result_view は「結果要約（#diagnosis-live）が、現在の診断結果区分のまま
+      // 50%以上・連続1秒以上見えた時」に区分ごと1回だけ送る。結果CTAブロックの表示/非表示とは
+      // 別の仕組みとして、現在の区分と一致する間だけ active になる監視を区分ごとに3つ用意する。
+      var resultViewWatches = null;
+      if (window.CtaTrackingCore && typeof window.CtaTrackingCore.createVisibilityWatch === 'function' && diagnosisLiveEl) {
+        resultViewWatches = {};
+        ['fit', 'maybe', 'unfit'].forEach(function (key) {
+          resultViewWatches[key] = window.CtaTrackingCore.createVisibilityWatch(diagnosisLiveEl, {
+            active: false,
+            onFire: function () {
+              if (typeof window.trackCta === 'function') {
+                window.trackCta('diagnosis_result_view', {
+                  page_type: 'fit-check',
+                  cta_id: 'fit-check-diagnosis-live-' + key,
+                  diagnosis_result: key
+                });
+              }
+            }
+          });
+        });
+      }
 
       function updateDiagnosis() {
         // 1ページ表示で最初の実際のinput changeでのみ diagnosis_start を送信（初期化処理では呼ばれないため、ここで送って問題ない）
@@ -738,11 +759,6 @@
         fitScore.textContent = String(fit);
         unfitScore.textContent = String(unfit);
 
-        Object.keys(resultEls).forEach(function (key) {
-          resultEls[key].hidden = true;
-          resultEls[key].classList.remove('referral-offer--active');
-        });
-
         // 判定ロジック本体（分岐・しきい値）は components/fit-check-diagnosis.js に切り出し済み。値・優先順位は変更していない。
         var diagnosis = window.FitCheckDiagnosis.diagnoseFitCheck({
           fit: fit,
@@ -753,10 +769,26 @@
 
         message.textContent = diagnosis.message;
 
-        if (diagnosis.resultKey !== 'initial') {
-          var activeEl = resultEls[diagnosis.resultKey];
-          activeEl.hidden = false;
-          activeEl.classList.add('referral-offer--active');
+        // 結果区分が実際に変わった時だけCTAブロックの表示を切り替える。
+        // 同じ結果のまま別項目をチェックしただけで非表示→表示を繰り返すと、
+        // CTAボタンの表示計測タイマーが無駄にリセットされてしまうため。
+        if (diagnosis.resultKey !== lastResultKey) {
+          Object.keys(resultEls).forEach(function (key) {
+            resultEls[key].hidden = true;
+            resultEls[key].classList.remove('referral-offer--active');
+          });
+          if (diagnosis.resultKey !== 'initial') {
+            var activeEl = resultEls[diagnosis.resultKey];
+            activeEl.hidden = false;
+            activeEl.classList.add('referral-offer--active');
+          }
+          lastResultKey = diagnosis.resultKey;
+        }
+
+        if (resultViewWatches) {
+          ['fit', 'maybe', 'unfit'].forEach(function (key) {
+            resultViewWatches[key].setActive(diagnosis.resultKey === key);
+          });
         }
       }
 

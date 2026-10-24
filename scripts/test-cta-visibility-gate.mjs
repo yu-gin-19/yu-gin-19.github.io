@@ -65,23 +65,28 @@ test('1秒未満で不可視化（elementVisible=false）するとタイマー�
   assert.equal(fired, true);
 });
 
-test('非アクティブタブ（pageVisible=false）の間は経過時間が加算されない（一時停止、蓄積は保持）', () => {
+test('非アクティブタブ（pageVisible=false）になると連続可視の起点がリセットされる（蓄積は保持しない）', () => {
+  // 「表示中タブで連続1秒」という仕様上、タブが非アクティブになった時点で"連続"が途切れるため、
+  // 一時停止ではなく起点リセットが正しい挙動（再レビューでの明示的な訂正）。
   const gate = new CtaVisibilityGate({ requiredDurationMs: 1000 });
 
-  // 0 -> 500ms 可視・アクティブタブ（500ms蓄積）
+  // 0 -> 500ms 可視・アクティブタブ（500ms経過、まだ発火しない）
   gate.update({ timestamp: 0, elementVisible: true, pageVisible: true });
   let fired = gate.update({ timestamp: 500, elementVisible: true, pageVisible: true });
   assert.equal(fired, false);
 
-  // 500ms時点でタブが非アクティブになり、3000msの間そのまま（この間は加算されない）
+  // 500ms時点でタブが非アクティブになり、3000msの間そのまま
   gate.update({ timestamp: 500, elementVisible: true, pageVisible: false });
   fired = gate.update({ timestamp: 3500, elementVisible: true, pageVisible: false });
   assert.equal(fired, false, '非アクティブタブの間は加算されないため発火しない');
 
-  // タブがアクティブに戻り、残り500ms分進めば発火する（蓄積済みの500msは保持されている）
-  gate.update({ timestamp: 3500, elementVisible: true, pageVisible: true });
-  fired = gate.update({ timestamp: 4000, elementVisible: true, pageVisible: true }); // +500ms = 合計1000ms
-  assert.equal(fired, true, '非アクティブ中に失われていなかった蓄積500ms + 再開後500ms = 1000msで発火');
+  // タブがアクティブに戻った直後は、起点がリセットされているため即座には発火しない
+  fired = gate.update({ timestamp: 3500, elementVisible: true, pageVisible: true });
+  assert.equal(fired, false, '復帰直後は起点がリセットされているため発火しない（蓄積済みの500msは持ち越されない）');
+  fired = gate.update({ timestamp: 4000, elementVisible: true, pageVisible: true }); // 復帰から500ms
+  assert.equal(fired, false, '復帰から500msではまだ発火しない（持ち越しなしで0から再計測のため）');
+  fired = gate.update({ timestamp: 4500, elementVisible: true, pageVisible: true }); // 復帰から1000ms
+  assert.equal(fired, true, '復帰してから新たに1000ms連続可視になった時点で発火する');
 });
 
 test('非アクティブタブ中に要素が不可視化した場合はタイマーが取消される', () => {

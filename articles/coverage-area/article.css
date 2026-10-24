@@ -533,7 +533,13 @@
   font-size: 16px;
   font-weight: 800;
   color: #1a1a1a;
-  margin-bottom: 16px;
+  margin-bottom: 8px;
+}
+.area-check-next__lead {
+  font-size: 13px;
+  color: #696969;
+  line-height: 1.7;
+  margin: 0 0 16px;
 }
 .area-check-next__secondary {
   margin-top: 20px;

@@ -285,10 +285,23 @@
   font-size: 15px;
   font-weight: 900;
   color: #e74c3c;
+  line-height: 1.7;
   margin-bottom: 8px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 8px;
+}
+
+.deadline-box__title::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 1.1em;
+  height: 1.1em;
+  /* 1行目の行ボックス（1.7em）の中央にアイコン（1.1em）の中央を合わせる */
+  margin-top: calc((1.7em - 1.1em) / 2);
+  background-color: currentColor;
+  -webkit-mask: var(--icon-alert) center / contain no-repeat;
+  mask: var(--icon-alert) center / contain no-repeat;
 }
 
 .deadline-box__body {

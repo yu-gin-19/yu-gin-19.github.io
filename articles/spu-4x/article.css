@@ -123,10 +123,25 @@
 }
 
 .info-box__title {
+  position: relative;
+  padding-left: 1.5em;
   font-size: 14px;
   font-weight: 700;
   margin-bottom: 8px;
   color: #1a1a1a;
+}
+
+.info-box__title::before,
+.caution-item__title::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.3em;
+  width: 1.1em;
+  height: 1.1em;
+  background-color: var(--color-primary);
+  -webkit-mask: var(--icon-info) center / contain no-repeat;
+  mask: var(--icon-info) center / contain no-repeat;
 }
 
 .info-box p {
@@ -295,10 +310,17 @@
 }
 
 .caution-item__title {
+  position: relative;
+  padding-left: 1.5em;
   font-size: 15px;
   font-weight: 700;
   margin-bottom: 8px;
   color: #1a1a1a;
+}
+
+.caution-item__title::before {
+  -webkit-mask-image: var(--icon-alert);
+  mask-image: var(--icon-alert);
 }
 
 .caution-item__body {

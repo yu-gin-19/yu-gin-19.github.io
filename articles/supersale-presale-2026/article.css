@@ -291,6 +291,16 @@
   gap: 8px;
 }
 
+.deadline-box__title::before {
+  content: "";
+  flex: 0 0 auto;
+  width: 1.1em;
+  height: 1.1em;
+  background-color: currentColor;
+  -webkit-mask: var(--icon-alert) center / contain no-repeat;
+  mask: var(--icon-alert) center / contain no-repeat;
+}
+
 .deadline-box__body {
   font-size: 15px;
   color: #333;

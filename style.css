@@ -203,7 +203,9 @@ body {
   background: #fff;
   border: 2px solid var(--color-primary);
   border-radius: 12px;
-  padding: 14px 28px;
+  /* 左右の余白は狭い画面で縮め、特典の各組（例：乗り換え以外13,000pt）を1行に収める */
+  padding: 14px clamp(16px, 5vw, 28px);
+  max-width: 100%;
   margin-bottom: 24px;
   font-size: 16px;
   line-height: 1.6;
@@ -212,7 +214,7 @@ body {
 
 .hero-point-badge strong {
   color: var(--color-primary);
-  font-size: 24px;
+  font-size: clamp(22px, 6.6vw, 24px);
   font-weight: 900;
 }
 
@@ -1054,11 +1056,16 @@ th.highlight, td.highlight {
   text-align: center;
 }
 
+/* ヒーロー：画像と本文の横並びは、本文の列が特典枠（約300px）より狭くならない幅から。
+   それ未満（〜760px）は縦積みにする */
+@media (max-width: 760px) {
+  .hero-container { flex-direction: column; gap: 24px; }
+  .hero-image img { width: 220px; height: 220px; }
+}
+
 /* スマホ対応 */
 @media (max-width: 600px) {
   .hero { padding: 48px 0 40px; }
-  .hero-container { flex-direction: column; gap: 24px; }
-  .hero-image img { width: 220px; height: 220px; }
   .section { padding: 48px 0; }
   .btn-primary { font-size: 15px; padding: 16px 28px; }
   /* 手順は縦1列。番号の右に見出しと説明を置き、横向きの矢印は出さない */

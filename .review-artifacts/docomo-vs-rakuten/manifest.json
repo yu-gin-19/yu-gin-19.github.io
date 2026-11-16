@@ -1,0 +1,131 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "feature/docomo-vs-rakuten",
+  "source_sha": "c6944ab5b98b6c6242808476005c967841f27806",
+  "page": "/articles/docomo-vs-rakuten/",
+  "captured_at": "2026-10-05T21:04:48+09:00",
+  "viewports": [
+    {
+      "viewport": "375x812",
+      "full_page": {
+        "full_height_px": 20990,
+        "pieces": [
+          { "file": "375x812/split_375x812_01.png", "y_start": 0, "y_end": 812 },
+          { "file": "375x812/split_375x812_02.png", "y_start": 812, "y_end": 1624 },
+          { "file": "375x812/split_375x812_03.png", "y_start": 1624, "y_end": 2436 },
+          { "file": "375x812/split_375x812_04.png", "y_start": 2436, "y_end": 3248 },
+          { "file": "375x812/split_375x812_05.png", "y_start": 3248, "y_end": 4060 },
+          { "file": "375x812/split_375x812_06.png", "y_start": 4060, "y_end": 4872 },
+          { "file": "375x812/split_375x812_07.png", "y_start": 4872, "y_end": 5684 },
+          { "file": "375x812/split_375x812_08.png", "y_start": 5684, "y_end": 6496 },
+          { "file": "375x812/split_375x812_09.png", "y_start": 6496, "y_end": 7308 },
+          { "file": "375x812/split_375x812_10.png", "y_start": 7308, "y_end": 8120 },
+          { "file": "375x812/split_375x812_11.png", "y_start": 8120, "y_end": 8932 },
+          { "file": "375x812/split_375x812_12.png", "y_start": 8932, "y_end": 9744 },
+          { "file": "375x812/split_375x812_13.png", "y_start": 9744, "y_end": 10556 },
+          { "file": "375x812/split_375x812_14.png", "y_start": 10556, "y_end": 11368 },
+          { "file": "375x812/split_375x812_15.png", "y_start": 11368, "y_end": 12180 },
+          { "file": "375x812/split_375x812_16.png", "y_start": 12180, "y_end": 12992 },
+          { "file": "375x812/split_375x812_17.png", "y_start": 12992, "y_end": 13804 },
+          { "file": "375x812/split_375x812_18.png", "y_start": 13804, "y_end": 14616 },
+          { "file": "375x812/split_375x812_19.png", "y_start": 14616, "y_end": 15428 },
+          { "file": "375x812/split_375x812_20.png", "y_start": 15428, "y_end": 16240 },
+          { "file": "375x812/split_375x812_21.png", "y_start": 16240, "y_end": 17052 },
+          { "file": "375x812/split_375x812_22.png", "y_start": 17052, "y_end": 17864 },
+          { "file": "375x812/split_375x812_23.png", "y_start": 17864, "y_end": 18676 },
+          { "file": "375x812/split_375x812_24.png", "y_start": 18676, "y_end": 19488 },
+          { "file": "375x812/split_375x812_25.png", "y_start": 19488, "y_end": 20300 },
+          { "file": "375x812/split_375x812_26.png", "y_start": 20300, "y_end": 20990 }
+        ]
+      },
+      "scroll_width_check": { "scrollWidth": 375, "clientWidth": 375, "overflow": false }
+    },
+    {
+      "viewport": "768x1024",
+      "full_page": {
+        "full_height_px": 14309,
+        "pieces": [
+          { "file": "768x1024/split_768x1024_01.png", "y_start": 0, "y_end": 1024 },
+          { "file": "768x1024/split_768x1024_02.png", "y_start": 1024, "y_end": 2048 },
+          { "file": "768x1024/split_768x1024_03.png", "y_start": 2048, "y_end": 3072 },
+          { "file": "768x1024/split_768x1024_04.png", "y_start": 3072, "y_end": 4096 },
+          { "file": "768x1024/split_768x1024_05.png", "y_start": 4096, "y_end": 5120 },
+          { "file": "768x1024/split_768x1024_06.png", "y_start": 5120, "y_end": 6144 },
+          { "file": "768x1024/split_768x1024_07.png", "y_start": 6144, "y_end": 7168 },
+          { "file": "768x1024/split_768x1024_08.png", "y_start": 7168, "y_end": 8192 },
+          { "file": "768x1024/split_768x1024_09.png", "y_start": 8192, "y_end": 9216 },
+          { "file": "768x1024/split_768x1024_10.png", "y_start": 9216, "y_end": 10240 },
+          { "file": "768x1024/split_768x1024_11.png", "y_start": 10240, "y_end": 11264 },
+          { "file": "768x1024/split_768x1024_12.png", "y_start": 11264, "y_end": 12288 },
+          { "file": "768x1024/split_768x1024_13.png", "y_start": 12288, "y_end": 13312 },
+          { "file": "768x1024/split_768x1024_14.png", "y_start": 13312, "y_end": 14309 }
+        ]
+      },
+      "scroll_width_check": { "scrollWidth": 768, "clientWidth": 768, "overflow": false }
+    },
+    {
+      "viewport": "1200x900",
+      "full_page": {
+        "full_height_px": 13841,
+        "pieces": [
+          { "file": "1200x900/split_1200x900_01.png", "y_start": 0, "y_end": 900 },
+          { "file": "1200x900/split_1200x900_02.png", "y_start": 900, "y_end": 1800 },
+          { "file": "1200x900/split_1200x900_03.png", "y_start": 1800, "y_end": 2700 },
+          { "file": "1200x900/split_1200x900_04.png", "y_start": 2700, "y_end": 3600 },
+          { "file": "1200x900/split_1200x900_05.png", "y_start": 3600, "y_end": 4500 },
+          { "file": "1200x900/split_1200x900_06.png", "y_start": 4500, "y_end": 5400 },
+          { "file": "1200x900/split_1200x900_07.png", "y_start": 5400, "y_end": 6300 },
+          { "file": "1200x900/split_1200x900_08.png", "y_start": 6300, "y_end": 7200 },
+          { "file": "1200x900/split_1200x900_09.png", "y_start": 7200, "y_end": 8100 },
+          { "file": "1200x900/split_1200x900_10.png", "y_start": 8100, "y_end": 9000 },
+          { "file": "1200x900/split_1200x900_11.png", "y_start": 9000, "y_end": 9900 },
+          { "file": "1200x900/split_1200x900_12.png", "y_start": 9900, "y_end": 10800 },
+          { "file": "1200x900/split_1200x900_13.png", "y_start": 10800, "y_end": 11700 },
+          { "file": "1200x900/split_1200x900_14.png", "y_start": 11700, "y_end": 12600 },
+          { "file": "1200x900/split_1200x900_15.png", "y_start": 12600, "y_end": 13500 },
+          { "file": "1200x900/split_1200x900_16.png", "y_start": 13500, "y_end": 13841 }
+        ]
+      },
+      "scroll_width_check": { "scrollWidth": 1200, "clientWidth": 1200, "overflow": false },
+      "detail": [
+        "1200x900/detail/case1_honnin.png",
+        "1200x900/detail/case4_kazoku.png",
+        "1200x900/detail/case5_kazoku.png",
+        "1200x900/detail/limited_offer.png",
+        "1200x900/detail/judge_cards.png",
+        "1200x900/detail/final_cta.png",
+        "1200x900/detail/faq_expanded.png"
+      ],
+      "anchor": [
+        {
+          "file": "1200x900/anchor/anchor_section-3.png",
+          "anchor": "section-3",
+          "header_bottom_px": 54.5,
+          "target_top_px": 170.15625,
+          "clipped_by_header": false
+        },
+        {
+          "file": "1200x900/anchor/anchor_section-6.png",
+          "anchor": "section-6",
+          "header_bottom_px": 54.5,
+          "target_top_px": 170.140625,
+          "clipped_by_header": false
+        }
+      ]
+    }
+  ],
+  "verified_items": [
+    "375x812 / 768x1024 / 1200x900 の3サイズでページ全体をfull_page撮影してから、clip指定でy=0から各full_height_pxまで隙間なく連続する画像へ分割した（各ピースのy_end=次ピースのy_startで連続性を確認、最終ピースのy_endがfull_height_pxと一致することを確認）",
+    "3サイズいずれも document.documentElement.scrollWidth が clientWidth を超えておらず（375/375, 768/768, 1200/1200）、意図しない横スクロールが発生していないことを確認",
+    "comparison-table-wrap内の横幅のある表（②本人料金比較表）は.scroll-hintの案内どおりテーブル領域のみが横スクロールし、ページ全体は横にはみ出さないことを375px幅のスクリーンショットで確認",
+    "console error / pageerror はいずれのページ読み込み・操作でも検出なし（詳細クロップ撮影・FAQ展開・アンカー遷移を含む全操作で0件）",
+    "FAQ開閉（faq-btn-1）クリック後、aria-expanded が true に切り替わり、本文が展開表示されることを確認",
+    "TOCアンカー（#section-3, #section-6）クリック後、実際のsticky header表示状態で見出し（h2）の上端座標（170.15px/170.14px）がheader下端（54.5px）より下にあり、画面内に収まっていることを座標で確認（clipped_by_header: false）",
+    "本人の料金比較（ケース1）・家族全体の世帯合計（ケース4・5）・期間限定/改定予告ボックス・3つの判断カード・最終CTA・展開したFAQの拡大画像を保存"
+  ],
+  "notes": [
+    "要素スクリーンショット（1200x900/detail/配下）のみ、撮影直前に page.add_style_tag() で .site-header / .disclosure-banner / .skip-link を display:none にした状態で撮影している。本番の style.css・article.css は変更していない（撮影後のDOM状態は保存せず、スクリプト終了時に破棄）。",
+    "1200x900/anchor/配下の画像は実際のsticky headerを表示した状態（ヘッダー非表示処理なし）で撮影している。",
+    "本記事のケース2・ケース3は本人料金比較表（#calc-case-2, #calc-case-3）内に小さな表として表示されており、detail/case1_honnin.pngと同じ構造のため個別の拡大画像は撮っていない。全体像は375x812のfull_page分割（part7付近）で確認できる。"
+  ]
+}

@@ -367,20 +367,6 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.08);
 }
 
-.check-card__number {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  background: var(--color-primary);
-  color: #fff;
-  font-size: 16px;
-  font-weight: 900;
-  border-radius: 50%;
-  flex-shrink: 0;
-}
-
 .check-card__body {
   flex: 1;
 }
@@ -631,12 +617,6 @@
   .check-card {
     flex-direction: row;
     padding: 14px 16px;
-  }
-
-  .check-card__number {
-    width: 30px;
-    height: 30px;
-    font-size: 14px;
   }
 
   .step-flow__item:not(:last-child)::after {

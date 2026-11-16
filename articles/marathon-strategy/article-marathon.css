@@ -107,13 +107,6 @@
   gap: 8px;
 }
 
-.combo-item__num {
-  font-size: 11px;
-  font-weight: 900;
-  color: var(--color-primary);
-  letter-spacing: 0.05em;
-}
-
 .combo-item__icon {
   font-size: 28px;
 }
@@ -285,15 +278,6 @@
   align-items: center;
   gap: 16px;
   margin-bottom: 12px;
-}
-
-.tip-item__num {
-  font-size: 22px;
-  font-weight: 900;
-  color: var(--color-primary-light);
-  line-height: 1;
-  flex-shrink: 0;
-  min-width: 32px;
 }
 
 .tip-item__title {

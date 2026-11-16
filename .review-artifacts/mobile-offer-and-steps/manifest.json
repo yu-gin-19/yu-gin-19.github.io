@@ -1,8 +1,10 @@
 {
   "repository": "yu-gin-19/yu-gin-19.github.io",
   "branch": "claude/rakuten-mobile-design-overhaul-cy2334",
+  "pr": "#33",
   "start_sha": "3a6a92a592b04826de2dae28e2ecd04a64ac472d",
-  "source_sha": "7a9998f9778d09ae49629a5f393911924d758034",
+  "source_sha": "a09fd385344658bc124ab5d1eeac7b397af91732",
+  "previous_source_sha": "7a9998f9778d09ae49629a5f393911924d758034",
   "target_pages": [
     "/",
     "/articles/campaign-guide/",
@@ -14,7 +16,8 @@
   "viewports": [
     "375x812",
     "768x1024",
-    "1200x900"
+    "1200x900",
+    "拡大：320x812・640x900（トップの特典枠）"
   ],
   "images": [
     ".review-artifacts/mobile-offer-and-steps/campaign-guide_full_1200x900.png",
@@ -28,7 +31,10 @@
     ".review-artifacts/mobile-offer-and-steps/home_full_1200x900.png",
     ".review-artifacts/mobile-offer-and-steps/home_full_375x812.png",
     ".review-artifacts/mobile-offer-and-steps/home_full_768x1024.png",
+    ".review-artifacts/mobile-offer-and-steps/home_hero-offer_zoom_320x812.png",
     ".review-artifacts/mobile-offer-and-steps/home_hero-offer_zoom_375x812.png",
+    ".review-artifacts/mobile-offer-and-steps/home_hero-offer_zoom_640x900.png",
+    ".review-artifacts/mobile-offer-and-steps/home_hero_zoom_640x900.png",
     ".review-artifacts/mobile-offer-and-steps/home_referral-offer_zoom_375x812.png",
     ".review-artifacts/mobile-offer-and-steps/home_steps_zoom_375x812.png",
     ".review-artifacts/mobile-offer-and-steps/home_steps_zoom_768x1024.png",
@@ -44,19 +50,16 @@
     ".review-artifacts/mobile-offer-and-steps/savings-calc_full_375x812.png",
     ".review-artifacts/mobile-offer-and-steps/savings-calc_full_768x1024.png"
   ],
-  "captured_at": "2026-11-16T09:25:27Z",
+  "captured_at": "2026-11-16T09:36:00Z",
   "checked": [
-    "全40ページ×375/768/1200で数値＋単位の割れ・狭い列・横スクロール・「／」の行端を自動検査（金額・ポイント・倍率の割れ 開始SHA時点あり→0件、横スクロール0件）",
-    "特典額の組（.offer-pair）を320〜1200pxの16幅で確認：「／」が見えたまま組が分かれる箇所・はみ出し0件",
-    "トップの申し込み手順：375pxで縦1列（番号＋見出し＋説明）、768/1200pxで3列＋矢印",
-    "全40ページで本文テキスト・href・id・onclick・aria・data-*属性・JSON-LD・<head>が開始SHAと一致（差分はトップ手順の装飾矢印「→」をCSSへ移したことのみ）",
-    "トップ・記事一覧・how-to-switch・campaign-guideのCTAで cta_view / journey_click / referral_cta_click の発火内容が開始SHAと一致（外部送信は遮断して確認）",
-    "savings-calcの試算結果を極端な入力（50,000円/0円）で320・375px確認：はみ出しなし",
-    "validate-content.mjs：エラー0件・情報82件（開始SHAと同一内容）、git diff --check OK"
+    "今回の追加修正（a09fd38）：トップのヒーロー・中間・下部の特典の各組について、先頭文字と末尾の「t」が同じ行にあることをテキスト範囲の行位置で判定。320/340/360/375/414/500/600/601/640/680/700/720/760/761/768/800/900/1024/1200pxで全組1行・枠内に収まり、横スクロールなし（修正前は320px・601〜680pxで組の途中改行あり）",
+    "ヒーローの縦積みは760pxまで、761pxから画像と本文の横並び（761pxで本文の列381px・特典枠301px）",
+    "hero-container / hero-point-badge / hero-image を使うのはトップのみ",
+    "前回（7a9998f）までの確認：全40ページ×375/768/1200で数値＋単位の割れ0件・横スクロール0件、本文・href・id・onclick・data-*・JSON-LD・headは開始SHAと一致（差分はトップ手順の装飾矢印のCSS化のみ）、主要CTAの cta_view / journey_click / referral_cta_click は開始SHAと同一",
+    "validate-content.mjs：エラー0件・情報82件、git diff --check OK"
   ],
   "notes": [
-    "撮影環境のフォントはNoto Sans CJK JP（Hiragino・Noto Sans JPは未インストール）。iPhone等のHiraginoでは折り返し位置が異なる場合がある",
-    "ヘッドレスChromiumで撮影。絵文字はNoto Color Emoji",
-    "記事本文中の日付・回数（2026年、2回線など）と文中の「乗り換え以外」の折り返しは通常の和文改行として対象外"
+    "撮影環境のフォントはNoto Sans CJK JP（Hiragino・Noto Sans JPは未インストール）。320pxの特典枠は内側に約23pxの余裕があり、Hiraginoでの文字幅の差を見込んでいる",
+    "ヘッドレスChromiumで撮影。古い画像は削除し全画像をsource_shaで撮り直した"
   ]
 }

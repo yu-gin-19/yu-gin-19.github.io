@@ -183,12 +183,14 @@
   font-weight: 700;
   color: #333;
   margin: 20px 0;
-  display: flex;
-  align-items: flex-start;
-  gap: 12px;
+  /* ラベルの後は<br>で改行し、本文中の<strong>やリンクは文中に置いたまま折り返す
+     （flexにすると<strong>が独立した狭い列になるため通常のブロックにする） */
+  display: block;
 }
 
 .point-label {
+  display: inline-block;
+  margin-bottom: 6px;
   background: var(--color-primary);
   color: #fff;
   font-size: 11px;
@@ -624,12 +626,6 @@
 
   .for-who-box {
     padding: 16px;
-  }
-
-  .point-box {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
   }
 
   .check-card {

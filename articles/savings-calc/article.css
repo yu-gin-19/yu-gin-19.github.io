@@ -497,3 +497,9 @@
     grid-column: auto;
   }
 }
+
+/* 試算結果の金額（JavaScriptで更新される値）は数値と単位を一体で表示する */
+.calc-result__plan strong,
+.calc-result__grid strong {
+  white-space: nowrap;
+}

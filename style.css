@@ -251,6 +251,11 @@ body {
   border-radius: 50px;
   text-decoration: none;
   transition: background 0.2s, transform 0.1s;
+  /* 文言は<wbr>を入れた文節の区切りでだけ折り返す（「申し込／む」を防ぐ）。
+     収まらない文節があるときだけ任意の位置で折り返し、はみ出さない */
+  word-break: keep-all;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
 }
 
 .btn-primary:hover {
@@ -814,8 +819,16 @@ th.highlight, td.highlight {
   line-height: 1.5;
 }
 
+/* 開閉アイコンは丸で囲み、質問文と区別できる操作の印にする（記事側で色・大きさを上書きしても丸は残る） */
 .faq-question__icon {
   flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border: 1px solid currentColor;
+  border-radius: 50%;
   font-size: 20px;
   color: var(--color-primary);
   line-height: 1;
@@ -834,6 +847,15 @@ th.highlight, td.highlight {
 
 .faq-item.is-open .faq-answer {
   grid-template-rows: 1fr;
+}
+
+/* 開いている質問は行の下に区切り線を引き、質問と回答の境目を示す */
+.faq-item.is-open .faq-question {
+  box-shadow: inset 0 -1px 0 #eee;
+}
+
+.faq-item.is-open .faq-answer__body {
+  padding-top: 14px;
 }
 
 .faq-answer__inner {
@@ -1006,19 +1028,17 @@ th.highlight, td.highlight {
   flex-direction: column;
   gap: 8px;
   padding: 22px 18px;
+  /* 判断カードは影を付けず細い線だけにし、申込枠より控えめにする（カード全体がリンク） */
   border: 1px solid #e6e6e6;
-  border-radius: 14px;
+  border-radius: 12px;
   color: #1a1a1a;
   text-decoration: none;
   background: #fff;
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.04);
-  transition: transform 0.15s, border-color 0.15s, box-shadow 0.15s;
+  transition: border-color 0.15s;
 }
 
 .decision-card:hover {
-  transform: translateY(-2px);
-  border-color: var(--color-primary-light);
-  box-shadow: 0 8px 24px rgba(204, 0, 111, 0.1);
+  border-color: var(--color-primary);
 }
 
 .decision-card__title {
@@ -1038,6 +1058,8 @@ th.highlight, td.highlight {
   font-size: 13px;
   font-weight: 700;
   margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid #f0f0f0;
 }
 
 .rate-note {
@@ -1059,10 +1081,20 @@ th.highlight, td.highlight {
 @media (max-width: 600px) {
   .hero { padding: 48px 0 40px; }
   .section { padding: 48px 0; }
-  .btn-primary { font-size: 15px; padding: 16px 28px; }
+  .btn-primary { font-size: 15px; padding: 16px 20px; }
   /* 手順は縦1列。番号の右に見出しと説明を置き、横向きの矢印は出さない */
-  .steps { flex-direction: column; gap: 12px; }
+  /* 手順は1枚の枠の中で区切り線を引いて並べ、カードを積み重ねない */
+  .steps {
+    flex-direction: column;
+    gap: 0;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 12px;
+  }
   .step {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
     flex: none;
     width: 100%;
     max-width: none;
@@ -1075,6 +1107,7 @@ th.highlight, td.highlight {
     text-align: left;
   }
   .step:not(:last-child)::after { content: none; }
+  .step + .step { border-top: 1px solid #eee; }
   .step-num { grid-column: 1; grid-row: 1 / span 2; margin: 0; }
   .step h3 { grid-column: 2; grid-row: 1; margin: 6px 0 4px; }
   .step-icon { grid-column: 3; grid-row: 1; font-size: 24px; margin: 2px 0 0; }
@@ -1142,7 +1175,8 @@ th.highlight, td.highlight {
 /* ===== 共通申込み枠（社員紹介キャンペーン） ===== */
 .referral-offer {
   background: #fff;
-  border: 1px solid var(--color-primary-light);
+  /* 申込枠はサイト内でいちばん強い枠。判断カード・FAQより太い線で区別する */
+  border: 2px solid var(--color-primary-light);
   border-radius: 16px;
   padding: 28px 24px;
   margin: 32px auto;
@@ -1178,18 +1212,27 @@ th.highlight, td.highlight {
   margin: 10px 0 20px;
 }
 
+/* 特典の説明と「注意書き・申込ボタン・条件確認リンク」の間を線で区切り、後半を1つの操作のまとまりにする */
+.referral-offer__points + .referral-offer__note {
+  margin: 16px 0 16px;
+  padding-top: 16px;
+  border-top: 1px solid var(--color-primary-light);
+}
+
 .referral-offer__btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   min-height: 44px;
   width: 100%;
-  max-width: 320px;
+  max-width: 340px;
+  padding-left: 24px;
+  padding-right: 24px;
 }
 
 .referral-offer__link {
   display: inline-block;
-  margin-top: 14px;
+  margin-top: 12px;
   font-size: 14px;
   font-weight: 600;
   color: var(--color-primary);
@@ -1214,7 +1257,9 @@ th.highlight, td.highlight {
   color: var(--color-primary-dark);
 }
 
+/* 判断が分かれる・費用が上がる等の結果は、申込枠より弱い灰色の細い枠のまま */
 .referral-offer--maybe {
+  border-width: 1px;
   border-color: #e0e0e0;
 }
 
@@ -1234,7 +1279,7 @@ th.highlight, td.highlight {
 /* スマホ対応 */
 @media (max-width: 600px) {
   .referral-offer { padding: 24px 20px; margin: 24px auto; }
-  .referral-offer__btn { max-width: 100%; }
+  .referral-offer__btn { max-width: 100%; padding-left: 16px; padding-right: 16px; }
 }
 
 /* ===== 数字と特典額の折り返し ===== */

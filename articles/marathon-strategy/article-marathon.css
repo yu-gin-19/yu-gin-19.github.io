@@ -34,6 +34,7 @@
 }
 
 .mechanism-bar__track {
+  position: relative;
   flex: 1;
   background: #e8e8e8;
   border-radius: 50px;
@@ -58,6 +59,20 @@
 
 .mechanism-bar__fill--max {
   background: var(--color-primary);
+  color: #fff;
+}
+
+/* 倍率ラベルはバーの長さに関係なく1行で表示する（短いバーの中で「1倍」「0倍」が割れないように） */
+.mechanism-bar__fill span {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  color: var(--color-primary-dark);
+}
+
+.mechanism-bar__fill--max span {
   color: #fff;
 }
 

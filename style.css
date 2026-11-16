@@ -464,28 +464,44 @@ th.highlight, td.highlight {
   transform: translateY(-50%);
 }
 
-/* 申し込みステップ */
+/* 申し込みステップ（ol.steps > li.step。矢印は装飾として疑似要素で表示） */
 .steps {
   display: flex;
   align-items: stretch;
   justify-content: center;
-  gap: 12px;
+  gap: 48px;
   flex-wrap: wrap;
+  list-style: none;
 }
 
 .step {
+  position: relative;
   background: #fff;
   border: 1px solid #eee;
   border-radius: 12px;
   padding: 24px 20px;
   text-align: center;
   flex: 1;
-  min-width: 160px;
+  min-width: 150px;
   max-width: 220px;
   align-self: stretch;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.step:not(:last-child)::after {
+  content: "→";
+  content: "→" / "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  width: 48px;
+  transform: translateY(-50%);
+  text-align: center;
+  font-size: 24px;
+  line-height: 1;
+  color: #ccc;
 }
 
 .step-icon {
@@ -517,12 +533,6 @@ th.highlight, td.highlight {
 .step p {
   font-size: 13px;
   color: #666;
-}
-
-.step-arrow {
-  font-size: 24px;
-  color: #ccc;
-  flex-shrink: 0;
 }
 
 .steps-note {
@@ -1051,8 +1061,25 @@ th.highlight, td.highlight {
   .hero-image img { width: 220px; height: 220px; }
   .section { padding: 48px 0; }
   .btn-primary { font-size: 15px; padding: 16px 28px; }
-  .step-arrow { display: none; }
-  .step { max-width: 100%; min-width: unset; width: 100%; }
+  /* 手順は縦1列。番号の右に見出しと説明を置き、横向きの矢印は出さない */
+  .steps { flex-direction: column; gap: 12px; }
+  .step {
+    flex: none;
+    width: 100%;
+    max-width: none;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 36px 1fr auto;
+    column-gap: 14px;
+    align-items: start;
+    padding: 16px 18px;
+    text-align: left;
+  }
+  .step:not(:last-child)::after { content: none; }
+  .step-num { grid-column: 1; grid-row: 1 / span 2; margin: 0; }
+  .step h3 { grid-column: 2; grid-row: 1; margin: 6px 0 4px; }
+  .step-icon { grid-column: 3; grid-row: 1; font-size: 24px; margin: 2px 0 0; }
+  .step p { grid-column: 2 / span 2; grid-row: 2; }
   .header-inner { flex-direction: column; align-items: stretch; padding-top: 10px; padding-bottom: 0; }
   .site-logo { width: 100%; font-size: 13px; padding-bottom: 10px; }
   .site-nav {
@@ -1209,4 +1236,28 @@ th.highlight, td.highlight {
 @media (max-width: 600px) {
   .referral-offer { padding: 24px 20px; margin: 24px auto; }
   .referral-offer__btn { max-width: 100%; }
+}
+
+/* ===== 数字と特典額の折り返し ===== */
+/* 数値と単位（3,278円・14,000ポイントなど）だけを1語として扱う。広い親要素には付けない */
+.num { white-space: nowrap; }
+
+/* 特典額：「対象区分＋数字＋単位」を1組にし、区切りの「／」の位置でだけ折り返す。
+   1組は行をまたいで分かれず、1行に収まらない狭い画面でだけ組の中で折り返す（数値と単位は .num で一体） */
+.offer-pair__item { display: inline-block; max-width: 100%; }
+
+/* 「／」が行頭・行末に残らないよう、区分を1行ずつ表示する（「／」は読み上げ・コピー用に残す）。
+   --stack は列幅が狭く常に2行になる箇所（トップのヒーロー）で全幅に適用する */
+.offer-pair--stack .offer-pair__sep {
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .offer-pair__sep {
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
 }

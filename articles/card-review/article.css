@@ -29,21 +29,6 @@
   margin-bottom: 0;
 }
 
-.criteria-item__num {
-  flex-shrink: 0;
-  width: 28px;
-  height: 28px;
-  background: #555;
-  color: #fff;
-  font-size: 13px;
-  font-weight: 900;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2px;
-}
-
 .criteria-item__body strong {
   display: block;
   font-size: 15px;

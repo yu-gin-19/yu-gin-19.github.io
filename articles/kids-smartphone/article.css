@@ -213,21 +213,6 @@
   padding: 16px 18px;
 }
 
-.key-points__num {
-  flex-shrink: 0;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2px;
-}
-
 .key-points__text {
   font-size: 14px;
   line-height: 1.7;
@@ -564,21 +549,6 @@
   align-items: flex-start;
   gap: 10px;
   margin-bottom: 10px;
-}
-
-.case-card__num {
-  flex-shrink: 0;
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 900;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2px;
 }
 
 .case-card__status-text {

@@ -56,7 +56,7 @@
   color: #333;
 }
 
-/* ===== 共通条件：番号ステップ（修正3-A） ===== */
+/* ===== 共通条件：条件の一覧（順番のない並列項目のため番号なし） ===== */
 .cond-step-list {
   display: flex;
   flex-direction: column;
@@ -71,21 +71,6 @@
   display: flex;
   align-items: flex-start;
   gap: 12px;
-}
-
-.cond-step__num {
-  flex-shrink: 0;
-  width: 24px;
-  height: 24px;
-  border-radius: 50%;
-  background: var(--color-primary);
-  color: #fff;
-  font-size: 13px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 1px;
 }
 
 .cond-step__title {

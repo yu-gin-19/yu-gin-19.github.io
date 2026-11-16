@@ -227,42 +227,16 @@
   margin-bottom: 10px;
 }
 
-.merit-list__num {
-  flex-shrink: 0;
-  width: 30px;
-  height: 30px;
-  background: var(--color-primary);
-  color: #fff;
-  font-size: 14px;
-  font-weight: 900;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 2px;
-}
-
 .merit-list__text {
   font-size: 14px;
   line-height: 1.8;
   color: #333;
-  margin: 0 0 4px 42px;
+  margin: 0 0 4px;
 }
 
 .merit-list__text a {
   color: var(--color-primary-dark);
   text-decoration: underline;
-}
-
-.merit-list .honest-box {
-  margin-left: 42px;
-}
-
-@media (max-width: 680px) {
-  .merit-list__text,
-  .merit-list .honest-box {
-    margin-left: 0;
-  }
 }
 
 /* ============================================

@@ -1005,7 +1005,6 @@ th.highlight, td.highlight {
   display: flex;
   flex-direction: column;
   gap: 8px;
-  min-height: 170px;
   padding: 22px 18px;
   border: 1px solid #e6e6e6;
   border-radius: 14px;
@@ -1020,13 +1019,6 @@ th.highlight, td.highlight {
   transform: translateY(-2px);
   border-color: var(--color-primary-light);
   box-shadow: 0 8px 24px rgba(204, 0, 111, 0.1);
-}
-
-.decision-card__number {
-  color: var(--color-primary-dark);
-  font-size: 12px;
-  font-weight: 800;
-  letter-spacing: 0.08em;
 }
 
 .decision-card__title {

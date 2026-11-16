@@ -1,8 +1,10 @@
 {
   "repository": "yu-gin-19/yu-gin-19.github.io",
   "branch": "claude/rakuten-mobile-design-overhaul-cy2334",
+  "pr": "#34",
   "start_sha": "b40e359",
-  "source_sha": "93cd8ea91d67eae5d421e1d0dfdfe797e9e89f79",
+  "source_sha": "9a242a9537776a53567e1211140e1e7d6e47ab1b",
+  "previous_source_sha": "93cd8ea91d67eae5d421e1d0dfdfe797e9e89f79",
   "target_pages": [
     "/",
     "/articles/",
@@ -15,7 +17,9 @@
     "/articles/family-name-mnp/",
     "/articles/second-line/",
     "/articles/povo-rakuten-dual-sim/",
-    "/articles/demerits/"
+    "/articles/demerits/",
+    "/articles/card-review/",
+    "/articles/securities-spu/"
   ],
   "viewports": [
     "375x812",
@@ -32,6 +36,9 @@
     ".review-artifacts/decision-heading-labels/cancel-guide_check-cards_1200x900.png",
     ".review-artifacts/decision-heading-labels/cancel-guide_check-cards_375x812.png",
     ".review-artifacts/decision-heading-labels/cancel-guide_check-cards_768x1024.png",
+    ".review-artifacts/decision-heading-labels/card-review_criteria_1200x900.png",
+    ".review-artifacts/decision-heading-labels/card-review_criteria_375x812.png",
+    ".review-artifacts/decision-heading-labels/card-review_criteria_768x1024.png",
     ".review-artifacts/decision-heading-labels/current-phone-compatibility_case-cards_1200x900.png",
     ".review-artifacts/decision-heading-labels/current-phone-compatibility_case-cards_375x812.png",
     ".review-artifacts/decision-heading-labels/current-phone-compatibility_case-cards_768x1024.png",
@@ -73,17 +80,20 @@
     ".review-artifacts/decision-heading-labels/rakuten-card_reasons_768x1024.png",
     ".review-artifacts/decision-heading-labels/second-line_merit-list_1200x900.png",
     ".review-artifacts/decision-heading-labels/second-line_merit-list_375x812.png",
-    ".review-artifacts/decision-heading-labels/second-line_merit-list_768x1024.png"
+    ".review-artifacts/decision-heading-labels/second-line_merit-list_768x1024.png",
+    ".review-artifacts/decision-heading-labels/securities-spu_conditions_1200x900.png",
+    ".review-artifacts/decision-heading-labels/securities-spu_conditions_375x812.png",
+    ".review-artifacts/decision-heading-labels/securities-spu_conditions_768x1024.png"
   ],
-  "captured_at": "2026-11-16T12:45:23Z",
+  "captured_at": "2026-11-16T13:31:52Z",
   "checked": [
-    "全40ページで開始SHAと比較：テキストの差分は外した番号・ラベルの数字のみ。href・id・onclick・aria・data-*・JSON-LD・headは一致",
-    "変更12ページ×375/768/1200で横スクロールなし、番号を外した後に空いた列・余白なし（merit-listの42px字下げ、decision-cardのmin-heightを解除）",
-    "目次リンク：変更12ページの目次アンカー80件すべて参照先あり。見出し（h2）の文言は変更していないため目次の表示文も変更なし",
-    "手順・診断の番号（申込手順、設定手順のstep-list、campaign-guide・how-to-switch・cancel-guideの手順、fit-checkの質問）は変更していない",
+    "今回の追加（9a242a9）：card-review の審査に落ちる理由（5つ）から番号1〜5、securities-spu の共通条件から番号1〜4を削除。2ページを3ea2080と比較し、テキスト差分は削除した数字のみ、href・id・onclick・aria・data-*・JSON-LD・headは一致",
+    "追加2ページを320/375/768/1200pxで確認：横スクロール・空き列なし",
+    "前回（93cd8ea）までの確認：全40ページでテキスト差分は外した番号のみ、変更12ページで横スクロール・空き列なし、目次アンカー80件すべて参照先あり、手順・診断の番号は未変更",
     "validate-content.mjs：エラー0件・情報82件（mainと同一）、git diff --check OK"
   ],
   "notes": [
+    "古い画像は削除し、全画像を source_sha で撮り直した",
     "要素単位の画像は固定ヘッダーが重ならないようヘッダーを一時的に非固定にして撮影",
     "撮影フォントはNoto Sans CJK JP（Hiragino未導入）",
     "marathon-strategy の掛け合わせカードの「買いま/わり」の改行は変更前からの既存事象"

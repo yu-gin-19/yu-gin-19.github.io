@@ -1,0 +1,62 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "claude/rakuten-mobile-design-overhaul-cy2334",
+  "start_sha": "3a6a92a592b04826de2dae28e2ecd04a64ac472d",
+  "source_sha": "7a9998f9778d09ae49629a5f393911924d758034",
+  "target_pages": [
+    "/",
+    "/articles/campaign-guide/",
+    "/articles/how-to-switch/",
+    "/articles/savings-calc/",
+    "/articles/cancel-guide/",
+    "/articles/marathon-strategy/"
+  ],
+  "viewports": [
+    "375x812",
+    "768x1024",
+    "1200x900"
+  ],
+  "images": [
+    ".review-artifacts/mobile-offer-and-steps/campaign-guide_full_1200x900.png",
+    ".review-artifacts/mobile-offer-and-steps/campaign-guide_full_375x812.png",
+    ".review-artifacts/mobile-offer-and-steps/campaign-guide_full_768x1024.png",
+    ".review-artifacts/mobile-offer-and-steps/cancel-guide_full_1200x900.png",
+    ".review-artifacts/mobile-offer-and-steps/cancel-guide_full_375x812.png",
+    ".review-artifacts/mobile-offer-and-steps/cancel-guide_full_768x1024.png",
+    ".review-artifacts/mobile-offer-and-steps/cancel-guide_point-box_zoom_768x1024.png",
+    ".review-artifacts/mobile-offer-and-steps/home_bottom-cta_zoom_375x812.png",
+    ".review-artifacts/mobile-offer-and-steps/home_full_1200x900.png",
+    ".review-artifacts/mobile-offer-and-steps/home_full_375x812.png",
+    ".review-artifacts/mobile-offer-and-steps/home_full_768x1024.png",
+    ".review-artifacts/mobile-offer-and-steps/home_hero-offer_zoom_375x812.png",
+    ".review-artifacts/mobile-offer-and-steps/home_referral-offer_zoom_375x812.png",
+    ".review-artifacts/mobile-offer-and-steps/home_steps_zoom_375x812.png",
+    ".review-artifacts/mobile-offer-and-steps/home_steps_zoom_768x1024.png",
+    ".review-artifacts/mobile-offer-and-steps/how-to-switch_full_1200x900.png",
+    ".review-artifacts/mobile-offer-and-steps/how-to-switch_full_375x812.png",
+    ".review-artifacts/mobile-offer-and-steps/how-to-switch_full_768x1024.png",
+    ".review-artifacts/mobile-offer-and-steps/how-to-switch_step1-offer_zoom_375x812.png",
+    ".review-artifacts/mobile-offer-and-steps/marathon-strategy_bars_zoom_375x812.png",
+    ".review-artifacts/mobile-offer-and-steps/marathon-strategy_full_1200x900.png",
+    ".review-artifacts/mobile-offer-and-steps/marathon-strategy_full_375x812.png",
+    ".review-artifacts/mobile-offer-and-steps/marathon-strategy_full_768x1024.png",
+    ".review-artifacts/mobile-offer-and-steps/savings-calc_full_1200x900.png",
+    ".review-artifacts/mobile-offer-and-steps/savings-calc_full_375x812.png",
+    ".review-artifacts/mobile-offer-and-steps/savings-calc_full_768x1024.png"
+  ],
+  "captured_at": "2026-11-16T09:25:27Z",
+  "checked": [
+    "全40ページ×375/768/1200で数値＋単位の割れ・狭い列・横スクロール・「／」の行端を自動検査（金額・ポイント・倍率の割れ 開始SHA時点あり→0件、横スクロール0件）",
+    "特典額の組（.offer-pair）を320〜1200pxの16幅で確認：「／」が見えたまま組が分かれる箇所・はみ出し0件",
+    "トップの申し込み手順：375pxで縦1列（番号＋見出し＋説明）、768/1200pxで3列＋矢印",
+    "全40ページで本文テキスト・href・id・onclick・aria・data-*属性・JSON-LD・<head>が開始SHAと一致（差分はトップ手順の装飾矢印「→」をCSSへ移したことのみ）",
+    "トップ・記事一覧・how-to-switch・campaign-guideのCTAで cta_view / journey_click / referral_cta_click の発火内容が開始SHAと一致（外部送信は遮断して確認）",
+    "savings-calcの試算結果を極端な入力（50,000円/0円）で320・375px確認：はみ出しなし",
+    "validate-content.mjs：エラー0件・情報82件（開始SHAと同一内容）、git diff --check OK"
+  ],
+  "notes": [
+    "撮影環境のフォントはNoto Sans CJK JP（Hiragino・Noto Sans JPは未インストール）。iPhone等のHiraginoでは折り返し位置が異なる場合がある",
+    "ヘッドレスChromiumで撮影。絵文字はNoto Color Emoji",
+    "記事本文中の日付・回数（2026年、2回線など）と文中の「乗り換え以外」の折り返しは通常の和文改行として対象外"
+  ]
+}

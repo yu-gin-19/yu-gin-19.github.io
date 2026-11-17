@@ -748,6 +748,60 @@ th.highlight, td.highlight {
   color: var(--color-primary);
 }
 
+/* トップ・記事一覧：目的別グループの記事を、1枚の枠の中で区切り線のあるリンク行として並べる
+   （記事本文内の関連記事カード .article-list は従来のカードのまま） */
+.article-list--rows {
+  gap: 0;
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 12px;
+}
+
+.article-list--rows .article-card {
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  padding: 16px 20px;
+  gap: 14px;
+}
+
+.article-list--rows .article-card + .article-card {
+  border-top: 1px solid #eee;
+}
+
+.article-list--rows .article-card:first-child { border-radius: 12px 12px 0 0; }
+.article-list--rows .article-card:last-child { border-radius: 0 0 12px 12px; }
+.article-list--rows .article-card:only-child { border-radius: 12px; }
+
+.article-list--rows .article-card:hover {
+  background: #fff5fa;
+  box-shadow: none;
+}
+
+.article-list--rows .article-card__icon {
+  font-size: 20px;
+}
+
+.article-list--rows .article-card__text {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 各グループの先頭（代表記事）はタイトルを少し大きく太くする */
+.article-list--rows .article-card--lead .article-card__text {
+  font-size: 15px;
+  font-weight: 700;
+}
+
+/* トップのグループ見出しと「記事一覧をすべて見る」 */
+#articles .article-category {
+  margin-bottom: 28px;
+}
+
+.article-list--more {
+  margin-top: 32px;
+}
+
 .articles-note {
   margin-top: 16px;
   font-size: 12px;

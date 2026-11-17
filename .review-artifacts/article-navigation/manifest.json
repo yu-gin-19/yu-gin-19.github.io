@@ -1,0 +1,51 @@
+{
+  "repository": "yu-gin-19/yu-gin-19.github.io",
+  "branch": "claude/rakuten-mobile-design-overhaul-cy2334",
+  "start_sha": "8e915e1",
+  "source_sha": "e4e652a66f2e6cf6a998e3427b3ad0f81ee2801e",
+  "target_pages": [
+    "/（#articles）",
+    "/articles/"
+  ],
+  "viewports": [
+    "375x812",
+    "768x1024",
+    "1200x900"
+  ],
+  "images": [
+    ".review-artifacts/article-navigation/articles-index_cat-compare_1200x900.png",
+    ".review-artifacts/article-navigation/articles-index_cat-compare_375x812.png",
+    ".review-artifacts/article-navigation/articles-index_cat-compare_768x1024.png",
+    ".review-artifacts/article-navigation/articles-index_cat-switch_1200x900.png",
+    ".review-artifacts/article-navigation/articles-index_cat-switch_375x812.png",
+    ".review-artifacts/article-navigation/articles-index_cat-switch_768x1024.png",
+    ".review-artifacts/article-navigation/articles-index_full_1200x900.png",
+    ".review-artifacts/article-navigation/articles-index_full_375x812.png",
+    ".review-artifacts/article-navigation/articles-index_full_768x1024.png",
+    ".review-artifacts/article-navigation/articles-index_toc_1200x900.png",
+    ".review-artifacts/article-navigation/articles-index_toc_375x812.png",
+    ".review-artifacts/article-navigation/articles-index_toc_768x1024.png",
+    ".review-artifacts/article-navigation/home_articles_1200x900.png",
+    ".review-artifacts/article-navigation/home_articles_375x812.png",
+    ".review-artifacts/article-navigation/home_articles_768x1024.png",
+    ".review-artifacts/article-navigation/home_full_1200x900.png",
+    ".review-artifacts/article-navigation/home_full_375x812.png",
+    ".review-artifacts/article-navigation/home_full_768x1024.png"
+  ],
+  "captured_at": "2026-11-17T00:54:56Z",
+  "checked": [
+    "リンク：両ページの全<a>（href・文言・onclick・data-*・aria）を開始SHAと比較。トップ38件・記事一覧の記事リンクは同一集合で欠落・重複なし。差分は記事一覧の目次文言6件の変更と #cat-compare リンク1件の追加のみ",
+    "記事数：トップ13記事＋一覧リンク、記事一覧36記事（12/5/6/2/2/7/2）。各カテゴリの先頭が指定どおりで、後続は既存の相対順",
+    "ID：既存IDの削除なし、cat-compare を追加。JSON-LD・head は開始SHAと同一",
+    "目次：7リンクすべて同名のカテゴリ見出しへ移動（#cat-compare のクリックで見出しへスクロールすることを確認）。768pxで2列に折り返し",
+    "タブ順：トップ#articles 14件、記事一覧（目次＋記事）43件がDOM順＝表示順",
+    "計測：両ページの campaign-guide 記事行で既存 onclick の journey_click（home/articles-index・article-card）が発火。主要CTAの cta_view／journey_click／referral_cta_click は開始SHAと同一",
+    "両ページ×320/375/768/1200pxで横スクロールなし。375pxで長い記事名が欠けずに折り返し、行全体がリンク",
+    "validate-content.mjs：エラー0件・情報82件、git diff --check OK"
+  ],
+  "notes": [
+    "要素単位の画像は固定ヘッダーを一時的に非固定にして撮影",
+    "撮影フォントはNoto Sans CJK JP（Hiragino未導入）",
+    "行スタイルは .article-list--rows に限定し、記事本文内の関連記事カード（au-switch など6記事）は従来のまま"
+  ]
+}

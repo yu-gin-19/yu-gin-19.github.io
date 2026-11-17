@@ -510,12 +510,6 @@
   padding: 14px 16px;
 }
 
-.watch-feature__icon {
-  flex-shrink: 0;
-  font-size: 20px;
-  line-height: 1.4;
-}
-
 .watch-feature__text {
   font-size: 14px;
   line-height: 1.7;
@@ -548,12 +542,6 @@
 .trio-card--primary {
   border: 2px solid var(--color-primary-light);
   background: var(--color-primary-bg);
-}
-
-.trio-card__icon {
-  font-size: 26px;
-  margin-bottom: 10px;
-  line-height: 1;
 }
 
 .trio-card__title {

@@ -593,9 +593,17 @@
   margin: 20px 0;
 }
 
+/* 文字の「⚠」の代わりに単色の注意アイコン（--icon-alert）を表示（PR #30 と同じ方式） */
 .note-box::before {
-  content: "⚠ ";
-  font-weight: 900;
+  content: "";
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+  margin-right: 0.35em;
+  vertical-align: -0.18em;
+  background-color: currentColor;
+  -webkit-mask: var(--icon-alert) center / contain no-repeat;
+  mask: var(--icon-alert) center / contain no-repeat;
 }
 
 /* スマホ対応 */

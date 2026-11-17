@@ -211,12 +211,6 @@
   padding: 14px 16px;
 }
 
-.plan-feature-icon {
-  font-size: 20px;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
 .plan-feature-body strong {
   display: block;
   font-size: 14px;

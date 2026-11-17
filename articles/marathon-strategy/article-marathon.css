@@ -107,14 +107,15 @@
   gap: 8px;
 }
 
-.combo-item__icon {
-  font-size: 28px;
-}
-
 .combo-item__name {
   font-size: 14px;
   font-weight: 700;
   color: #1a1a1a;
+}
+
+/* 絵文字を外した分の幅で、項目名（SPU・買いまわり・5と0の付く日）を1行に保つ */
+.combo-item__name {
+  white-space: nowrap;
 }
 
 .combo-item__desc {

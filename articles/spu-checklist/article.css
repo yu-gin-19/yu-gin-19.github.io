@@ -756,12 +756,6 @@
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
 }
 
-.reason-card__icon {
-  font-size: 2rem;
-  margin-bottom: 8px;
-  line-height: 1;
-}
-
 .reason-card__title {
   font-size: 16px;
   font-weight: 800;

@@ -570,11 +570,6 @@
   color: var(--color-primary);
 }
 
-.related-article__icon {
-  font-size: 20px;
-  flex-shrink: 0;
-}
-
 .related-article__text {
   flex: 1;
   line-height: 1.5;

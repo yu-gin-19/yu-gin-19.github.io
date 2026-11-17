@@ -150,8 +150,9 @@ body {
   margin-bottom: 24px;
 }
 
+/* 「あなたに合う？」は前段と同じ文字色にし、強調は文字の大きさで行う */
 .hero-price {
-  color: var(--color-primary);
+  font-size: 1.15em;
 }
 
 .hero-diff {
@@ -419,11 +420,6 @@ th.highlight, td.highlight {
   text-align: center;
 }
 
-.card-icon {
-  font-size: 32px;
-  margin-bottom: 12px;
-}
-
 .card h3 {
   font-size: 14px;
   font-weight: 700;
@@ -447,28 +443,20 @@ th.highlight, td.highlight {
 }
 
 .checklist li {
-  padding: 12px 0 12px 64px;
+  padding: 12px 0 12px 32px;
   border-bottom: 1px solid #eee;
   position: relative;
   font-size: 15px;
 }
 
+/* チェックの印は✓1つだけ（行頭の絵文字は外した） */
 .checklist li::before {
   content: "✓";
   position: absolute;
-  left: 36px;
+  left: 4px;
   color: var(--color-primary);
   font-weight: 900;
   font-size: 18px;
-}
-
-.checklist-icon {
-  position: absolute;
-  left: 0;
-  font-size: 22px;
-  line-height: 1;
-  top: 50%;
-  transform: translateY(-50%);
 }
 
 /* 申し込みステップ（ol.steps > li.step。矢印は装飾として疑似要素で表示） */
@@ -509,12 +497,6 @@ th.highlight, td.highlight {
   font-size: 24px;
   line-height: 1;
   color: #ccc;
-}
-
-.step-icon {
-  font-size: 36px;
-  margin-bottom: 10px;
-  line-height: 1;
 }
 
 .step-num {
@@ -728,11 +710,6 @@ th.highlight, td.highlight {
   font-weight: 700;
 }
 
-.article-card__icon {
-  font-size: 24px;
-  flex-shrink: 0;
-}
-
 .article-card__text {
   flex: 1;
   font-size: 15px;
@@ -776,10 +753,6 @@ th.highlight, td.highlight {
 .article-list--rows .article-card:hover {
   background: #fff5fa;
   box-shadow: none;
-}
-
-.article-list--rows .article-card__icon {
-  font-size: 20px;
 }
 
 .article-list--rows .article-card__text {
@@ -1154,7 +1127,7 @@ th.highlight, td.highlight {
     max-width: none;
     min-width: 0;
     display: grid;
-    grid-template-columns: 36px 1fr auto;
+    grid-template-columns: 36px 1fr;
     column-gap: 14px;
     align-items: start;
     padding: 16px 18px;
@@ -1164,8 +1137,7 @@ th.highlight, td.highlight {
   .step + .step { border-top: 1px solid #eee; }
   .step-num { grid-column: 1; grid-row: 1 / span 2; margin: 0; }
   .step h3 { grid-column: 2; grid-row: 1; margin: 6px 0 4px; }
-  .step-icon { grid-column: 3; grid-row: 1; font-size: 24px; margin: 2px 0 0; }
-  .step p { grid-column: 2 / span 2; grid-row: 2; }
+  .step p { grid-column: 2; grid-row: 2; }
   .header-inner { flex-direction: column; align-items: stretch; padding-top: 10px; padding-bottom: 0; }
   .site-logo { width: 100%; font-size: 13px; padding-bottom: 10px; }
   .site-nav {

@@ -320,12 +320,6 @@
   justify-content: center;
 }
 
-.reason-card__icon {
-  font-size: 40px;
-  margin-bottom: 12px;
-  display: block;
-}
-
 .reason-card__title {
   font-size: 14px;
   font-weight: 900;
@@ -902,6 +896,16 @@
   font-size: 24px;
   flex-shrink: 0;
   margin-top: 2px;
+}
+
+/* 注意カードだけ、単色の注意アイコン（--icon-alert）を表示する。通常カードは絵文字を外し文字だけにした */
+.condition-card--warn .condition-card__icon {
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  background-color: #e65100;
+  -webkit-mask: var(--icon-alert) center / contain no-repeat;
+  mask: var(--icon-alert) center / contain no-repeat;
 }
 
 .condition-card__text {

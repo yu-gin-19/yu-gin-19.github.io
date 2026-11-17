@@ -365,11 +365,6 @@
   color: #555;
 }
 
-.ng-item__icon {
-  font-size: 18px;
-  flex-shrink: 0;
-}
-
 /* SPU積み上がり（ファミマ追加版） */
 .spu-new-badge {
   display: inline-block;

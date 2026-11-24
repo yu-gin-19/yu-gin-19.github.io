@@ -72,7 +72,7 @@
     "git diff --check・validate-content.mjs（エラー0件）・test-cta-visibility-gate/dom・test-fit-check-diagnosis 通過"
   ],
   "notes": [
-    "日本語フォントは Noto Sans CJK JP で描画（代用フォントなし）",
+    "日本語フォントは Noto Sans CJK JP で描画（CSSの指定 \"Noto Sans JP\" を fontconfig で Noto Sans CJK JP に割り当て、CDPでノードの実使用フォントを確認）。初回撮影は WenQuanYi Zen Hei で代用されていたため撮り直した",
     "画面表示への影響はないが、ルールに従いレビュー画像を添付",
     "header の紹介リンクは画面上部に常時見えるため、ページ表示から1秒程度で cta_view が発生する（仕様どおり、1ページ表示につき1回）"
   ]
